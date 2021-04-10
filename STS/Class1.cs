@@ -11,6 +11,7 @@ namespace STS
     {
         public bool defend, cleared;
         public int n = 1;
+        public int sumfin = 1;
         public int t = 1;
         public int y;
         public int playerHP = 30;
