@@ -1,0 +1,12 @@
+C:\Users\mryor\source\repos\Stage1\STS\bin\Debug\STS.exe.config
+C:\Users\mryor\source\repos\Stage1\STS\bin\Debug\STS.exe
+C:\Users\mryor\source\repos\Stage1\STS\bin\Debug\STS.pdb
+C:\Users\mryor\source\repos\Stage1\STS\obj\Debug\STS.csprojAssemblyReference.cache
+C:\Users\mryor\source\repos\Stage1\STS\obj\Debug\STS.STS.resources
+C:\Users\mryor\source\repos\Stage1\STS\obj\Debug\STS.Properties.Resources.resources
+C:\Users\mryor\source\repos\Stage1\STS\obj\Debug\STS.csproj.GenerateResource.cache
+C:\Users\mryor\source\repos\Stage1\STS\obj\Debug\STS.csproj.CoreCompileInputs.cache
+C:\Users\mryor\source\repos\Stage1\STS\obj\Debug\STS.exe
+C:\Users\mryor\source\repos\Stage1\STS\obj\Debug\STS.pdb
+C:\Users\mryor\source\repos\Stage1\STS\obj\Debug\STS.Map.resources
+C:\Users\mryor\source\repos\Stage1\STS\obj\Debug\STS.Start.resources
