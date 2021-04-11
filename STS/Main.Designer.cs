@@ -55,10 +55,24 @@
             this.pbSkip = new System.Windows.Forms.PictureBox();
             this.btnSkip = new System.Windows.Forms.Button();
             this.lblSkip = new System.Windows.Forms.Label();
+            this.lblCleared = new System.Windows.Forms.Label();
+            this.btnCleared = new System.Windows.Forms.Button();
+            this.pbCleared = new System.Windows.Forms.PictureBox();
+            this.lblExp = new System.Windows.Forms.Label();
+            this.lblLevelUp = new System.Windows.Forms.Label();
+            this.btnLevelUp = new System.Windows.Forms.Button();
+            this.pbLevelUp = new System.Windows.Forms.PictureBox();
+            this.lblStrDef = new System.Windows.Forms.Label();
+            this.lblPoints = new System.Windows.Forms.Label();
+            this.btnStr = new System.Windows.Forms.Button();
+            this.btnDef = new System.Windows.Forms.Button();
+            this.lblStats = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbFight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEnemy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSkip)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCleared)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLevelUp)).BeginInit();
             this.SuspendLayout();
             // 
             // btnRand1
@@ -83,9 +97,9 @@
             // 
             // btnBoss
             // 
-            this.btnBoss.Location = new System.Drawing.Point(94, 12);
+            this.btnBoss.Location = new System.Drawing.Point(119, 12);
             this.btnBoss.Name = "btnBoss";
-            this.btnBoss.Size = new System.Drawing.Size(190, 62);
+            this.btnBoss.Size = new System.Drawing.Size(147, 62);
             this.btnBoss.TabIndex = 9;
             this.btnBoss.Text = "Boss";
             this.btnBoss.UseVisualStyleBackColor = true;
@@ -176,7 +190,7 @@
             this.pbFight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbFight.Location = new System.Drawing.Point(12, 80);
             this.pbFight.Name = "pbFight";
-            this.pbFight.Size = new System.Drawing.Size(354, 439);
+            this.pbFight.Size = new System.Drawing.Size(354, 455);
             this.pbFight.TabIndex = 18;
             this.pbFight.TabStop = false;
             this.pbFight.Tag = "Stage";
@@ -299,9 +313,9 @@
             // 
             // btnRestart
             // 
-            this.btnRestart.Location = new System.Drawing.Point(12, 51);
+            this.btnRestart.Location = new System.Drawing.Point(12, 42);
             this.btnRestart.Name = "btnRestart";
-            this.btnRestart.Size = new System.Drawing.Size(75, 23);
+            this.btnRestart.Size = new System.Drawing.Size(92, 23);
             this.btnRestart.TabIndex = 29;
             this.btnRestart.Tag = "Stage";
             this.btnRestart.Text = "Restart";
@@ -355,9 +369,163 @@
             this.lblSkip.Text = "You get to skip the level!";
             this.lblSkip.Visible = false;
             // 
+            // lblCleared
+            // 
+            this.lblCleared.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCleared.Location = new System.Drawing.Point(94, 275);
+            this.lblCleared.Name = "lblCleared";
+            this.lblCleared.Size = new System.Drawing.Size(185, 13);
+            this.lblCleared.TabIndex = 36;
+            this.lblCleared.Tag = "Stage";
+            this.lblCleared.Text = "You cleared the battle!";
+            this.lblCleared.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCleared.Visible = false;
+            // 
+            // btnCleared
+            // 
+            this.btnCleared.Location = new System.Drawing.Point(144, 319);
+            this.btnCleared.Name = "btnCleared";
+            this.btnCleared.Size = new System.Drawing.Size(87, 23);
+            this.btnCleared.TabIndex = 35;
+            this.btnCleared.Tag = "Stage";
+            this.btnCleared.Text = "OK";
+            this.btnCleared.UseVisualStyleBackColor = true;
+            this.btnCleared.Visible = false;
+            this.btnCleared.Click += new System.EventHandler(this.btnCleared_Click);
+            // 
+            // pbCleared
+            // 
+            this.pbCleared.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbCleared.Location = new System.Drawing.Point(78, 245);
+            this.pbCleared.Name = "pbCleared";
+            this.pbCleared.Size = new System.Drawing.Size(218, 112);
+            this.pbCleared.TabIndex = 34;
+            this.pbCleared.TabStop = false;
+            this.pbCleared.Tag = "Stage";
+            this.pbCleared.Visible = false;
+            // 
+            // lblExp
+            // 
+            this.lblExp.AutoSize = true;
+            this.lblExp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExp.Location = new System.Drawing.Point(27, 514);
+            this.lblExp.Name = "lblExp";
+            this.lblExp.Size = new System.Drawing.Size(43, 17);
+            this.lblExp.TabIndex = 37;
+            this.lblExp.Tag = "Stage";
+            this.lblExp.Text = "EXP:";
+            this.lblExp.Visible = false;
+            // 
+            // lblLevelUp
+            // 
+            this.lblLevelUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLevelUp.Location = new System.Drawing.Point(94, 202);
+            this.lblLevelUp.Name = "lblLevelUp";
+            this.lblLevelUp.Size = new System.Drawing.Size(185, 13);
+            this.lblLevelUp.TabIndex = 40;
+            this.lblLevelUp.Tag = "Stage";
+            this.lblLevelUp.Text = "You leveled up!";
+            this.lblLevelUp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblLevelUp.Visible = false;
+            // 
+            // btnLevelUp
+            // 
+            this.btnLevelUp.Location = new System.Drawing.Point(144, 323);
+            this.btnLevelUp.Name = "btnLevelUp";
+            this.btnLevelUp.Size = new System.Drawing.Size(87, 23);
+            this.btnLevelUp.TabIndex = 39;
+            this.btnLevelUp.Tag = "Stage";
+            this.btnLevelUp.Text = "OK";
+            this.btnLevelUp.UseVisualStyleBackColor = true;
+            this.btnLevelUp.Visible = false;
+            this.btnLevelUp.Click += new System.EventHandler(this.btnCleared_Click);
+            // 
+            // pbLevelUp
+            // 
+            this.pbLevelUp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbLevelUp.Location = new System.Drawing.Point(78, 193);
+            this.pbLevelUp.Name = "pbLevelUp";
+            this.pbLevelUp.Size = new System.Drawing.Size(218, 164);
+            this.pbLevelUp.TabIndex = 38;
+            this.pbLevelUp.TabStop = false;
+            this.pbLevelUp.Tag = "Stage";
+            this.pbLevelUp.Visible = false;
+            // 
+            // lblStrDef
+            // 
+            this.lblStrDef.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStrDef.Location = new System.Drawing.Point(126, 258);
+            this.lblStrDef.Name = "lblStrDef";
+            this.lblStrDef.Size = new System.Drawing.Size(63, 48);
+            this.lblStrDef.TabIndex = 41;
+            this.lblStrDef.Tag = "Stage";
+            this.lblStrDef.Text = "Strength\r\n \r\nDefense";
+            this.lblStrDef.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblStrDef.Visible = false;
+            // 
+            // lblPoints
+            // 
+            this.lblPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPoints.Location = new System.Drawing.Point(114, 215);
+            this.lblPoints.Name = "lblPoints";
+            this.lblPoints.Size = new System.Drawing.Size(121, 37);
+            this.lblPoints.TabIndex = 42;
+            this.lblPoints.Tag = "Stage";
+            this.lblPoints.Text = "Unused points:";
+            this.lblPoints.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblPoints.Visible = false;
+            // 
+            // btnStr
+            // 
+            this.btnStr.Location = new System.Drawing.Point(219, 259);
+            this.btnStr.Name = "btnStr";
+            this.btnStr.Size = new System.Drawing.Size(23, 23);
+            this.btnStr.TabIndex = 43;
+            this.btnStr.Tag = "Stage";
+            this.btnStr.Text = "+";
+            this.btnStr.UseVisualStyleBackColor = true;
+            this.btnStr.Visible = false;
+            this.btnStr.Click += new System.EventHandler(this.btnStr_Click);
+            // 
+            // btnDef
+            // 
+            this.btnDef.Location = new System.Drawing.Point(219, 285);
+            this.btnDef.Name = "btnDef";
+            this.btnDef.Size = new System.Drawing.Size(23, 23);
+            this.btnDef.TabIndex = 44;
+            this.btnDef.Tag = "Stage";
+            this.btnDef.Text = "+";
+            this.btnDef.UseVisualStyleBackColor = true;
+            this.btnDef.Visible = false;
+            this.btnDef.Click += new System.EventHandler(this.btnDef_Click);
+            // 
+            // lblStats
+            // 
+            this.lblStats.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStats.Location = new System.Drawing.Point(175, 516);
+            this.lblStats.Name = "lblStats";
+            this.lblStats.Size = new System.Drawing.Size(185, 13);
+            this.lblStats.TabIndex = 45;
+            this.lblStats.Tag = "Stage";
+            this.lblStats.Text = "Str | Def";
+            this.lblStats.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblStats.Visible = false;
+            // 
             // STS
             // 
             this.ClientSize = new System.Drawing.Size(378, 573);
+            this.Controls.Add(this.lblStats);
+            this.Controls.Add(this.btnDef);
+            this.Controls.Add(this.btnStr);
+            this.Controls.Add(this.lblPoints);
+            this.Controls.Add(this.lblStrDef);
+            this.Controls.Add(this.lblLevelUp);
+            this.Controls.Add(this.btnLevelUp);
+            this.Controls.Add(this.pbLevelUp);
+            this.Controls.Add(this.lblExp);
+            this.Controls.Add(this.lblCleared);
+            this.Controls.Add(this.btnCleared);
+            this.Controls.Add(this.pbCleared);
             this.Controls.Add(this.lblSkip);
             this.Controls.Add(this.btnSkip);
             this.Controls.Add(this.pbSkip);
@@ -386,10 +554,13 @@
             this.Controls.Add(this.btnRand1);
             this.Controls.Add(this.pbFight);
             this.Name = "STS";
+            this.Text = "Cryptic Dungeons";
             ((System.ComponentModel.ISupportInitialize)(this.pbFight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEnemy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSkip)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCleared)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLevelUp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -425,6 +596,18 @@
         private System.Windows.Forms.PictureBox pbSkip;
         private System.Windows.Forms.Button btnSkip;
         private System.Windows.Forms.Label lblSkip;
+        private System.Windows.Forms.Label lblCleared;
+        private System.Windows.Forms.Button btnCleared;
+        private System.Windows.Forms.PictureBox pbCleared;
+        private System.Windows.Forms.Label lblExp;
+        private System.Windows.Forms.Label lblLevelUp;
+        private System.Windows.Forms.Button btnLevelUp;
+        private System.Windows.Forms.PictureBox pbLevelUp;
+        private System.Windows.Forms.Label lblStrDef;
+        private System.Windows.Forms.Label lblPoints;
+        private System.Windows.Forms.Button btnStr;
+        private System.Windows.Forms.Button btnDef;
+        private System.Windows.Forms.Label lblStats;
     }
 }
 

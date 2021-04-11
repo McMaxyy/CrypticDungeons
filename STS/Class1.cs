@@ -9,21 +9,23 @@ namespace STS
 {
     public class Podatki
     {
-        public bool defend, cleared;
+        public bool defend, cleared, skipped;
         public int n = 1;
         public int sumfin = 1;
         public int t = 1;
-        public int y;
-        public int playerHP = 30;
+        public double y;
+        public double playerHP = 30;
         public int enemyMaxHP = 15;
         public int enemyHP = 15;
 
+        public int points = 0;
         public int str = 0;
         public int def = 0;
         public int playerMaxHP = 30;
-        public int exp = 0;
+        public double exp = 0;
         public int maxExp = 10;
         public int level = 1;
+        public int newLevel = 2;
 
         public Armors armors = new Armors();
         public Weapon weapons = new Weapon();
@@ -50,20 +52,6 @@ namespace STS
         {
             get { return _weaponDmgMin; }
             set { _weaponDmgMin = value; }
-        }
-
-        public Weapons()
-        {
-            weaponName = "N/A";
-            weaponDmgMin = 0;
-            weaponDmgMax = 0;
-            isUnlocked = false;
-        }
-        public Weapons(string _weaponName, int _weaponDmgMin, int _weaponDmgMax)
-        {
-            weaponName = _weaponName;
-            weaponDmgMin = _weaponDmgMin;
-            weaponDmgMax = _weaponDmgMax;
         }
     }
 
@@ -104,13 +92,6 @@ namespace STS
         {
             get { return _armorDefense; }
             set { _armorDefense = value; }
-        }
-
-        public Armor()
-        {
-            armorName = "N/A";
-            armorDefense = 1;
-            isUnlocked = false;
         }
     }
 

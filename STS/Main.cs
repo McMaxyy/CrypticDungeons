@@ -22,15 +22,20 @@ namespace STS
         //Show and hide stage or skip window
         public void showStage()
         {
+            lblStats.Text = "Str: " + p.str + " | Def: " + p.def;
+            btnAttack.Enabled = btnDefend.Enabled = btnFlee.Enabled = true;
+
             lblDmg1.Text = "You dealt: ";
             lblDmg2.Text = "Enemy dealt: ";
             lblEnemyHP.Text = "HP: " + p.enemyHP + "/" + p.enemyMaxHP;
             lblPlayerHP.Text = "HP: " + p.playerHP + "/" + p.playerMaxHP;
+            lblExp.Text = "EXP: " + p.exp + "/" + p.maxExp;
             foreach (Control x in this.Controls)
             {
                 if (x is PictureBox || x is Button || x is Label && x.Visible == false)
                 {
-                    if (x != pbSkip && x != btnSkip && x != lblSkip && x != lblLost && x != btnRestart)
+                    if (x != pbSkip && x != btnSkip && x != lblSkip && x != lblLost && x != btnRestart && x != pbCleared && x != lblCleared && x != btnCleared &&
+                        x != pbLevelUp && x != btnLevelUp && x != lblLevelUp && x != lblStrDef && x != lblPoints && x != btnStr && x != btnDef)
                     {
                         x.Visible = true;
                     }
@@ -51,6 +56,7 @@ namespace STS
 
         public void skipStage()
         {
+            p.skipped = true;
             foreach (Control x in this.Controls)
             {
                 if (x is PictureBox || x is Button || x is Label && x.Visible == true)
@@ -89,45 +95,96 @@ namespace STS
         //Check if the player has cleared the stage
         public void stageIsClear()
         {
-                if (p.n == 1)
+            btnAttack.Enabled = btnDefend.Enabled = btnFlee.Enabled = false;
+            if (p.n == 1)
+            {
+                btnBattle1.Enabled = btnRand1.Enabled = btnRand2.Enabled = false;
+                btnBattle2.Enabled = btnRand3.Enabled = btnRand4.Enabled = true;
+                p.t = 1;
+                if (p.skipped == false)
                 {
-                    btnBattle1.Enabled = btnRand1.Enabled = btnRand2.Enabled = false;
-                    btnBattle2.Enabled = btnRand3.Enabled = btnRand4.Enabled = true;
-                    p.t = 1;
-                    hideStage();
-                }
-                else if (p.n == 2)
-                {
-                    btnBattle2.Enabled = btnRand3.Enabled = btnRand4.Enabled = false;
-                    btnBattle3.Enabled = btnRand5.Enabled = btnRand6.Enabled = true;
-                    p.t = 1;
-                    hideStage();
-                }
-                else if (p.n == 3)
-                {
-                    btnBattle3.Enabled = btnRand5.Enabled = btnRand6.Enabled = false;
-                    btnBoss.Enabled = true;
-                    p.t = 1;
-                    hideStage();
-                }
-                else if (p.n == 4)
-                {
-                    yy = r.Next(1, 3);
-                    if (yy == 1)
-                        p.weapons.ironS.isUnlocked = true;
-                    else if (yy == 2)
-                        p.armors.ironA.isUnlocked = true;                  
+                    pbCleared.Visible = btnCleared.Visible = lblCleared.Visible = true;                   
+                    if (p.level == p.newLevel)
+                    {
+                        pbCleared.Visible = btnCleared.Visible = lblCleared.Visible = false;
+                        btnStr.Enabled = btnDef.Enabled = true;
+                        lblPoints.Text = "Unused points: " + p.points;
+                        pbLevelUp.Visible = btnDef.Visible = btnStr.Visible = btnLevelUp.Visible = lblStrDef.Visible = lblPoints.Visible = lblLevelUp.Visible = true;
+                        p.newLevel++;
+                    }
 
-                    lblYY.Text = yy.ToString();
-                    btnBoss.Enabled = false;
-                    lblLost.Text = "You won";
-                    lblLost.Visible = true;
-                    btnRestart.Text = "Return to map";
-                    btnRestart.Visible = true;
-                    p.cleared = true;
-                    p.t = 1;
+                lblExp.Text = "EXP: " + p.exp + "/" + p.maxExp;                    
                 }
+            }
+            else if (p.n == 2)
+            {
+                btnBattle2.Enabled = btnRand3.Enabled = btnRand4.Enabled = false;
+                btnBattle3.Enabled = btnRand5.Enabled = btnRand6.Enabled = true;
+                p.t = 1;
+                if (p.skipped == false)
+                {
+                    pbCleared.Visible = btnCleared.Visible = lblCleared.Visible = true;
+                    if (p.level == p.newLevel)
+                    {
+                        pbCleared.Visible = btnCleared.Visible = lblCleared.Visible = false;
+                        btnStr.Enabled = btnDef.Enabled = true;
+                        lblPoints.Text = "Unused points: " + p.points;
+                        pbLevelUp.Visible = btnDef.Visible = btnStr.Visible = btnLevelUp.Visible = lblStrDef.Visible = lblPoints.Visible = lblLevelUp.Visible = true;
+                        p.newLevel++;
+                    }
+                      
+                    lblExp.Text = "EXP: " + p.exp + "/" + p.maxExp;
+                }
+            }
+            else if (p.n == 3)
+            {
+                btnBattle3.Enabled = btnRand5.Enabled = btnRand6.Enabled = false;
+                btnBoss.Enabled = true;
+                p.t = 1;
+                if (p.skipped == false)
+                {
+                    pbCleared.Visible = btnCleared.Visible = lblCleared.Visible = true;
+                    if (p.level == p.newLevel)
+                    {
+                        pbCleared.Visible = btnCleared.Visible = lblCleared.Visible = false;
+                        btnStr.Enabled = btnDef.Enabled = true;
+                        lblPoints.Text = "Unused points: " + p.points;
+                        pbLevelUp.Visible = btnDef.Visible = btnStr.Visible = btnLevelUp.Visible = lblStrDef.Visible = lblPoints.Visible = lblLevelUp.Visible = true;
+                        p.newLevel++;
+                    }
+
+                    lblExp.Text = "EXP: " + p.exp + "/" + p.maxExp;
+                }
+            }
+            else if (p.n == 4)
+            {
+                yy = r.Next(1, 3);
+                if (yy == 1)
+                    p.weapons.ironS.isUnlocked = true;
+                else if (yy == 2)
+                    p.armors.ironA.isUnlocked = true;
+
+                if (p.level == p.newLevel)
+                {
+                    btnStr.Enabled = btnDef.Enabled = true;
+                    lblPoints.Text = "Unused points: " + p.points;
+                    pbLevelUp.Visible = btnDef.Visible = btnStr.Visible = btnLevelUp.Visible = lblStrDef.Visible = lblPoints.Visible = lblLevelUp.Visible = true;
+                    p.newLevel++;
+                }
+
+                btnLevelUp.Enabled = false;
+                lblExp.Text = "EXP: " + p.exp + "/" + p.maxExp;
+                lblYY.Text = yy.ToString();
+                btnBoss.Enabled = false;
+                lblLost.Text = "You won";
+                lblLost.Visible = true;
+                btnRestart.Text = "Return to map";
+                btnRestart.Visible = true;
+                p.cleared = true;
+                p.t = 1;
+            }
             p.n++;
+            p.skipped = false;
         }
         public void stageNotClear()
         {
@@ -177,6 +234,14 @@ namespace STS
             lblDmg2.Visible = true;
             if (p.enemyHP < 1)
             {
+                p.exp += 3;
+                if (p.exp >= p.maxExp)
+                {
+                    p.exp = 0;
+                    p.level++;
+                    p.maxExp = p.maxExp * 2;
+                    p.points += 2;
+                }
                 p.enemyHP = 15;
                 p.t = 0;
                 stageIsClear();
@@ -184,22 +249,33 @@ namespace STS
         }
         public void enemyAttack()
         {
-            if (p.enemyMaxHP == 15 && p.defend == true)
+            while (true)
             {
-                p.y = r.Next(1, 5);
-                p.y = p.y - defense;
-                p.defend = false;
+                if (p.enemyMaxHP == 15 && p.defend == true)
+                {
+                    p.y = r.Next(1, 5);
+                    p.y = p.y - defense;
+                    p.defend = false;
+                }
+                else if (p.enemyMaxHP == 15)
+                    p.y = r.Next(1, 5);
+                else if (p.enemyMaxHP == 30 && p.defend == true)
+                {
+                    p.y = r.Next(1, 7);
+                    p.y = p.y - defense;
+                    p.defend = false;
+                }
+                else if (p.enemyMaxHP == 30)
+                    p.y = r.Next(1, 7);
+
+                p.y = p.y - p.def - selectedArmor.armorDefense / 3;
+
+                if (p.y < 0)
+                    p.y = Math.Pow(p.y, 2);
+
+                if (p.y > 0)
+                    break;
             }
-            else if (p.enemyMaxHP == 15)
-                p.y = r.Next(1, 5);
-            else if (p.enemyMaxHP == 30 && p.defend == true)
-            {
-                p.y = r.Next(1, 7);
-                p.y = p.y - defense;
-                p.defend = false;
-            }
-            else if (p.enemyMaxHP == 30)
-                p.y = r.Next(1, 7);
             /*switch (selectedArmor.armorName)
             {
                 case "Bronze Armor":
@@ -208,8 +284,7 @@ namespace STS
                 case "Iron Armor":
                     p.y = p.y - (p.armors.IA.armorDefense/3);
                     break;
-            }*/
-            p.y = p.y - selectedArmor.armorDefense/3;
+            }*/           
             p.playerHP = p.playerHP - p.y;
             lblPlayerHP.Text = "HP: " + p.playerHP + "/" + p.playerMaxHP;
             lblDmg2.Text = "Enemy dealt: " + p.y + " damage";           
@@ -254,6 +329,7 @@ namespace STS
                         pbPlayer.BackgroundImage = Properties.Resources.IronArmor_IronSword;
                         break;
                 }
+            btnLevelUp.Enabled = true;
         }
 
         private void btnBattle1_Click(object sender, EventArgs e)
@@ -320,6 +396,41 @@ namespace STS
             p.enemyHP = 30;
             p.playerHP = p.playerHP + 20;
             showStage();
+        }
+
+        private void btnCleared_Click(object sender, EventArgs e)
+        {
+            hideStage();
+        }
+
+        private void btnStr_Click(object sender, EventArgs e)
+        {
+            if (p.points > 0)
+            {
+                p.str++;
+                p.points--;
+                lblPoints.Text = "Unused points: " + p.points;
+            }
+
+            if (p.points == 0)
+            {
+                btnStr.Enabled = btnDef.Enabled = false;               
+            }
+        }
+
+        private void btnDef_Click(object sender, EventArgs e)
+        {
+            if (p.points > 0)
+            {
+                p.def++;
+                p.points--;
+                lblPoints.Text = "Unused points: " + p.points;
+            }
+
+            if (p.points == 0)
+            {
+                btnStr.Enabled = btnDef.Enabled = false;
+            }
         }
 
         private void btnDefend_Click(object sender, EventArgs e)
