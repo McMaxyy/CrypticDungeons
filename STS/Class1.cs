@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -29,6 +30,7 @@ namespace STS
 
         public Armors armors = new Armors();
         public Weapon weapons = new Weapon();
+        public Bosses bosses = new Bosses();
     }
 
     public class Weapons
@@ -113,16 +115,100 @@ namespace STS
             isUnlocked = false;
         }
     }
+    public class MythrilArmor : Armor
+    {
+        public MythrilArmor()
+        {
+            armorName = "Mythril Armor";
+            armorDefense = 9;
+            isUnlocked = false;
+        }
+    }
 
     public class Armors
     {
         public IronArmor ironA = new IronArmor();
         public BronzeArmor bronzeA = new BronzeArmor();
+        public MythrilArmor mythrilA = new MythrilArmor();
     }
 
     public class Weapon
     {
         public WoodenSword woodenS = new WoodenSword();
         public IronSword ironS = new IronSword();
+    }
+
+    public class Boss
+    {
+        private string _bossName;
+        private int _bossID;
+        private int _minDmgBoss;
+        private int _maxDmgBoss;
+        private int _bossMaxHP;
+        private string _bossPic;
+        public Bitmap bossImage;
+
+        public string bossName
+        {
+            get { return _bossName; }
+            set { _bossName = value; }
+        }
+        public string bossPic
+        {
+            get { return _bossPic; }
+            set { _bossPic = value; }
+        }
+        public int bossID
+        {
+            get { return _bossID; }
+            set { _bossID = value; }
+        }
+        public int minDmgBoss
+        {
+            get { return _minDmgBoss; }
+            set { _minDmgBoss = value; }
+        }
+        public int maxDmgBoss
+        {
+            get { return _maxDmgBoss; }
+            set { _maxDmgBoss = value; }
+        }
+        public int bossMaxHP
+        {
+            get { return _bossMaxHP; }
+            set { _bossMaxHP = value; }
+        }
+    }
+    public class MenacingPikl : Boss
+    {
+        public MenacingPikl()
+        {
+            bossName = "Menacing Pickle";
+            bossPic = "MenacingPikl";
+            bossID = 1;
+            minDmgBoss = 5;
+            maxDmgBoss = 8;
+            bossMaxHP = 45;
+            bossImage = Properties.Resources.MenacingPikl;
+        }
+    }
+    public class Pikl : Boss
+    {
+        public Pikl()
+        {
+            bossName = "Pickle";
+            bossPic = "Pikl";
+            bossID = 2;
+            minDmgBoss = 10;
+            maxDmgBoss = 13;
+            bossMaxHP = 60;
+            bossImage = Properties.Resources.Pikl;
+        }
+    }
+
+    public class Bosses
+    {
+        public MenacingPikl menacingPikl = new MenacingPikl();
+        public Pikl pikl = new Pikl();
     }
 }

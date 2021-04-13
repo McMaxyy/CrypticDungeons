@@ -16,6 +16,7 @@ namespace STS
         int yy, defense;
         Weapons selectedWeapon;
         Armor selectedArmor;
+        Boss selectedBoss;
         Podatki p;
         Random r = new Random();
         
@@ -106,11 +107,7 @@ namespace STS
                     pbCleared.Visible = btnCleared.Visible = lblCleared.Visible = true;                   
                     if (p.level == p.newLevel)
                     {
-                        pbCleared.Visible = btnCleared.Visible = lblCleared.Visible = false;
-                        btnStr.Enabled = btnDef.Enabled = true;
-                        lblPoints.Text = "Unused points: " + p.points;
-                        pbLevelUp.Visible = btnDef.Visible = btnStr.Visible = btnLevelUp.Visible = lblStrDef.Visible = lblPoints.Visible = lblLevelUp.Visible = true;
-                        p.newLevel++;
+                        levelUp();
                     }
 
                 lblExp.Text = "EXP: " + p.exp + "/" + p.maxExp;                    
@@ -126,11 +123,7 @@ namespace STS
                     pbCleared.Visible = btnCleared.Visible = lblCleared.Visible = true;
                     if (p.level == p.newLevel)
                     {
-                        pbCleared.Visible = btnCleared.Visible = lblCleared.Visible = false;
-                        btnStr.Enabled = btnDef.Enabled = true;
-                        lblPoints.Text = "Unused points: " + p.points;
-                        pbLevelUp.Visible = btnDef.Visible = btnStr.Visible = btnLevelUp.Visible = lblStrDef.Visible = lblPoints.Visible = lblLevelUp.Visible = true;
-                        p.newLevel++;
+                        levelUp();
                     }
                       
                     lblExp.Text = "EXP: " + p.exp + "/" + p.maxExp;
@@ -146,11 +139,7 @@ namespace STS
                     pbCleared.Visible = btnCleared.Visible = lblCleared.Visible = true;
                     if (p.level == p.newLevel)
                     {
-                        pbCleared.Visible = btnCleared.Visible = lblCleared.Visible = false;
-                        btnStr.Enabled = btnDef.Enabled = true;
-                        lblPoints.Text = "Unused points: " + p.points;
-                        pbLevelUp.Visible = btnDef.Visible = btnStr.Visible = btnLevelUp.Visible = lblStrDef.Visible = lblPoints.Visible = lblLevelUp.Visible = true;
-                        p.newLevel++;
+                        levelUp();
                     }
 
                     lblExp.Text = "EXP: " + p.exp + "/" + p.maxExp;
@@ -216,15 +205,7 @@ namespace STS
         public void playerAttack()
         {
             int x = 0;
-            /*switch (selectedWeapon.weaponName)
-            {
-                case "Wooden Sword":
-                    x = p.str + r.Next(p.weapons.woodenS.weaponDmgMin, p.weapons.woodenS.weaponDmgMax + 1);
-                    break;
-                case "Iron Sword":
-                    x = p.str + r.Next(p.weapons.ironS.weaponDmgMin, p.weapons.ironS.weaponDmgMax + 1);
-                    break;
-            }*/
+
             x = p.str + r.Next(selectedWeapon.weaponDmgMin, selectedWeapon.weaponDmgMax + 1);
 
             p.enemyHP = p.enemyHP - x;
@@ -237,7 +218,8 @@ namespace STS
                 p.exp += 3;
                 if (p.exp >= p.maxExp)
                 {
-                    p.exp = 0;
+                    p.playerMaxHP = p.playerMaxHP + 5;
+                    p.exp = p.exp%p.maxExp;
                     p.level++;
                     p.maxExp = p.maxExp * 2;
                     p.points += 2;
@@ -251,64 +233,57 @@ namespace STS
         {
             while (true)
             {
-                if (p.enemyMaxHP == 15 && p.defend == true)
-                {
+                if (p.enemyMaxHP == 15)
                     p.y = r.Next(1, 5);
+                else if (p. enemyMaxHP > 15)
+                    p.y = r.Next(selectedBoss.minDmgBoss, selectedBoss.maxDmgBoss + 1);
+
+                if (p.defend == true)
+                {
                     p.y = p.y - defense;
                     p.defend = false;
                 }
-                else if (p.enemyMaxHP == 15)
-                    p.y = r.Next(1, 5);
-                else if (p.enemyMaxHP == 30 && p.defend == true)
-                {
-                    p.y = r.Next(1, 7);
-                    p.y = p.y - defense;
-                    p.defend = false;
-                }
-                else if (p.enemyMaxHP == 30)
-                    p.y = r.Next(1, 7);
 
                 p.y = p.y - p.def - selectedArmor.armorDefense / 3;
 
                 if (p.y < 0)
-                    p.y = Math.Pow(p.y, 2);
+                    p.y = 0;
 
-                if (p.y > 0)
+                if (p.y >= 0)
                     break;
             }
-            /*switch (selectedArmor.armorName)
-            {
-                case "Bronze Armor":
-                    p.y = p.y - (p.armors.BA.armorDefense/3);
-                    break;
-                case "Iron Armor":
-                    p.y = p.y - (p.armors.IA.armorDefense/3);
-                    break;
-            }*/           
-            p.playerHP = p.playerHP - p.y;
+
+            if (p.t == 1)
+                p.playerHP = p.playerHP - p.y;
             lblPlayerHP.Text = "HP: " + p.playerHP + "/" + p.playerMaxHP;
-            lblDmg2.Text = "Enemy dealt: " + p.y + " damage";           
+            lblDmg2.Text = "Enemy dealt: " + p.y + " damage";   
+            if (p.y == 0)
+                lblDmg2.Text = "Enemy attack missed";
             if (p.playerHP < 1)
             {
                 stageNotClear();
             }
         }
-
-        //Database
-        /*public void changeDB()
+        
+        public void levelUp()
         {
-            _con = new SqlConnection(@"Data Source = DESKTOP - PP0KUAR\SQLEXPRESS; Initial Catalog = ItemDB; Integrated Security = True");
-            _con.Open();
-            _cmd = new SqlCommand("UPDATE Weapons SET Unlocked = @a1 WHERE Title = @a2", _con);
-        }*/
+            pbCleared.Visible = btnCleared.Visible = lblCleared.Visible = false;
+            btnStr.Enabled = btnDef.Enabled = true;
+            lblPoints.Text = "Unused points: " + p.points;
+            pbLevelUp.Visible = btnDef.Visible = btnStr.Visible = btnLevelUp.Visible = lblStrDef.Visible = lblPoints.Visible = lblLevelUp.Visible = true;
+            p.newLevel++;
+        }
 
-        //Program start
-        public STS(Weapons sword, Armor armor, ref Podatki p)
+        
+        public STS(Weapons sword, Armor armor, Boss boss, ref Podatki p)
         {
             InitializeComponent();
+            p.playerHP = p.playerMaxHP;
+            pbEnemy.BackgroundImage = Properties.Resources.Pikl;
             this.p = p;
             selectedWeapon = sword;
             selectedArmor = armor;
+            selectedBoss = boss;
             if (selectedArmor.armorName == "Bronze Armor")
                 switch (selectedWeapon.weaponName)
                 {
@@ -330,6 +305,7 @@ namespace STS
                         break;
                 }
             btnLevelUp.Enabled = true;
+            p.n = 1;
         }
 
         private void btnBattle1_Click(object sender, EventArgs e)
@@ -381,7 +357,7 @@ namespace STS
         {
             if (p.cleared == true)
             {
-                Map m = new Map(ref p);
+                Map m = new Map(selectedWeapon, selectedArmor, ref p);
                 this.Hide();
                 m.Show();
             }
@@ -391,9 +367,10 @@ namespace STS
 
         private void btnBoss_Click(object sender, EventArgs e)
         {
-            pbEnemy.BackgroundImage = Properties.Resources.MenacingPikl;
-            p.enemyMaxHP = 30;
-            p.enemyHP = 30;
+            pbEnemy.BackgroundImage = selectedBoss.bossImage;
+            p.enemyMaxHP = selectedBoss.bossMaxHP;
+
+            p.enemyHP = p.enemyMaxHP;
             p.playerHP = p.playerHP + 20;
             showStage();
         }
@@ -414,7 +391,7 @@ namespace STS
 
             if (p.points == 0)
             {
-                btnStr.Enabled = btnDef.Enabled = false;               
+                btnStr.Enabled = btnDef.Enabled = false;             
             }
         }
 
@@ -433,18 +410,16 @@ namespace STS
             }
         }
 
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            Map m = new Map(selectedWeapon, selectedArmor, ref p);
+            this.Hide();
+            m.Show();
+        }
+
         private void btnDefend_Click(object sender, EventArgs e)
         {
             p.defend = true;
-            /*switch (selectedArmor.armorName)
-            {
-                case "Bronze Armor":
-                    defense = p.armors.BA.armorDefense / 2;
-                    break;
-                case "Iron Armor":
-                    defense = p.armors.IA.armorDefense / 2;
-                    break;
-            }*/
             defense = selectedArmor.armorDefense/2;
             enemyAttack();
         }

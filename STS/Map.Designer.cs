@@ -34,6 +34,9 @@
             this.btnGo = new System.Windows.Forms.Button();
             this.btnIA = new System.Windows.Forms.Button();
             this.btnBA = new System.Windows.Forms.Button();
+            this.btnStage2 = new System.Windows.Forms.Button();
+            this.pbPlayer = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlayer)).BeginInit();
             this.SuspendLayout();
             // 
             // btnStage1
@@ -48,7 +51,7 @@
             // 
             // btnWS
             // 
-            this.btnWS.Location = new System.Drawing.Point(186, 258);
+            this.btnWS.Location = new System.Drawing.Point(12, 425);
             this.btnWS.Name = "btnWS";
             this.btnWS.Size = new System.Drawing.Size(60, 54);
             this.btnWS.TabIndex = 1;
@@ -60,7 +63,7 @@
             // btnIS
             // 
             this.btnIS.Enabled = false;
-            this.btnIS.Location = new System.Drawing.Point(279, 258);
+            this.btnIS.Location = new System.Drawing.Point(78, 425);
             this.btnIS.Name = "btnIS";
             this.btnIS.Size = new System.Drawing.Size(60, 54);
             this.btnIS.TabIndex = 2;
@@ -71,7 +74,7 @@
             // 
             // btnGo
             // 
-            this.btnGo.Location = new System.Drawing.Point(223, 388);
+            this.btnGo.Location = new System.Drawing.Point(144, 516);
             this.btnGo.Name = "btnGo";
             this.btnGo.Size = new System.Drawing.Size(75, 23);
             this.btnGo.TabIndex = 3;
@@ -83,7 +86,7 @@
             // btnIA
             // 
             this.btnIA.Enabled = false;
-            this.btnIA.Location = new System.Drawing.Point(279, 318);
+            this.btnIA.Location = new System.Drawing.Point(78, 485);
             this.btnIA.Name = "btnIA";
             this.btnIA.Size = new System.Drawing.Size(60, 54);
             this.btnIA.TabIndex = 5;
@@ -94,7 +97,7 @@
             // 
             // btnBA
             // 
-            this.btnBA.Location = new System.Drawing.Point(186, 318);
+            this.btnBA.Location = new System.Drawing.Point(12, 485);
             this.btnBA.Name = "btnBA";
             this.btnBA.Size = new System.Drawing.Size(60, 54);
             this.btnBA.TabIndex = 4;
@@ -103,11 +106,32 @@
             this.btnBA.Visible = false;
             this.btnBA.Click += new System.EventHandler(this.btnBA_Click);
             // 
+            // btnStage2
+            // 
+            this.btnStage2.Location = new System.Drawing.Point(12, 74);
+            this.btnStage2.Name = "btnStage2";
+            this.btnStage2.Size = new System.Drawing.Size(66, 56);
+            this.btnStage2.TabIndex = 6;
+            this.btnStage2.Text = "Stage2";
+            this.btnStage2.UseVisualStyleBackColor = true;
+            this.btnStage2.Click += new System.EventHandler(this.btnStage2_Click);
+            // 
+            // pbPlayer
+            // 
+            this.pbPlayer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbPlayer.Location = new System.Drawing.Point(12, 146);
+            this.pbPlayer.Name = "pbPlayer";
+            this.pbPlayer.Size = new System.Drawing.Size(247, 264);
+            this.pbPlayer.TabIndex = 7;
+            this.pbPlayer.TabStop = false;
+            // 
             // Map
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(518, 551);
+            this.Controls.Add(this.pbPlayer);
+            this.Controls.Add(this.btnStage2);
             this.Controls.Add(this.btnIA);
             this.Controls.Add(this.btnBA);
             this.Controls.Add(this.btnGo);
@@ -116,6 +140,7 @@
             this.Controls.Add(this.btnStage1);
             this.Name = "Map";
             this.Text = "Map";
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlayer)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -128,5 +153,7 @@
         private System.Windows.Forms.Button btnGo;
         private System.Windows.Forms.Button btnIA;
         private System.Windows.Forms.Button btnBA;
+        private System.Windows.Forms.Button btnStage2;
+        private System.Windows.Forms.PictureBox pbPlayer;
     }
 }

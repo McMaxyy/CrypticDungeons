@@ -17,7 +17,7 @@ namespace STS
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Podatki p = new Podatki();
+            Podatki p = new Podatki();           
             Application.Run(new Start(ref p));
         }
     }

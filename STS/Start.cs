@@ -13,6 +13,9 @@ namespace STS
     public partial class Start : Form
     {
         Podatki p;
+        Weapons weapon;
+        Armor armor;
+
         public Start(ref Podatki p)
         {           
             InitializeComponent();
@@ -21,8 +24,10 @@ namespace STS
 
         private void btnStart_Click(object sender, EventArgs e)
         {
+            weapon = p.weapons.woodenS;
+            armor = p.armors.bronzeA;
             this.Hide();
-            Map m = new Map(ref p);
+            Map m = new Map(weapon, armor, ref p);
             m.Show();
         }
     }

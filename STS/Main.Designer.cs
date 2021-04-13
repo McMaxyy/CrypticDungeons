@@ -67,6 +67,7 @@
             this.btnStr = new System.Windows.Forms.Button();
             this.btnDef = new System.Windows.Forms.Button();
             this.lblStats = new System.Windows.Forms.Label();
+            this.btnReturn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbFight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEnemy)).BeginInit();
@@ -97,6 +98,7 @@
             // 
             // btnBoss
             // 
+            this.btnBoss.Enabled = false;
             this.btnBoss.Location = new System.Drawing.Point(119, 12);
             this.btnBoss.Name = "btnBoss";
             this.btnBoss.Size = new System.Drawing.Size(147, 62);
@@ -107,6 +109,7 @@
             // 
             // btnBattle2
             // 
+            this.btnBattle2.Enabled = false;
             this.btnBattle2.Location = new System.Drawing.Point(144, 255);
             this.btnBattle2.Name = "btnBattle2";
             this.btnBattle2.Size = new System.Drawing.Size(88, 62);
@@ -117,6 +120,7 @@
             // 
             // btnBattle3
             // 
+            this.btnBattle3.Enabled = false;
             this.btnBattle3.Location = new System.Drawing.Point(144, 125);
             this.btnBattle3.Name = "btnBattle3";
             this.btnBattle3.Size = new System.Drawing.Size(88, 62);
@@ -137,6 +141,7 @@
             // 
             // btnRand4
             // 
+            this.btnRand4.Enabled = false;
             this.btnRand4.Location = new System.Drawing.Point(272, 255);
             this.btnRand4.Name = "btnRand4";
             this.btnRand4.Size = new System.Drawing.Size(88, 62);
@@ -147,6 +152,7 @@
             // 
             // btnRand3
             // 
+            this.btnRand3.Enabled = false;
             this.btnRand3.Location = new System.Drawing.Point(16, 255);
             this.btnRand3.Name = "btnRand3";
             this.btnRand3.Size = new System.Drawing.Size(88, 62);
@@ -157,6 +163,7 @@
             // 
             // btnRand6
             // 
+            this.btnRand6.Enabled = false;
             this.btnRand6.Location = new System.Drawing.Point(272, 125);
             this.btnRand6.Name = "btnRand6";
             this.btnRand6.Size = new System.Drawing.Size(88, 62);
@@ -167,6 +174,7 @@
             // 
             // btnRand5
             // 
+            this.btnRand5.Enabled = false;
             this.btnRand5.Location = new System.Drawing.Point(16, 125);
             this.btnRand5.Name = "btnRand5";
             this.btnRand5.Size = new System.Drawing.Size(88, 62);
@@ -511,9 +519,20 @@
             this.lblStats.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblStats.Visible = false;
             // 
+            // btnReturn
+            // 
+            this.btnReturn.Location = new System.Drawing.Point(12, 541);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(75, 23);
+            this.btnReturn.TabIndex = 46;
+            this.btnReturn.Text = "Return";
+            this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
+            // 
             // STS
             // 
             this.ClientSize = new System.Drawing.Size(378, 573);
+            this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.lblStats);
             this.Controls.Add(this.btnDef);
             this.Controls.Add(this.btnStr);
@@ -608,6 +627,7 @@
         private System.Windows.Forms.Button btnStr;
         private System.Windows.Forms.Button btnDef;
         private System.Windows.Forms.Label lblStats;
+        private System.Windows.Forms.Button btnReturn;
     }
 }
 
