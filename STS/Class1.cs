@@ -10,14 +10,14 @@ namespace STS
 {
     public class Podatki
     {
-        public bool defend, cleared, skipped;
+        public bool defend, cleared, skipped, bossStage;
         public int n = 1;
-        public int sumfin = 1;
         public int t = 1;
+        public double h;
         public double y;
         public double playerHP = 30;
-        public int enemyMaxHP = 15;
-        public int enemyHP = 15;
+        public int enemyMaxHP;
+        public int enemyHP;
 
         public int points = 0;
         public int str = 0;
@@ -31,6 +31,7 @@ namespace STS
         public Armors armors = new Armors();
         public Weapon weapons = new Weapon();
         public Bosses bosses = new Bosses();
+        public Mobs mobs = new Mobs();
     }
 
     public class Weapons
@@ -145,18 +146,12 @@ namespace STS
         private int _minDmgBoss;
         private int _maxDmgBoss;
         private int _bossMaxHP;
-        private string _bossPic;
-        public Bitmap bossImage;
+        private Bitmap _bossImage;
 
         public string bossName
         {
             get { return _bossName; }
             set { _bossName = value; }
-        }
-        public string bossPic
-        {
-            get { return _bossPic; }
-            set { _bossPic = value; }
         }
         public int bossID
         {
@@ -178,13 +173,17 @@ namespace STS
             get { return _bossMaxHP; }
             set { _bossMaxHP = value; }
         }
+        public Bitmap bossImage
+        {
+            get { return _bossImage; }
+            set { _bossImage = value; }
+        }
     }
     public class MenacingPikl : Boss
     {
         public MenacingPikl()
         {
             bossName = "Menacing Pickle";
-            bossPic = "MenacingPikl";
             bossID = 1;
             minDmgBoss = 5;
             maxDmgBoss = 8;
@@ -197,7 +196,6 @@ namespace STS
         public Pikl()
         {
             bossName = "Pickle";
-            bossPic = "Pikl";
             bossID = 2;
             minDmgBoss = 10;
             maxDmgBoss = 13;
@@ -210,5 +208,76 @@ namespace STS
     {
         public MenacingPikl menacingPikl = new MenacingPikl();
         public Pikl pikl = new Pikl();
+    }
+
+    public class Mob
+    {
+        private string _mobName;
+        private int _maxMobHP;
+        private int _minMobDmg;
+        private int _maxMobDmg;
+        private int _stageID;
+        private Bitmap _mobImage;
+
+        public string mobName
+        {
+            get { return _mobName; }
+            set { _mobName = value; }
+        }
+        public int maxMobHP
+        {
+            get { return _maxMobHP; }
+            set { _maxMobHP = value; }
+        }
+        public int maxMobDmg
+        {
+            get { return _maxMobDmg; }
+            set { _maxMobDmg = value; }
+        }
+        public int minMobDmg
+        {
+            get { return _minMobDmg; }
+            set { _minMobDmg = value; }
+        }
+        public int stageID
+        {
+            get { return _stageID; }
+            set { _stageID = value; }
+        }
+        public Bitmap mobImage
+        {
+            get { return _mobImage; }
+            set { _mobImage = value; }
+        }
+    }
+    public class Pikle : Mob
+    {
+        public Pikle()
+        {
+            mobName = "Pikl";
+            stageID = 1;
+            maxMobHP = 15;
+            minMobDmg = 3;
+            maxMobDmg = 5;
+            mobImage = Properties.Resources.Pikl;
+        }
+    }
+    public class Jerry : Mob
+    {
+        public Jerry()
+        {
+            mobName = "Swrd";
+            stageID = 2;
+            maxMobHP = 30;
+            minMobDmg = 6;
+            maxMobDmg = 8;
+            mobImage = Properties.Resources.Jerry;
+        }
+    }
+
+    public class Mobs
+    {
+        public Pikle pikle = new Pikle();
+        public Jerry jerry = new Jerry();
     }
 }

@@ -126,5 +126,8 @@
   <ItemGroup>
     <None Include="Resources\IronArmor_WoodenSword.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Full_Pikl.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

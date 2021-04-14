@@ -17,6 +17,7 @@ namespace STS
         Weapons selectedWeapon;
         Armor selectedArmor;
         Boss selectedBoss;
+        Mob selectedMob;        
         Podatki p;
         Random r = new Random();
         
@@ -96,7 +97,8 @@ namespace STS
         //Check if the player has cleared the stage
         public void stageIsClear()
         {
-            btnAttack.Enabled = btnDefend.Enabled = btnFlee.Enabled = false;
+            btnAttack.Enabled = btnDefend.Enabled = btnFlee.Enabled = false;            
+
             if (p.n == 1)
             {
                 btnBattle1.Enabled = btnRand1.Enabled = btnRand2.Enabled = false;
@@ -134,6 +136,7 @@ namespace STS
                 btnBattle3.Enabled = btnRand5.Enabled = btnRand6.Enabled = false;
                 btnBoss.Enabled = true;
                 p.t = 1;
+                p.bossStage = true;
                 if (p.skipped == false)
                 {
                     pbCleared.Visible = btnCleared.Visible = lblCleared.Visible = true;
@@ -180,6 +183,7 @@ namespace STS
             lblLost.Visible = true;
             btnRestart.Visible = true;
             btnAttack.Enabled = btnDefend.Enabled = btnFlee.Enabled = false;
+            p.bossStage = false;
         }
 
         //Restart Game
@@ -206,7 +210,7 @@ namespace STS
         {
             int x = 0;
 
-            x = p.str + r.Next(selectedWeapon.weaponDmgMin, selectedWeapon.weaponDmgMax + 1);
+            x = p.str + r.Next(selectedWeapon.weaponDmgMin, selectedWeapon.weaponDmgMax + 1);        
 
             p.enemyHP = p.enemyHP - x;
             lblEnemyHP.Text = "HP: " + p.enemyHP + "/" + p.enemyMaxHP;
@@ -224,34 +228,35 @@ namespace STS
                     p.maxExp = p.maxExp * 2;
                     p.points += 2;
                 }
-                p.enemyHP = 15;
+                //p.enemyHP = p.enemyMaxHP;
                 p.t = 0;
                 stageIsClear();
             }
         }
         public void enemyAttack()
         {
-            while (true)
+            /*if (p.enemyMaxHP == 15)
+                p.y = r.Next(1, 5);
+            else if (p. enemyMaxHP > 15)
+                p.y = r.Next(selectedBoss.minDmgBoss, selectedBoss.maxDmgBoss + 1);*/
+
+            if (p.bossStage == true)
+                p.y = r.Next(selectedBoss.minDmgBoss, selectedBoss.maxDmgBoss + 1);
+            else
+                p.y = r.Next(selectedMob.minMobDmg, selectedMob.maxMobDmg + 1);
+
+            if (p.defend == true)
             {
-                if (p.enemyMaxHP == 15)
-                    p.y = r.Next(1, 5);
-                else if (p. enemyMaxHP > 15)
-                    p.y = r.Next(selectedBoss.minDmgBoss, selectedBoss.maxDmgBoss + 1);
-
-                if (p.defend == true)
-                {
-                    p.y = p.y - defense;
-                    p.defend = false;
-                }
-
-                p.y = p.y - p.def - selectedArmor.armorDefense / 3;
-
-                if (p.y < 0)
-                    p.y = 0;
-
-                if (p.y >= 0)
-                    break;
+                p.y = p.y - defense;
+                p.defend = false;
             }
+
+            p.y = p.y - p.def - selectedArmor.armorDefense / 3;
+
+            if (p.y < 0)
+                p.y = 0;
+
+            //p.h = p.y;
 
             if (p.t == 1)
                 p.playerHP = p.playerHP - p.y;
@@ -265,6 +270,7 @@ namespace STS
             }
         }
         
+        //Level up!
         public void levelUp()
         {
             pbCleared.Visible = btnCleared.Visible = lblCleared.Visible = false;
@@ -274,16 +280,28 @@ namespace STS
             p.newLevel++;
         }
 
+
+        //Mob selection
+        public void selectMob()
+        {
+            yy = r.Next(1, 3);
+            
+        }
+
         
-        public STS(Weapons sword, Armor armor, Boss boss, ref Podatki p)
+        public STS(Weapons sword, Armor armor, Boss boss, Mob mob, ref Podatki p)
         {
             InitializeComponent();
-            p.playerHP = p.playerMaxHP;
-            pbEnemy.BackgroundImage = Properties.Resources.Pikl;
+
+            p.bossStage = false;
+            p.playerHP = p.playerMaxHP;           
             this.p = p;
             selectedWeapon = sword;
             selectedArmor = armor;
             selectedBoss = boss;
+            selectedMob = mob;
+            pbEnemy.BackgroundImage = selectedMob.mobImage;
+
             if (selectedArmor.armorName == "Bronze Armor")
                 switch (selectedWeapon.weaponName)
                 {
@@ -310,6 +328,8 @@ namespace STS
 
         private void btnBattle1_Click(object sender, EventArgs e)
         {
+            p.enemyMaxHP = selectedMob.maxMobHP;
+            p.enemyHP = p.enemyMaxHP;
             showStage();
         }
 
@@ -371,7 +391,11 @@ namespace STS
             p.enemyMaxHP = selectedBoss.bossMaxHP;
 
             p.enemyHP = p.enemyMaxHP;
+
             p.playerHP = p.playerHP + 20;
+            if (p.playerHP > p.playerMaxHP)
+                p.playerHP = p.playerMaxHP;
+
             showStage();
         }
 

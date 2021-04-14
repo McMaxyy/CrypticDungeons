@@ -55,6 +55,7 @@
             this.btnWS.Name = "btnWS";
             this.btnWS.Size = new System.Drawing.Size(60, 54);
             this.btnWS.TabIndex = 1;
+            this.btnWS.Tag = "Equipment";
             this.btnWS.Text = "Wooden Sword";
             this.btnWS.UseVisualStyleBackColor = true;
             this.btnWS.Visible = false;
@@ -67,6 +68,7 @@
             this.btnIS.Name = "btnIS";
             this.btnIS.Size = new System.Drawing.Size(60, 54);
             this.btnIS.TabIndex = 2;
+            this.btnIS.Tag = "Equipment";
             this.btnIS.Text = "Iron Sword";
             this.btnIS.UseVisualStyleBackColor = true;
             this.btnIS.Visible = false;
@@ -78,6 +80,7 @@
             this.btnGo.Name = "btnGo";
             this.btnGo.Size = new System.Drawing.Size(75, 23);
             this.btnGo.TabIndex = 3;
+            this.btnGo.Tag = "Equipment";
             this.btnGo.Text = "Start";
             this.btnGo.UseVisualStyleBackColor = true;
             this.btnGo.Visible = false;
@@ -90,6 +93,7 @@
             this.btnIA.Name = "btnIA";
             this.btnIA.Size = new System.Drawing.Size(60, 54);
             this.btnIA.TabIndex = 5;
+            this.btnIA.Tag = "Equipment";
             this.btnIA.Text = "Iron Armor";
             this.btnIA.UseVisualStyleBackColor = true;
             this.btnIA.Visible = false;
@@ -101,6 +105,7 @@
             this.btnBA.Name = "btnBA";
             this.btnBA.Size = new System.Drawing.Size(60, 54);
             this.btnBA.TabIndex = 4;
+            this.btnBA.Tag = "Equipment";
             this.btnBA.Text = "Bronze Armor";
             this.btnBA.UseVisualStyleBackColor = true;
             this.btnBA.Visible = false;

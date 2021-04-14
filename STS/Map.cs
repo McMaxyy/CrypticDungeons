@@ -16,7 +16,7 @@ namespace STS
         Weapons weapon;
         Armor armor;
         Boss boss;
-        Random r = new Random();
+        Mob mob;
 
         public void showEquipment()
         {
@@ -24,7 +24,7 @@ namespace STS
                 switch (weapon.weaponName)
                 {
                     case "Wooden Sword":
-                        pbPlayer.BackgroundImage = Properties.Resources.BronzeArmor_WoodenSword;
+                        pbPlayer.BackgroundImage = Properties.Resources.Full_Pikl;
                         break;
                     case "Iron Sword":
                         pbPlayer.BackgroundImage = Properties.Resources.BronzeArmor_IronSword;
@@ -41,6 +41,28 @@ namespace STS
                         break;
                 }
         }
+        public void isUnlocked()
+        {
+            if (p.weapons.ironS.isUnlocked == true)
+                btnIS.Enabled = true;
+            if (p.armors.ironA.isUnlocked == true)
+                btnIA.Enabled = true;
+        }
+
+        public void showAvailableEquipment()
+        {
+            foreach (Control x in this.Controls)
+            {
+                if (x is Button && x.Visible == false)
+                {
+                    if ((string)x.Tag == "Equipment")
+                    {
+                        x.Visible = true;
+                    }
+                }
+            }
+        }
+
 
         public Map(Weapons selectedWeapon, Armor selectedArmor, ref Podatki p)
         {
@@ -49,22 +71,20 @@ namespace STS
             weapon = selectedWeapon;
             armor = selectedArmor;
             showEquipment();
+            isUnlocked();
         } 
 
         private void btnStage1_Click(object sender, EventArgs e)
         {             
-            if (p.weapons.ironS.isUnlocked == true)
-                btnIS.Enabled = true;
-            if (p.armors.ironA.isUnlocked == true)
-                btnIA.Enabled = true;
-
             boss = p.bosses.menacingPikl;
-
-            btnWS.Visible = true;
-            btnIS.Visible = true;
-            btnBA.Visible = true;
-            btnIA.Visible = true;
-            btnGo.Visible = true;
+            mob = p.mobs.pikle;
+            showAvailableEquipment();
+        }
+        private void btnStage2_Click(object sender, EventArgs e)
+        {
+            boss = p.bosses.pikl;
+            mob = p.mobs.jerry;
+            showAvailableEquipment();
         }
 
         private void btnWS_Click(object sender, EventArgs e)
@@ -82,7 +102,7 @@ namespace STS
         private void btnGo_Click(object sender, EventArgs e)
         {
             this.Hide();
-            STS s = new STS(weapon, armor, boss, ref p);
+            STS s = new STS(weapon, armor, boss, mob, ref p);
             s.Show();
         }
 
@@ -96,22 +116,6 @@ namespace STS
         {
             armor = p.armors.bronzeA;
             showEquipment();
-        }
-
-        private void btnStage2_Click(object sender, EventArgs e)
-        {
-            if (p.weapons.ironS.isUnlocked == true)
-                btnIS.Enabled = true;
-            if (p.armors.ironA.isUnlocked == true)
-                btnIA.Enabled = true;
-
-            boss = p.bosses.pikl;
-
-            btnWS.Visible = true;
-            btnIS.Visible = true;
-            btnBA.Visible = true;
-            btnIA.Visible = true;
-            btnGo.Visible = true;
-        }
+        }       
     }
 }
