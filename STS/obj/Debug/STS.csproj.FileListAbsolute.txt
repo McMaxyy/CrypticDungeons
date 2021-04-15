@@ -8,5 +8,8 @@ C:\Users\mryor\source\repos\Stage1\STS\obj\Debug\STS.csproj.GenerateResource.cac
 C:\Users\mryor\source\repos\Stage1\STS\obj\Debug\STS.csproj.CoreCompileInputs.cache
 C:\Users\mryor\source\repos\Stage1\STS\obj\Debug\STS.exe
 C:\Users\mryor\source\repos\Stage1\STS\obj\Debug\STS.pdb
-C:\Users\mryor\source\repos\Stage1\STS\obj\Debug\STS.Map.resources
 C:\Users\mryor\source\repos\Stage1\STS\obj\Debug\STS.Start.resources
+C:\Users\mryor\source\repos\Stage1\STS\obj\Debug\STS.Home.resources
+C:\Users\mryor\source\repos\Stage1\STS\obj\Debug\STS.Map.resources
+C:\Users\mryor\source\repos\Stage1\STS\obj\Debug\STS.Smithy.resources
+C:\Users\mryor\source\repos\Stage1\STS\obj\Debug\STS.Shop.resources

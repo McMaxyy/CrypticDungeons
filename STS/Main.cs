@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,10 +15,11 @@ namespace STS
     {
 
         int yy, defense;
+        bool enemyDefeated;
         Weapons selectedWeapon;
         Armor selectedArmor;
         Boss selectedBoss;
-        Mob selectedMob;        
+        Mob selectedMob, availableMob1, availableMob2;        
         Podatki p;
         Random r = new Random();
         
@@ -103,7 +105,6 @@ namespace STS
             {
                 btnBattle1.Enabled = btnRand1.Enabled = btnRand2.Enabled = false;
                 btnBattle2.Enabled = btnRand3.Enabled = btnRand4.Enabled = true;
-                p.t = 1;
                 if (p.skipped == false)
                 {
                     pbCleared.Visible = btnCleared.Visible = lblCleared.Visible = true;                   
@@ -119,7 +120,6 @@ namespace STS
             {
                 btnBattle2.Enabled = btnRand3.Enabled = btnRand4.Enabled = false;
                 btnBattle3.Enabled = btnRand5.Enabled = btnRand6.Enabled = true;
-                p.t = 1;
                 if (p.skipped == false)
                 {
                     pbCleared.Visible = btnCleared.Visible = lblCleared.Visible = true;
@@ -135,7 +135,6 @@ namespace STS
             {
                 btnBattle3.Enabled = btnRand5.Enabled = btnRand6.Enabled = false;
                 btnBoss.Enabled = true;
-                p.t = 1;
                 p.bossStage = true;
                 if (p.skipped == false)
                 {
@@ -150,11 +149,14 @@ namespace STS
             }
             else if (p.n == 4)
             {
-                yy = r.Next(1, 3);
-                if (yy == 1)
+                yy = r.Next(0, selectedBoss.dropTable.Length);
+                p.inventory.addItem(selectedBoss.dropTable[yy], 2);
+
+
+                /*if (yy == 1)
                     p.weapons.ironS.isUnlocked = true;
                 else if (yy == 2)
-                    p.armors.ironA.isUnlocked = true;
+                    p.armors.ironA.isUnlocked = true;*/
 
                 if (p.level == p.newLevel)
                 {
@@ -173,7 +175,6 @@ namespace STS
                 btnRestart.Text = "Return to map";
                 btnRestart.Visible = true;
                 p.cleared = true;
-                p.t = 1;
             }
             p.n++;
             p.skipped = false;
@@ -210,7 +211,7 @@ namespace STS
         {
             int x = 0;
 
-            x = p.str + r.Next(selectedWeapon.weaponDmgMin, selectedWeapon.weaponDmgMax + 1);        
+            x = p.str / 2 + r.Next(selectedWeapon.weaponDmgMin, selectedWeapon.weaponDmgMax + 1);        
 
             p.enemyHP = p.enemyHP - x;
             lblEnemyHP.Text = "HP: " + p.enemyHP + "/" + p.enemyMaxHP;
@@ -219,6 +220,7 @@ namespace STS
             lblDmg2.Visible = true;
             if (p.enemyHP < 1)
             {
+                p.coins = p.coins + p.newCoins;
                 p.exp += 3;
                 if (p.exp >= p.maxExp)
                 {
@@ -228,8 +230,7 @@ namespace STS
                     p.maxExp = p.maxExp * 2;
                     p.points += 2;
                 }
-                //p.enemyHP = p.enemyMaxHP;
-                p.t = 0;
+                enemyDefeated = true;
                 stageIsClear();
             }
         }
@@ -251,7 +252,7 @@ namespace STS
                 p.defend = false;
             }
 
-            p.y = p.y - p.def - selectedArmor.armorDefense / 3;
+            p.y = p.y - p.def / 2 - selectedArmor.armorDefense / 3;
 
             if (p.y < 0)
                 p.y = 0;
@@ -285,11 +286,14 @@ namespace STS
         public void selectMob()
         {
             yy = r.Next(1, 3);
-            
+            if (yy == 1)
+                selectedMob = availableMob1;
+            else
+                selectedMob = availableMob2;           
         }
 
         
-        public STS(Weapons sword, Armor armor, Boss boss, Mob mob, ref Podatki p)
+        public STS(Weapons sword, Armor armor, Boss boss, Mob mob1, Mob mob2, ref Podatki p)
         {
             InitializeComponent();
 
@@ -299,36 +303,21 @@ namespace STS
             selectedWeapon = sword;
             selectedArmor = armor;
             selectedBoss = boss;
-            selectedMob = mob;
-            pbEnemy.BackgroundImage = selectedMob.mobImage;
+            availableMob1 = mob1;
+            availableMob2 = mob2;
+            pbPlayer.BackgroundImage = selectedArmor.armorImage;
+            pbSword.BackgroundImage = selectedWeapon.weaponImage;
 
-            if (selectedArmor.armorName == "Bronze Armor")
-                switch (selectedWeapon.weaponName)
-                {
-                    case "Wooden Sword":
-                        pbPlayer.BackgroundImage = Properties.Resources.BronzeArmor_WoodenSword;
-                        break;
-                    case "Iron Sword":
-                        pbPlayer.BackgroundImage = Properties.Resources.BronzeArmor_IronSword;
-                        break;
-                }
-            else if (selectedArmor.armorName == "Iron Armor")
-                switch (selectedWeapon.weaponName)
-                {
-                    case "Wooden Sword":
-                        pbPlayer.BackgroundImage = Properties.Resources.IronArmor_WoodenSword;
-                        break;
-                    case "Iron Sword":
-                        pbPlayer.BackgroundImage = Properties.Resources.IronArmor_IronSword;
-                        break;
-                }
             btnLevelUp.Enabled = true;
             p.n = 1;
         }
 
         private void btnBattle1_Click(object sender, EventArgs e)
         {
+            selectMob();
+            p.newCoins = selectedMob.coinValue;
             p.enemyMaxHP = selectedMob.maxMobHP;
+            pbEnemy.BackgroundImage = selectedMob.mobImage;
             p.enemyHP = p.enemyMaxHP;
             showStage();
         }
@@ -352,10 +341,12 @@ namespace STS
         private void btnAttack_Click(object sender, EventArgs e)
         {
             playerAttack();
-            if (p.t == 1)
+            if (enemyDefeated != true)
             {
                 enemyAttack();
             }
+            else
+                enemyDefeated = false;
         }
 
         private void btnFlee_Click(object sender, EventArgs e)
@@ -377,9 +368,9 @@ namespace STS
         {
             if (p.cleared == true)
             {
-                Map m = new Map(selectedWeapon, selectedArmor, ref p);
+                Home h = new Home(selectedWeapon, selectedArmor, ref p);
                 this.Hide();
-                m.Show();
+                h.Show();
             }
 
             restartGame();
@@ -389,6 +380,7 @@ namespace STS
         {
             pbEnemy.BackgroundImage = selectedBoss.bossImage;
             p.enemyMaxHP = selectedBoss.bossMaxHP;
+            p.newCoins = selectedBoss.coinValue;
 
             p.enemyHP = p.enemyMaxHP;
 
@@ -436,7 +428,7 @@ namespace STS
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            Map m = new Map(selectedWeapon, selectedArmor, ref p);
+            Home m = new Home(selectedWeapon, selectedArmor, ref p);
             this.Hide();
             m.Show();
         }

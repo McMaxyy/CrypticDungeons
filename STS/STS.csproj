@@ -47,6 +47,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Shop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shop.Designer.cs">
+      <DependentUpon>Shop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Smithy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Smithy.Designer.cs">
+      <DependentUpon>Smithy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Map.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Map.Designer.cs">
+      <DependentUpon>Map.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -58,11 +76,11 @@
     <Compile Include="Start.Designer.cs">
       <DependentUpon>Start.cs</DependentUpon>
     </Compile>
-    <Compile Include="Map.cs">
+    <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Map.Designer.cs">
-      <DependentUpon>Map.cs</DependentUpon>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -72,11 +90,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Start.resx">
-      <DependentUpon>Start.cs</DependentUpon>
+    <EmbeddedResource Include="Shop.resx">
+      <DependentUpon>Shop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Map.resx">
       <DependentUpon>Map.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Smithy.resx">
+      <DependentUpon>Smithy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Start.resx">
+      <DependentUpon>Start.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
@@ -128,6 +155,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Full_Pikl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Full_Pikl1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IronArmor_Equip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IronSword_Equip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PiklSword_Equip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WoodenSword_Equip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PiklArmor_Equip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BronzeArmor_Equip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PiklArmor_Equip1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PiklSword.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

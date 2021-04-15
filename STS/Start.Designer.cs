@@ -48,7 +48,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnStart);
             this.Name = "Start";
-            this.Text = "Start";
+            this.Text = "Cryptic Dungeons";
             this.ResumeLayout(false);
 
         }

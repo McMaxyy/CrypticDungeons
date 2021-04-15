@@ -63,6 +63,16 @@ namespace STS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BronzeArmor_Equip {
+            get {
+                object obj = ResourceManager.GetObject("BronzeArmor_Equip", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BronzeArmor_IronSword {
             get {
                 object obj = ResourceManager.GetObject("BronzeArmor_IronSword", resourceCulture);
@@ -106,6 +116,16 @@ namespace STS.Properties {
         internal static System.Drawing.Bitmap Full_Pikl {
             get {
                 object obj = ResourceManager.GetObject("Full_Pikl", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IronArmor_Equip {
+            get {
+                object obj = ResourceManager.GetObject("IronArmor_Equip", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,6 +183,16 @@ namespace STS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap IronSword_Equip {
+            get {
+                object obj = ResourceManager.GetObject("IronSword_Equip", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Jerry {
             get {
                 object obj = ResourceManager.GetObject("Jerry", resourceCulture);
@@ -193,9 +223,49 @@ namespace STS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap PiklArmor_Equip {
+            get {
+                object obj = ResourceManager.GetObject("PiklArmor_Equip", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PiklSword {
+            get {
+                object obj = ResourceManager.GetObject("PiklSword", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PiklSword_Equip {
+            get {
+                object obj = ResourceManager.GetObject("PiklSword_Equip", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap WoodenSword {
             get {
                 object obj = ResourceManager.GetObject("WoodenSword", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WoodenSword_Equip {
+            get {
+                object obj = ResourceManager.GetObject("WoodenSword_Equip", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

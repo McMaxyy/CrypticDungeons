@@ -68,12 +68,14 @@
             this.btnDef = new System.Windows.Forms.Button();
             this.lblStats = new System.Windows.Forms.Label();
             this.btnReturn = new System.Windows.Forms.Button();
+            this.pbSword = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbFight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEnemy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSkip)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCleared)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLevelUp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSword)).BeginInit();
             this.SuspendLayout();
             // 
             // btnRand1
@@ -209,7 +211,7 @@
             this.pbPlayer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbPlayer.Location = new System.Drawing.Point(30, 397);
             this.pbPlayer.Name = "pbPlayer";
-            this.pbPlayer.Size = new System.Drawing.Size(97, 104);
+            this.pbPlayer.Size = new System.Drawing.Size(88, 104);
             this.pbPlayer.TabIndex = 19;
             this.pbPlayer.TabStop = false;
             this.pbPlayer.Tag = "Stage";
@@ -218,9 +220,9 @@
             // pbEnemy
             // 
             this.pbEnemy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbEnemy.Location = new System.Drawing.Point(251, 98);
+            this.pbEnemy.Location = new System.Drawing.Point(261, 98);
             this.pbEnemy.Name = "pbEnemy";
-            this.pbEnemy.Size = new System.Drawing.Size(97, 101);
+            this.pbEnemy.Size = new System.Drawing.Size(87, 101);
             this.pbEnemy.TabIndex = 20;
             this.pbEnemy.TabStop = false;
             this.pbEnemy.Tag = "Stage";
@@ -529,9 +531,21 @@
             this.btnReturn.UseVisualStyleBackColor = true;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
+            // pbSword
+            // 
+            this.pbSword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbSword.Location = new System.Drawing.Point(27, 398);
+            this.pbSword.Name = "pbSword";
+            this.pbSword.Size = new System.Drawing.Size(19, 30);
+            this.pbSword.TabIndex = 47;
+            this.pbSword.TabStop = false;
+            this.pbSword.Tag = "Stage";
+            this.pbSword.Visible = false;
+            // 
             // STS
             // 
             this.ClientSize = new System.Drawing.Size(378, 573);
+            this.Controls.Add(this.pbSword);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.lblStats);
             this.Controls.Add(this.btnDef);
@@ -580,6 +594,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbSkip)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCleared)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLevelUp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSword)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -628,6 +643,7 @@
         private System.Windows.Forms.Button btnDef;
         private System.Windows.Forms.Label lblStats;
         private System.Windows.Forms.Button btnReturn;
+        private System.Windows.Forms.PictureBox pbSword;
     }
 }
 

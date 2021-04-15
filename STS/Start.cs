@@ -27,8 +27,8 @@ namespace STS
             weapon = p.weapons.woodenS;
             armor = p.armors.bronzeA;
             this.Hide();
-            Map m = new Map(weapon, armor, ref p);
-            m.Show();
+            Home h = new Home(weapon, armor, ref p);
+            h.Show();
         }
     }
 }
