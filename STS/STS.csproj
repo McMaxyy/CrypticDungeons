@@ -183,5 +183,20 @@
   <ItemGroup>
     <None Include="Resources\PiklSword.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cyclops.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GoblinKing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nejc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SpaceGoblin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SpearGoblin.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

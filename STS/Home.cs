@@ -16,7 +16,7 @@ namespace STS
         Weapons weapon;
         Armor armor;
         Boss boss;
-        Mob mob1, mob2;
+        Mob mob1, mob2, mob3, specialMob;
 
         public void showEquipment()
         {
@@ -66,13 +66,20 @@ namespace STS
         {             
             boss = p.bosses.menacingPikl;
             mob1 = p.mobs.pikle;
-            mob2 = p.mobs.jerry;
+            mob2 = p.mobs.pikle;
+            mob3 = p.mobs.jerry;
+            specialMob = p.mobs.jerry;
+            p.expAdd = 0;
             showAvailableEquipment();
         }
         private void btnStage2_Click(object sender, EventArgs e)
         {
-            boss = p.bosses.pikl;
-            mob1 = p.mobs.jerry;
+            boss = p.bosses.goblinKing;
+            mob1 = p.mobs.smolGoblin;
+            mob2 = p.mobs.spearGoblin;
+            mob3 = p.mobs.spaceGoblin;
+            specialMob = p.mobs.cyclops;
+            p.expAdd = 2;
             showAvailableEquipment();
         }
 
@@ -91,7 +98,7 @@ namespace STS
         private void btnGo_Click(object sender, EventArgs e)
         {
             this.Hide();
-            STS s = new STS(weapon, armor, boss, mob1, mob2, ref p);
+            STS s = new STS(weapon, armor, boss, mob1, mob2, mob3, specialMob, ref p);
             s.Show();
         }
 

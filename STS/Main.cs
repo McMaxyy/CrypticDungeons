@@ -14,12 +14,12 @@ namespace STS
     public partial class STS : Form
     {
 
-        int yy, defense;
+        int yy, defense, extraExp;
         bool enemyDefeated;
         Weapons selectedWeapon;
         Armor selectedArmor;
         Boss selectedBoss;
-        Mob selectedMob, availableMob1, availableMob2;        
+        Mob selectedMob, availableMob1, availableMob2, availableMob3, specialMob;        
         Podatki p;
         Random r = new Random();
         
@@ -221,7 +221,7 @@ namespace STS
             if (p.enemyHP < 1)
             {
                 p.coins = p.coins + p.newCoins;
-                p.exp += 3;
+                p.exp = p.exp + p.expAdd + 3;
                 if (p.exp >= p.maxExp)
                 {
                     p.playerMaxHP = p.playerMaxHP + 5;
@@ -285,15 +285,24 @@ namespace STS
         //Mob selection
         public void selectMob()
         {
-            yy = r.Next(1, 3);
-            if (yy == 1)
+            yy = r.Next(0, 10);
+            if (yy <= 4)
                 selectedMob = availableMob1;
+            else if (yy > 4 && yy <= 7)
+                selectedMob = availableMob2;
             else
-                selectedMob = availableMob2;           
+                selectedMob = availableMob3;
+        }
+        public void setMobStats()
+        {
+            p.newCoins = selectedMob.coinValue;
+            p.enemyMaxHP = selectedMob.maxMobHP;
+            pbEnemy.BackgroundImage = selectedMob.mobImage;
+            p.enemyHP = p.enemyMaxHP;
         }
 
         
-        public STS(Weapons sword, Armor armor, Boss boss, Mob mob1, Mob mob2, ref Podatki p)
+        public STS(Weapons sword, Armor armor, Boss boss, Mob mob1, Mob mob2, Mob mob3, Mob special, ref Podatki p)
         {
             InitializeComponent();
 
@@ -305,6 +314,8 @@ namespace STS
             selectedBoss = boss;
             availableMob1 = mob1;
             availableMob2 = mob2;
+            availableMob3 = mob3;
+            specialMob = special;
             pbPlayer.BackgroundImage = selectedArmor.armorImage;
             pbSword.BackgroundImage = selectedWeapon.weaponImage;
 
@@ -315,21 +326,32 @@ namespace STS
         private void btnBattle1_Click(object sender, EventArgs e)
         {
             selectMob();
-            p.newCoins = selectedMob.coinValue;
-            p.enemyMaxHP = selectedMob.maxMobHP;
-            pbEnemy.BackgroundImage = selectedMob.mobImage;
-            p.enemyHP = p.enemyMaxHP;
+            setMobStats();
             showStage();
         }
 
         private void btnRand2_Click(object sender, EventArgs e)
         {
-            if (r.Next(1, 3) == 1)
+            yy = r.Next(0, 10);
+            if (yy <= 2)
             {
+                skipStage();
+            }
+            else if (yy > 2 && yy <= 8)
+            {
+                selectMob();
+                setMobStats();
                 showStage();
             }
             else
-                skipStage();
+            {
+                p.newCoins = specialMob.coinValue;
+                p.enemyMaxHP = specialMob.maxMobHP;
+                pbEnemy.BackgroundImage = specialMob.mobImage;
+                p.enemyHP = p.enemyMaxHP;
+                showStage();
+            }
+
         }
 
         private void btnSkip_Click(object sender, EventArgs e)

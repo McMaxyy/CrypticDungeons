@@ -27,6 +27,7 @@ namespace STS
         public int str = 0;
         public int def = 0;
         public int playerMaxHP = 30;
+        public int expAdd;
         public double exp = 0;
         public int maxExp = 10;
         public int level = 1;
@@ -176,12 +177,23 @@ namespace STS
             armorImage = Properties.Resources.PiklArmor_Equip;
         }
     }
+    public class GoblinArmor : Armor
+    {
+        public GoblinArmor()
+        {
+            armorName = "Goblin Armor";
+            armorDefense = 15;
+            isUnlocked = false;
+            armorImage = Properties.Resources.PiklArmor_Equip;
+        }
+    }
 
     public class Armors
     {
         public IronArmor ironA = new IronArmor();
         public BronzeArmor bronzeA = new BronzeArmor();
         public PickleArmor pickleA = new PickleArmor();
+        public GoblinArmor goblinA = new GoblinArmor();
     }
 
     public class Weapon
@@ -252,25 +264,25 @@ namespace STS
             dropTable = new int[] { PickleJuice.ID, PickleSkin.ID };
         }
     }
-    public class Pikl : Boss
+    public class GoblinKing : Boss
     {
-        public Pikl()
+        public GoblinKing()
         {
-            bossName = "Pickle";
+            bossName = "Goblin King";
             bossID = 2;
             coinValue = 15;
             minDmgBoss = 10;
             maxDmgBoss = 13;
             bossMaxHP = 60;
-            bossImage = Properties.Resources.Pikl;
-            
+            bossImage = Properties.Resources.GoblinKing;
+            dropTable = new int[] { GoblinSkull.ID, GoblinHide.ID };
         }
     }
 
     public class Bosses
     {
         public MenacingPikl menacingPikl = new MenacingPikl();
-        public Pikl pikl = new Pikl();
+        public GoblinKing goblinKing = new GoblinKing();
     }
 
     public class Mob
@@ -337,16 +349,68 @@ namespace STS
             mobImage = Properties.Resources.Jerry;
         }
     }
+    public class SmolGoblin : Mob
+    {
+        public SmolGoblin()
+        {
+            mobName = "Smol Goblin";
+            coinValue = 4;
+            maxMobHP = 18;
+            minMobDmg = 4;
+            maxMobDmg = 7;
+            mobImage = Properties.Resources.Nejc;
+        }
+    }
+    public class SpearGoblin : Mob
+    {
+        public SpearGoblin()
+        {
+            mobName = "Spear Goblin";
+            coinValue = 5;
+            maxMobHP = 25;
+            minMobDmg = 5;
+            maxMobDmg = 8;
+            mobImage = Properties.Resources.SpearGoblin;
+        }
+    }
+    public class SpaceGoblin : Mob
+    {
+        public SpaceGoblin()
+        {
+            mobName = "Space Goblin";
+            coinValue = 7;
+            maxMobHP = 30;
+            minMobDmg = 5;
+            maxMobDmg = 9;
+            mobImage = Properties.Resources.SpaceGoblin;
+        }
+    }
+    public class Cyclops : Mob
+    {
+        public Cyclops()
+        {
+            mobName = "Cyclops";
+            coinValue = 10;
+            maxMobHP = 45;
+            minMobDmg = 8;
+            maxMobDmg = 10;
+            mobImage = Properties.Resources.Cyclops;
+        }
+    }
 
     public class Mobs
     {
         public Pikle pikle = new Pikle();
         public Jerry jerry = new Jerry();
+        public SmolGoblin smolGoblin = new SmolGoblin();
+        public SpearGoblin spearGoblin = new SpearGoblin();
+        public SpaceGoblin spaceGoblin = new SpaceGoblin();
+        public Cyclops cyclops = new Cyclops();
     }
 
     public class Inventory
     {
-        public Item[] items = { new PickleJuice() , new PickleSkin() };
+        public Item[] items = { new PickleJuice(), new PickleSkin(), new GoblinHide(), new GoblinSkull() };
 
         public void addItem(int itemID, int numberOfItemsToAdd)
         {
@@ -413,6 +477,27 @@ namespace STS
             itemQuantity = 0;
         }
     }
+    public class GoblinSkull : Item
+    {
+        readonly public static int ID = 2;
+        public GoblinSkull()
+        {
+            itemName = "Goblin Skull";
+            itemID = ID;
+            itemQuantity = 0;
+        }
+    }
+    public class GoblinHide : Item
+    {
+        readonly public static int ID = 3;
+        public GoblinHide()
+        {
+            itemName = "Goblin Hide";
+            itemID = ID;
+            itemQuantity = 0;
+        }
+    }
+
 
     abstract public class Recipe
     {

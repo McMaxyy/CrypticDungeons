@@ -113,9 +113,29 @@ namespace STS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Cyclops {
+            get {
+                object obj = ResourceManager.GetObject("Cyclops", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Full_Pikl {
             get {
                 object obj = ResourceManager.GetObject("Full_Pikl", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap GoblinKing {
+            get {
+                object obj = ResourceManager.GetObject("GoblinKing", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -213,6 +233,16 @@ namespace STS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Nejc {
+            get {
+                object obj = ResourceManager.GetObject("Nejc", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Pikl {
             get {
                 object obj = ResourceManager.GetObject("Pikl", resourceCulture);
@@ -246,6 +276,26 @@ namespace STS.Properties {
         internal static System.Drawing.Bitmap PiklSword_Equip {
             get {
                 object obj = ResourceManager.GetObject("PiklSword_Equip", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SpaceGoblin {
+            get {
+                object obj = ResourceManager.GetObject("SpaceGoblin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SpearGoblin {
+            get {
+                object obj = ResourceManager.GetObject("SpearGoblin", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
