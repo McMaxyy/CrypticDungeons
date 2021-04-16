@@ -46,7 +46,7 @@ namespace STS
         private string _weaponName;
         private int _weaponDmgMax;
         private int _weaponDmgMin;
-        public bool isUnlocked;
+        public bool _isUnlocked;
         private Bitmap _weaponImage;
         private int _coinValue;
         public bool isObtained;
@@ -75,6 +75,11 @@ namespace STS
         {
             get { return _coinValue; }
             set { _coinValue = value; }
+        }
+        public bool isUnlocked
+        {
+            get { return _isUnlocked; }
+            set { _isUnlocked = value; }
         }
     }
 
@@ -113,15 +118,26 @@ namespace STS
             weaponImage = Properties.Resources.PiklSword_Equip;
         }
     }
+    public class GoblinSword : Weapons
+    {
+        public GoblinSword()
+        {
+            weaponName = "Goblin Sword";
+            weaponDmgMax = 17;
+            weaponDmgMin = 13;
+            isUnlocked = false;
+            weaponImage = Properties.Resources.GoblinSwordNormal_Equip;
+        }
+    }
 
     public class Armor
     {
         private string _armorName;
         private int _armorDefense;
-        public bool isUnlocked;
+        private bool _isUnlocked;
         private Bitmap _armorImage;
         private int _coinValue;
-        public bool isObtained;
+        private bool _isObtained;
 
         public string armorName
         {
@@ -142,6 +158,16 @@ namespace STS
         {
             get { return _coinValue; }
             set { _coinValue = value; }
+        }
+        public bool isUnlocked
+        {
+            get { return _isUnlocked; }
+            set { _isUnlocked = value; }
+        }
+        public bool isObtained
+        {
+            get { return _isObtained; }
+            set { _isObtained = value; }
         }
     }
 
@@ -201,6 +227,7 @@ namespace STS
         public WoodenSword woodenS = new WoodenSword();
         public IronSword ironS = new IronSword();
         public PickleSword pickleS = new PickleSword();
+        public GoblinSword goblinS = new GoblinSword();
     }
 
     public class Boss
@@ -390,10 +417,10 @@ namespace STS
         public Cyclops()
         {
             mobName = "Cyclops";
-            coinValue = 10;
-            maxMobHP = 45;
-            minMobDmg = 8;
-            maxMobDmg = 10;
+            coinValue = 20;
+            maxMobHP = 75;
+            minMobDmg = 13;
+            maxMobDmg = 16;
             mobImage = Properties.Resources.Cyclops;
         }
     }
@@ -437,10 +464,20 @@ namespace STS
 
     public class Item
     {
-        public int itemID;
-        public string itemName;
+        private int _itemID;
+        private string _itemName;
         private int _itemQuantity;
 
+        public int itemID
+        {
+            get { return _itemID; }
+            set { _itemID = value; }
+        }
+        public string itemName
+        {
+            get { return _itemName; }
+            set { _itemName = value; }
+        }
         public int itemQuantity
         {
             get { return _itemQuantity; }
@@ -566,10 +603,44 @@ namespace STS
             p.armors.pickleA.isUnlocked = true;
         }
     }
+    public class GoblinSwordRecipe : Recipe
+    {
+        public GoblinSwordRecipe()
+        {
+            recipe = new Dictionary<int, int>()
+            {
+                { GoblinSkull.ID, 3},
+                { GoblinHide.ID, 3}
+            };
+        }
+
+        override public void unlock(ref Podatki p)
+        {
+            p.weapons.goblinS.isUnlocked = true;
+        }
+    }
+    public class GoblinArmorRecipe : Recipe
+    {
+        public GoblinArmorRecipe()
+        {
+            recipe = new Dictionary<int, int>()
+            {
+                { GoblinSkull.ID, 3},
+                { GoblinHide.ID, 5}
+            };
+        }
+
+        override public void unlock(ref Podatki p)
+        {
+            p.armors.goblinA.isUnlocked = true;
+        }
+    }
 
     public class Recipes
     {
         public PickleSwordRecipe pickleS = new PickleSwordRecipe();
         public PickleArmorRecipe pickleA = new PickleArmorRecipe();
+        public PickleSwordRecipe goblinS = new PickleSwordRecipe();
+        public PickleArmorRecipe goblinA = new PickleArmorRecipe();
     }
 }

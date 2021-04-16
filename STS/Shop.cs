@@ -76,8 +76,12 @@ namespace STS
         private void btnReturn_Click(object sender, EventArgs e)
         {
             Home h = new Home(selectedWeapon, selectedArmor, ref p);
-            this.Hide();
-            h.Show();
+            h.Width = this.Width;
+            h.Height = this.Height;
+            h.StartPosition = FormStartPosition.Manual;
+            h.Location = new Point(this.Location.X, this.Location.Y);
+            this.Visible = false;
+            h.ShowDialog();
         }
     }
 }

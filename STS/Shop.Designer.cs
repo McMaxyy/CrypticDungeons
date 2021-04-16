@@ -56,7 +56,7 @@
             this.pbPickleS.BackgroundImage = global::STS.Properties.Resources.IronSword;
             this.pbPickleS.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbPickleS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbPickleS.Location = new System.Drawing.Point(81, 127);
+            this.pbPickleS.Location = new System.Drawing.Point(96, 136);
             this.pbPickleS.Name = "pbPickleS";
             this.pbPickleS.Size = new System.Drawing.Size(82, 84);
             this.pbPickleS.TabIndex = 12;
@@ -68,7 +68,7 @@
             this.pictureBox1.BackgroundImage = global::STS.Properties.Resources.IronArmor_Equip;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(81, 247);
+            this.pictureBox1.Location = new System.Drawing.Point(96, 256);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(82, 96);
             this.pictureBox1.TabIndex = 13;
@@ -78,7 +78,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(37, 76);
+            this.label1.Location = new System.Drawing.Point(21, 72);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(122, 17);
             this.label1.TabIndex = 14;
@@ -87,7 +87,7 @@
             // btnBuyIronS
             // 
             this.btnBuyIronS.Enabled = false;
-            this.btnBuyIronS.Location = new System.Drawing.Point(169, 188);
+            this.btnBuyIronS.Location = new System.Drawing.Point(184, 197);
             this.btnBuyIronS.Name = "btnBuyIronS";
             this.btnBuyIronS.Size = new System.Drawing.Size(40, 23);
             this.btnBuyIronS.TabIndex = 15;
@@ -99,7 +99,7 @@
             // btnBuyIronA
             // 
             this.btnBuyIronA.Enabled = false;
-            this.btnBuyIronA.Location = new System.Drawing.Point(169, 320);
+            this.btnBuyIronA.Location = new System.Drawing.Point(184, 329);
             this.btnBuyIronA.Name = "btnBuyIronA";
             this.btnBuyIronA.Size = new System.Drawing.Size(40, 23);
             this.btnBuyIronA.TabIndex = 16;
@@ -112,7 +112,7 @@
             // 
             this.lblCoins.AutoSize = true;
             this.lblCoins.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCoins.Location = new System.Drawing.Point(37, 382);
+            this.lblCoins.Location = new System.Drawing.Point(21, 598);
             this.lblCoins.Name = "lblCoins";
             this.lblCoins.Size = new System.Drawing.Size(124, 17);
             this.lblCoins.TabIndex = 17;
@@ -121,7 +121,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(81, 108);
+            this.label2.Location = new System.Drawing.Point(96, 117);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(107, 13);
             this.label2.TabIndex = 18;
@@ -130,7 +130,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(78, 231);
+            this.label3.Location = new System.Drawing.Point(93, 240);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(104, 13);
             this.label3.TabIndex = 19;
@@ -141,7 +141,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(835, 644);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblCoins);

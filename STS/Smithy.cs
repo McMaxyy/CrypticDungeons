@@ -26,6 +26,8 @@ namespace STS
         {
             btnCraftPSword.Enabled = p.recipes.pickleS.isCraftable(ref p);
             btnCraftPArmor.Enabled = p.recipes.pickleA.isCraftable(ref p);
+            btnCraftGS.Enabled = p.recipes.goblinS.isCraftable(ref p);
+            btnCraftGA.Enabled = p.recipes.goblinA.isCraftable(ref p);
         }
 
         public Smithy(Weapons weapon, Armor armor, ref Podatki p)
@@ -43,8 +45,12 @@ namespace STS
         private void btnReturn_Click(object sender, EventArgs e)
         {
             Home h = new Home(selectedWeapon, selectedArmor, ref p);
-            this.Hide();
-            h.Show();           
+            h.Width = this.Width;
+            h.Height = this.Height;
+            h.StartPosition = FormStartPosition.Manual;
+            h.Location = new Point(this.Location.X, this.Location.Y);
+            this.Visible = false;
+            h.ShowDialog();
         }
 
         private void btnCraftPSword_Click(object sender, EventArgs e)
@@ -61,6 +67,24 @@ namespace STS
             p.recipes.pickleA.craftItem(ref p);
             lblItems.Text = p.inventory.toString();
             selectedArmor = p.armors.pickleA;
+            showEquipment();
+            isCraftable();
+        }
+
+        private void btnCraftGS_Click(object sender, EventArgs e)
+        {
+            p.recipes.goblinS.craftItem(ref p);
+            lblItems.Text = p.inventory.toString();
+            selectedWeapon = p.weapons.goblinS;
+            showEquipment();
+            isCraftable();
+        }
+
+        private void btnCraftGA_Click(object sender, EventArgs e)
+        {
+            p.recipes.goblinA.craftItem(ref p);
+            lblItems.Text = p.inventory.toString();
+            selectedArmor = p.armors.goblinA;
             showEquipment();
             isCraftable();
         }

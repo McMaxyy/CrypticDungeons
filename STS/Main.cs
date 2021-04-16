@@ -14,8 +14,8 @@ namespace STS
     public partial class STS : Form
     {
 
-        int yy, defense, extraExp;
-        bool enemyDefeated;
+        int yy, defense, goblinCount = 1, extraDmg = 3;
+        bool enemyDefeated, bossStage, isRageActive;
         Weapons selectedWeapon;
         Armor selectedArmor;
         Boss selectedBoss;
@@ -28,6 +28,8 @@ namespace STS
         {
             lblStats.Text = "Str: " + p.str + " | Def: " + p.def;
             btnAttack.Enabled = btnDefend.Enabled = btnFlee.Enabled = true;
+            if (bossStage == true)
+                btnFlee.Enabled = false;
 
             lblDmg1.Text = "You dealt: ";
             lblDmg2.Text = "Enemy dealt: ";
@@ -211,7 +213,12 @@ namespace STS
         {
             int x = 0;
 
-            x = p.str / 2 + r.Next(selectedWeapon.weaponDmgMin, selectedWeapon.weaponDmgMax + 1);        
+            x = p.str / 2 + r.Next(selectedWeapon.weaponDmgMin, selectedWeapon.weaponDmgMax + 1);
+            if (isRageActive == true)
+            {
+                x += 3;
+                isRageActive = false;
+            }
 
             p.enemyHP = p.enemyHP - x;
             lblEnemyHP.Text = "HP: " + p.enemyHP + "/" + p.enemyMaxHP;
@@ -349,6 +356,7 @@ namespace STS
                 p.enemyMaxHP = specialMob.maxMobHP;
                 pbEnemy.BackgroundImage = specialMob.mobImage;
                 p.enemyHP = p.enemyMaxHP;
+                p.expAdd += 4;
                 showStage();
             }
 
@@ -362,6 +370,8 @@ namespace STS
 
         private void btnAttack_Click(object sender, EventArgs e)
         {
+            
+            
             playerAttack();
             if (enemyDefeated != true)
             {
@@ -369,6 +379,24 @@ namespace STS
             }
             else
                 enemyDefeated = false;
+
+            if (selectedWeapon == p.weapons.goblinS)
+            {
+                if (goblinCount == 2)
+                {
+                    pbSword.BackgroundImage = Properties.Resources.GoblinSwordRage_Equip;
+                    goblinCount = -1;
+                    isRageActive = true;
+                }
+            }
+            if (selectedWeapon == p.weapons.goblinS)
+            {
+                if (goblinCount == 0)
+                {
+                    pbSword.BackgroundImage = Properties.Resources.GoblinSwordNormal_Equip;
+                }
+            }
+            goblinCount++;
         }
 
         private void btnFlee_Click(object sender, EventArgs e)
@@ -388,6 +416,7 @@ namespace STS
 
         private void btnRestart_Click(object sender, EventArgs e)
         {
+            bossStage = false;
             if (p.cleared == true)
             {
                 Home h = new Home(selectedWeapon, selectedArmor, ref p);
@@ -403,6 +432,7 @@ namespace STS
             pbEnemy.BackgroundImage = selectedBoss.bossImage;
             p.enemyMaxHP = selectedBoss.bossMaxHP;
             p.newCoins = selectedBoss.coinValue;
+            p.expAdd += 2;
 
             p.enemyHP = p.enemyMaxHP;
 
@@ -410,6 +440,7 @@ namespace STS
             if (p.playerHP > p.playerMaxHP)
                 p.playerHP = p.playerMaxHP;
 
+            bossStage = true;
             showStage();
         }
 
@@ -451,8 +482,12 @@ namespace STS
         private void btnReturn_Click(object sender, EventArgs e)
         {
             Home m = new Home(selectedWeapon, selectedArmor, ref p);
-            this.Hide();
-            m.Show();
+            m.Width = this.Width;
+            m.Height = this.Height;
+            m.StartPosition = FormStartPosition.Manual;
+            m.Location = new Point(this.Location.X, this.Location.Y);
+            this.Visible = false;
+            m.ShowDialog();
         }
 
         private void btnDefend_Click(object sender, EventArgs e)

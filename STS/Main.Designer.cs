@@ -80,7 +80,7 @@
             // 
             // btnRand1
             // 
-            this.btnRand1.Location = new System.Drawing.Point(15, 388);
+            this.btnRand1.Location = new System.Drawing.Point(232, 417);
             this.btnRand1.Name = "btnRand1";
             this.btnRand1.Size = new System.Drawing.Size(88, 62);
             this.btnRand1.TabIndex = 0;
@@ -90,7 +90,7 @@
             // 
             // btnBattle1
             // 
-            this.btnBattle1.Location = new System.Drawing.Point(143, 388);
+            this.btnBattle1.Location = new System.Drawing.Point(360, 417);
             this.btnBattle1.Name = "btnBattle1";
             this.btnBattle1.Size = new System.Drawing.Size(88, 62);
             this.btnBattle1.TabIndex = 1;
@@ -101,9 +101,9 @@
             // btnBoss
             // 
             this.btnBoss.Enabled = false;
-            this.btnBoss.Location = new System.Drawing.Point(119, 12);
+            this.btnBoss.Location = new System.Drawing.Point(336, 12);
             this.btnBoss.Name = "btnBoss";
-            this.btnBoss.Size = new System.Drawing.Size(147, 62);
+            this.btnBoss.Size = new System.Drawing.Size(147, 91);
             this.btnBoss.TabIndex = 9;
             this.btnBoss.Text = "Boss";
             this.btnBoss.UseVisualStyleBackColor = true;
@@ -112,7 +112,7 @@
             // btnBattle2
             // 
             this.btnBattle2.Enabled = false;
-            this.btnBattle2.Location = new System.Drawing.Point(144, 255);
+            this.btnBattle2.Location = new System.Drawing.Point(361, 284);
             this.btnBattle2.Name = "btnBattle2";
             this.btnBattle2.Size = new System.Drawing.Size(88, 62);
             this.btnBattle2.TabIndex = 10;
@@ -123,7 +123,7 @@
             // btnBattle3
             // 
             this.btnBattle3.Enabled = false;
-            this.btnBattle3.Location = new System.Drawing.Point(144, 125);
+            this.btnBattle3.Location = new System.Drawing.Point(361, 154);
             this.btnBattle3.Name = "btnBattle3";
             this.btnBattle3.Size = new System.Drawing.Size(88, 62);
             this.btnBattle3.TabIndex = 11;
@@ -133,7 +133,7 @@
             // 
             // btnRand2
             // 
-            this.btnRand2.Location = new System.Drawing.Point(271, 388);
+            this.btnRand2.Location = new System.Drawing.Point(488, 417);
             this.btnRand2.Name = "btnRand2";
             this.btnRand2.Size = new System.Drawing.Size(88, 62);
             this.btnRand2.TabIndex = 12;
@@ -144,7 +144,7 @@
             // btnRand4
             // 
             this.btnRand4.Enabled = false;
-            this.btnRand4.Location = new System.Drawing.Point(272, 255);
+            this.btnRand4.Location = new System.Drawing.Point(489, 284);
             this.btnRand4.Name = "btnRand4";
             this.btnRand4.Size = new System.Drawing.Size(88, 62);
             this.btnRand4.TabIndex = 14;
@@ -155,7 +155,7 @@
             // btnRand3
             // 
             this.btnRand3.Enabled = false;
-            this.btnRand3.Location = new System.Drawing.Point(16, 255);
+            this.btnRand3.Location = new System.Drawing.Point(233, 284);
             this.btnRand3.Name = "btnRand3";
             this.btnRand3.Size = new System.Drawing.Size(88, 62);
             this.btnRand3.TabIndex = 13;
@@ -166,7 +166,7 @@
             // btnRand6
             // 
             this.btnRand6.Enabled = false;
-            this.btnRand6.Location = new System.Drawing.Point(272, 125);
+            this.btnRand6.Location = new System.Drawing.Point(489, 154);
             this.btnRand6.Name = "btnRand6";
             this.btnRand6.Size = new System.Drawing.Size(88, 62);
             this.btnRand6.TabIndex = 16;
@@ -177,7 +177,7 @@
             // btnRand5
             // 
             this.btnRand5.Enabled = false;
-            this.btnRand5.Location = new System.Drawing.Point(16, 125);
+            this.btnRand5.Location = new System.Drawing.Point(233, 154);
             this.btnRand5.Name = "btnRand5";
             this.btnRand5.Size = new System.Drawing.Size(88, 62);
             this.btnRand5.TabIndex = 15;
@@ -188,7 +188,7 @@
             // btnStart
             // 
             this.btnStart.Enabled = false;
-            this.btnStart.Location = new System.Drawing.Point(143, 514);
+            this.btnStart.Location = new System.Drawing.Point(360, 543);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(88, 34);
             this.btnStart.TabIndex = 17;
@@ -198,9 +198,9 @@
             // pbFight
             // 
             this.pbFight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbFight.Location = new System.Drawing.Point(12, 80);
+            this.pbFight.Location = new System.Drawing.Point(136, 41);
             this.pbFight.Name = "pbFight";
-            this.pbFight.Size = new System.Drawing.Size(354, 455);
+            this.pbFight.Size = new System.Drawing.Size(555, 560);
             this.pbFight.TabIndex = 18;
             this.pbFight.TabStop = false;
             this.pbFight.Tag = "Stage";
@@ -209,9 +209,9 @@
             // pbPlayer
             // 
             this.pbPlayer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbPlayer.Location = new System.Drawing.Point(30, 397);
+            this.pbPlayer.Location = new System.Drawing.Point(146, 372);
             this.pbPlayer.Name = "pbPlayer";
-            this.pbPlayer.Size = new System.Drawing.Size(88, 104);
+            this.pbPlayer.Size = new System.Drawing.Size(185, 222);
             this.pbPlayer.TabIndex = 19;
             this.pbPlayer.TabStop = false;
             this.pbPlayer.Tag = "Stage";
@@ -220,9 +220,9 @@
             // pbEnemy
             // 
             this.pbEnemy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbEnemy.Location = new System.Drawing.Point(261, 98);
+            this.pbEnemy.Location = new System.Drawing.Point(502, 52);
             this.pbEnemy.Name = "pbEnemy";
-            this.pbEnemy.Size = new System.Drawing.Size(87, 101);
+            this.pbEnemy.Size = new System.Drawing.Size(178, 216);
             this.pbEnemy.TabIndex = 20;
             this.pbEnemy.TabStop = false;
             this.pbEnemy.Tag = "Stage";
@@ -230,9 +230,9 @@
             // 
             // btnAttack
             // 
-            this.btnAttack.Location = new System.Drawing.Point(197, 397);
+            this.btnAttack.Location = new System.Drawing.Point(443, 373);
             this.btnAttack.Name = "btnAttack";
-            this.btnAttack.Size = new System.Drawing.Size(126, 23);
+            this.btnAttack.Size = new System.Drawing.Size(150, 43);
             this.btnAttack.TabIndex = 21;
             this.btnAttack.Tag = "Stage";
             this.btnAttack.Text = "Attack";
@@ -242,9 +242,9 @@
             // 
             // btnDefend
             // 
-            this.btnDefend.Location = new System.Drawing.Point(197, 436);
+            this.btnDefend.Location = new System.Drawing.Point(361, 437);
             this.btnDefend.Name = "btnDefend";
-            this.btnDefend.Size = new System.Drawing.Size(126, 23);
+            this.btnDefend.Size = new System.Drawing.Size(150, 42);
             this.btnDefend.TabIndex = 22;
             this.btnDefend.Tag = "Stage";
             this.btnDefend.Text = "Defend";
@@ -254,9 +254,9 @@
             // 
             // btnFlee
             // 
-            this.btnFlee.Location = new System.Drawing.Point(197, 478);
+            this.btnFlee.Location = new System.Drawing.Point(530, 437);
             this.btnFlee.Name = "btnFlee";
-            this.btnFlee.Size = new System.Drawing.Size(126, 23);
+            this.btnFlee.Size = new System.Drawing.Size(150, 43);
             this.btnFlee.TabIndex = 23;
             this.btnFlee.Tag = "Stage";
             this.btnFlee.Text = "Flee";
@@ -268,7 +268,7 @@
             // 
             this.lblEnemyHP.AutoSize = true;
             this.lblEnemyHP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEnemyHP.Location = new System.Drawing.Point(30, 98);
+            this.lblEnemyHP.Location = new System.Drawing.Point(143, 52);
             this.lblEnemyHP.Name = "lblEnemyHP";
             this.lblEnemyHP.Size = new System.Drawing.Size(39, 17);
             this.lblEnemyHP.TabIndex = 24;
@@ -280,7 +280,7 @@
             // 
             this.lblPlayerHP.AutoSize = true;
             this.lblPlayerHP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlayerHP.Location = new System.Drawing.Point(30, 368);
+            this.lblPlayerHP.Location = new System.Drawing.Point(143, 348);
             this.lblPlayerHP.Name = "lblPlayerHP";
             this.lblPlayerHP.Size = new System.Drawing.Size(39, 17);
             this.lblPlayerHP.TabIndex = 25;
@@ -292,7 +292,7 @@
             // 
             this.lblDmg1.AutoSize = true;
             this.lblDmg1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDmg1.Location = new System.Drawing.Point(91, 303);
+            this.lblDmg1.Location = new System.Drawing.Point(163, 230);
             this.lblDmg1.Name = "lblDmg1";
             this.lblDmg1.Size = new System.Drawing.Size(69, 13);
             this.lblDmg1.TabIndex = 26;
@@ -304,7 +304,7 @@
             // 
             this.lblDmg2.AutoSize = true;
             this.lblDmg2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDmg2.Location = new System.Drawing.Point(91, 267);
+            this.lblDmg2.Location = new System.Drawing.Point(163, 154);
             this.lblDmg2.Name = "lblDmg2";
             this.lblDmg2.Size = new System.Drawing.Size(80, 13);
             this.lblDmg2.TabIndex = 27;
@@ -315,7 +315,7 @@
             // lblYY
             // 
             this.lblYY.AutoSize = true;
-            this.lblYY.Location = new System.Drawing.Point(302, 37);
+            this.lblYY.Location = new System.Drawing.Point(296, 46);
             this.lblYY.Name = "lblYY";
             this.lblYY.Size = new System.Drawing.Size(35, 13);
             this.lblYY.TabIndex = 28;
@@ -323,7 +323,7 @@
             // 
             // btnRestart
             // 
-            this.btnRestart.Location = new System.Drawing.Point(12, 42);
+            this.btnRestart.Location = new System.Drawing.Point(12, 41);
             this.btnRestart.Name = "btnRestart";
             this.btnRestart.Size = new System.Drawing.Size(92, 23);
             this.btnRestart.TabIndex = 29;
@@ -336,7 +336,7 @@
             // lblLost
             // 
             this.lblLost.AutoSize = true;
-            this.lblLost.Location = new System.Drawing.Point(12, 26);
+            this.lblLost.Location = new System.Drawing.Point(9, 23);
             this.lblLost.Name = "lblLost";
             this.lblLost.Size = new System.Drawing.Size(48, 13);
             this.lblLost.TabIndex = 30;
@@ -347,7 +347,7 @@
             // pbSkip
             // 
             this.pbSkip.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbSkip.Location = new System.Drawing.Point(78, 245);
+            this.pbSkip.Location = new System.Drawing.Point(336, 255);
             this.pbSkip.Name = "pbSkip";
             this.pbSkip.Size = new System.Drawing.Size(218, 112);
             this.pbSkip.TabIndex = 31;
@@ -357,7 +357,7 @@
             // 
             // btnSkip
             // 
-            this.btnSkip.Location = new System.Drawing.Point(144, 319);
+            this.btnSkip.Location = new System.Drawing.Point(402, 329);
             this.btnSkip.Name = "btnSkip";
             this.btnSkip.Size = new System.Drawing.Size(87, 23);
             this.btnSkip.TabIndex = 32;
@@ -371,7 +371,7 @@
             // 
             this.lblSkip.AutoSize = true;
             this.lblSkip.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSkip.Location = new System.Drawing.Point(116, 267);
+            this.lblSkip.Location = new System.Drawing.Point(374, 277);
             this.lblSkip.Name = "lblSkip";
             this.lblSkip.Size = new System.Drawing.Size(150, 13);
             this.lblSkip.TabIndex = 33;
@@ -382,7 +382,7 @@
             // lblCleared
             // 
             this.lblCleared.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCleared.Location = new System.Drawing.Point(94, 275);
+            this.lblCleared.Location = new System.Drawing.Point(352, 285);
             this.lblCleared.Name = "lblCleared";
             this.lblCleared.Size = new System.Drawing.Size(185, 13);
             this.lblCleared.TabIndex = 36;
@@ -393,7 +393,7 @@
             // 
             // btnCleared
             // 
-            this.btnCleared.Location = new System.Drawing.Point(144, 319);
+            this.btnCleared.Location = new System.Drawing.Point(402, 329);
             this.btnCleared.Name = "btnCleared";
             this.btnCleared.Size = new System.Drawing.Size(87, 23);
             this.btnCleared.TabIndex = 35;
@@ -406,7 +406,7 @@
             // pbCleared
             // 
             this.pbCleared.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbCleared.Location = new System.Drawing.Point(78, 245);
+            this.pbCleared.Location = new System.Drawing.Point(336, 255);
             this.pbCleared.Name = "pbCleared";
             this.pbCleared.Size = new System.Drawing.Size(218, 112);
             this.pbCleared.TabIndex = 34;
@@ -418,7 +418,7 @@
             // 
             this.lblExp.AutoSize = true;
             this.lblExp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExp.Location = new System.Drawing.Point(27, 514);
+            this.lblExp.Location = new System.Drawing.Point(358, 577);
             this.lblExp.Name = "lblExp";
             this.lblExp.Size = new System.Drawing.Size(43, 17);
             this.lblExp.TabIndex = 37;
@@ -429,7 +429,7 @@
             // lblLevelUp
             // 
             this.lblLevelUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLevelUp.Location = new System.Drawing.Point(94, 202);
+            this.lblLevelUp.Location = new System.Drawing.Point(352, 239);
             this.lblLevelUp.Name = "lblLevelUp";
             this.lblLevelUp.Size = new System.Drawing.Size(185, 13);
             this.lblLevelUp.TabIndex = 40;
@@ -440,7 +440,7 @@
             // 
             // btnLevelUp
             // 
-            this.btnLevelUp.Location = new System.Drawing.Point(144, 323);
+            this.btnLevelUp.Location = new System.Drawing.Point(402, 360);
             this.btnLevelUp.Name = "btnLevelUp";
             this.btnLevelUp.Size = new System.Drawing.Size(87, 23);
             this.btnLevelUp.TabIndex = 39;
@@ -453,7 +453,7 @@
             // pbLevelUp
             // 
             this.pbLevelUp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbLevelUp.Location = new System.Drawing.Point(78, 193);
+            this.pbLevelUp.Location = new System.Drawing.Point(336, 230);
             this.pbLevelUp.Name = "pbLevelUp";
             this.pbLevelUp.Size = new System.Drawing.Size(218, 164);
             this.pbLevelUp.TabIndex = 38;
@@ -464,7 +464,7 @@
             // lblStrDef
             // 
             this.lblStrDef.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStrDef.Location = new System.Drawing.Point(126, 258);
+            this.lblStrDef.Location = new System.Drawing.Point(384, 295);
             this.lblStrDef.Name = "lblStrDef";
             this.lblStrDef.Size = new System.Drawing.Size(63, 48);
             this.lblStrDef.TabIndex = 41;
@@ -476,7 +476,7 @@
             // lblPoints
             // 
             this.lblPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPoints.Location = new System.Drawing.Point(114, 215);
+            this.lblPoints.Location = new System.Drawing.Point(372, 252);
             this.lblPoints.Name = "lblPoints";
             this.lblPoints.Size = new System.Drawing.Size(121, 37);
             this.lblPoints.TabIndex = 42;
@@ -487,7 +487,7 @@
             // 
             // btnStr
             // 
-            this.btnStr.Location = new System.Drawing.Point(219, 259);
+            this.btnStr.Location = new System.Drawing.Point(477, 296);
             this.btnStr.Name = "btnStr";
             this.btnStr.Size = new System.Drawing.Size(23, 23);
             this.btnStr.TabIndex = 43;
@@ -499,7 +499,7 @@
             // 
             // btnDef
             // 
-            this.btnDef.Location = new System.Drawing.Point(219, 285);
+            this.btnDef.Location = new System.Drawing.Point(477, 322);
             this.btnDef.Name = "btnDef";
             this.btnDef.Size = new System.Drawing.Size(23, 23);
             this.btnDef.TabIndex = 44;
@@ -512,7 +512,7 @@
             // lblStats
             // 
             this.lblStats.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStats.Location = new System.Drawing.Point(175, 516);
+            this.lblStats.Location = new System.Drawing.Point(425, 502);
             this.lblStats.Name = "lblStats";
             this.lblStats.Size = new System.Drawing.Size(185, 13);
             this.lblStats.TabIndex = 45;
@@ -523,7 +523,7 @@
             // 
             // btnReturn
             // 
-            this.btnReturn.Location = new System.Drawing.Point(12, 541);
+            this.btnReturn.Location = new System.Drawing.Point(12, 609);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(75, 23);
             this.btnReturn.TabIndex = 46;
@@ -534,9 +534,9 @@
             // pbSword
             // 
             this.pbSword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbSword.Location = new System.Drawing.Point(27, 398);
+            this.pbSword.Location = new System.Drawing.Point(139, 373);
             this.pbSword.Name = "pbSword";
-            this.pbSword.Size = new System.Drawing.Size(19, 30);
+            this.pbSword.Size = new System.Drawing.Size(43, 65);
             this.pbSword.TabIndex = 47;
             this.pbSword.TabStop = false;
             this.pbSword.Tag = "Stage";
@@ -544,7 +544,7 @@
             // 
             // STS
             // 
-            this.ClientSize = new System.Drawing.Size(378, 573);
+            this.ClientSize = new System.Drawing.Size(835, 644);
             this.Controls.Add(this.pbSword);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.lblStats);

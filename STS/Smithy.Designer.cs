@@ -37,10 +37,18 @@
             this.lblItems = new System.Windows.Forms.Label();
             this.btnReturn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnCraftGS = new System.Windows.Forms.Button();
+            this.btnCraftGA = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pbSword = new System.Windows.Forms.PictureBox();
             this.pbPlayer = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pbPickleS = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -132,6 +140,67 @@
             this.label5.TabIndex = 11;
             this.label5.Text = "Preview:";
             // 
+            // btnCraftGS
+            // 
+            this.btnCraftGS.Location = new System.Drawing.Point(337, 205);
+            this.btnCraftGS.Name = "btnCraftGS";
+            this.btnCraftGS.Size = new System.Drawing.Size(37, 23);
+            this.btnCraftGS.TabIndex = 16;
+            this.btnCraftGS.Text = "Craft";
+            this.btnCraftGS.UseVisualStyleBackColor = true;
+            this.btnCraftGS.Click += new System.EventHandler(this.btnCraftGS_Click);
+            // 
+            // btnCraftGA
+            // 
+            this.btnCraftGA.Location = new System.Drawing.Point(337, 345);
+            this.btnCraftGA.Name = "btnCraftGA";
+            this.btnCraftGA.Size = new System.Drawing.Size(37, 23);
+            this.btnCraftGA.TabIndex = 17;
+            this.btnCraftGA.Text = "Craft";
+            this.btnCraftGA.UseVisualStyleBackColor = true;
+            this.btnCraftGA.Click += new System.EventHandler(this.btnCraftGA_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(246, 256);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(67, 13);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "Goblin Armor";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(246, 128);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(70, 13);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Goblin Sword";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox3.BackgroundImage = global::STS.Properties.Resources.GoblinArmor;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox3.Location = new System.Drawing.Point(249, 272);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(82, 96);
+            this.pictureBox3.TabIndex = 15;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::STS.Properties.Resources.GoblinSword;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.Location = new System.Drawing.Point(249, 144);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(82, 84);
+            this.pictureBox2.TabIndex = 14;
+            this.pictureBox2.TabStop = false;
+            // 
             // pbSword
             // 
             this.pbSword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -178,7 +247,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(800, 571);
+            this.ClientSize = new System.Drawing.Size(835, 644);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.btnCraftGA);
+            this.Controls.Add(this.btnCraftGS);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pbSword);
             this.Controls.Add(this.pbPlayer);
             this.Controls.Add(this.label5);
@@ -194,6 +269,8 @@
             this.Controls.Add(this.btnCraftPSword);
             this.Name = "Smithy";
             this.Text = "Cryptic Dungeons";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -218,5 +295,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pbSword;
         private System.Windows.Forms.PictureBox pbPlayer;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Button btnCraftGS;
+        private System.Windows.Forms.Button btnCraftGA;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }

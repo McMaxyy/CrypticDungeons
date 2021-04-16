@@ -25,10 +25,14 @@ namespace STS
         private void btnStart_Click(object sender, EventArgs e)
         {
             weapon = p.weapons.woodenS;
-            armor = p.armors.bronzeA;
-            this.Hide();
+            armor = p.armors.bronzeA;           
             Home h = new Home(weapon, armor, ref p);
-            h.Show();
+            h.Width = this.Width;
+            h.Height = this.Height;
+            h.StartPosition = FormStartPosition.Manual;
+            h.Location = new Point(this.Location.X, this.Location.Y);
+            this.Visible = false;
+            h.ShowDialog();           
         }
     }
 }

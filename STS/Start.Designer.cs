@@ -33,7 +33,7 @@
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(308, 180);
+            this.btnStart.Location = new System.Drawing.Point(330, 289);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(156, 72);
             this.btnStart.TabIndex = 0;
@@ -45,7 +45,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(835, 644);
             this.Controls.Add(this.btnStart);
             this.Name = "Start";
             this.Text = "Cryptic Dungeons";
