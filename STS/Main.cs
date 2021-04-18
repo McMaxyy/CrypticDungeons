@@ -14,7 +14,7 @@ namespace STS
     public partial class STS : Form
     {
 
-        int yy, defense, goblinCount = 1, extraDmg = 3;
+        int yy, defense, goblinCount = 1;
         bool enemyDefeated, bossStage, isRageActive;
         Weapons selectedWeapon;
         Armor selectedArmor;
@@ -101,7 +101,8 @@ namespace STS
         //Check if the player has cleared the stage
         public void stageIsClear()
         {
-            btnAttack.Enabled = btnDefend.Enabled = btnFlee.Enabled = false;            
+            btnAttack.Enabled = btnDefend.Enabled = btnFlee.Enabled = false;
+            goblinCount = 0;
 
             if (p.n == 1)
             {
@@ -152,7 +153,7 @@ namespace STS
             else if (p.n == 4)
             {
                 yy = r.Next(0, selectedBoss.dropTable.Length);
-                p.inventory.addItem(selectedBoss.dropTable[yy], 2);
+                p.inventory.addItem(selectedBoss.dropTable[yy], 3);
 
 
                 /*if (yy == 1)
@@ -263,8 +264,6 @@ namespace STS
 
             if (p.y < 0)
                 p.y = 0;
-
-            //p.h = p.y;
 
             if (p.t == 1)
                 p.playerHP = p.playerHP - p.y;
@@ -419,9 +418,13 @@ namespace STS
             bossStage = false;
             if (p.cleared == true)
             {
-                Home h = new Home(selectedWeapon, selectedArmor, ref p);
-                this.Hide();
-                h.Show();
+                Home m = new Home(selectedWeapon, selectedArmor, ref p);
+                m.Width = this.Width;
+                m.Height = this.Height;
+                m.StartPosition = FormStartPosition.Manual;
+                m.Location = new Point(this.Location.X, this.Location.Y);
+                this.Visible = false;
+                m.ShowDialog();
             }
 
             restartGame();

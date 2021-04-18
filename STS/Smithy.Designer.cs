@@ -61,6 +61,7 @@
             this.btnCraftPSword.Name = "btnCraftPSword";
             this.btnCraftPSword.Size = new System.Drawing.Size(37, 23);
             this.btnCraftPSword.TabIndex = 0;
+            this.btnCraftPSword.TabStop = false;
             this.btnCraftPSword.Text = "Craft";
             this.btnCraftPSword.UseVisualStyleBackColor = true;
             this.btnCraftPSword.Click += new System.EventHandler(this.btnCraftPSword_Click);
@@ -99,6 +100,7 @@
             this.btnCraftPArmor.Name = "btnCraftPArmor";
             this.btnCraftPArmor.Size = new System.Drawing.Size(37, 23);
             this.btnCraftPArmor.TabIndex = 7;
+            this.btnCraftPArmor.TabStop = false;
             this.btnCraftPArmor.Text = "Craft";
             this.btnCraftPArmor.UseVisualStyleBackColor = true;
             this.btnCraftPArmor.Click += new System.EventHandler(this.btnCraftPArmor_Click);
@@ -126,6 +128,7 @@
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(75, 23);
             this.btnReturn.TabIndex = 10;
+            this.btnReturn.TabStop = false;
             this.btnReturn.Text = "Return";
             this.btnReturn.UseVisualStyleBackColor = true;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
@@ -146,6 +149,7 @@
             this.btnCraftGS.Name = "btnCraftGS";
             this.btnCraftGS.Size = new System.Drawing.Size(37, 23);
             this.btnCraftGS.TabIndex = 16;
+            this.btnCraftGS.TabStop = false;
             this.btnCraftGS.Text = "Craft";
             this.btnCraftGS.UseVisualStyleBackColor = true;
             this.btnCraftGS.Click += new System.EventHandler(this.btnCraftGS_Click);
@@ -156,6 +160,7 @@
             this.btnCraftGA.Name = "btnCraftGA";
             this.btnCraftGA.Size = new System.Drawing.Size(37, 23);
             this.btnCraftGA.TabIndex = 17;
+            this.btnCraftGA.TabStop = false;
             this.btnCraftGA.Text = "Craft";
             this.btnCraftGA.UseVisualStyleBackColor = true;
             this.btnCraftGA.Click += new System.EventHandler(this.btnCraftGA_Click);

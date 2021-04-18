@@ -65,6 +65,11 @@ namespace STS
             }
         }
 
+        public void showStats()
+        {
+            lblStats.Text = "Attack: " + (p.str + (weapon.weaponDmgMax + weapon.weaponDmgMin) / 2) + " || Defense: " + (p.def + armor.armorDefense);
+        }
+
         public Home(Weapons selectedWeapon, Armor selectedArmor, ref Podatki p)
         {
             InitializeComponent();            
@@ -77,7 +82,7 @@ namespace STS
 
             lblLevel.Text = "Level: " + p.level;
             lblHP.Text = "HP: " + p.playerMaxHP;
-            lblStats.Text = "Strength: " + p.str + " || Defense: " + p.def;
+            lblStats.Text = "Attack: " + (p.str + (weapon.weaponDmgMax + weapon.weaponDmgMin) / 2) + " || Defense: " + (p.def + armor.armorDefense);
         } 
 
         private void btnWS_Click(object sender, EventArgs e)
@@ -194,6 +199,11 @@ namespace STS
             s.Location = new Point(this.Location.X, this.Location.Y);
             this.Visible = false;
             s.ShowDialog();
-        }       
+        }
+
+        private void updateStats(object sender, MouseEventArgs e)
+        {
+            showStats();
+        }
     }
 }

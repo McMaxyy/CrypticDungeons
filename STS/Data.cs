@@ -26,7 +26,8 @@ namespace STS
         public int points = 0;
         public int str = 0;
         public int def = 0;
-        public int playerMaxHP = 30;
+        public int playerMaxHP = 40;
+        public double shields;
         public int expAdd;
         public double exp = 0;
         public int maxExp = 10;
@@ -39,9 +40,10 @@ namespace STS
         public Mobs mobs = new Mobs();
         public Recipes recipes = new Recipes();
         public Inventory inventory = new Inventory();
+        public Items items = new Items();
     }
 
-    public class Weapons
+    public abstract class Weapons
     {
         private string _weaponName;
         private int _weaponDmgMax;
@@ -210,7 +212,7 @@ namespace STS
             armorName = "Goblin Armor";
             armorDefense = 15;
             isUnlocked = false;
-            armorImage = Properties.Resources.PiklArmor_Equip;
+            armorImage = Properties.Resources.GoblinArmor;
         }
     }
 
@@ -312,7 +314,7 @@ namespace STS
         public GoblinKing goblinKing = new GoblinKing();
     }
 
-    public class Mob
+    public abstract class Mob
     {
         private string _mobName;
         private int _maxMobHP;
@@ -320,6 +322,7 @@ namespace STS
         private int _maxMobDmg;
         private int _coinValue;
         private Bitmap _mobImage;
+        public int mobID;
 
         public string mobName
         {
@@ -352,6 +355,7 @@ namespace STS
             set { _mobImage = value; }
         }
     }
+
     public class Pikle : Mob
     {
         public Pikle()
@@ -362,6 +366,7 @@ namespace STS
             minMobDmg = 3;
             maxMobDmg = 5;
             mobImage = Properties.Resources.Pikl;
+            mobID = 0;
         }
     }
     public class Jerry : Mob
@@ -374,6 +379,7 @@ namespace STS
             minMobDmg = 3;
             maxMobDmg = 7;
             mobImage = Properties.Resources.Jerry;
+            mobID = 1;
         }
     }
     public class SmolGoblin : Mob
@@ -386,6 +392,7 @@ namespace STS
             minMobDmg = 4;
             maxMobDmg = 7;
             mobImage = Properties.Resources.Nejc;
+            mobID = 2;
         }
     }
     public class SpearGoblin : Mob
@@ -398,6 +405,7 @@ namespace STS
             minMobDmg = 5;
             maxMobDmg = 8;
             mobImage = Properties.Resources.SpearGoblin;
+            mobID = 3;
         }
     }
     public class SpaceGoblin : Mob
@@ -410,6 +418,7 @@ namespace STS
             minMobDmg = 5;
             maxMobDmg = 9;
             mobImage = Properties.Resources.SpaceGoblin;
+            mobID = 4;
         }
     }
     public class Cyclops : Mob
@@ -422,6 +431,7 @@ namespace STS
             minMobDmg = 13;
             maxMobDmg = 16;
             mobImage = Properties.Resources.Cyclops;
+            mobID = 5;
         }
     }
 
@@ -437,7 +447,7 @@ namespace STS
 
     public class Inventory
     {
-        public Item[] items = { new PickleJuice(), new PickleSkin(), new GoblinHide(), new GoblinSkull() };
+        public Item[] items = { new PickleJuice(), new PickleSkin(), new GoblinHide(), new GoblinSkull(), new HealthPotion(), new Sword(), new Shield(), new Bomb() };
 
         public void addItem(int itemID, int numberOfItemsToAdd)
         {
@@ -534,7 +544,54 @@ namespace STS
             itemQuantity = 0;
         }
     }
+    public class HealthPotion : Item
+    {
+        readonly public static int ID = 4;
+        public HealthPotion()
+        {
+            itemName = "Health Potion";
+            itemID = ID;
+            itemQuantity = 0;
+        }
+    }
+    public class Shield : Item
+    {
+        readonly public static int ID = 5;
+        public Shield()
+        {
+            itemName = "Shield";
+            itemID = ID;
+            itemQuantity = 0;
+        }
+    }
+    public class Sword : Item
+    {
+        readonly public static int ID = 6;
+        public Sword()
+        {
+            itemName = "Sword";
+            itemID = ID;
+            itemQuantity = 0;
+        }
+    }
+    public class Bomb : Item
+    {
+        readonly public static int ID = 5;
+        public Bomb()
+        {
+            itemName = "Bomb";
+            itemID = ID;
+            itemQuantity = 0;
+        }
+    }
 
+    public class Items
+    {
+        public HealthPotion healthPot = new HealthPotion();
+        public Sword sword = new Sword();
+        public Shield shield = new Shield();
+        public Bomb bomb = new Bomb();
+    }
 
     abstract public class Recipe
     {
@@ -640,7 +697,7 @@ namespace STS
     {
         public PickleSwordRecipe pickleS = new PickleSwordRecipe();
         public PickleArmorRecipe pickleA = new PickleArmorRecipe();
-        public PickleSwordRecipe goblinS = new PickleSwordRecipe();
-        public PickleArmorRecipe goblinA = new PickleArmorRecipe();
+        public GoblinSwordRecipe goblinS = new GoblinSwordRecipe();
+        public GoblinArmorRecipe goblinA = new GoblinArmorRecipe();
     }
 }

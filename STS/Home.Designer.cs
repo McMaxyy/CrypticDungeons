@@ -46,11 +46,11 @@
             this.lblLevel = new System.Windows.Forms.Label();
             this.lblHP = new System.Windows.Forms.Label();
             this.lblStats = new System.Windows.Forms.Label();
+            this.btnGS = new System.Windows.Forms.Button();
+            this.btnGA = new System.Windows.Forms.Button();
             this.pbSword = new System.Windows.Forms.PictureBox();
             this.pbPlayer = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnGS = new System.Windows.Forms.Button();
-            this.btnGA = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayer)).BeginInit();
@@ -69,10 +69,10 @@
             this.btnWS.UseVisualStyleBackColor = true;
             this.btnWS.Visible = false;
             this.btnWS.Click += new System.EventHandler(this.btnWS_Click);
+            this.btnWS.MouseClick += new System.Windows.Forms.MouseEventHandler(this.updateStats);
             // 
             // btnIS
             // 
-            this.btnIS.Enabled = false;
             this.btnIS.Location = new System.Drawing.Point(635, 464);
             this.btnIS.Name = "btnIS";
             this.btnIS.Size = new System.Drawing.Size(60, 54);
@@ -83,10 +83,10 @@
             this.btnIS.UseVisualStyleBackColor = true;
             this.btnIS.Visible = false;
             this.btnIS.Click += new System.EventHandler(this.btnIS_Click);
+            this.btnIS.MouseClick += new System.Windows.Forms.MouseEventHandler(this.updateStats);
             // 
             // btnIA
             // 
-            this.btnIA.Enabled = false;
             this.btnIA.Location = new System.Drawing.Point(635, 524);
             this.btnIA.Name = "btnIA";
             this.btnIA.Size = new System.Drawing.Size(60, 54);
@@ -97,6 +97,7 @@
             this.btnIA.UseVisualStyleBackColor = true;
             this.btnIA.Visible = false;
             this.btnIA.Click += new System.EventHandler(this.btnIA_Click);
+            this.btnIA.MouseClick += new System.Windows.Forms.MouseEventHandler(this.updateStats);
             // 
             // btnBA
             // 
@@ -110,6 +111,7 @@
             this.btnBA.UseVisualStyleBackColor = true;
             this.btnBA.Visible = false;
             this.btnBA.Click += new System.EventHandler(this.btnBA_Click);
+            this.btnBA.MouseClick += new System.Windows.Forms.MouseEventHandler(this.updateStats);
             // 
             // lblItems
             // 
@@ -123,7 +125,6 @@
             // 
             // btnPS
             // 
-            this.btnPS.Enabled = false;
             this.btnPS.Location = new System.Drawing.Point(701, 464);
             this.btnPS.Name = "btnPS";
             this.btnPS.Size = new System.Drawing.Size(60, 54);
@@ -134,6 +135,7 @@
             this.btnPS.UseVisualStyleBackColor = true;
             this.btnPS.Visible = false;
             this.btnPS.Click += new System.EventHandler(this.btnPS_Click);
+            this.btnPS.MouseClick += new System.Windows.Forms.MouseEventHandler(this.updateStats);
             // 
             // btnCraft
             // 
@@ -149,7 +151,6 @@
             // 
             // btnPA
             // 
-            this.btnPA.Enabled = false;
             this.btnPA.Location = new System.Drawing.Point(701, 524);
             this.btnPA.Name = "btnPA";
             this.btnPA.Size = new System.Drawing.Size(60, 54);
@@ -160,6 +161,7 @@
             this.btnPA.UseVisualStyleBackColor = true;
             this.btnPA.Visible = false;
             this.btnPA.Click += new System.EventHandler(this.btnPA_Click);
+            this.btnPA.MouseClick += new System.Windows.Forms.MouseEventHandler(this.updateStats);
             // 
             // btnShop
             // 
@@ -269,6 +271,34 @@
             this.lblStats.TabIndex = 24;
             this.lblStats.Text = "Stats: ";
             // 
+            // btnGS
+            // 
+            this.btnGS.Location = new System.Drawing.Point(767, 464);
+            this.btnGS.Name = "btnGS";
+            this.btnGS.Size = new System.Drawing.Size(60, 54);
+            this.btnGS.TabIndex = 25;
+            this.btnGS.TabStop = false;
+            this.btnGS.Tag = "Equipment";
+            this.btnGS.Text = "Goblin Sword";
+            this.btnGS.UseVisualStyleBackColor = true;
+            this.btnGS.Visible = false;
+            this.btnGS.Click += new System.EventHandler(this.btnGS_Click);
+            this.btnGS.MouseClick += new System.Windows.Forms.MouseEventHandler(this.updateStats);
+            // 
+            // btnGA
+            // 
+            this.btnGA.Location = new System.Drawing.Point(767, 524);
+            this.btnGA.Name = "btnGA";
+            this.btnGA.Size = new System.Drawing.Size(60, 54);
+            this.btnGA.TabIndex = 26;
+            this.btnGA.TabStop = false;
+            this.btnGA.Tag = "Equipment";
+            this.btnGA.Text = "Goblin Armor";
+            this.btnGA.UseVisualStyleBackColor = true;
+            this.btnGA.Visible = false;
+            this.btnGA.Click += new System.EventHandler(this.btnGA_Click);
+            this.btnGA.MouseClick += new System.Windows.Forms.MouseEventHandler(this.updateStats);
+            // 
             // pbSword
             // 
             this.pbSword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -295,34 +325,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(260, 300);
             this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
-            // 
-            // btnGS
-            // 
-            this.btnGS.Enabled = false;
-            this.btnGS.Location = new System.Drawing.Point(767, 464);
-            this.btnGS.Name = "btnGS";
-            this.btnGS.Size = new System.Drawing.Size(60, 54);
-            this.btnGS.TabIndex = 25;
-            this.btnGS.TabStop = false;
-            this.btnGS.Tag = "Equipment";
-            this.btnGS.Text = "Goblin Sword";
-            this.btnGS.UseVisualStyleBackColor = true;
-            this.btnGS.Visible = false;
-            this.btnGS.Click += new System.EventHandler(this.btnGS_Click);
-            // 
-            // btnGA
-            // 
-            this.btnGA.Enabled = false;
-            this.btnGA.Location = new System.Drawing.Point(767, 524);
-            this.btnGA.Name = "btnGA";
-            this.btnGA.Size = new System.Drawing.Size(60, 54);
-            this.btnGA.TabIndex = 26;
-            this.btnGA.TabStop = false;
-            this.btnGA.Tag = "Equipment";
-            this.btnGA.Text = "Goblin Armor";
-            this.btnGA.UseVisualStyleBackColor = true;
-            this.btnGA.Visible = false;
-            this.btnGA.Click += new System.EventHandler(this.btnGA_Click);
             // 
             // Home
             // 
