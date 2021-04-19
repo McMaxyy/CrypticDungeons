@@ -1,6 +1,6 @@
 ﻿namespace STS
 {
-    partial class Endless
+    partial class Grind
     {
         /// <summary>
         /// Required designer variable.
@@ -52,6 +52,7 @@
             this.pbLevelUp = new System.Windows.Forms.PictureBox();
             this.btnReturn = new System.Windows.Forms.Button();
             this.lblShields = new System.Windows.Forms.Label();
+            this.txtDmgOutput = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbSword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEnemy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayer)).BeginInit();
@@ -79,6 +80,7 @@
             this.lblDmg2.TabIndex = 54;
             this.lblDmg2.Tag = "Stage";
             this.lblDmg2.Text = "Enemy dealt:";
+            this.lblDmg2.Visible = false;
             // 
             // lblDmg1
             // 
@@ -90,6 +92,7 @@
             this.lblDmg1.TabIndex = 53;
             this.lblDmg1.Tag = "Stage";
             this.lblDmg1.Text = "You dealt: ";
+            this.lblDmg1.Visible = false;
             // 
             // lblPlayerHP
             // 
@@ -319,10 +322,23 @@
             this.lblShields.TabIndex = 72;
             this.lblShields.Tag = "Stage";
             // 
-            // Endless
+            // txtDmgOutput
+            // 
+            this.txtDmgOutput.Enabled = false;
+            this.txtDmgOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDmgOutput.Location = new System.Drawing.Point(119, 14);
+            this.txtDmgOutput.Multiline = true;
+            this.txtDmgOutput.Name = "txtDmgOutput";
+            this.txtDmgOutput.ReadOnly = true;
+            this.txtDmgOutput.Size = new System.Drawing.Size(260, 292);
+            this.txtDmgOutput.TabIndex = 73;
+            this.txtDmgOutput.TabStop = false;
+            // 
+            // Grind
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(835, 644);
             this.Controls.Add(this.lblShields);
             this.Controls.Add(this.btnReturn);
@@ -348,7 +364,8 @@
             this.Controls.Add(this.btnAttack);
             this.Controls.Add(this.pbEnemy);
             this.Controls.Add(this.pbPlayer);
-            this.Name = "Endless";
+            this.Controls.Add(this.txtDmgOutput);
+            this.Name = "Grind";
             this.Text = "Cryptic Dungeons";
             ((System.ComponentModel.ISupportInitialize)(this.pbSword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEnemy)).EndInit();
@@ -385,5 +402,6 @@
         private System.Windows.Forms.PictureBox pbLevelUp;
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.Label lblShields;
+        private System.Windows.Forms.TextBox txtDmgOutput;
     }
 }

@@ -18,9 +18,34 @@ namespace STS
         Boss boss;
         Mob mob1, mob2, mob3, specialMob;
 
-        public void startStage()
+        public void checkIfLevelUnlocked()
+        {
+            if (p.weapons.pickleS.isUnlocked == true && p.armors.pickleA.isUnlocked == true)
+            {
+                btnMidGrind.Enabled = true;
+                btnStage2.Enabled = true;
+            }
+
+            if (p.weapons.goblinS.isUnlocked == true && p.armors.goblinA.isUnlocked == true)
+            {
+                btnEndless.Enabled = true;
+            }
+        }
+
+        public void startMain()
         {
             STS s = new STS(selectedWeapon, selectedArmor, boss, mob1, mob2, mob3, specialMob, ref p);
+            s.Width = this.Width;
+            s.Height = this.Height;
+            s.StartPosition = FormStartPosition.Manual;
+            s.Location = new Point(this.Location.X, this.Location.Y);
+            this.Visible = false;
+            s.ShowDialog();
+        }
+
+        public void startGrind()
+        {
+            Grind s = new Grind(selectedWeapon, selectedArmor, ref p);
             s.Width = this.Width;
             s.Height = this.Height;
             s.StartPosition = FormStartPosition.Manual;
@@ -40,9 +65,27 @@ namespace STS
             s.ShowDialog();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnLowGrind_Click(object sender, EventArgs e)
         {
+            p.stageRank = 1;
+            startGrind();
+        }
 
+        private void btnMidGrind_Click(object sender, EventArgs e)
+        {
+            p.stageRank = 2;
+            startGrind();
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            Home m = new Home(selectedWeapon, selectedArmor, ref p);
+            m.Width = this.Width;
+            m.Height = this.Height;
+            m.StartPosition = FormStartPosition.Manual;
+            m.Location = new Point(this.Location.X, this.Location.Y);
+            this.Visible = false;
+            m.ShowDialog();
         }
 
         public Map(Weapons sword, Armor armor, ref Podatki p)
@@ -50,6 +93,7 @@ namespace STS
             InitializeComponent();
             this.p = p;
 
+            checkIfLevelUnlocked();
             selectedArmor = armor;
             selectedWeapon = sword;
         }
@@ -63,7 +107,7 @@ namespace STS
             mob3 = p.mobs.jerry;
             specialMob = p.mobs.jerry;
             p.expAdd = 0;
-            startStage();
+            startMain();
         }
 
         private void btnStage2_Click(object sender, EventArgs e)
@@ -74,7 +118,7 @@ namespace STS
             mob3 = p.mobs.spaceGoblin;
             specialMob = p.mobs.cyclops;
             p.expAdd = 2;
-            startStage();
+            startMain();
         }
     }
 }

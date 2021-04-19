@@ -66,7 +66,7 @@ namespace STS
         {
             p.recipes.pickleA.craftItem(ref p);
             lblItems.Text = p.inventory.toString();
-            selectedArmor = p.armors.goblinA;
+            selectedArmor = p.armors.pickleA;
             showEquipment();
             isCraftable();
         }

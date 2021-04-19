@@ -73,6 +73,7 @@
             // 
             // btnIS
             // 
+            this.btnIS.Enabled = false;
             this.btnIS.Location = new System.Drawing.Point(635, 464);
             this.btnIS.Name = "btnIS";
             this.btnIS.Size = new System.Drawing.Size(60, 54);
@@ -87,6 +88,7 @@
             // 
             // btnIA
             // 
+            this.btnIA.Enabled = false;
             this.btnIA.Location = new System.Drawing.Point(635, 524);
             this.btnIA.Name = "btnIA";
             this.btnIA.Size = new System.Drawing.Size(60, 54);
@@ -125,6 +127,7 @@
             // 
             // btnPS
             // 
+            this.btnPS.Enabled = false;
             this.btnPS.Location = new System.Drawing.Point(701, 464);
             this.btnPS.Name = "btnPS";
             this.btnPS.Size = new System.Drawing.Size(60, 54);
@@ -151,6 +154,7 @@
             // 
             // btnPA
             // 
+            this.btnPA.Enabled = false;
             this.btnPA.Location = new System.Drawing.Point(701, 524);
             this.btnPA.Name = "btnPA";
             this.btnPA.Size = new System.Drawing.Size(60, 54);
@@ -273,6 +277,7 @@
             // 
             // btnGS
             // 
+            this.btnGS.Enabled = false;
             this.btnGS.Location = new System.Drawing.Point(767, 464);
             this.btnGS.Name = "btnGS";
             this.btnGS.Size = new System.Drawing.Size(60, 54);
@@ -287,6 +292,7 @@
             // 
             // btnGA
             // 
+            this.btnGA.Enabled = false;
             this.btnGA.Location = new System.Drawing.Point(767, 524);
             this.btnGA.Name = "btnGA";
             this.btnGA.Size = new System.Drawing.Size(60, 54);
@@ -330,7 +336,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BackColor = System.Drawing.Color.Tan;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(835, 644);
             this.ControlBox = false;

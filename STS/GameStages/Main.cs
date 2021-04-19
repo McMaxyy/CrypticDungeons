@@ -14,7 +14,7 @@ namespace STS
     public partial class STS : Form
     {
 
-        int yy, defense, goblinCount = 1;
+        int yy, xx, defense, goblinCount = 1;
         bool enemyDefeated, bossStage, isRageActive;
         Weapons selectedWeapon;
         Armor selectedArmor;
@@ -57,7 +57,6 @@ namespace STS
                     }
                 }
             }
-            btnBoss.Visible = btnStart.Visible = false;
         }
 
         public void skipStage()
@@ -153,13 +152,9 @@ namespace STS
             else if (p.n == 4)
             {
                 yy = r.Next(0, selectedBoss.dropTable.Length);
-                p.inventory.addItem(selectedBoss.dropTable[yy], 3);
-
-
-                /*if (yy == 1)
-                    p.weapons.ironS.isUnlocked = true;
-                else if (yy == 2)
-                    p.armors.ironA.isUnlocked = true;*/
+                xx = r.Next(1, 4);
+                p.inventory.addItem(selectedBoss.dropTable[yy], xx);
+                p.inventory.showItem(yy);
 
                 if (p.level == p.newLevel)
                 {
@@ -169,9 +164,10 @@ namespace STS
                     p.newLevel++;
                 }
 
+                lblYY.Visible = true;
                 btnLevelUp.Enabled = false;
                 lblExp.Text = "EXP: " + p.exp + "/" + p.maxExp;
-                lblYY.Text = yy.ToString();
+                lblYY.Text = "You got: " + xx + "x " + p.inventory.itemShow;
                 btnBoss.Enabled = false;
                 lblLost.Text = "You won";
                 lblLost.Visible = true;
@@ -235,7 +231,13 @@ namespace STS
                     p.playerMaxHP = p.playerMaxHP + 5;
                     p.exp = p.exp%p.maxExp;
                     p.level++;
-                    p.maxExp = p.maxExp * 2;
+                    if (p.maxExp < 80)
+                        p.maxExp = p.maxExp * 2;
+                    else if (p.maxExp == 80)
+                        p.maxExp = 100;
+                    else
+                        p.maxExp += 50;
+                        
                     p.points += 2;
                 }
                 enemyDefeated = true;
@@ -306,7 +308,6 @@ namespace STS
             pbEnemy.BackgroundImage = selectedMob.mobImage;
             p.enemyHP = p.enemyMaxHP;
         }
-
         
         public STS(Weapons sword, Armor armor, Boss boss, Mob mob1, Mob mob2, Mob mob3, Mob special, ref Podatki p)
         {
@@ -325,6 +326,7 @@ namespace STS
             pbPlayer.BackgroundImage = selectedArmor.armorImage;
             pbSword.BackgroundImage = selectedWeapon.weaponImage;
 
+            lblYY.Text = "";
             btnLevelUp.Enabled = true;
             p.n = 1;
         }
@@ -416,18 +418,13 @@ namespace STS
         private void btnRestart_Click(object sender, EventArgs e)
         {
             bossStage = false;
-            if (p.cleared == true)
-            {
-                Home m = new Home(selectedWeapon, selectedArmor, ref p);
-                m.Width = this.Width;
-                m.Height = this.Height;
-                m.StartPosition = FormStartPosition.Manual;
-                m.Location = new Point(this.Location.X, this.Location.Y);
-                this.Visible = false;
-                m.ShowDialog();
-            }
-
-            restartGame();
+            Home m = new Home(selectedWeapon, selectedArmor, ref p);
+            m.Width = this.Width;
+            m.Height = this.Height;
+            m.StartPosition = FormStartPosition.Manual;
+            m.Location = new Point(this.Location.X, this.Location.Y);
+            this.Visible = false;
+            m.ShowDialog();
         }
 
         private void btnBoss_Click(object sender, EventArgs e)

@@ -20,13 +20,14 @@ namespace STS
         public double playerHP = 30;
         public int enemyMaxHP;
         public int enemyHP;
+        public int stageRank;
 
         public int newCoins;
         public int coins = 0;
         public int points = 0;
         public int str = 0;
         public int def = 0;
-        public int playerMaxHP = 40;
+        public int playerMaxHP = 30;
         public double shields;
         public int expAdd;
         public double exp = 0;
@@ -91,7 +92,7 @@ namespace STS
         {
             weaponName = "Wooden Sword";
             weaponDmgMax = 30;
-            weaponDmgMin = 10;
+            weaponDmgMin = 20;
             isUnlocked = true;
             weaponImage = Properties.Resources.WoodenSword_Equip;
         }
@@ -114,8 +115,8 @@ namespace STS
         public PickleSword()
         {
             weaponName = "Pickle Sword";
-            weaponDmgMax = 13;
-            weaponDmgMin = 10;
+            weaponDmgMax = 10;
+            weaponDmgMin = 8;
             isUnlocked = false;
             weaponImage = Properties.Resources.PiklSword_Equip;
         }
@@ -210,7 +211,7 @@ namespace STS
         public GoblinArmor()
         {
             armorName = "Goblin Armor";
-            armorDefense = 15;
+            armorDefense = 18;
             isUnlocked = false;
             armorImage = Properties.Resources.GoblinArmor;
         }
@@ -300,9 +301,9 @@ namespace STS
             bossName = "Goblin King";
             bossID = 2;
             coinValue = 15;
-            minDmgBoss = 10;
-            maxDmgBoss = 13;
-            bossMaxHP = 60;
+            minDmgBoss = 11;
+            maxDmgBoss = 14;
+            bossMaxHP = 80;
             bossImage = Properties.Resources.GoblinKing;
             dropTable = new int[] { GoblinSkull.ID, GoblinHide.ID };
         }
@@ -313,6 +314,16 @@ namespace STS
         public MenacingPikl menacingPikl = new MenacingPikl();
         public GoblinKing goblinKing = new GoblinKing();
     }
+
+    interface MobLowRank
+    {
+
+    }
+    interface MobMidRank
+    {
+
+    }
+
 
     public abstract class Mob
     {
@@ -356,7 +367,7 @@ namespace STS
         }
     }
 
-    public class Pikle : Mob
+    public class Pikle : Mob, MobLowRank
     {
         public Pikle()
         {
@@ -369,7 +380,7 @@ namespace STS
             mobID = 0;
         }
     }
-    public class Jerry : Mob
+    public class Jerry : Mob, MobLowRank
     {
         public Jerry()
         {
@@ -378,56 +389,56 @@ namespace STS
             maxMobHP = 10;
             minMobDmg = 3;
             maxMobDmg = 7;
-            mobImage = Properties.Resources.Jerry;
+            mobImage = Properties.Resources.Jerry; 
             mobID = 1;
         }
     }
-    public class SmolGoblin : Mob
+    public class SmolGoblin : Mob, MobMidRank
     {
         public SmolGoblin()
         {
             mobName = "Smol Goblin";
             coinValue = 4;
-            maxMobHP = 18;
-            minMobDmg = 4;
+            maxMobHP = 25;
+            minMobDmg = 5;
             maxMobDmg = 7;
             mobImage = Properties.Resources.Nejc;
             mobID = 2;
         }
     }
-    public class SpearGoblin : Mob
+    public class SpearGoblin : Mob, MobMidRank
     {
         public SpearGoblin()
         {
             mobName = "Spear Goblin";
             coinValue = 5;
-            maxMobHP = 25;
-            minMobDmg = 5;
+            maxMobHP = 35;
+            minMobDmg = 6;
             maxMobDmg = 8;
             mobImage = Properties.Resources.SpearGoblin;
             mobID = 3;
         }
     }
-    public class SpaceGoblin : Mob
+    public class SpaceGoblin : Mob, MobMidRank
     {
         public SpaceGoblin()
         {
             mobName = "Space Goblin";
-            coinValue = 7;
-            maxMobHP = 30;
-            minMobDmg = 5;
+            coinValue = 6;
+            maxMobHP = 40;
+            minMobDmg = 7;
             maxMobDmg = 9;
             mobImage = Properties.Resources.SpaceGoblin;
             mobID = 4;
         }
     }
-    public class Cyclops : Mob
+    public class Cyclops : Mob, MobMidRank
     {
         public Cyclops()
         {
             mobName = "Cyclops";
             coinValue = 20;
-            maxMobHP = 75;
+            maxMobHP = 90;
             minMobDmg = 13;
             maxMobDmg = 16;
             mobImage = Properties.Resources.Cyclops;
@@ -448,7 +459,12 @@ namespace STS
     public class Inventory
     {
         public Item[] items = { new PickleJuice(), new PickleSkin(), new GoblinHide(), new GoblinSkull(), new HealthPotion(), new Sword(), new Shield(), new Bomb() };
+        public string itemShow;
 
+        public void showItem(int ItemID)
+        {
+            itemShow = items[ItemID].itemName;
+        }
         public void addItem(int itemID, int numberOfItemsToAdd)
         {
             items[itemID].incrementQuantity(numberOfItemsToAdd);

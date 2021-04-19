@@ -38,7 +38,6 @@
             this.btnRand3 = new System.Windows.Forms.Button();
             this.btnRand6 = new System.Windows.Forms.Button();
             this.btnRand5 = new System.Windows.Forms.Button();
-            this.btnStart = new System.Windows.Forms.Button();
             this.pbFight = new System.Windows.Forms.PictureBox();
             this.pbPlayer = new System.Windows.Forms.PictureBox();
             this.pbEnemy = new System.Windows.Forms.PictureBox();
@@ -80,123 +79,134 @@
             // 
             // btnRand1
             // 
+            this.btnRand1.BackColor = System.Drawing.Color.LightGray;
             this.btnRand1.Location = new System.Drawing.Point(232, 417);
             this.btnRand1.Name = "btnRand1";
             this.btnRand1.Size = new System.Drawing.Size(88, 62);
             this.btnRand1.TabIndex = 0;
+            this.btnRand1.TabStop = false;
             this.btnRand1.Text = "?";
-            this.btnRand1.UseVisualStyleBackColor = true;
+            this.btnRand1.UseVisualStyleBackColor = false;
             this.btnRand1.Click += new System.EventHandler(this.btnRand2_Click);
             // 
             // btnBattle1
             // 
+            this.btnBattle1.BackColor = System.Drawing.Color.LightGray;
             this.btnBattle1.Location = new System.Drawing.Point(360, 417);
             this.btnBattle1.Name = "btnBattle1";
             this.btnBattle1.Size = new System.Drawing.Size(88, 62);
             this.btnBattle1.TabIndex = 1;
+            this.btnBattle1.TabStop = false;
             this.btnBattle1.Text = "Battle";
-            this.btnBattle1.UseVisualStyleBackColor = true;
+            this.btnBattle1.UseVisualStyleBackColor = false;
             this.btnBattle1.Click += new System.EventHandler(this.btnBattle1_Click);
             // 
             // btnBoss
             // 
+            this.btnBoss.BackColor = System.Drawing.Color.LightGray;
             this.btnBoss.Enabled = false;
             this.btnBoss.Location = new System.Drawing.Point(336, 12);
             this.btnBoss.Name = "btnBoss";
             this.btnBoss.Size = new System.Drawing.Size(147, 91);
             this.btnBoss.TabIndex = 9;
+            this.btnBoss.TabStop = false;
             this.btnBoss.Text = "Boss";
-            this.btnBoss.UseVisualStyleBackColor = true;
+            this.btnBoss.UseVisualStyleBackColor = false;
             this.btnBoss.Click += new System.EventHandler(this.btnBoss_Click);
             // 
             // btnBattle2
             // 
+            this.btnBattle2.BackColor = System.Drawing.Color.LightGray;
             this.btnBattle2.Enabled = false;
             this.btnBattle2.Location = new System.Drawing.Point(361, 284);
             this.btnBattle2.Name = "btnBattle2";
             this.btnBattle2.Size = new System.Drawing.Size(88, 62);
             this.btnBattle2.TabIndex = 10;
+            this.btnBattle2.TabStop = false;
             this.btnBattle2.Text = "Battle";
-            this.btnBattle2.UseVisualStyleBackColor = true;
+            this.btnBattle2.UseVisualStyleBackColor = false;
             this.btnBattle2.Click += new System.EventHandler(this.btnBattle1_Click);
             // 
             // btnBattle3
             // 
+            this.btnBattle3.BackColor = System.Drawing.Color.LightGray;
             this.btnBattle3.Enabled = false;
             this.btnBattle3.Location = new System.Drawing.Point(361, 154);
             this.btnBattle3.Name = "btnBattle3";
             this.btnBattle3.Size = new System.Drawing.Size(88, 62);
             this.btnBattle3.TabIndex = 11;
+            this.btnBattle3.TabStop = false;
             this.btnBattle3.Text = "Battle";
-            this.btnBattle3.UseVisualStyleBackColor = true;
+            this.btnBattle3.UseVisualStyleBackColor = false;
             this.btnBattle3.Click += new System.EventHandler(this.btnBattle1_Click);
             // 
             // btnRand2
             // 
+            this.btnRand2.BackColor = System.Drawing.Color.LightGray;
             this.btnRand2.Location = new System.Drawing.Point(488, 417);
             this.btnRand2.Name = "btnRand2";
             this.btnRand2.Size = new System.Drawing.Size(88, 62);
             this.btnRand2.TabIndex = 12;
+            this.btnRand2.TabStop = false;
             this.btnRand2.Text = "?";
-            this.btnRand2.UseVisualStyleBackColor = true;
+            this.btnRand2.UseVisualStyleBackColor = false;
             this.btnRand2.Click += new System.EventHandler(this.btnRand2_Click);
             // 
             // btnRand4
             // 
+            this.btnRand4.BackColor = System.Drawing.Color.LightGray;
             this.btnRand4.Enabled = false;
             this.btnRand4.Location = new System.Drawing.Point(489, 284);
             this.btnRand4.Name = "btnRand4";
             this.btnRand4.Size = new System.Drawing.Size(88, 62);
             this.btnRand4.TabIndex = 14;
+            this.btnRand4.TabStop = false;
             this.btnRand4.Text = "?";
-            this.btnRand4.UseVisualStyleBackColor = true;
+            this.btnRand4.UseVisualStyleBackColor = false;
             this.btnRand4.Click += new System.EventHandler(this.btnRand2_Click);
             // 
             // btnRand3
             // 
+            this.btnRand3.BackColor = System.Drawing.Color.LightGray;
             this.btnRand3.Enabled = false;
             this.btnRand3.Location = new System.Drawing.Point(233, 284);
             this.btnRand3.Name = "btnRand3";
             this.btnRand3.Size = new System.Drawing.Size(88, 62);
             this.btnRand3.TabIndex = 13;
+            this.btnRand3.TabStop = false;
             this.btnRand3.Text = "?";
-            this.btnRand3.UseVisualStyleBackColor = true;
+            this.btnRand3.UseVisualStyleBackColor = false;
             this.btnRand3.Click += new System.EventHandler(this.btnRand2_Click);
             // 
             // btnRand6
             // 
+            this.btnRand6.BackColor = System.Drawing.Color.LightGray;
             this.btnRand6.Enabled = false;
             this.btnRand6.Location = new System.Drawing.Point(489, 154);
             this.btnRand6.Name = "btnRand6";
             this.btnRand6.Size = new System.Drawing.Size(88, 62);
             this.btnRand6.TabIndex = 16;
+            this.btnRand6.TabStop = false;
             this.btnRand6.Text = "?";
-            this.btnRand6.UseVisualStyleBackColor = true;
+            this.btnRand6.UseVisualStyleBackColor = false;
             this.btnRand6.Click += new System.EventHandler(this.btnRand2_Click);
             // 
             // btnRand5
             // 
+            this.btnRand5.BackColor = System.Drawing.Color.LightGray;
             this.btnRand5.Enabled = false;
             this.btnRand5.Location = new System.Drawing.Point(233, 154);
             this.btnRand5.Name = "btnRand5";
             this.btnRand5.Size = new System.Drawing.Size(88, 62);
             this.btnRand5.TabIndex = 15;
+            this.btnRand5.TabStop = false;
             this.btnRand5.Text = "?";
-            this.btnRand5.UseVisualStyleBackColor = true;
+            this.btnRand5.UseVisualStyleBackColor = false;
             this.btnRand5.Click += new System.EventHandler(this.btnRand2_Click);
-            // 
-            // btnStart
-            // 
-            this.btnStart.Enabled = false;
-            this.btnStart.Location = new System.Drawing.Point(360, 543);
-            this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(88, 34);
-            this.btnStart.TabIndex = 17;
-            this.btnStart.Text = "Start";
-            this.btnStart.UseVisualStyleBackColor = true;
             // 
             // pbFight
             // 
+            this.pbFight.BackColor = System.Drawing.Color.LightGray;
             this.pbFight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbFight.Location = new System.Drawing.Point(136, 41);
             this.pbFight.Name = "pbFight";
@@ -208,10 +218,12 @@
             // 
             // pbPlayer
             // 
+            this.pbPlayer.BackColor = System.Drawing.Color.LightGray;
             this.pbPlayer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbPlayer.Location = new System.Drawing.Point(146, 372);
+            this.pbPlayer.Location = new System.Drawing.Point(146, 368);
             this.pbPlayer.Name = "pbPlayer";
             this.pbPlayer.Size = new System.Drawing.Size(185, 222);
+            this.pbPlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbPlayer.TabIndex = 19;
             this.pbPlayer.TabStop = false;
             this.pbPlayer.Tag = "Stage";
@@ -219,6 +231,7 @@
             // 
             // pbEnemy
             // 
+            this.pbEnemy.BackColor = System.Drawing.Color.LightGray;
             this.pbEnemy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbEnemy.Location = new System.Drawing.Point(502, 52);
             this.pbEnemy.Name = "pbEnemy";
@@ -230,43 +243,50 @@
             // 
             // btnAttack
             // 
+            this.btnAttack.BackColor = System.Drawing.Color.LightGray;
             this.btnAttack.Location = new System.Drawing.Point(443, 373);
             this.btnAttack.Name = "btnAttack";
             this.btnAttack.Size = new System.Drawing.Size(150, 43);
             this.btnAttack.TabIndex = 21;
+            this.btnAttack.TabStop = false;
             this.btnAttack.Tag = "Stage";
             this.btnAttack.Text = "Attack";
-            this.btnAttack.UseVisualStyleBackColor = true;
+            this.btnAttack.UseVisualStyleBackColor = false;
             this.btnAttack.Visible = false;
             this.btnAttack.Click += new System.EventHandler(this.btnAttack_Click);
             // 
             // btnDefend
             // 
+            this.btnDefend.BackColor = System.Drawing.Color.LightGray;
             this.btnDefend.Location = new System.Drawing.Point(361, 437);
             this.btnDefend.Name = "btnDefend";
             this.btnDefend.Size = new System.Drawing.Size(150, 42);
             this.btnDefend.TabIndex = 22;
+            this.btnDefend.TabStop = false;
             this.btnDefend.Tag = "Stage";
             this.btnDefend.Text = "Defend";
-            this.btnDefend.UseVisualStyleBackColor = true;
+            this.btnDefend.UseVisualStyleBackColor = false;
             this.btnDefend.Visible = false;
             this.btnDefend.Click += new System.EventHandler(this.btnDefend_Click);
             // 
             // btnFlee
             // 
+            this.btnFlee.BackColor = System.Drawing.Color.LightGray;
             this.btnFlee.Location = new System.Drawing.Point(530, 437);
             this.btnFlee.Name = "btnFlee";
             this.btnFlee.Size = new System.Drawing.Size(150, 43);
             this.btnFlee.TabIndex = 23;
+            this.btnFlee.TabStop = false;
             this.btnFlee.Tag = "Stage";
             this.btnFlee.Text = "Flee";
-            this.btnFlee.UseVisualStyleBackColor = true;
+            this.btnFlee.UseVisualStyleBackColor = false;
             this.btnFlee.Visible = false;
             this.btnFlee.Click += new System.EventHandler(this.btnFlee_Click);
             // 
             // lblEnemyHP
             // 
             this.lblEnemyHP.AutoSize = true;
+            this.lblEnemyHP.BackColor = System.Drawing.Color.LightGray;
             this.lblEnemyHP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEnemyHP.Location = new System.Drawing.Point(143, 52);
             this.lblEnemyHP.Name = "lblEnemyHP";
@@ -279,6 +299,7 @@
             // lblPlayerHP
             // 
             this.lblPlayerHP.AutoSize = true;
+            this.lblPlayerHP.BackColor = System.Drawing.Color.LightGray;
             this.lblPlayerHP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlayerHP.Location = new System.Drawing.Point(143, 348);
             this.lblPlayerHP.Name = "lblPlayerHP";
@@ -291,6 +312,7 @@
             // lblDmg1
             // 
             this.lblDmg1.AutoSize = true;
+            this.lblDmg1.BackColor = System.Drawing.Color.LightGray;
             this.lblDmg1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDmg1.Location = new System.Drawing.Point(163, 230);
             this.lblDmg1.Name = "lblDmg1";
@@ -303,6 +325,7 @@
             // lblDmg2
             // 
             this.lblDmg2.AutoSize = true;
+            this.lblDmg2.BackColor = System.Drawing.Color.LightGray;
             this.lblDmg2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDmg2.Location = new System.Drawing.Point(163, 154);
             this.lblDmg2.Name = "lblDmg2";
@@ -315,11 +338,14 @@
             // lblYY
             // 
             this.lblYY.AutoSize = true;
-            this.lblYY.Location = new System.Drawing.Point(296, 46);
+            this.lblYY.BackColor = System.Drawing.Color.LightGray;
+            this.lblYY.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblYY.Location = new System.Drawing.Point(143, 90);
             this.lblYY.Name = "lblYY";
-            this.lblYY.Size = new System.Drawing.Size(35, 13);
+            this.lblYY.Size = new System.Drawing.Size(0, 17);
             this.lblYY.TabIndex = 28;
-            this.lblYY.Text = "label1";
+            this.lblYY.Tag = "";
+            this.lblYY.Visible = false;
             // 
             // btnRestart
             // 
@@ -327,8 +353,9 @@
             this.btnRestart.Name = "btnRestart";
             this.btnRestart.Size = new System.Drawing.Size(92, 23);
             this.btnRestart.TabIndex = 29;
+            this.btnRestart.TabStop = false;
             this.btnRestart.Tag = "Stage";
-            this.btnRestart.Text = "Restart";
+            this.btnRestart.Text = "Return to map";
             this.btnRestart.UseVisualStyleBackColor = true;
             this.btnRestart.Visible = false;
             this.btnRestart.Click += new System.EventHandler(this.btnRestart_Click);
@@ -346,8 +373,9 @@
             // 
             // pbSkip
             // 
+            this.pbSkip.BackColor = System.Drawing.Color.LightGray;
             this.pbSkip.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbSkip.Location = new System.Drawing.Point(336, 255);
+            this.pbSkip.Location = new System.Drawing.Point(337, 255);
             this.pbSkip.Name = "pbSkip";
             this.pbSkip.Size = new System.Drawing.Size(218, 112);
             this.pbSkip.TabIndex = 31;
@@ -357,21 +385,24 @@
             // 
             // btnSkip
             // 
-            this.btnSkip.Location = new System.Drawing.Point(402, 329);
+            this.btnSkip.BackColor = System.Drawing.Color.LightGray;
+            this.btnSkip.Location = new System.Drawing.Point(403, 329);
             this.btnSkip.Name = "btnSkip";
             this.btnSkip.Size = new System.Drawing.Size(87, 23);
             this.btnSkip.TabIndex = 32;
+            this.btnSkip.TabStop = false;
             this.btnSkip.Tag = "Stage";
             this.btnSkip.Text = "OK";
-            this.btnSkip.UseVisualStyleBackColor = true;
+            this.btnSkip.UseVisualStyleBackColor = false;
             this.btnSkip.Visible = false;
             this.btnSkip.Click += new System.EventHandler(this.btnSkip_Click);
             // 
             // lblSkip
             // 
             this.lblSkip.AutoSize = true;
+            this.lblSkip.BackColor = System.Drawing.Color.LightGray;
             this.lblSkip.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSkip.Location = new System.Drawing.Point(374, 277);
+            this.lblSkip.Location = new System.Drawing.Point(375, 277);
             this.lblSkip.Name = "lblSkip";
             this.lblSkip.Size = new System.Drawing.Size(150, 13);
             this.lblSkip.TabIndex = 33;
@@ -381,8 +412,9 @@
             // 
             // lblCleared
             // 
+            this.lblCleared.BackColor = System.Drawing.Color.LightGray;
             this.lblCleared.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCleared.Location = new System.Drawing.Point(352, 285);
+            this.lblCleared.Location = new System.Drawing.Point(353, 285);
             this.lblCleared.Name = "lblCleared";
             this.lblCleared.Size = new System.Drawing.Size(185, 13);
             this.lblCleared.TabIndex = 36;
@@ -393,20 +425,23 @@
             // 
             // btnCleared
             // 
-            this.btnCleared.Location = new System.Drawing.Point(402, 329);
+            this.btnCleared.BackColor = System.Drawing.Color.LightGray;
+            this.btnCleared.Location = new System.Drawing.Point(403, 329);
             this.btnCleared.Name = "btnCleared";
             this.btnCleared.Size = new System.Drawing.Size(87, 23);
             this.btnCleared.TabIndex = 35;
+            this.btnCleared.TabStop = false;
             this.btnCleared.Tag = "Stage";
             this.btnCleared.Text = "OK";
-            this.btnCleared.UseVisualStyleBackColor = true;
+            this.btnCleared.UseVisualStyleBackColor = false;
             this.btnCleared.Visible = false;
             this.btnCleared.Click += new System.EventHandler(this.btnCleared_Click);
             // 
             // pbCleared
             // 
+            this.pbCleared.BackColor = System.Drawing.Color.LightGray;
             this.pbCleared.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbCleared.Location = new System.Drawing.Point(336, 255);
+            this.pbCleared.Location = new System.Drawing.Point(337, 255);
             this.pbCleared.Name = "pbCleared";
             this.pbCleared.Size = new System.Drawing.Size(218, 112);
             this.pbCleared.TabIndex = 34;
@@ -417,6 +452,7 @@
             // lblExp
             // 
             this.lblExp.AutoSize = true;
+            this.lblExp.BackColor = System.Drawing.Color.LightGray;
             this.lblExp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblExp.Location = new System.Drawing.Point(358, 577);
             this.lblExp.Name = "lblExp";
@@ -428,8 +464,9 @@
             // 
             // lblLevelUp
             // 
+            this.lblLevelUp.BackColor = System.Drawing.Color.LightGray;
             this.lblLevelUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLevelUp.Location = new System.Drawing.Point(352, 239);
+            this.lblLevelUp.Location = new System.Drawing.Point(353, 239);
             this.lblLevelUp.Name = "lblLevelUp";
             this.lblLevelUp.Size = new System.Drawing.Size(185, 13);
             this.lblLevelUp.TabIndex = 40;
@@ -440,20 +477,23 @@
             // 
             // btnLevelUp
             // 
-            this.btnLevelUp.Location = new System.Drawing.Point(402, 360);
+            this.btnLevelUp.BackColor = System.Drawing.Color.LightGray;
+            this.btnLevelUp.Location = new System.Drawing.Point(403, 360);
             this.btnLevelUp.Name = "btnLevelUp";
             this.btnLevelUp.Size = new System.Drawing.Size(87, 23);
             this.btnLevelUp.TabIndex = 39;
+            this.btnLevelUp.TabStop = false;
             this.btnLevelUp.Tag = "Stage";
             this.btnLevelUp.Text = "OK";
-            this.btnLevelUp.UseVisualStyleBackColor = true;
+            this.btnLevelUp.UseVisualStyleBackColor = false;
             this.btnLevelUp.Visible = false;
             this.btnLevelUp.Click += new System.EventHandler(this.btnCleared_Click);
             // 
             // pbLevelUp
             // 
+            this.pbLevelUp.BackColor = System.Drawing.Color.LightGray;
             this.pbLevelUp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbLevelUp.Location = new System.Drawing.Point(336, 230);
+            this.pbLevelUp.Location = new System.Drawing.Point(337, 230);
             this.pbLevelUp.Name = "pbLevelUp";
             this.pbLevelUp.Size = new System.Drawing.Size(218, 164);
             this.pbLevelUp.TabIndex = 38;
@@ -463,8 +503,9 @@
             // 
             // lblStrDef
             // 
+            this.lblStrDef.BackColor = System.Drawing.Color.LightGray;
             this.lblStrDef.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStrDef.Location = new System.Drawing.Point(384, 295);
+            this.lblStrDef.Location = new System.Drawing.Point(385, 295);
             this.lblStrDef.Name = "lblStrDef";
             this.lblStrDef.Size = new System.Drawing.Size(63, 48);
             this.lblStrDef.TabIndex = 41;
@@ -475,8 +516,9 @@
             // 
             // lblPoints
             // 
+            this.lblPoints.BackColor = System.Drawing.Color.LightGray;
             this.lblPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPoints.Location = new System.Drawing.Point(372, 252);
+            this.lblPoints.Location = new System.Drawing.Point(373, 252);
             this.lblPoints.Name = "lblPoints";
             this.lblPoints.Size = new System.Drawing.Size(121, 37);
             this.lblPoints.TabIndex = 42;
@@ -487,30 +529,35 @@
             // 
             // btnStr
             // 
-            this.btnStr.Location = new System.Drawing.Point(477, 296);
+            this.btnStr.BackColor = System.Drawing.Color.LightGray;
+            this.btnStr.Location = new System.Drawing.Point(478, 296);
             this.btnStr.Name = "btnStr";
             this.btnStr.Size = new System.Drawing.Size(23, 23);
             this.btnStr.TabIndex = 43;
+            this.btnStr.TabStop = false;
             this.btnStr.Tag = "Stage";
             this.btnStr.Text = "+";
-            this.btnStr.UseVisualStyleBackColor = true;
+            this.btnStr.UseVisualStyleBackColor = false;
             this.btnStr.Visible = false;
             this.btnStr.Click += new System.EventHandler(this.btnStr_Click);
             // 
             // btnDef
             // 
-            this.btnDef.Location = new System.Drawing.Point(477, 322);
+            this.btnDef.BackColor = System.Drawing.Color.LightGray;
+            this.btnDef.Location = new System.Drawing.Point(478, 322);
             this.btnDef.Name = "btnDef";
             this.btnDef.Size = new System.Drawing.Size(23, 23);
             this.btnDef.TabIndex = 44;
+            this.btnDef.TabStop = false;
             this.btnDef.Tag = "Stage";
             this.btnDef.Text = "+";
-            this.btnDef.UseVisualStyleBackColor = true;
+            this.btnDef.UseVisualStyleBackColor = false;
             this.btnDef.Visible = false;
             this.btnDef.Click += new System.EventHandler(this.btnDef_Click);
             // 
             // lblStats
             // 
+            this.lblStats.BackColor = System.Drawing.Color.LightGray;
             this.lblStats.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStats.Location = new System.Drawing.Point(425, 502);
             this.lblStats.Name = "lblStats";
@@ -527,16 +574,19 @@
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(75, 23);
             this.btnReturn.TabIndex = 46;
+            this.btnReturn.TabStop = false;
             this.btnReturn.Text = "Return";
             this.btnReturn.UseVisualStyleBackColor = true;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // pbSword
             // 
+            this.pbSword.BackColor = System.Drawing.Color.LightGray;
             this.pbSword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbSword.Location = new System.Drawing.Point(139, 373);
+            this.pbSword.Location = new System.Drawing.Point(139, 369);
             this.pbSword.Name = "pbSword";
             this.pbSword.Size = new System.Drawing.Size(43, 65);
+            this.pbSword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbSword.TabIndex = 47;
             this.pbSword.TabStop = false;
             this.pbSword.Tag = "Stage";
@@ -544,10 +594,8 @@
             // 
             // STS
             // 
+            this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(835, 644);
-            this.Controls.Add(this.pbSword);
-            this.Controls.Add(this.btnReturn);
-            this.Controls.Add(this.lblStats);
             this.Controls.Add(this.btnDef);
             this.Controls.Add(this.btnStr);
             this.Controls.Add(this.lblPoints);
@@ -555,13 +603,16 @@
             this.Controls.Add(this.lblLevelUp);
             this.Controls.Add(this.btnLevelUp);
             this.Controls.Add(this.pbLevelUp);
-            this.Controls.Add(this.lblExp);
             this.Controls.Add(this.lblCleared);
             this.Controls.Add(this.btnCleared);
             this.Controls.Add(this.pbCleared);
             this.Controls.Add(this.lblSkip);
             this.Controls.Add(this.btnSkip);
             this.Controls.Add(this.pbSkip);
+            this.Controls.Add(this.pbSword);
+            this.Controls.Add(this.btnReturn);
+            this.Controls.Add(this.lblStats);
+            this.Controls.Add(this.lblExp);
             this.Controls.Add(this.lblLost);
             this.Controls.Add(this.btnRestart);
             this.Controls.Add(this.lblYY);
@@ -574,7 +625,6 @@
             this.Controls.Add(this.btnAttack);
             this.Controls.Add(this.pbEnemy);
             this.Controls.Add(this.pbPlayer);
-            this.Controls.Add(this.btnStart);
             this.Controls.Add(this.btnRand6);
             this.Controls.Add(this.btnRand5);
             this.Controls.Add(this.btnRand4);
@@ -613,7 +663,6 @@
         private System.Windows.Forms.Button btnRand3;
         private System.Windows.Forms.Button btnRand6;
         private System.Windows.Forms.Button btnRand5;
-        private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.PictureBox pbFight;
         private System.Windows.Forms.PictureBox pbPlayer;
         private System.Windows.Forms.PictureBox pbEnemy;

@@ -51,28 +51,34 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data.cs" />
-    <Compile Include="Endless.cs">
+    <Compile Include="GameStages\Endless.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Endless.Designer.cs">
+    <Compile Include="GameStages\Endless.Designer.cs">
       <DependentUpon>Endless.cs</DependentUpon>
     </Compile>
-    <Compile Include="Shop.cs">
+    <Compile Include="GameStages\Grind.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Shop.Designer.cs">
+    <Compile Include="GameStages\Grind.designer.cs">
+      <DependentUpon>Grind.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shops\Shop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shops\Shop.Designer.cs">
       <DependentUpon>Shop.cs</DependentUpon>
     </Compile>
-    <Compile Include="Smithy.cs">
+    <Compile Include="Shops\Smithy.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Smithy.Designer.cs">
+    <Compile Include="Shops\Smithy.Designer.cs">
       <DependentUpon>Smithy.cs</DependentUpon>
     </Compile>
-    <Compile Include="Map.cs">
+    <Compile Include="Menus\Map.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Map.Designer.cs">
+    <Compile Include="Menus\Map.Designer.cs">
       <DependentUpon>Map.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
@@ -80,45 +86,48 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Start.cs">
+    <Compile Include="Menus\Start.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Start.Designer.cs">
+    <Compile Include="Menus\Start.Designer.cs">
       <DependentUpon>Start.cs</DependentUpon>
     </Compile>
-    <Compile Include="Home.cs">
+    <Compile Include="Menus\Home.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Home.Designer.cs">
+    <Compile Include="Menus\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main.cs">
+    <Compile Include="GameStages\Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main.Designer.cs">
+    <Compile Include="GameStages\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Endless.resx">
+    <EmbeddedResource Include="GameStages\Endless.resx">
       <DependentUpon>Endless.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Shop.resx">
+    <EmbeddedResource Include="GameStages\Grind.resx">
+      <DependentUpon>Grind.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shops\Shop.resx">
       <DependentUpon>Shop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Map.resx">
+    <EmbeddedResource Include="Menus\Map.resx">
       <DependentUpon>Map.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Smithy.resx">
+    <EmbeddedResource Include="Shops\Smithy.resx">
       <DependentUpon>Smithy.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Start.resx">
+    <EmbeddedResource Include="Menus\Start.resx">
       <DependentUpon>Start.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Home.resx">
+    <EmbeddedResource Include="Menus\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main.resx">
+    <EmbeddedResource Include="GameStages\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
