@@ -51,6 +51,9 @@
             this.pbSword = new System.Windows.Forms.PictureBox();
             this.pbPlayer = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.btnMA = new System.Windows.Forms.Button();
+            this.btnMM = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayer)).BeginInit();
@@ -59,12 +62,12 @@
             // 
             // btnWS
             // 
-            this.btnWS.Location = new System.Drawing.Point(569, 464);
+            this.btnWS.Location = new System.Drawing.Point(617, 464);
             this.btnWS.Name = "btnWS";
             this.btnWS.Size = new System.Drawing.Size(60, 54);
             this.btnWS.TabIndex = 1;
             this.btnWS.TabStop = false;
-            this.btnWS.Tag = "Equipment";
+            this.btnWS.Tag = "Equipment1";
             this.btnWS.Text = "Wooden Sword";
             this.btnWS.UseVisualStyleBackColor = true;
             this.btnWS.Visible = false;
@@ -74,12 +77,12 @@
             // btnIS
             // 
             this.btnIS.Enabled = false;
-            this.btnIS.Location = new System.Drawing.Point(635, 464);
+            this.btnIS.Location = new System.Drawing.Point(683, 464);
             this.btnIS.Name = "btnIS";
             this.btnIS.Size = new System.Drawing.Size(60, 54);
             this.btnIS.TabIndex = 2;
             this.btnIS.TabStop = false;
-            this.btnIS.Tag = "Equipment";
+            this.btnIS.Tag = "Equipment1";
             this.btnIS.Text = "Iron Sword";
             this.btnIS.UseVisualStyleBackColor = true;
             this.btnIS.Visible = false;
@@ -89,12 +92,12 @@
             // btnIA
             // 
             this.btnIA.Enabled = false;
-            this.btnIA.Location = new System.Drawing.Point(635, 524);
+            this.btnIA.Location = new System.Drawing.Point(683, 524);
             this.btnIA.Name = "btnIA";
             this.btnIA.Size = new System.Drawing.Size(60, 54);
             this.btnIA.TabIndex = 5;
             this.btnIA.TabStop = false;
-            this.btnIA.Tag = "Equipment";
+            this.btnIA.Tag = "Equipment1";
             this.btnIA.Text = "Iron Armor";
             this.btnIA.UseVisualStyleBackColor = true;
             this.btnIA.Visible = false;
@@ -103,12 +106,12 @@
             // 
             // btnBA
             // 
-            this.btnBA.Location = new System.Drawing.Point(569, 524);
+            this.btnBA.Location = new System.Drawing.Point(617, 524);
             this.btnBA.Name = "btnBA";
             this.btnBA.Size = new System.Drawing.Size(60, 54);
             this.btnBA.TabIndex = 4;
             this.btnBA.TabStop = false;
-            this.btnBA.Tag = "Equipment";
+            this.btnBA.Tag = "Equipment1";
             this.btnBA.Text = "Bronze Armor";
             this.btnBA.UseVisualStyleBackColor = true;
             this.btnBA.Visible = false;
@@ -128,12 +131,12 @@
             // btnPS
             // 
             this.btnPS.Enabled = false;
-            this.btnPS.Location = new System.Drawing.Point(701, 464);
+            this.btnPS.Location = new System.Drawing.Point(749, 464);
             this.btnPS.Name = "btnPS";
             this.btnPS.Size = new System.Drawing.Size(60, 54);
             this.btnPS.TabIndex = 11;
             this.btnPS.TabStop = false;
-            this.btnPS.Tag = "Equipment";
+            this.btnPS.Tag = "Equipment1";
             this.btnPS.Text = "Pickle Sword";
             this.btnPS.UseVisualStyleBackColor = true;
             this.btnPS.Visible = false;
@@ -155,12 +158,12 @@
             // btnPA
             // 
             this.btnPA.Enabled = false;
-            this.btnPA.Location = new System.Drawing.Point(701, 524);
+            this.btnPA.Location = new System.Drawing.Point(749, 524);
             this.btnPA.Name = "btnPA";
             this.btnPA.Size = new System.Drawing.Size(60, 54);
             this.btnPA.TabIndex = 13;
             this.btnPA.TabStop = false;
-            this.btnPA.Tag = "Equipment";
+            this.btnPA.Tag = "Equipment1";
             this.btnPA.Text = "Pickle Armor";
             this.btnPA.UseVisualStyleBackColor = true;
             this.btnPA.Visible = false;
@@ -278,12 +281,12 @@
             // btnGS
             // 
             this.btnGS.Enabled = false;
-            this.btnGS.Location = new System.Drawing.Point(767, 464);
+            this.btnGS.Location = new System.Drawing.Point(617, 464);
             this.btnGS.Name = "btnGS";
             this.btnGS.Size = new System.Drawing.Size(60, 54);
             this.btnGS.TabIndex = 25;
             this.btnGS.TabStop = false;
-            this.btnGS.Tag = "Equipment";
+            this.btnGS.Tag = "Equipment2";
             this.btnGS.Text = "Goblin Sword";
             this.btnGS.UseVisualStyleBackColor = true;
             this.btnGS.Visible = false;
@@ -293,12 +296,12 @@
             // btnGA
             // 
             this.btnGA.Enabled = false;
-            this.btnGA.Location = new System.Drawing.Point(767, 524);
+            this.btnGA.Location = new System.Drawing.Point(617, 524);
             this.btnGA.Name = "btnGA";
             this.btnGA.Size = new System.Drawing.Size(60, 54);
             this.btnGA.TabIndex = 26;
             this.btnGA.TabStop = false;
-            this.btnGA.Tag = "Equipment";
+            this.btnGA.Tag = "Equipment2";
             this.btnGA.Text = "Goblin Armor";
             this.btnGA.UseVisualStyleBackColor = true;
             this.btnGA.Visible = false;
@@ -332,6 +335,47 @@
             this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
             // 
+            // btnNext
+            // 
+            this.btnNext.Location = new System.Drawing.Point(617, 593);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(192, 30);
+            this.btnNext.TabIndex = 27;
+            this.btnNext.TabStop = false;
+            this.btnNext.Tag = "Equipment";
+            this.btnNext.Text = "Next Page";
+            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Visible = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // btnMA
+            // 
+            this.btnMA.Enabled = false;
+            this.btnMA.Location = new System.Drawing.Point(683, 524);
+            this.btnMA.Name = "btnMA";
+            this.btnMA.Size = new System.Drawing.Size(60, 54);
+            this.btnMA.TabIndex = 29;
+            this.btnMA.TabStop = false;
+            this.btnMA.Tag = "Equipment2";
+            this.btnMA.Text = "Monke Armor";
+            this.btnMA.UseVisualStyleBackColor = true;
+            this.btnMA.Visible = false;
+            this.btnMA.Click += new System.EventHandler(this.btnMA_Click);
+            // 
+            // btnMM
+            // 
+            this.btnMM.Enabled = false;
+            this.btnMM.Location = new System.Drawing.Point(683, 464);
+            this.btnMM.Name = "btnMM";
+            this.btnMM.Size = new System.Drawing.Size(60, 54);
+            this.btnMM.TabIndex = 28;
+            this.btnMM.TabStop = false;
+            this.btnMM.Tag = "Equipment2";
+            this.btnMM.Text = "Monke Mallet";
+            this.btnMM.UseVisualStyleBackColor = true;
+            this.btnMM.Visible = false;
+            this.btnMM.Click += new System.EventHandler(this.btnMM_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -340,6 +384,9 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(835, 644);
             this.ControlBox = false;
+            this.Controls.Add(this.btnMA);
+            this.Controls.Add(this.btnMM);
+            this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnGA);
             this.Controls.Add(this.btnGS);
             this.Controls.Add(this.lblStats);
@@ -400,5 +447,8 @@
         private System.Windows.Forms.Label lblStats;
         private System.Windows.Forms.Button btnGS;
         private System.Windows.Forms.Button btnGA;
+        private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Button btnMA;
+        private System.Windows.Forms.Button btnMM;
     }
 }

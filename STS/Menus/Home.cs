@@ -43,7 +43,7 @@ namespace STS
             {
                 if (x is Button && x.Visible == false)
                 {
-                    if ((string)x.Tag == "Equipment")
+                    if ((string)x.Tag == "Equipment" || (string)x.Tag == "Equipment1")
                     {
                         x.Visible = true;
                     }
@@ -57,12 +57,13 @@ namespace STS
             {
                 if (x is Button && x.Visible == true)
                 {
-                    if ((string)x.Tag == "Equipment")
+                    if ((string)x.Tag == "Equipment" || (string)x.Tag == "Equipment1" || (string)x.Tag == "Equipment2")
                     {
                         x.Visible = false;
                     }
                 }
             }
+            btnNext.Text = "Next Page";
         }
 
         public void showStats()
@@ -130,10 +131,21 @@ namespace STS
             armor = p.armors.pickleA;
             showEquipment();
         }
+        private void btnMM_Click(object sender, EventArgs e)
+        {
+            weapon = p.weapons.monkeM;
+            showEquipment();
+        }
+
+        private void btnMA_Click(object sender, EventArgs e)
+        {
+            armor = p.armors.monkeA;
+            showEquipment();
+        }
 
         private void btnEquipment_Click(object sender, EventArgs e)
         {
-            if (btnBA.Visible == false)
+            if (btnEquipment.Text == "Show Equipment")
             {
                 showAvailableEquipment();
                 btnEquipment.Text = "Hide Equipment";
@@ -205,5 +217,62 @@ namespace STS
         {
             showStats();
         }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            if (btnNext.Text == "Next Page")
+            {
+                btnNext.Text = "Previous Page";
+
+                foreach (Control x in this.Controls)
+                {
+                    if (x is Button && x.Visible == false)
+                    {
+                        if ((string)x.Tag == "Equipment2")
+                        {
+                            x.Visible = true;
+                        }
+                    }
+                }
+                foreach (Control x in this.Controls)
+                {
+                    if (x is Button && x.Visible == true)
+                    {
+                        if ((string)x.Tag == "Equipment1")
+                        {
+                            x.Visible = false;
+                        }
+                    }
+                }
+            }
+
+            else
+            {
+                btnNext.Text = "Next Page";
+
+                foreach (Control x in this.Controls)
+                {
+                    if (x is Button && x.Visible == false)
+                    {
+                        if ((string)x.Tag == "Equipment1")
+                        {
+                            x.Visible = true;
+                        }
+                    }
+                }
+                foreach (Control x in this.Controls)
+                {
+                    if (x is Button && x.Visible == true)
+                    {
+                        if ((string)x.Tag == "Equipment2")
+                        {
+                            x.Visible = false;
+                        }
+                    }
+                }
+            }
+        }
+
+        
     }
 }

@@ -27,7 +27,7 @@ namespace STS
         public int points = 0;
         public int str = 0;
         public int def = 0;
-        public int playerMaxHP = 30;
+        public int playerMaxHP = 300;
         public double shields;
         public int expAdd;
         public double exp = 0;
@@ -132,6 +132,17 @@ namespace STS
             weaponImage = Properties.Resources.GoblinSwordNormal_Equip;
         }
     }
+    public class MonkeMallet : Weapons
+    {
+        public MonkeMallet()
+        {
+            weaponName = "Monke Mallet";
+            weaponDmgMax = 25;
+            weaponDmgMin = 20;
+            isUnlocked = false;
+            weaponImage = Properties.Resources.MonkeMallet_Equip;
+        }
+    }
 
     public class Armor
     {
@@ -216,6 +227,16 @@ namespace STS
             armorImage = Properties.Resources.GoblinArmor;
         }
     }
+    public class MonkeArmor : Armor
+    {
+        public MonkeArmor()
+        {
+            armorName = "Monke Armor";
+            armorDefense = 24;
+            isUnlocked = false;
+            armorImage = Properties.Resources.MonkeArmor;
+        }
+    }
 
     public class Armors
     {
@@ -223,6 +244,7 @@ namespace STS
         public BronzeArmor bronzeA = new BronzeArmor();
         public PickleArmor pickleA = new PickleArmor();
         public GoblinArmor goblinA = new GoblinArmor();
+        public MonkeArmor monkeA = new MonkeArmor();
     }
 
     public class Weapon
@@ -231,6 +253,7 @@ namespace STS
         public IronSword ironS = new IronSword();
         public PickleSword pickleS = new PickleSword();
         public GoblinSword goblinS = new GoblinSword();
+        public MonkeMallet monkeM = new MonkeMallet();
     }
 
     public class Boss
@@ -285,7 +308,7 @@ namespace STS
         public MenacingPikl()
         {
             bossName = "Menacing Pickle";
-            bossID = 1;
+            bossID = 0;
             coinValue = 6;
             minDmgBoss = 6;
             maxDmgBoss = 8;
@@ -299,7 +322,7 @@ namespace STS
         public GoblinKing()
         {
             bossName = "Goblin King";
-            bossID = 2;
+            bossID = 1;
             coinValue = 15;
             minDmgBoss = 11;
             maxDmgBoss = 14;
@@ -308,11 +331,41 @@ namespace STS
             dropTable = new int[] { GoblinSkull.ID, GoblinHide.ID };
         }
     }
+    public class SmolMonkeBoss : Boss
+    {
+        public SmolMonkeBoss()
+        {
+            bossName = "Smol Hanging Monke";
+            bossID = 2;
+            coinValue = 25;
+            minDmgBoss = 17;
+            maxDmgBoss = 20;
+            bossMaxHP = 100;
+            bossImage = Properties.Resources.SmolBossMonke;
+            dropTable = new int[] { MonkeCarapace.ID, MonkeBones.ID };
+        }
+    }
+    public class Zavr : Boss
+    {
+        public Zavr()
+        {
+            bossName = "Zavr";
+            bossID = 3;
+            coinValue = 50;
+            minDmgBoss = 25;
+            maxDmgBoss = 30;
+            bossMaxHP = 200;
+            bossImage = Properties.Resources.Zavr;
+            dropTable = new int[] { MonkeCarapace.ID, MonkeBones.ID };
+        }
+    }
 
     public class Bosses
     {
         public MenacingPikl menacingPikl = new MenacingPikl();
         public GoblinKing goblinKing = new GoblinKing();
+        public SmolMonkeBoss smolMonkeBoss = new SmolMonkeBoss();
+        public Zavr zavr = new Zavr();
     }
 
     interface MobLowRank
@@ -320,6 +373,10 @@ namespace STS
 
     }
     interface MobMidRank
+    {
+
+    }
+    interface MobHighRank
     {
 
     }
@@ -432,19 +489,73 @@ namespace STS
             mobID = 4;
         }
     }
-    public class Cyclops : Mob, MobMidRank
+    public class Cyclops : Mob
     {
         public Cyclops()
         {
             mobName = "Cyclops";
             coinValue = 20;
             maxMobHP = 90;
-            minMobDmg = 13;
-            maxMobDmg = 16;
+            minMobDmg = 14;
+            maxMobDmg = 17;
             mobImage = Properties.Resources.Cyclops;
             mobID = 5;
         }
     }
+
+    public class CoolMonke : Mob, MobHighRank
+    {
+        public CoolMonke()
+        {
+            mobName = "Cool Monke";
+            coinValue = 10;
+            maxMobHP = 40;
+            minMobDmg = 10;
+            maxMobDmg = 12;
+            mobImage = Properties.Resources.CoolMonke;
+            mobID = 6;
+        }
+    }
+    public class StrongMonke : Mob, MobHighRank
+    {
+        public StrongMonke()
+        {
+            mobName = "Strong Monke";
+            coinValue = 13;
+            maxMobHP = 65;
+            minMobDmg = 9;
+            maxMobDmg = 13;
+            mobImage = Properties.Resources.StrongMonke;
+            mobID = 7;
+        }
+    }
+    public class CrossbowMonke : Mob, MobHighRank
+    {
+        public CrossbowMonke()
+        {
+            mobName = "Crossbow Monke";
+            coinValue = 15;
+            maxMobHP = 50;
+            minMobDmg = 13;
+            maxMobDmg = 15;
+            mobImage = Properties.Resources.CrossbowMonke;
+            mobID = 8;
+        }
+    }
+    public class Gorilla : Mob
+    {
+        public Gorilla()
+        {
+            mobName = "Gorilla";
+            coinValue = 35;
+            maxMobHP = 140;
+            minMobDmg = 22;
+            maxMobDmg = 25;
+            mobImage = Properties.Resources.Gorillaz;
+            mobID = 9;
+        }
+    }
+
 
     public class Mobs
     {
@@ -454,12 +565,18 @@ namespace STS
         public SpearGoblin spearGoblin = new SpearGoblin();
         public SpaceGoblin spaceGoblin = new SpaceGoblin();
         public Cyclops cyclops = new Cyclops();
+        public CoolMonke coolMonke = new CoolMonke();
+        public StrongMonke strongMonke = new StrongMonke();
+        public CrossbowMonke crossbowMonke = new CrossbowMonke();
+        public Gorilla gorilla = new Gorilla();
     }
 
     public class Inventory
     {
-        public Item[] items = { new PickleJuice(), new PickleSkin(), new GoblinHide(), new GoblinSkull(), new HealthPotion(), new Sword(), new Shield(), new Bomb() };
+        public Item[] items = { new PickleJuice(), new PickleSkin(), new GoblinHide(), new GoblinSkull(), new MonkeBones(), new MonkeCarapace(), 
+            new HealthPotion(), new Sword(), new Shield(), new Bomb() };
         public string itemShow;
+        public int reqMat;
 
         public void showItem(int ItemID)
         {
@@ -485,6 +602,11 @@ namespace STS
                 }
             }
             return sb.ToString();
+        }
+        public int requiredMaterials(int ItemID)
+        {
+            reqMat = items[ItemID].itemQuantity;
+            return reqMat;
         }
     }
 
@@ -560,43 +682,55 @@ namespace STS
             itemQuantity = 0;
         }
     }
-    public class HealthPotion : Item
+    public class MonkeBones : Item
     {
         readonly public static int ID = 4;
+        public MonkeBones()
+        {
+            itemName = "Monke Bones";
+            itemID = ID;
+            itemQuantity = 0;
+        }
+    }
+    public class MonkeCarapace : Item
+    {
+        readonly public static int ID = 5;
+        public MonkeCarapace()
+        {
+            itemName = "Monke Skull";
+            itemID = ID;
+            itemQuantity = 0;
+        }
+    }
+    public class HealthPotion : Item
+    {
         public HealthPotion()
         {
             itemName = "Health Potion";
-            itemID = ID;
             itemQuantity = 0;
         }
     }
     public class Shield : Item
     {
-        readonly public static int ID = 5;
         public Shield()
         {
             itemName = "Shield";
-            itemID = ID;
             itemQuantity = 0;
         }
     }
     public class Sword : Item
     {
-        readonly public static int ID = 6;
         public Sword()
         {
             itemName = "Sword";
-            itemID = ID;
             itemQuantity = 0;
         }
     }
     public class Bomb : Item
     {
-        readonly public static int ID = 5;
         public Bomb()
         {
             itemName = "Bomb";
-            itemID = ID;
             itemQuantity = 0;
         }
     }
@@ -607,6 +741,12 @@ namespace STS
         public Sword sword = new Sword();
         public Shield shield = new Shield();
         public Bomb bomb = new Bomb();
+        //public PickleJuice pJuice = new PickleJuice();
+        //public PickleSkin pSkin = new PickleSkin();
+        //public GoblinHide gHide = new GoblinHide();
+        //public GoblinSkull gSkull = new GoblinSkull();
+        //public MonkeBones mBones = new MonkeBones();
+        //public MonkeCarapace mCarapace = new MonkeCarapace();
     }
 
     abstract public class Recipe
@@ -698,7 +838,7 @@ namespace STS
         {
             recipe = new Dictionary<int, int>()
             {
-                { GoblinSkull.ID, 3},
+                { GoblinSkull.ID, 2},
                 { GoblinHide.ID, 5}
             };
         }
@@ -708,6 +848,38 @@ namespace STS
             p.armors.goblinA.isUnlocked = true;
         }
     }
+    public class MonkeArmorRecipe : Recipe
+    {
+        public MonkeArmorRecipe()
+        {
+            recipe = new Dictionary<int, int>()
+            {
+                { MonkeBones.ID, 4},
+                { MonkeCarapace.ID, 5}
+            };
+        }
+
+        override public void unlock(ref Podatki p)
+        {
+            p.armors.monkeA.isUnlocked = true;
+        }
+    }
+    public class MonkeMalletRecipe : Recipe
+    {
+        public MonkeMalletRecipe()
+        {
+            recipe = new Dictionary<int, int>()
+            {
+                { MonkeBones.ID, 4},
+                { MonkeCarapace.ID, 3}
+            };
+        }
+
+        override public void unlock(ref Podatki p)
+        {
+            p.weapons.monkeM.isUnlocked = true;
+        }
+    }
 
     public class Recipes
     {
@@ -715,5 +887,7 @@ namespace STS
         public PickleArmorRecipe pickleA = new PickleArmorRecipe();
         public GoblinSwordRecipe goblinS = new GoblinSwordRecipe();
         public GoblinArmorRecipe goblinA = new GoblinArmorRecipe();
+        public MonkeArmorRecipe monkeA = new MonkeArmorRecipe();
+        public MonkeMalletRecipe monkeM = new MonkeMalletRecipe();
     }
 }

@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.lblExp = new System.Windows.Forms.Label();
-            this.lblDmg2 = new System.Windows.Forms.Label();
-            this.lblDmg1 = new System.Windows.Forms.Label();
             this.lblPlayerHP = new System.Windows.Forms.Label();
             this.lblEnemyHP = new System.Windows.Forms.Label();
             this.btnAttack = new System.Windows.Forms.Button();
@@ -69,30 +67,6 @@
             this.lblExp.TabIndex = 55;
             this.lblExp.Tag = "Stage";
             this.lblExp.Text = "EXP:";
-            // 
-            // lblDmg2
-            // 
-            this.lblDmg2.AutoSize = true;
-            this.lblDmg2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDmg2.Location = new System.Drawing.Point(104, 163);
-            this.lblDmg2.Name = "lblDmg2";
-            this.lblDmg2.Size = new System.Drawing.Size(80, 13);
-            this.lblDmg2.TabIndex = 54;
-            this.lblDmg2.Tag = "Stage";
-            this.lblDmg2.Text = "Enemy dealt:";
-            this.lblDmg2.Visible = false;
-            // 
-            // lblDmg1
-            // 
-            this.lblDmg1.AutoSize = true;
-            this.lblDmg1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDmg1.Location = new System.Drawing.Point(104, 215);
-            this.lblDmg1.Name = "lblDmg1";
-            this.lblDmg1.Size = new System.Drawing.Size(69, 13);
-            this.lblDmg1.TabIndex = 53;
-            this.lblDmg1.Tag = "Stage";
-            this.lblDmg1.Text = "You dealt: ";
-            this.lblDmg1.Visible = false;
             // 
             // lblPlayerHP
             // 
@@ -316,7 +290,7 @@
             // 
             this.lblShields.AutoSize = true;
             this.lblShields.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShields.Location = new System.Drawing.Point(116, 355);
+            this.lblShields.Location = new System.Drawing.Point(127, 355);
             this.lblShields.Name = "lblShields";
             this.lblShields.Size = new System.Drawing.Size(0, 17);
             this.lblShields.TabIndex = 72;
@@ -357,8 +331,6 @@
             this.Controls.Add(this.btnPotion);
             this.Controls.Add(this.pbSword);
             this.Controls.Add(this.lblExp);
-            this.Controls.Add(this.lblDmg2);
-            this.Controls.Add(this.lblDmg1);
             this.Controls.Add(this.lblPlayerHP);
             this.Controls.Add(this.lblEnemyHP);
             this.Controls.Add(this.btnAttack);
@@ -380,8 +352,6 @@
 
         private System.Windows.Forms.PictureBox pbSword;
         private System.Windows.Forms.Label lblExp;
-        private System.Windows.Forms.Label lblDmg2;
-        private System.Windows.Forms.Label lblDmg1;
         private System.Windows.Forms.Label lblPlayerHP;
         private System.Windows.Forms.Label lblEnemyHP;
         private System.Windows.Forms.Button btnAttack;

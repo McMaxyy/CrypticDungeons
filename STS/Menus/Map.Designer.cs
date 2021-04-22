@@ -34,6 +34,9 @@
             this.btnLowGrind = new System.Windows.Forms.Button();
             this.btnMidGrind = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
+            this.btnStage3 = new System.Windows.Forms.Button();
+            this.btnHighGrind = new System.Windows.Forms.Button();
+            this.btnFinalBoss = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnStage2
@@ -61,6 +64,7 @@
             // 
             // btnEndless
             // 
+            this.btnEndless.Enabled = false;
             this.btnEndless.Location = new System.Drawing.Point(56, 511);
             this.btnEndless.Name = "btnEndless";
             this.btnEndless.Size = new System.Drawing.Size(717, 64);
@@ -103,12 +107,50 @@
             this.btnReturn.UseVisualStyleBackColor = true;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
+            // btnStage3
+            // 
+            this.btnStage3.Enabled = false;
+            this.btnStage3.Location = new System.Drawing.Point(384, 157);
+            this.btnStage3.Name = "btnStage3";
+            this.btnStage3.Size = new System.Drawing.Size(128, 64);
+            this.btnStage3.TabIndex = 73;
+            this.btnStage3.TabStop = false;
+            this.btnStage3.Text = "Jungle";
+            this.btnStage3.UseVisualStyleBackColor = true;
+            this.btnStage3.Click += new System.EventHandler(this.btnStage3_Click);
+            // 
+            // btnHighGrind
+            // 
+            this.btnHighGrind.Enabled = false;
+            this.btnHighGrind.Location = new System.Drawing.Point(384, 410);
+            this.btnHighGrind.Name = "btnHighGrind";
+            this.btnHighGrind.Size = new System.Drawing.Size(128, 64);
+            this.btnHighGrind.TabIndex = 74;
+            this.btnHighGrind.TabStop = false;
+            this.btnHighGrind.Text = "HighRank Grind";
+            this.btnHighGrind.UseVisualStyleBackColor = true;
+            this.btnHighGrind.Click += new System.EventHandler(this.btnHighGrind_Click);
+            // 
+            // btnFinalBoss
+            // 
+            this.btnFinalBoss.Location = new System.Drawing.Point(625, 157);
+            this.btnFinalBoss.Name = "btnFinalBoss";
+            this.btnFinalBoss.Size = new System.Drawing.Size(148, 317);
+            this.btnFinalBoss.TabIndex = 75;
+            this.btnFinalBoss.TabStop = false;
+            this.btnFinalBoss.Text = "Böss";
+            this.btnFinalBoss.UseVisualStyleBackColor = true;
+            this.btnFinalBoss.Click += new System.EventHandler(this.btnFinalBoss_Click);
+            // 
             // Map
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Tan;
             this.ClientSize = new System.Drawing.Size(835, 644);
+            this.Controls.Add(this.btnFinalBoss);
+            this.Controls.Add(this.btnHighGrind);
+            this.Controls.Add(this.btnStage3);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnMidGrind);
             this.Controls.Add(this.btnLowGrind);
@@ -129,5 +171,8 @@
         private System.Windows.Forms.Button btnLowGrind;
         private System.Windows.Forms.Button btnMidGrind;
         private System.Windows.Forms.Button btnReturn;
+        private System.Windows.Forms.Button btnStage3;
+        private System.Windows.Forms.Button btnHighGrind;
+        private System.Windows.Forms.Button btnFinalBoss;
     }
 }

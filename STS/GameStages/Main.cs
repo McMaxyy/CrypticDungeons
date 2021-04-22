@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -14,8 +15,8 @@ namespace STS
     public partial class STS : Form
     {
 
-        int yy, xx, defense, goblinCount = 1;
-        bool enemyDefeated, bossStage, isRageActive;
+        int yy, xx, defense, goblinCount = 1, specialExp = 0;
+        bool enemyDefeated, bossStage, isRageActive, speciaStage;
         Weapons selectedWeapon;
         Armor selectedArmor;
         Boss selectedBoss;
@@ -103,6 +104,35 @@ namespace STS
             btnAttack.Enabled = btnDefend.Enabled = btnFlee.Enabled = false;
             goblinCount = 0;
 
+            //Add coins, exp, levels, max player HP, points if level up
+            p.coins = p.coins + p.newCoins;
+            p.exp = p.exp + p.expAdd + 3 + specialExp;
+            if (p.exp >= p.maxExp)
+            {
+                if (p.maxExp <= 80)
+                {
+                    p.playerMaxHP = p.playerMaxHP + 5;
+                    p.playerHP += 5;
+                }
+                else
+                {
+                    p.playerMaxHP = p.playerMaxHP + 10;
+                    p.playerHP += 10;
+                }
+
+                p.exp = p.exp % p.maxExp;
+                p.level++;
+                if (p.maxExp < 80)
+                    p.maxExp = p.maxExp * 2;
+                else if (p.maxExp == 80)
+                    p.maxExp = 100;
+                else
+                    p.maxExp += 50;
+
+                p.points += 2;
+            }
+
+            //Check what stage's been completed and unlock the next one + check if level up
             if (p.n == 1)
             {
                 btnBattle1.Enabled = btnRand1.Enabled = btnRand2.Enabled = false;
@@ -121,7 +151,7 @@ namespace STS
             else if (p.n == 2)
             {
                 btnBattle2.Enabled = btnRand3.Enabled = btnRand4.Enabled = false;
-                btnBattle3.Enabled = btnRand5.Enabled = btnRand6.Enabled = true;
+                btnBattle3.Enabled = btnRand5.Enabled = btnSpecial.Enabled = true;
                 if (p.skipped == false)
                 {
                     pbCleared.Visible = btnCleared.Visible = lblCleared.Visible = true;
@@ -135,7 +165,7 @@ namespace STS
             }
             else if (p.n == 3)
             {
-                btnBattle3.Enabled = btnRand5.Enabled = btnRand6.Enabled = false;
+                btnBattle3.Enabled = btnRand5.Enabled = btnSpecial.Enabled = false;
                 btnBoss.Enabled = true;
                 p.bossStage = true;
                 if (p.skipped == false)
@@ -154,7 +184,19 @@ namespace STS
                 yy = r.Next(0, selectedBoss.dropTable.Length);
                 xx = r.Next(1, 4);
                 p.inventory.addItem(selectedBoss.dropTable[yy], xx);
-                p.inventory.showItem(yy);
+
+                switch (selectedBoss.bossID)
+                {
+                    case 0:
+                        p.inventory.showItem(yy);
+                        break;
+                    case 1:
+                        p.inventory.showItem(yy + 2);
+                        break;
+                    case 2:
+                        p.inventory.showItem(yy + 4);
+                        break;
+                }
 
                 if (p.level == p.newLevel)
                 {
@@ -177,6 +219,7 @@ namespace STS
             }
             p.n++;
             p.skipped = false;
+            specialExp = 0;
         }
         public void stageNotClear()
         {
@@ -184,6 +227,7 @@ namespace STS
             btnRestart.Visible = true;
             btnAttack.Enabled = btnDefend.Enabled = btnFlee.Enabled = false;
             p.bossStage = false;
+            specialExp = 0;
         }
 
         //Restart Game
@@ -192,7 +236,7 @@ namespace STS
             hideStage();
             btnBattle1.Enabled = btnRand1.Enabled = btnRand2.Enabled = true;
             btnBattle2.Enabled = btnRand3.Enabled = btnRand4.Enabled = false;
-            btnBattle3.Enabled = btnRand5.Enabled = btnRand6.Enabled = false;
+            btnBattle3.Enabled = btnRand5.Enabled = btnSpecial.Enabled = false;
             btnBoss.Enabled = false;
             btnAttack.Enabled = btnDefend.Enabled = btnFlee.Enabled = true;
             lblLost.Visible = false;
@@ -208,7 +252,7 @@ namespace STS
         //Battle phase
         public void playerAttack()
         {
-            int x = 0;
+            int x;
 
             x = p.str / 2 + r.Next(selectedWeapon.weaponDmgMin, selectedWeapon.weaponDmgMax + 1);
             if (isRageActive == true)
@@ -223,36 +267,17 @@ namespace STS
             lblDmg1.Visible = true;
             lblDmg2.Visible = true;
             if (p.enemyHP < 1)
-            {
-                p.coins = p.coins + p.newCoins;
-                p.exp = p.exp + p.expAdd + 3;
-                if (p.exp >= p.maxExp)
-                {
-                    p.playerMaxHP = p.playerMaxHP + 5;
-                    p.exp = p.exp%p.maxExp;
-                    p.level++;
-                    if (p.maxExp < 80)
-                        p.maxExp = p.maxExp * 2;
-                    else if (p.maxExp == 80)
-                        p.maxExp = 100;
-                    else
-                        p.maxExp += 50;
-                        
-                    p.points += 2;
-                }
+            {   
                 enemyDefeated = true;
                 stageIsClear();
             }
         }
         public void enemyAttack()
         {
-            /*if (p.enemyMaxHP == 15)
-                p.y = r.Next(1, 5);
-            else if (p. enemyMaxHP > 15)
-                p.y = r.Next(selectedBoss.minDmgBoss, selectedBoss.maxDmgBoss + 1);*/
-
             if (p.bossStage == true)
                 p.y = r.Next(selectedBoss.minDmgBoss, selectedBoss.maxDmgBoss + 1);
+            else if (speciaStage == true)
+                p.y = r.Next(specialMob.minMobDmg, specialMob.maxMobDmg + 1);
             else
                 p.y = r.Next(selectedMob.minMobDmg, selectedMob.maxMobDmg + 1);
 
@@ -266,6 +291,8 @@ namespace STS
 
             if (p.y < 0)
                 p.y = 0;
+
+            xx = (int)p.y;
 
             if (p.t == 1)
                 p.playerHP = p.playerHP - p.y;
@@ -345,28 +372,29 @@ namespace STS
             {
                 skipStage();
             }
-            else if (yy > 2 && yy <= 8)
+            else
             {
                 selectMob();
                 setMobStats();
                 showStage();
             }
-            else
-            {
-                p.newCoins = specialMob.coinValue;
-                p.enemyMaxHP = specialMob.maxMobHP;
-                pbEnemy.BackgroundImage = specialMob.mobImage;
-                p.enemyHP = p.enemyMaxHP;
-                p.expAdd += 4;
-                showStage();
-            }
-
         }
 
         private void btnSkip_Click(object sender, EventArgs e)
         {
             hideStage();
             stageIsClear();
+        }
+
+        private void btnSpecial_Click(object sender, EventArgs e)
+        {
+            speciaStage = true;
+            p.newCoins = specialMob.coinValue;
+            p.enemyMaxHP = specialMob.maxMobHP;
+            pbEnemy.BackgroundImage = specialMob.mobImage;
+            p.enemyHP = p.enemyMaxHP;
+            specialExp = 4;
+            showStage();
         }
 
         private void btnAttack_Click(object sender, EventArgs e)
@@ -436,7 +464,7 @@ namespace STS
 
             p.enemyHP = p.enemyMaxHP;
 
-            p.playerHP = p.playerHP + 20;
+            p.playerHP = p.playerHP + 10;
             if (p.playerHP > p.playerMaxHP)
                 p.playerHP = p.playerMaxHP;
 
@@ -495,6 +523,19 @@ namespace STS
             p.defend = true;
             defense = selectedArmor.armorDefense/2;
             enemyAttack();
+            yy = r.Next(10);
+            if (yy >= 0 && yy <= 2)
+            {
+                p.enemyHP = p.enemyHP - xx;
+                lblEnemyHP.Text = "HP: " + p.enemyHP + "/" + p.enemyMaxHP;
+                lblDmg1.Text = "You parried, dealing: " + xx + " damage";
+            }
+
+            if (p.enemyHP < 1)
+            {
+                enemyDefeated = true;
+                stageIsClear();
+            }
         }
     }
 }

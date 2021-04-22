@@ -51,6 +51,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data.cs" />
+    <Compile Include="GameStages\FinalBoss.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameStages\FinalBoss.designer.cs">
+      <DependentUpon>FinalBoss.cs</DependentUpon>
+    </Compile>
     <Compile Include="GameStages\Endless.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GameStages\FinalBoss.resx">
+      <DependentUpon>FinalBoss.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GameStages\Endless.resx">
       <DependentUpon>Endless.cs</DependentUpon>
     </EmbeddedResource>
@@ -237,6 +246,39 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\GoblinSword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CoolMonke.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CrossbowMonke.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gorillaz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SmolBossMonke.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StrongMonke.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MonkeArmor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MonkeMallet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MonkeMallet_Equip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aljaz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rici.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Zavr.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

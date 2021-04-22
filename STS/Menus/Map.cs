@@ -28,6 +28,12 @@ namespace STS
 
             if (p.weapons.goblinS.isUnlocked == true && p.armors.goblinA.isUnlocked == true)
             {
+                btnHighGrind.Enabled = true;
+                btnStage3.Enabled = true;
+            }
+
+            if (p.weapons.monkeM.isUnlocked == true && p.armors.monkeA.isUnlocked == true)
+            {
                 btnEndless.Enabled = true;
             }
         }
@@ -76,6 +82,11 @@ namespace STS
             p.stageRank = 2;
             startGrind();
         }
+        private void btnHighGrind_Click(object sender, EventArgs e)
+        {
+            p.stageRank = 3;
+            startGrind();
+        }
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
@@ -88,6 +99,8 @@ namespace STS
             m.ShowDialog();
         }
 
+        
+
         public Map(Weapons sword, Armor armor, ref Podatki p)
         {
             InitializeComponent();
@@ -98,10 +111,21 @@ namespace STS
             selectedWeapon = sword;
         }
 
+        private void btnFinalBoss_Click(object sender, EventArgs e)
+        {
+            boss = p.bosses.zavr;
+            FinalBoss m = new FinalBoss(selectedWeapon, selectedArmor, boss, ref p);
+            m.Width = this.Width;
+            m.Height = this.Height;
+            m.StartPosition = FormStartPosition.Manual;
+            m.Location = new Point(this.Location.X, this.Location.Y);
+            this.Visible = false;
+            m.ShowDialog();
+        }       
+
         private void btnStage1_Click(object sender, EventArgs e)
         {
             boss = p.bosses.menacingPikl;
-            //Type[] mobList = Assembly.GetAssembly(typeof(Mob)).GetTypes().Where(TheType => TheType.IsClass && !TheType.IsAbstract && TheType.IsSubclassOf(typeof(Mob))).ToArray();            
             mob1 = p.mobs.pikle;
             mob2 = p.mobs.pikle;
             mob3 = p.mobs.jerry;
@@ -118,6 +142,17 @@ namespace STS
             mob3 = p.mobs.spaceGoblin;
             specialMob = p.mobs.cyclops;
             p.expAdd = 2;
+            startMain();
+        }
+
+        private void btnStage3_Click(object sender, EventArgs e)
+        {
+            boss = p.bosses.smolMonkeBoss;
+            mob1 = p.mobs.coolMonke;
+            mob2 = p.mobs.strongMonke;
+            mob3 = p.mobs.crossbowMonke;
+            specialMob = p.mobs.gorilla;
+            p.expAdd = 5;
             startMain();
         }
     }

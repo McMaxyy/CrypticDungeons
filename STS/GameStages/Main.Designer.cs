@@ -36,7 +36,7 @@
             this.btnRand2 = new System.Windows.Forms.Button();
             this.btnRand4 = new System.Windows.Forms.Button();
             this.btnRand3 = new System.Windows.Forms.Button();
-            this.btnRand6 = new System.Windows.Forms.Button();
+            this.btnSpecial = new System.Windows.Forms.Button();
             this.btnRand5 = new System.Windows.Forms.Button();
             this.pbFight = new System.Windows.Forms.PictureBox();
             this.pbPlayer = new System.Windows.Forms.PictureBox();
@@ -178,18 +178,18 @@
             this.btnRand3.UseVisualStyleBackColor = false;
             this.btnRand3.Click += new System.EventHandler(this.btnRand2_Click);
             // 
-            // btnRand6
+            // btnSpecial
             // 
-            this.btnRand6.BackColor = System.Drawing.Color.LightGray;
-            this.btnRand6.Enabled = false;
-            this.btnRand6.Location = new System.Drawing.Point(489, 154);
-            this.btnRand6.Name = "btnRand6";
-            this.btnRand6.Size = new System.Drawing.Size(88, 62);
-            this.btnRand6.TabIndex = 16;
-            this.btnRand6.TabStop = false;
-            this.btnRand6.Text = "?";
-            this.btnRand6.UseVisualStyleBackColor = false;
-            this.btnRand6.Click += new System.EventHandler(this.btnRand2_Click);
+            this.btnSpecial.BackColor = System.Drawing.Color.LightGray;
+            this.btnSpecial.Enabled = false;
+            this.btnSpecial.Location = new System.Drawing.Point(489, 154);
+            this.btnSpecial.Name = "btnSpecial";
+            this.btnSpecial.Size = new System.Drawing.Size(88, 62);
+            this.btnSpecial.TabIndex = 16;
+            this.btnSpecial.TabStop = false;
+            this.btnSpecial.Text = "Special";
+            this.btnSpecial.UseVisualStyleBackColor = false;
+            this.btnSpecial.Click += new System.EventHandler(this.btnSpecial_Click);
             // 
             // btnRand5
             // 
@@ -264,7 +264,7 @@
             this.btnDefend.TabIndex = 22;
             this.btnDefend.TabStop = false;
             this.btnDefend.Tag = "Stage";
-            this.btnDefend.Text = "Defend";
+            this.btnDefend.Text = "Parry";
             this.btnDefend.UseVisualStyleBackColor = false;
             this.btnDefend.Visible = false;
             this.btnDefend.Click += new System.EventHandler(this.btnDefend_Click);
@@ -349,7 +349,7 @@
             // 
             // btnRestart
             // 
-            this.btnRestart.Location = new System.Drawing.Point(12, 41);
+            this.btnRestart.Location = new System.Drawing.Point(12, 66);
             this.btnRestart.Name = "btnRestart";
             this.btnRestart.Size = new System.Drawing.Size(92, 23);
             this.btnRestart.TabIndex = 29;
@@ -363,7 +363,7 @@
             // lblLost
             // 
             this.lblLost.AutoSize = true;
-            this.lblLost.Location = new System.Drawing.Point(9, 23);
+            this.lblLost.Location = new System.Drawing.Point(9, 48);
             this.lblLost.Name = "lblLost";
             this.lblLost.Size = new System.Drawing.Size(48, 13);
             this.lblLost.TabIndex = 30;
@@ -570,7 +570,7 @@
             // 
             // btnReturn
             // 
-            this.btnReturn.Location = new System.Drawing.Point(12, 609);
+            this.btnReturn.Location = new System.Drawing.Point(12, 12);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(75, 23);
             this.btnReturn.TabIndex = 46;
@@ -625,7 +625,7 @@
             this.Controls.Add(this.btnAttack);
             this.Controls.Add(this.pbEnemy);
             this.Controls.Add(this.pbPlayer);
-            this.Controls.Add(this.btnRand6);
+            this.Controls.Add(this.btnSpecial);
             this.Controls.Add(this.btnRand5);
             this.Controls.Add(this.btnRand4);
             this.Controls.Add(this.btnRand3);
@@ -661,7 +661,7 @@
         private System.Windows.Forms.Button btnRand2;
         private System.Windows.Forms.Button btnRand4;
         private System.Windows.Forms.Button btnRand3;
-        private System.Windows.Forms.Button btnRand6;
+        private System.Windows.Forms.Button btnSpecial;
         private System.Windows.Forms.Button btnRand5;
         private System.Windows.Forms.PictureBox pbFight;
         private System.Windows.Forms.PictureBox pbPlayer;

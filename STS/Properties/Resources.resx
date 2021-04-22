@@ -118,82 +118,115 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="PiklArmor_Equip" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PiklArmor_Equip1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Jerry" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Jerry.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PiklSword_Equip" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PiklSword_Equip.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BronzeArmor_WoodenSword" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BronzeArmor_WoodenSword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="IronArmor_IronSword" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IronArmor_IronSword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Nejc" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Nejc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PiklSword" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PiklSword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Cyclops" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Cyclops.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BronzeArmor_IronSword" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BronzeArmor_IronSword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Nejc" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Nejc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="GoblinSwordNormal_Equip" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GoblinSwordNormal_Equip.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="IronSword" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IronSword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BronzeArmor_Equip" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BronzeArmor_Equip.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="WoodenSword_Equip" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\WoodenSword_Equip.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="GoblinSwordRage_Equip" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GoblinSwordRage_Equip.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MenacingPikl" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MenacingPikl.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="GoblinArmor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GoblinArmor1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="WoodenSword" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\WoodenSword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="IronArmor_WoodenSword" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IronArmor_WoodenSword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SpaceGoblin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SpaceGoblin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SpearGoblin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SpearGoblin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="IronSword_Equip" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IronSword_Equip.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Full_Pikl" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Full_Pikl1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CrossbowMonke" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CrossbowMonke.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="IronArmor_Equip" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IronArmor_Equip.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Pikl" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Pikl.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="GoblinKing" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GoblinKing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="IronSword_Equip" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IronSword_Equip.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cyclops" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cyclops.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BronzeArmor_WoodenSword" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BronzeArmor_WoodenSword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GoblinSwordNormal_Equip" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GoblinSwordNormal_Equip.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IronArmor_IronSword" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IronArmor_IronSword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WoodenSword_Equip" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WoodenSword_Equip.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SmolBossMonke" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SmolBossMonke.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WoodenSword" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WoodenSword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SpearGoblin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SpearGoblin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MonkeMallet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MonkeMallet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MonkeMallet_Equip" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MonkeMallet_Equip.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BronzeArmor_Equip" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BronzeArmor_Equip.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Full_Pikl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Full_Pikl1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SpaceGoblin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SpaceGoblin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StrongMonke" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\StrongMonke.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Jerry" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Jerry.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PiklArmor_Equip" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PiklArmor_Equip1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Gorillaz" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Gorillaz.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pikl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pikl.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MonkeArmor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MonkeArmor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CoolMonke" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CoolMonke.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IronSword" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IronSword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MenacingPikl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MenacingPikl.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IronArmor_WoodenSword" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IronArmor_WoodenSword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GoblinSwordRage_Equip" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GoblinSwordRage_Equip.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="GoblinSword" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GoblinSword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BronzeArmor_IronSword" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BronzeArmor_IronSword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PiklSword_Equip" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PiklSword_Equip.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Aljaz" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Aljaz.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Rici" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Rici.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Zavr" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Zavr.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

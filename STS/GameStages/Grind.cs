@@ -49,8 +49,17 @@ namespace STS
 
             if (p.exp >= p.maxExp)
             {
-                p.playerMaxHP = p.playerMaxHP + 5;
-                p.playerHP += 5;
+                if (p.maxExp <= 80)
+                {
+                    p.playerMaxHP = p.playerMaxHP + 5;
+                    p.playerHP += 5;
+                }
+                else
+                {
+                    p.playerMaxHP = p.playerMaxHP + 10;
+                    p.playerHP += 10;
+                }
+
                 p.exp = p.exp % p.maxExp;
                 p.level++;
                 if (p.maxExp < 80)
@@ -77,7 +86,6 @@ namespace STS
                 dmgOutput = "Your attack missed...";
                 txtDmgOutput.AppendText(dmgOutput);
                 txtDmgOutput.AppendText(Environment.NewLine);
-                lblDmg1.Text = "Your attack missed...";
             }
             else
             {
@@ -85,8 +93,7 @@ namespace STS
 
                 p.enemyHP = p.enemyHP - x;
                 lblEnemyHP.Text = "HP: " + p.enemyHP + "/" + p.enemyMaxHP;
-                lblDmg1.Text = "You dealt: " + x + " damage";
-                dmgOutput = lblDmg1.Text;
+                dmgOutput = "You dealt: " + x + " damage";
                 txtDmgOutput.AppendText(dmgOutput);
                 txtDmgOutput.AppendText(Environment.NewLine);
             }
@@ -105,19 +112,18 @@ namespace STS
             if (p.y < 0)
                 p.y = 0;
 
-            if (p.t == 1 && p.shields > 0)
+            if (enemyDefeated != true && p.shields > 0)
                 p.shields -= p.y;
-            else if (p.t == 1)
+            else if (enemyDefeated != true)
                 p.playerHP -= p.y;
 
             if (p.shields <= 0)
                 p.shields = 0;
             lblShields.Text = "(" + p.shields + ")";
             lblPlayerHP.Text = "HP: " + p.playerHP + "/" + p.playerMaxHP;
-            lblDmg2.Text = "Enemy dealt: " + p.y + " damage";
+            dmgOutput = "Enemy dealt: " + p.y + " damage";
             if (p.y == 0)
-                lblDmg2.Text = "Enemy attack missed";
-            dmgOutput = lblDmg2.Text;
+                dmgOutput = "Enemy attack missed";
             txtDmgOutput.AppendText(dmgOutput);
             txtDmgOutput.AppendText(Environment.NewLine);
 
@@ -159,6 +165,18 @@ namespace STS
                     p.newCoins = selectedMob.coinValue - 2;
                 else
                     p.newCoins = selectedMob.coinValue - 3;
+            }
+            else if (p.stageRank == 3)
+            {
+                Type[] chooseMob = Assembly.GetAssembly(typeof(MobHighRank)).GetTypes().Where(TheType => TheType.IsClass && !TheType.IsAbstract && TheType.GetInterfaces().Contains(typeof(MobHighRank))).ToArray();
+                x = r.Next(chooseMob.Length);
+                ConstructorInfo ctor = chooseMob[x].GetConstructor(new Type[0]);
+                selectedMob = (Mob)ctor.Invoke(new object[] { });
+                currentNewExp = 8;
+                if (selectedMob != p.mobs.crossbowMonke)
+                    p.newCoins = selectedMob.coinValue - 3;
+                else
+                    p.newCoins = selectedMob.coinValue - 5;
             }
             pbEnemy.BackgroundImage = selectedMob.mobImage;
         }
@@ -274,6 +292,9 @@ namespace STS
                     p.playerHP += 10;
                 else if (p.stageRank == 2)
                     p.playerHP += 15;
+                else if (p.stageRank == 3)
+                    p.playerHP += 25;
+
                 if (p.playerHP > p.playerMaxHP)
                     p.playerHP = p.playerMaxHP;
                 lblPlayerHP.Text = "HP: " + p.playerHP + "/" + p.playerMaxHP;
@@ -287,7 +308,7 @@ namespace STS
                 p.items.bomb.decrementQuantity(1);
                 lockItems();
                 updateItems();
-                p.enemyHP -= 40;
+                p.enemyHP -= 50;
                 lblEnemyHP.Text = "HP: " + p.enemyHP + "/" + p.enemyMaxHP;
                 if (p.enemyHP <= 0)
                     playerAttack();
@@ -305,6 +326,8 @@ namespace STS
                     p.shields += 6;
                 else if (p.stageRank == 2)
                     p.shields += 10;
+                else if (p.stageRank == 3)
+                    p.shields += 15;
                 lblShields.Text = "(" + p.shields + ")";
             }
         }
@@ -319,6 +342,8 @@ namespace STS
                 extraDmg = r.Next(4, 8);
             else if (p.stageRank == 2)
                 extraDmg = r.Next(8, 11);
+            else if (p.stageRank == 3)
+                extraDmg = r.Next(11, 14);
 
         }
 

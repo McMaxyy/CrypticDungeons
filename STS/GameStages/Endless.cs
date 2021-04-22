@@ -19,7 +19,7 @@ namespace STS
         Random r = new Random();
         Boss selectedBoss;
         Mob selectedMob;
-        int x, bossCount = 0, currentNewExp = 4, extraDmg;
+        int x, bossCount = 0, currentNewExp = 7, extraDmg;
         bool enemyDefeated, bossTime;
         string dmgOutput;
 
@@ -51,8 +51,17 @@ namespace STS
 
             if (p.exp >= p.maxExp)
             {
-                p.playerMaxHP = p.playerMaxHP + 5;
-                p.playerHP += 5;
+                if (p.maxExp <= 80)
+                {
+                    p.playerMaxHP = p.playerMaxHP + 5;
+                    p.playerHP += 5;
+                }
+                else
+                {
+                    p.playerMaxHP = p.playerMaxHP + 10;
+                    p.playerHP += 10;
+                }
+
                 p.exp = p.exp % p.maxExp;
                 p.level++;
                 if (p.maxExp < 80)
@@ -76,7 +85,6 @@ namespace STS
                 bossTime = false;
             }
             unlockItems();
-            lblDmg2.Text = "Enemy dealt:";
 
             if (bossCount == 5)
             {
@@ -99,7 +107,6 @@ namespace STS
                 dmgOutput = "Your attack missed...";
                 txtDmgOutput.AppendText(dmgOutput);
                 txtDmgOutput.AppendText(Environment.NewLine);
-                lblDmg1.Text = "Your attack missed...";
             }
             else
             {
@@ -107,8 +114,7 @@ namespace STS
 
                 p.enemyHP = p.enemyHP - x;
                 lblEnemyHP.Text = "HP: " + p.enemyHP + "/" + p.enemyMaxHP;
-                lblDmg1.Text = "You dealt: " + x + " damage";
-                dmgOutput = lblDmg1.Text;
+                dmgOutput = "You dealt: " + x + " damage";
                 txtDmgOutput.AppendText(dmgOutput);
                 txtDmgOutput.AppendText(Environment.NewLine);
             }
@@ -130,19 +136,18 @@ namespace STS
             if (p.y < 0)
                 p.y = 0;
 
-            if (p.t == 1 && p.shields > 0)
+            if (enemyDefeated != true && p.shields > 0)
                 p.shields -= p.y;
-            else if (p.t == 1)
+            else if (enemyDefeated != true)
                 p.playerHP -= p.y;
 
             if (p.shields <= 0)
                 p.shields = 0;
             lblShields.Text = "(" + p.shields + ")";
             lblPlayerHP.Text = "HP: " + p.playerHP + "/" + p.playerMaxHP;
-            lblDmg2.Text = "Enemy dealt: " + p.y + " damage";
+            dmgOutput = "Enemy dealt: " + p.y + " damage";
             if (p.y == 0)
-                lblDmg2.Text = "Enemy attack missed...";
-            dmgOutput = lblDmg2.Text;
+                dmgOutput = "Enemy attack missed...";
             txtDmgOutput.AppendText(dmgOutput);
             txtDmgOutput.AppendText(Environment.NewLine);
             if (p.playerHP < 1)
@@ -181,7 +186,7 @@ namespace STS
             pbEnemy.BackgroundImage = selectedBoss.bossImage;
             p.enemyMaxHP = selectedBoss.bossMaxHP;
             p.newCoins = selectedBoss.coinValue;
-            p.expAdd += 2;
+            p.expAdd += 3;
             p.enemyHP = p.enemyMaxHP;
             lblPlayerHP.Text = "HP: " + p.playerHP + "/" + p.playerMaxHP;
             lblEnemyHP.Text = "HP: " + p.enemyHP + "/" + p.enemyMaxHP;
@@ -301,7 +306,7 @@ namespace STS
                 p.items.healthPot.decrementQuantity(1);
                 lockItems();
                 updateItems();
-                p.playerHP += 10;
+                p.playerHP += 30;
                 if (p.playerHP > p.playerMaxHP)
                     p.playerHP = p.playerMaxHP;
                 lblPlayerHP.Text = "HP: " + p.playerHP + "/" + p.playerMaxHP;
@@ -315,7 +320,7 @@ namespace STS
                 p.items.bomb.decrementQuantity(1);
                 lockItems();
                 updateItems();
-                p.enemyHP -= 40;
+                p.enemyHP -= 60;
                 lblEnemyHP.Text = "HP: " + p.enemyHP + "/" + p.enemyMaxHP;
                 if (p.enemyHP <= 0)
                     playerAttack();
@@ -329,7 +334,7 @@ namespace STS
                 p.items.shield.decrementQuantity(1);
                 lockItems();
                 updateItems();
-                p.shields += 6;
+                p.shields += 15;
                 lblShields.Text = "(" + p.shields + ")";
             }
         }
@@ -340,7 +345,7 @@ namespace STS
                 p.items.sword.decrementQuantity(1);
             lockItems();
             updateItems();
-            extraDmg = r.Next(5, 8);
+            extraDmg = r.Next(10, 15);
         }
 
         private void btnLevelUp_Click(object sender, EventArgs e)
