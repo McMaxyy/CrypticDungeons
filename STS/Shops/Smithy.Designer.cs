@@ -41,15 +41,7 @@
             this.btnCraftGA = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pbSword = new System.Windows.Forms.PictureBox();
-            this.pbPlayer = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pbPickleS = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
             this.btnCraftMonkeA = new System.Windows.Forms.Button();
             this.btnCraftMonkeM = new System.Windows.Forms.Button();
@@ -59,14 +51,32 @@
             this.lblGoblinA = new System.Windows.Forms.Label();
             this.lblMonkeA = new System.Windows.Forms.Label();
             this.lblMonkeM = new System.Windows.Forms.Label();
+            this.lblDinoA = new System.Windows.Forms.Label();
+            this.lblDinoS = new System.Windows.Forms.Label();
+            this.btnCraftDinoA = new System.Windows.Forms.Button();
+            this.btnCraftDinoS = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pbSword = new System.Windows.Forms.PictureBox();
+            this.pbPlayer = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbPickleS = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPickleS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCraftPSword
@@ -199,70 +209,6 @@
             this.label7.TabIndex = 19;
             this.label7.Text = "Goblin Sword";
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureBox3.BackgroundImage = global::STS.Properties.Resources.GoblinArmor;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox3.Location = new System.Drawing.Point(278, 239);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(82, 96);
-            this.pictureBox3.TabIndex = 15;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = global::STS.Properties.Resources.GoblinSword;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Location = new System.Drawing.Point(278, 111);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(82, 84);
-            this.pictureBox2.TabIndex = 14;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pbSword
-            // 
-            this.pbSword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbSword.Location = new System.Drawing.Point(549, 79);
-            this.pbSword.Name = "pbSword";
-            this.pbSword.Size = new System.Drawing.Size(51, 77);
-            this.pbSword.TabIndex = 13;
-            this.pbSword.TabStop = false;
-            // 
-            // pbPlayer
-            // 
-            this.pbPlayer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbPlayer.Location = new System.Drawing.Point(557, 78);
-            this.pbPlayer.Name = "pbPlayer";
-            this.pbPlayer.Size = new System.Drawing.Size(225, 264);
-            this.pbPlayer.TabIndex = 12;
-            this.pbPlayer.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureBox1.BackgroundImage = global::STS.Properties.Resources.PiklArmor_Equip;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(61, 239);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(82, 96);
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pbPickleS
-            // 
-            this.pbPickleS.BackgroundImage = global::STS.Properties.Resources.PiklSword;
-            this.pbPickleS.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbPickleS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbPickleS.Location = new System.Drawing.Point(61, 111);
-            this.pbPickleS.Name = "pbPickleS";
-            this.pbPickleS.Size = new System.Drawing.Size(82, 84);
-            this.pbPickleS.TabIndex = 3;
-            this.pbPickleS.TabStop = false;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -271,29 +217,6 @@
             this.label8.Size = new System.Drawing.Size(70, 13);
             this.label8.TabIndex = 22;
             this.label8.Text = "Monke Armor";
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureBox4.BackgroundImage = global::STS.Properties.Resources.MonkeArmor;
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox4.Location = new System.Drawing.Point(61, 509);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(82, 96);
-            this.pictureBox4.TabIndex = 21;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackgroundImage = global::STS.Properties.Resources.MonkeMallet;
-            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox5.Location = new System.Drawing.Point(61, 381);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(82, 84);
-            this.pictureBox5.TabIndex = 20;
-            this.pictureBox5.TabStop = false;
             // 
             // label9
             // 
@@ -376,12 +299,189 @@
             this.lblMonkeM.TabIndex = 30;
             this.lblMonkeM.Text = "Monke Bones\r\nMonke Carapace\r\n";
             // 
+            // lblDinoA
+            // 
+            this.lblDinoA.Location = new System.Drawing.Point(363, 536);
+            this.lblDinoA.Name = "lblDinoA";
+            this.lblDinoA.Size = new System.Drawing.Size(120, 43);
+            this.lblDinoA.TabIndex = 39;
+            this.lblDinoA.Text = "Dino Teeth\r\nDino Claws\r\nDino Tail\r\n";
+            // 
+            // lblDinoS
+            // 
+            this.lblDinoS.Location = new System.Drawing.Point(363, 408);
+            this.lblDinoS.Name = "lblDinoS";
+            this.lblDinoS.Size = new System.Drawing.Size(120, 31);
+            this.lblDinoS.TabIndex = 38;
+            this.lblDinoS.Text = "Dino Teeth\r\nDino Claws\r\n";
+            // 
+            // btnCraftDinoA
+            // 
+            this.btnCraftDinoA.Enabled = false;
+            this.btnCraftDinoA.Location = new System.Drawing.Point(366, 582);
+            this.btnCraftDinoA.Name = "btnCraftDinoA";
+            this.btnCraftDinoA.Size = new System.Drawing.Size(37, 23);
+            this.btnCraftDinoA.TabIndex = 37;
+            this.btnCraftDinoA.TabStop = false;
+            this.btnCraftDinoA.Text = "Craft";
+            this.btnCraftDinoA.UseVisualStyleBackColor = true;
+            this.btnCraftDinoA.Click += new System.EventHandler(this.btnCraftDinoA_Click);
+            // 
+            // btnCraftDinoS
+            // 
+            this.btnCraftDinoS.Enabled = false;
+            this.btnCraftDinoS.Location = new System.Drawing.Point(366, 442);
+            this.btnCraftDinoS.Name = "btnCraftDinoS";
+            this.btnCraftDinoS.Size = new System.Drawing.Size(37, 23);
+            this.btnCraftDinoS.TabIndex = 36;
+            this.btnCraftDinoS.TabStop = false;
+            this.btnCraftDinoS.Text = "Craft";
+            this.btnCraftDinoS.UseVisualStyleBackColor = true;
+            this.btnCraftDinoS.Click += new System.EventHandler(this.btnCraftDinoS_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(275, 365);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(62, 13);
+            this.label12.TabIndex = 35;
+            this.label12.Text = "Dino Sword";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(275, 493);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(59, 13);
+            this.label13.TabIndex = 34;
+            this.label13.Text = "Dino Armor";
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox6.BackgroundImage = global::STS.Properties.Resources.DinoArmor;
+            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox6.Location = new System.Drawing.Point(278, 509);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(82, 96);
+            this.pictureBox6.TabIndex = 33;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BackgroundImage = global::STS.Properties.Resources.DinoSword;
+            this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox7.Location = new System.Drawing.Point(278, 381);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(82, 84);
+            this.pictureBox7.TabIndex = 32;
+            this.pictureBox7.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox4.BackgroundImage = global::STS.Properties.Resources.MonkeArmor;
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox4.Location = new System.Drawing.Point(61, 509);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(82, 96);
+            this.pictureBox4.TabIndex = 21;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackgroundImage = global::STS.Properties.Resources.MonkeMallet;
+            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox5.Location = new System.Drawing.Point(61, 381);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(82, 84);
+            this.pictureBox5.TabIndex = 20;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox3.BackgroundImage = global::STS.Properties.Resources.GoblinArmor;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox3.Location = new System.Drawing.Point(278, 239);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(82, 96);
+            this.pictureBox3.TabIndex = 15;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::STS.Properties.Resources.GoblinSword;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.Location = new System.Drawing.Point(278, 111);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(82, 84);
+            this.pictureBox2.TabIndex = 14;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pbSword
+            // 
+            this.pbSword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbSword.Location = new System.Drawing.Point(549, 79);
+            this.pbSword.Name = "pbSword";
+            this.pbSword.Size = new System.Drawing.Size(51, 77);
+            this.pbSword.TabIndex = 13;
+            this.pbSword.TabStop = false;
+            // 
+            // pbPlayer
+            // 
+            this.pbPlayer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbPlayer.Location = new System.Drawing.Point(557, 78);
+            this.pbPlayer.Name = "pbPlayer";
+            this.pbPlayer.Size = new System.Drawing.Size(225, 264);
+            this.pbPlayer.TabIndex = 12;
+            this.pbPlayer.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox1.BackgroundImage = global::STS.Properties.Resources.PiklArmor_Equip;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Location = new System.Drawing.Point(61, 239);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(82, 96);
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pbPickleS
+            // 
+            this.pbPickleS.BackgroundImage = global::STS.Properties.Resources.PiklSword;
+            this.pbPickleS.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbPickleS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbPickleS.Location = new System.Drawing.Point(61, 111);
+            this.pbPickleS.Name = "pbPickleS";
+            this.pbPickleS.Size = new System.Drawing.Size(82, 84);
+            this.pbPickleS.TabIndex = 3;
+            this.pbPickleS.TabStop = false;
+            // 
             // Smithy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(835, 644);
+            this.ControlBox = false;
+            this.Controls.Add(this.lblDinoA);
+            this.Controls.Add(this.lblDinoS);
+            this.Controls.Add(this.btnCraftDinoA);
+            this.Controls.Add(this.btnCraftDinoS);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.pictureBox6);
+            this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.lblMonkeA);
             this.Controls.Add(this.lblMonkeM);
             this.Controls.Add(this.lblGoblinA);
@@ -415,14 +515,16 @@
             this.Controls.Add(this.btnCraftPSword);
             this.Name = "Smithy";
             this.Text = "Cryptic Dungeons";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPickleS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -461,5 +563,13 @@
         private System.Windows.Forms.Label lblGoblinA;
         private System.Windows.Forms.Label lblMonkeA;
         private System.Windows.Forms.Label lblMonkeM;
+        private System.Windows.Forms.Label lblDinoA;
+        private System.Windows.Forms.Label lblDinoS;
+        private System.Windows.Forms.Button btnCraftDinoA;
+        private System.Windows.Forms.Button btnCraftDinoS;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox7;
     }
 }

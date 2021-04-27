@@ -596,6 +596,7 @@
             // 
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(835, 644);
+            this.ControlBox = false;
             this.Controls.Add(this.btnDef);
             this.Controls.Add(this.btnStr);
             this.Controls.Add(this.lblPoints);

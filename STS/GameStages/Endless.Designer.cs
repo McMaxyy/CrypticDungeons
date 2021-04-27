@@ -36,9 +36,6 @@
             this.btnBomb = new System.Windows.Forms.Button();
             this.btnShield = new System.Windows.Forms.Button();
             this.btnSword = new System.Windows.Forms.Button();
-            this.pbSword = new System.Windows.Forms.PictureBox();
-            this.pbEnemy = new System.Windows.Forms.PictureBox();
-            this.pbPlayer = new System.Windows.Forms.PictureBox();
             this.lblLevel = new System.Windows.Forms.Label();
             this.lblCoins = new System.Windows.Forms.Label();
             this.btnDef = new System.Windows.Forms.Button();
@@ -47,14 +44,17 @@
             this.lblStrDef = new System.Windows.Forms.Label();
             this.lblLevelUp = new System.Windows.Forms.Label();
             this.btnLevelUp = new System.Windows.Forms.Button();
-            this.pbLevelUp = new System.Windows.Forms.PictureBox();
             this.btnReturn = new System.Windows.Forms.Button();
             this.lblShields = new System.Windows.Forms.Label();
             this.txtDmgOutput = new System.Windows.Forms.TextBox();
+            this.pbLevelUp = new System.Windows.Forms.PictureBox();
+            this.pbSword = new System.Windows.Forms.PictureBox();
+            this.pbEnemy = new System.Windows.Forms.PictureBox();
+            this.pbPlayer = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLevelUp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEnemy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLevelUp)).BeginInit();
             this.SuspendLayout();
             // 
             // lblExp
@@ -140,36 +140,6 @@
             this.btnSword.TabIndex = 61;
             this.btnSword.UseVisualStyleBackColor = true;
             this.btnSword.Click += new System.EventHandler(this.btnSword_Click);
-            // 
-            // pbSword
-            // 
-            this.pbSword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbSword.Location = new System.Drawing.Point(24, 391);
-            this.pbSword.Name = "pbSword";
-            this.pbSword.Size = new System.Drawing.Size(43, 65);
-            this.pbSword.TabIndex = 57;
-            this.pbSword.TabStop = false;
-            this.pbSword.Tag = "Stage";
-            // 
-            // pbEnemy
-            // 
-            this.pbEnemy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbEnemy.Location = new System.Drawing.Point(626, 26);
-            this.pbEnemy.Name = "pbEnemy";
-            this.pbEnemy.Size = new System.Drawing.Size(178, 216);
-            this.pbEnemy.TabIndex = 49;
-            this.pbEnemy.TabStop = false;
-            this.pbEnemy.Tag = "Stage";
-            // 
-            // pbPlayer
-            // 
-            this.pbPlayer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbPlayer.Location = new System.Drawing.Point(31, 390);
-            this.pbPlayer.Name = "pbPlayer";
-            this.pbPlayer.Size = new System.Drawing.Size(185, 222);
-            this.pbPlayer.TabIndex = 48;
-            this.pbPlayer.TabStop = false;
-            this.pbPlayer.Tag = "Stage";
             // 
             // lblLevel
             // 
@@ -265,17 +235,6 @@
             this.btnLevelUp.Visible = false;
             this.btnLevelUp.Click += new System.EventHandler(this.btnLevelUp_Click);
             // 
-            // pbLevelUp
-            // 
-            this.pbLevelUp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbLevelUp.Location = new System.Drawing.Point(315, 244);
-            this.pbLevelUp.Name = "pbLevelUp";
-            this.pbLevelUp.Size = new System.Drawing.Size(218, 164);
-            this.pbLevelUp.TabIndex = 64;
-            this.pbLevelUp.TabStop = false;
-            this.pbLevelUp.Tag = "Stage";
-            this.pbLevelUp.Visible = false;
-            // 
             // btnReturn
             // 
             this.btnReturn.Location = new System.Drawing.Point(12, 12);
@@ -304,9 +263,50 @@
             this.txtDmgOutput.Multiline = true;
             this.txtDmgOutput.Name = "txtDmgOutput";
             this.txtDmgOutput.ReadOnly = true;
-            this.txtDmgOutput.Size = new System.Drawing.Size(260, 292);
+            this.txtDmgOutput.Size = new System.Drawing.Size(299, 292);
             this.txtDmgOutput.TabIndex = 74;
             this.txtDmgOutput.TabStop = false;
+            // 
+            // pbLevelUp
+            // 
+            this.pbLevelUp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbLevelUp.Location = new System.Drawing.Point(315, 244);
+            this.pbLevelUp.Name = "pbLevelUp";
+            this.pbLevelUp.Size = new System.Drawing.Size(218, 164);
+            this.pbLevelUp.TabIndex = 64;
+            this.pbLevelUp.TabStop = false;
+            this.pbLevelUp.Tag = "Stage";
+            this.pbLevelUp.Visible = false;
+            // 
+            // pbSword
+            // 
+            this.pbSword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbSword.Location = new System.Drawing.Point(24, 391);
+            this.pbSword.Name = "pbSword";
+            this.pbSword.Size = new System.Drawing.Size(43, 65);
+            this.pbSword.TabIndex = 57;
+            this.pbSword.TabStop = false;
+            this.pbSword.Tag = "Stage";
+            // 
+            // pbEnemy
+            // 
+            this.pbEnemy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbEnemy.Location = new System.Drawing.Point(626, 26);
+            this.pbEnemy.Name = "pbEnemy";
+            this.pbEnemy.Size = new System.Drawing.Size(178, 216);
+            this.pbEnemy.TabIndex = 49;
+            this.pbEnemy.TabStop = false;
+            this.pbEnemy.Tag = "Stage";
+            // 
+            // pbPlayer
+            // 
+            this.pbPlayer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbPlayer.Location = new System.Drawing.Point(31, 390);
+            this.pbPlayer.Name = "pbPlayer";
+            this.pbPlayer.Size = new System.Drawing.Size(185, 222);
+            this.pbPlayer.TabIndex = 48;
+            this.pbPlayer.TabStop = false;
+            this.pbPlayer.Tag = "Stage";
             // 
             // Endless
             // 
@@ -314,6 +314,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(835, 644);
+            this.ControlBox = false;
             this.Controls.Add(this.lblShields);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnDef);
@@ -339,10 +340,10 @@
             this.Controls.Add(this.txtDmgOutput);
             this.Name = "Endless";
             this.Text = "Cryptic Dungeons";
+            ((System.ComponentModel.ISupportInitialize)(this.pbLevelUp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEnemy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLevelUp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

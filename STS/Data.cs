@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace STS
 {
@@ -21,6 +22,7 @@ namespace STS
         public int enemyMaxHP;
         public int enemyHP;
         public int stageRank;
+        public string saveName = "";
 
         public int newCoins;
         public int coins = 0;
@@ -37,9 +39,9 @@ namespace STS
 
         public Armors armors = new Armors();
         public Weapon weapons = new Weapon();
-        public Bosses bosses = new Bosses();
-        public Mobs mobs = new Mobs();
-        public Recipes recipes = new Recipes();
+        [JsonIgnore] public Bosses bosses = new Bosses();
+        [JsonIgnore] public Mobs mobs = new Mobs();
+        [JsonIgnore] public Recipes recipes = new Recipes();
         public Inventory inventory = new Inventory();
         public Items items = new Items();
     }
@@ -49,11 +51,12 @@ namespace STS
         private string _weaponName;
         private int _weaponDmgMax;
         private int _weaponDmgMin;
-        public bool _isUnlocked;
+        private bool _isUnlocked;
         private Bitmap _weaponImage;
         private int _coinValue;
-        public bool isObtained;
+        private bool _isObtained;
 
+        [JsonIgnore]
         public string weaponName
         {
             get { return _weaponName; }
@@ -69,11 +72,13 @@ namespace STS
             get { return _weaponDmgMin; }
             set { _weaponDmgMin = value; }
         }
+        [JsonIgnore]
         public Bitmap weaponImage
         {
             get { return _weaponImage; }
             set { _weaponImage = value; }
         }
+        [JsonIgnore]
         public int coinValue
         {
             get { return _coinValue; }
@@ -84,6 +89,11 @@ namespace STS
             get { return _isUnlocked; }
             set { _isUnlocked = value; }
         }
+        public bool isObtained
+        {
+            get { return _isObtained; }
+            set { _isObtained = value; }
+        }
     }
 
     public class WoodenSword : Weapons
@@ -91,8 +101,8 @@ namespace STS
         public WoodenSword()
         {
             weaponName = "Wooden Sword";
-            weaponDmgMax = 30;
-            weaponDmgMin = 20;
+            weaponDmgMax = 3;
+            weaponDmgMin = 2;
             isUnlocked = true;
             weaponImage = Properties.Resources.WoodenSword_Equip;
         }
@@ -106,7 +116,7 @@ namespace STS
             weaponDmgMin = 3;
             isUnlocked = false;
             weaponImage = Properties.Resources.IronSword_Equip;
-            coinValue = 15;
+            coinValue = 35;
             isObtained = false;
         }
     }
@@ -119,6 +129,7 @@ namespace STS
             weaponDmgMin = 8;
             isUnlocked = false;
             weaponImage = Properties.Resources.PiklSword_Equip;
+            isObtained = false;
         }
     }
     public class GoblinSword : Weapons
@@ -130,6 +141,7 @@ namespace STS
             weaponDmgMin = 13;
             isUnlocked = false;
             weaponImage = Properties.Resources.GoblinSwordNormal_Equip;
+            isObtained = false;
         }
     }
     public class MonkeMallet : Weapons
@@ -141,6 +153,19 @@ namespace STS
             weaponDmgMin = 20;
             isUnlocked = false;
             weaponImage = Properties.Resources.MonkeMallet_Equip;
+            isObtained = false;
+        }
+    }
+    public class DinoSword : Weapons
+    {
+        public DinoSword()
+        {
+            weaponName = "Dino Sword";
+            weaponDmgMax = 30;
+            weaponDmgMin = 28;
+            isUnlocked = false;
+            weaponImage = Properties.Resources.DinoSword_Equip;
+            isObtained = false;
         }
     }
 
@@ -153,22 +178,22 @@ namespace STS
         private int _coinValue;
         private bool _isObtained;
 
-        public string armorName
+        [JsonIgnore] public string armorName
         {
             get { return _armorName; }
             set { _armorName = value; }
         }
-        public int armorDefense
+        [JsonIgnore] public int armorDefense
         {
             get { return _armorDefense; }
             set { _armorDefense = value; }
         }
-        public Bitmap armorImage
+        [JsonIgnore] public Bitmap armorImage
         {
             get { return _armorImage; }
             set { _armorImage = value; }
         }
-        public int coinValue
+        [JsonIgnore] public int coinValue
         {
             get { return _coinValue; }
             set { _coinValue = value; }
@@ -203,7 +228,7 @@ namespace STS
             armorDefense = 6;
             isUnlocked = false;
             armorImage = Properties.Resources.IronArmor_Equip;
-            coinValue = 20;
+            coinValue = 60;
             isObtained = false;
         }
     }
@@ -215,6 +240,7 @@ namespace STS
             armorDefense = 12;
             isUnlocked = false;
             armorImage = Properties.Resources.PiklArmor_Equip;
+            isObtained = false;
         }
     }
     public class GoblinArmor : Armor
@@ -225,6 +251,7 @@ namespace STS
             armorDefense = 18;
             isUnlocked = false;
             armorImage = Properties.Resources.GoblinArmor;
+            isObtained = false;
         }
     }
     public class MonkeArmor : Armor
@@ -235,6 +262,18 @@ namespace STS
             armorDefense = 24;
             isUnlocked = false;
             armorImage = Properties.Resources.MonkeArmor;
+            isObtained = false;
+        }
+    }
+    public class DinoArmor : Armor
+    {
+        public DinoArmor()
+        {
+            armorName = "Dino Armor";
+            armorDefense = 30;
+            isUnlocked = false;
+            armorImage = Properties.Resources.DinoArmor;
+            isObtained = false;
         }
     }
 
@@ -245,6 +284,7 @@ namespace STS
         public PickleArmor pickleA = new PickleArmor();
         public GoblinArmor goblinA = new GoblinArmor();
         public MonkeArmor monkeA = new MonkeArmor();
+        public DinoArmor dinoA = new DinoArmor();
     }
 
     public class Weapon
@@ -254,6 +294,7 @@ namespace STS
         public PickleSword pickleS = new PickleSword();
         public GoblinSword goblinS = new GoblinSword();
         public MonkeMallet monkeM = new MonkeMallet();
+        public DinoSword dinoS = new DinoSword();
     }
 
     public class Boss
@@ -338,8 +379,8 @@ namespace STS
             bossName = "Smol Hanging Monke";
             bossID = 2;
             coinValue = 25;
-            minDmgBoss = 17;
-            maxDmgBoss = 20;
+            minDmgBoss = 21;
+            maxDmgBoss = 23;
             bossMaxHP = 100;
             bossImage = Properties.Resources.SmolBossMonke;
             dropTable = new int[] { MonkeCarapace.ID, MonkeBones.ID };
@@ -352,11 +393,11 @@ namespace STS
             bossName = "Zavr";
             bossID = 3;
             coinValue = 50;
-            minDmgBoss = 25;
-            maxDmgBoss = 30;
+            minDmgBoss = 28;
+            maxDmgBoss = 32;
             bossMaxHP = 200;
-            bossImage = Properties.Resources.Zavr;
-            dropTable = new int[] { MonkeCarapace.ID, MonkeBones.ID };
+            bossImage = Properties.Resources.ZavrRed;
+            dropTable = new int[] { DinoTeeth.ID, DinoClaws.ID, DinoTail.ID };
         }
     }
 
@@ -573,7 +614,8 @@ namespace STS
 
     public class Inventory
     {
-        public Item[] items = { new PickleJuice(), new PickleSkin(), new GoblinHide(), new GoblinSkull(), new MonkeBones(), new MonkeCarapace(), 
+        public Item[] items = { new PickleJuice(), new PickleSkin(), new GoblinHide(), new GoblinSkull(), new MonkeBones(), new MonkeCarapace(),
+            new DinoTeeth(), new DinoClaws(), new DinoTail(),
             new HealthPotion(), new Sword(), new Shield(), new Bomb() };
         public string itemShow;
         public int reqMat;
@@ -702,6 +744,37 @@ namespace STS
             itemQuantity = 0;
         }
     }
+    public class DinoTeeth : Item
+    {
+        readonly public static int ID = 6;
+        public DinoTeeth()
+        {
+            itemName = "Dino Teeth";
+            itemID = ID;
+            itemQuantity = 0;
+        }
+    }
+    public class DinoClaws : Item
+    {
+        readonly public static int ID = 7;
+        public DinoClaws()
+        {
+            itemName = "Dino Claws";
+            itemID = ID;
+            itemQuantity = 0;
+        }
+    }
+    public class DinoTail : Item
+    {
+        readonly public static int ID = 8;
+        public DinoTail()
+        {
+            itemName = "Dino Tail";
+            itemID = ID;
+            itemQuantity = 0;
+        }
+    }
+
     public class HealthPotion : Item
     {
         public HealthPotion()
@@ -741,12 +814,6 @@ namespace STS
         public Sword sword = new Sword();
         public Shield shield = new Shield();
         public Bomb bomb = new Bomb();
-        //public PickleJuice pJuice = new PickleJuice();
-        //public PickleSkin pSkin = new PickleSkin();
-        //public GoblinHide gHide = new GoblinHide();
-        //public GoblinSkull gSkull = new GoblinSkull();
-        //public MonkeBones mBones = new MonkeBones();
-        //public MonkeCarapace mCarapace = new MonkeCarapace();
     }
 
     abstract public class Recipe
@@ -880,6 +947,39 @@ namespace STS
             p.weapons.monkeM.isUnlocked = true;
         }
     }
+    public class DinoSwordRecipe : Recipe
+    {
+        public DinoSwordRecipe()
+        {
+            recipe = new Dictionary<int, int>()
+            {
+                { DinoTeeth.ID, 3},
+                { DinoClaws.ID, 4}
+            };
+        }
+
+        override public void unlock(ref Podatki p)
+        {
+            p.weapons.dinoS.isUnlocked = true;
+        }
+    }
+    public class DinoArmorRecipe : Recipe
+    {
+        public DinoArmorRecipe()
+        {
+            recipe = new Dictionary<int, int>()
+            {
+                { DinoTeeth.ID, 4},
+                { DinoClaws.ID, 6},
+                { DinoTail.ID, 1 }
+            };
+        }
+
+        override public void unlock(ref Podatki p)
+        {
+            p.armors.dinoA.isUnlocked = true;
+        }
+    }
 
     public class Recipes
     {
@@ -889,5 +989,7 @@ namespace STS
         public GoblinArmorRecipe goblinA = new GoblinArmorRecipe();
         public MonkeArmorRecipe monkeA = new MonkeArmorRecipe();
         public MonkeMalletRecipe monkeM = new MonkeMalletRecipe();
+        public DinoSwordRecipe dinoS = new DinoSwordRecipe();
+        public DinoArmorRecipe dinoA = new DinoArmorRecipe();
     }
 }

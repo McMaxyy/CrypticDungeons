@@ -304,7 +304,7 @@
             this.txtDmgOutput.Multiline = true;
             this.txtDmgOutput.Name = "txtDmgOutput";
             this.txtDmgOutput.ReadOnly = true;
-            this.txtDmgOutput.Size = new System.Drawing.Size(260, 292);
+            this.txtDmgOutput.Size = new System.Drawing.Size(299, 292);
             this.txtDmgOutput.TabIndex = 73;
             this.txtDmgOutput.TabStop = false;
             // 
@@ -314,6 +314,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(835, 644);
+            this.ControlBox = false;
             this.Controls.Add(this.lblShields);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnDef);

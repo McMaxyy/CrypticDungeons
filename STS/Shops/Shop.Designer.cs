@@ -68,7 +68,7 @@
             this.pictureBox1.BackgroundImage = global::STS.Properties.Resources.IronArmor_Equip;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(96, 256);
+            this.pictureBox1.Location = new System.Drawing.Point(96, 283);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(82, 96);
             this.pictureBox1.TabIndex = 13;
@@ -99,7 +99,7 @@
             // btnBuyIronA
             // 
             this.btnBuyIronA.Enabled = false;
-            this.btnBuyIronA.Location = new System.Drawing.Point(184, 329);
+            this.btnBuyIronA.Location = new System.Drawing.Point(184, 356);
             this.btnBuyIronA.Name = "btnBuyIronA";
             this.btnBuyIronA.Size = new System.Drawing.Size(40, 23);
             this.btnBuyIronA.TabIndex = 16;
@@ -112,7 +112,7 @@
             // 
             this.lblCoins.AutoSize = true;
             this.lblCoins.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCoins.Location = new System.Drawing.Point(21, 598);
+            this.lblCoins.Location = new System.Drawing.Point(21, 565);
             this.lblCoins.Name = "lblCoins";
             this.lblCoins.Size = new System.Drawing.Size(124, 17);
             this.lblCoins.TabIndex = 17;
@@ -125,16 +125,16 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(107, 13);
             this.label2.TabIndex = 18;
-            this.label2.Text = "Iron Sword - 15 coins";
+            this.label2.Text = "Iron Sword - 35 coins";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(93, 240);
+            this.label3.Location = new System.Drawing.Point(93, 267);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(104, 13);
             this.label3.TabIndex = 19;
-            this.label3.Text = "Iron Armor - 20 coins";
+            this.label3.Text = "Iron Armor - 60 coins";
             // 
             // Shop
             // 
@@ -142,6 +142,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(835, 644);
+            this.ControlBox = false;
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblCoins);

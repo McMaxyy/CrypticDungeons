@@ -15,8 +15,8 @@ namespace STS
     public partial class STS : Form
     {
 
-        int yy, xx, defense, goblinCount = 1, specialExp = 0;
-        bool enemyDefeated, bossStage, isRageActive, speciaStage;
+        int yy, xx, defense, goblinCount = 0, specialExp = 0, fireCount = 0;
+        bool enemyDefeated, bossStage, isRageActive, specialStage, fireAttack;
         Weapons selectedWeapon;
         Armor selectedArmor;
         Boss selectedBoss;
@@ -101,6 +101,9 @@ namespace STS
         //Check if the player has cleared the stage
         public void stageIsClear()
         {
+            p.enemyHP = 0;
+            lblEnemyHP.Text = "HP: " + p.enemyHP + "/" + p.enemyMaxHP;
+
             btnAttack.Enabled = btnDefend.Enabled = btnFlee.Enabled = false;
             goblinCount = 0;
 
@@ -276,7 +279,7 @@ namespace STS
         {
             if (p.bossStage == true)
                 p.y = r.Next(selectedBoss.minDmgBoss, selectedBoss.maxDmgBoss + 1);
-            else if (speciaStage == true)
+            else if (specialStage == true)
                 p.y = r.Next(specialMob.minMobDmg, specialMob.maxMobDmg + 1);
             else
                 p.y = r.Next(selectedMob.minMobDmg, selectedMob.maxMobDmg + 1);
@@ -356,7 +359,7 @@ namespace STS
             lblYY.Text = "";
             btnLevelUp.Enabled = true;
             p.n = 1;
-        }
+        }       
 
         private void btnBattle1_Click(object sender, EventArgs e)
         {
@@ -388,7 +391,7 @@ namespace STS
 
         private void btnSpecial_Click(object sender, EventArgs e)
         {
-            speciaStage = true;
+            specialStage = true;
             p.newCoins = specialMob.coinValue;
             p.enemyMaxHP = specialMob.maxMobHP;
             pbEnemy.BackgroundImage = specialMob.mobImage;
@@ -399,9 +402,19 @@ namespace STS
 
         private void btnAttack_Click(object sender, EventArgs e)
         {
-            
-            
+            if (selectedWeapon == p.weapons.dinoS && fireAttack == false)
+            {
+                yy = r.Next(10);
+                if (yy == 0 || yy == 1)
+                {
+                    fireAttack = true;
+                    fireCount = 3;
+                    pbSword.BackgroundImage = Properties.Resources.DinoSwordFire_Equip;
+                }
+            }
+
             playerAttack();
+
             if (enemyDefeated != true)
             {
                 enemyAttack();
@@ -417,15 +430,26 @@ namespace STS
                     goblinCount = -1;
                     isRageActive = true;
                 }
-            }
-            if (selectedWeapon == p.weapons.goblinS)
-            {
+
                 if (goblinCount == 0)
                 {
                     pbSword.BackgroundImage = Properties.Resources.GoblinSwordNormal_Equip;
                 }
-            }
+            }               
             goblinCount++;
+
+            if (fireAttack == true)
+            {
+                fireCount--;
+                p.enemyHP -= 5;
+                lblDmg1.Text = "You burned the enemy for 5 extra damage";
+            }
+
+            if (selectedWeapon == p.weapons.dinoS && fireCount == 0)
+            {
+                fireAttack = false;
+                pbSword.BackgroundImage = Properties.Resources.DinoSword_Equip;
+            }
         }
 
         private void btnFlee_Click(object sender, EventArgs e)

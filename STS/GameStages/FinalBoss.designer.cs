@@ -32,15 +32,19 @@
             this.lblEnemyHP = new System.Windows.Forms.Label();
             this.btnAttack = new System.Windows.Forms.Button();
             this.btnPotion = new System.Windows.Forms.Button();
-            this.pbSword = new System.Windows.Forms.PictureBox();
-            this.pbEnemy = new System.Windows.Forms.PictureBox();
-            this.pbPlayer = new System.Windows.Forms.PictureBox();
             this.lblLevel = new System.Windows.Forms.Label();
             this.lblCoins = new System.Windows.Forms.Label();
             this.btnReturn = new System.Windows.Forms.Button();
             this.lblShields = new System.Windows.Forms.Label();
             this.txtDmgOutput = new System.Windows.Forms.TextBox();
             this.btnDefend = new System.Windows.Forms.Button();
+            this.lblCleared = new System.Windows.Forms.Label();
+            this.btnCleared = new System.Windows.Forms.Button();
+            this.pbCleared = new System.Windows.Forms.PictureBox();
+            this.pbSword = new System.Windows.Forms.PictureBox();
+            this.pbEnemy = new System.Windows.Forms.PictureBox();
+            this.pbPlayer = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCleared)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEnemy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayer)).BeginInit();
@@ -88,37 +92,6 @@
             this.btnPotion.TabIndex = 58;
             this.btnPotion.UseVisualStyleBackColor = true;
             this.btnPotion.Click += new System.EventHandler(this.btnPotion_Click);
-            // 
-            // pbSword
-            // 
-            this.pbSword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbSword.Location = new System.Drawing.Point(24, 391);
-            this.pbSword.Name = "pbSword";
-            this.pbSword.Size = new System.Drawing.Size(43, 65);
-            this.pbSword.TabIndex = 57;
-            this.pbSword.TabStop = false;
-            this.pbSword.Tag = "Stage";
-            // 
-            // pbEnemy
-            // 
-            this.pbEnemy.BackgroundImage = global::STS.Properties.Resources.Zavr;
-            this.pbEnemy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbEnemy.Location = new System.Drawing.Point(543, 26);
-            this.pbEnemy.Name = "pbEnemy";
-            this.pbEnemy.Size = new System.Drawing.Size(261, 216);
-            this.pbEnemy.TabIndex = 49;
-            this.pbEnemy.TabStop = false;
-            this.pbEnemy.Tag = "Stage";
-            // 
-            // pbPlayer
-            // 
-            this.pbPlayer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbPlayer.Location = new System.Drawing.Point(31, 390);
-            this.pbPlayer.Name = "pbPlayer";
-            this.pbPlayer.Size = new System.Drawing.Size(185, 222);
-            this.pbPlayer.TabIndex = 48;
-            this.pbPlayer.TabStop = false;
-            this.pbPlayer.Tag = "Stage";
             // 
             // lblLevel
             // 
@@ -170,7 +143,7 @@
             this.txtDmgOutput.Multiline = true;
             this.txtDmgOutput.Name = "txtDmgOutput";
             this.txtDmgOutput.ReadOnly = true;
-            this.txtDmgOutput.Size = new System.Drawing.Size(260, 292);
+            this.txtDmgOutput.Size = new System.Drawing.Size(299, 292);
             this.txtDmgOutput.TabIndex = 73;
             this.txtDmgOutput.TabStop = false;
             // 
@@ -187,12 +160,86 @@
             this.btnDefend.UseVisualStyleBackColor = true;
             this.btnDefend.Click += new System.EventHandler(this.btnDefend_Click);
             // 
+            // lblCleared
+            // 
+            this.lblCleared.BackColor = System.Drawing.SystemColors.Control;
+            this.lblCleared.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCleared.Location = new System.Drawing.Point(331, 279);
+            this.lblCleared.Name = "lblCleared";
+            this.lblCleared.Size = new System.Drawing.Size(185, 60);
+            this.lblCleared.TabIndex = 77;
+            this.lblCleared.Tag = "Stage";
+            this.lblCleared.Text = "You cleared the battle!";
+            this.lblCleared.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCleared.Visible = false;
+            // 
+            // btnCleared
+            // 
+            this.btnCleared.BackColor = System.Drawing.SystemColors.Control;
+            this.btnCleared.Location = new System.Drawing.Point(382, 346);
+            this.btnCleared.Name = "btnCleared";
+            this.btnCleared.Size = new System.Drawing.Size(87, 23);
+            this.btnCleared.TabIndex = 76;
+            this.btnCleared.TabStop = false;
+            this.btnCleared.Tag = "Stage";
+            this.btnCleared.Text = "OK";
+            this.btnCleared.UseVisualStyleBackColor = false;
+            this.btnCleared.Visible = false;
+            this.btnCleared.Click += new System.EventHandler(this.btnCleared_Click);
+            // 
+            // pbCleared
+            // 
+            this.pbCleared.BackColor = System.Drawing.SystemColors.Control;
+            this.pbCleared.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbCleared.Location = new System.Drawing.Point(316, 272);
+            this.pbCleared.Name = "pbCleared";
+            this.pbCleared.Size = new System.Drawing.Size(218, 112);
+            this.pbCleared.TabIndex = 75;
+            this.pbCleared.TabStop = false;
+            this.pbCleared.Tag = "Stage";
+            this.pbCleared.Visible = false;
+            // 
+            // pbSword
+            // 
+            this.pbSword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbSword.Location = new System.Drawing.Point(24, 391);
+            this.pbSword.Name = "pbSword";
+            this.pbSword.Size = new System.Drawing.Size(43, 65);
+            this.pbSword.TabIndex = 57;
+            this.pbSword.TabStop = false;
+            this.pbSword.Tag = "Stage";
+            // 
+            // pbEnemy
+            // 
+            this.pbEnemy.BackgroundImage = global::STS.Properties.Resources.ZavrRed;
+            this.pbEnemy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbEnemy.Location = new System.Drawing.Point(543, 26);
+            this.pbEnemy.Name = "pbEnemy";
+            this.pbEnemy.Size = new System.Drawing.Size(261, 216);
+            this.pbEnemy.TabIndex = 49;
+            this.pbEnemy.TabStop = false;
+            this.pbEnemy.Tag = "Stage";
+            // 
+            // pbPlayer
+            // 
+            this.pbPlayer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbPlayer.Location = new System.Drawing.Point(31, 390);
+            this.pbPlayer.Name = "pbPlayer";
+            this.pbPlayer.Size = new System.Drawing.Size(185, 222);
+            this.pbPlayer.TabIndex = 48;
+            this.pbPlayer.TabStop = false;
+            this.pbPlayer.Tag = "Stage";
+            // 
             // FinalBoss
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Salmon;
+            this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(835, 644);
+            this.ControlBox = false;
+            this.Controls.Add(this.lblCleared);
+            this.Controls.Add(this.btnCleared);
+            this.Controls.Add(this.pbCleared);
             this.Controls.Add(this.btnDefend);
             this.Controls.Add(this.lblShields);
             this.Controls.Add(this.btnReturn);
@@ -208,6 +255,7 @@
             this.Controls.Add(this.txtDmgOutput);
             this.Name = "FinalBoss";
             this.Text = "Cryptic Dungeons";
+            ((System.ComponentModel.ISupportInitialize)(this.pbCleared)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEnemy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayer)).EndInit();
@@ -231,5 +279,8 @@
         private System.Windows.Forms.Label lblShields;
         private System.Windows.Forms.TextBox txtDmgOutput;
         private System.Windows.Forms.Button btnDefend;
+        private System.Windows.Forms.Label lblCleared;
+        private System.Windows.Forms.Button btnCleared;
+        private System.Windows.Forms.PictureBox pbCleared;
     }
 }

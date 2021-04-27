@@ -133,6 +133,7 @@
             // 
             // btnFinalBoss
             // 
+            this.btnFinalBoss.Enabled = false;
             this.btnFinalBoss.Location = new System.Drawing.Point(625, 157);
             this.btnFinalBoss.Name = "btnFinalBoss";
             this.btnFinalBoss.Size = new System.Drawing.Size(148, 317);
@@ -148,6 +149,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Tan;
             this.ClientSize = new System.Drawing.Size(835, 644);
+            this.ControlBox = false;
             this.Controls.Add(this.btnFinalBoss);
             this.Controls.Add(this.btnHighGrind);
             this.Controls.Add(this.btnStage3);

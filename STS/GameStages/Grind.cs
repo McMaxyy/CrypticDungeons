@@ -18,8 +18,8 @@ namespace STS
         Armor selectedArmor;
         Random r = new Random();
         Mob selectedMob;
-        int x, currentNewExp, extraDmg;
-        bool enemyDefeated;
+        int x, currentNewExp, extraDmg, fireCount = 0, yy, goblinCount = 0;
+        bool enemyDefeated, fireAttack, isRageActive;
         string dmgOutput;
 
         public void dropItems()
@@ -39,6 +39,10 @@ namespace STS
 
         public void isClear()
         {
+            goblinCount = -1;
+            isRageActive = false;
+            fireCount = 0;
+            fireAttack = false;
             dmgOutput = "--------------------------------------------------";
             txtDmgOutput.AppendText(dmgOutput);
             txtDmgOutput.AppendText(Environment.NewLine);
@@ -90,6 +94,12 @@ namespace STS
             else
             {
                 x = extraDmg + p.str / 2 + r.Next(selectedWeapon.weaponDmgMin, selectedWeapon.weaponDmgMax + 1);
+
+                if (isRageActive == true)
+                {
+                    x += 3;
+                    isRageActive = false;
+                }
 
                 p.enemyHP = p.enemyHP - x;
                 lblEnemyHP.Text = "HP: " + p.enemyHP + "/" + p.enemyMaxHP;
@@ -366,8 +376,19 @@ namespace STS
 
         private void btnAttack_Click(object sender, EventArgs e)
         {
+            if (selectedWeapon == p.weapons.dinoS && fireAttack == false)
+            {
+                yy = r.Next(10);
+                if (yy == 0 || yy == 1)
+                {
+                    fireAttack = true;
+                    fireCount = 3;
+                    pbSword.BackgroundImage = Properties.Resources.DinoSwordFire_Equip;
+                }
+            }
+
             playerAttack();
-            if (enemyDefeated == false)
+            if (enemyDefeated != true)
             {
                 enemyAttack();
             }
@@ -376,6 +397,40 @@ namespace STS
                 isClear();
                 selectMob();
                 setMobStats();
+            }
+
+            if (selectedWeapon == p.weapons.goblinS)
+            {
+                if (goblinCount == 2)
+                {
+                    pbSword.BackgroundImage = Properties.Resources.GoblinSwordRage_Equip;
+                    goblinCount = -1;
+                    isRageActive = true;
+                }
+
+                if (goblinCount == 0)
+                {
+                    pbSword.BackgroundImage = Properties.Resources.GoblinSwordNormal_Equip;
+                }
+            }
+            goblinCount++;
+
+            if (fireAttack == true)
+            {
+                fireCount--;
+                p.enemyHP -= 5;
+                lblEnemyHP.Text = "HP: " + p.enemyHP + "/" + p.enemyMaxHP;
+                txtDmgOutput.AppendText("Enemy burned for an additional 5 damage");
+                txtDmgOutput.AppendText(Environment.NewLine);
+
+                if (p.enemyHP <= 0)
+                    isClear();
+            }
+
+            if (selectedWeapon == p.weapons.dinoS && fireCount == 0)
+            {
+                fireAttack = false;
+                pbSword.BackgroundImage = Properties.Resources.DinoSword_Equip;
             }
         }
     }

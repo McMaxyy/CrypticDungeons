@@ -42,18 +42,26 @@
             this.lblCoins = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.exitGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveLoadGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnMap = new System.Windows.Forms.Button();
             this.lblLevel = new System.Windows.Forms.Label();
             this.lblHP = new System.Windows.Forms.Label();
             this.lblStats = new System.Windows.Forms.Label();
             this.btnGS = new System.Windows.Forms.Button();
             this.btnGA = new System.Windows.Forms.Button();
-            this.pbSword = new System.Windows.Forms.PictureBox();
-            this.pbPlayer = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnNext = new System.Windows.Forms.Button();
             this.btnMA = new System.Windows.Forms.Button();
             this.btnMM = new System.Windows.Forms.Button();
+            this.btnDA = new System.Windows.Forms.Button();
+            this.btnDS = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.saveNewGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pbSword = new System.Windows.Forms.PictureBox();
+            this.pbPlayer = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayer)).BeginInit();
@@ -62,7 +70,7 @@
             // 
             // btnWS
             // 
-            this.btnWS.Location = new System.Drawing.Point(617, 464);
+            this.btnWS.Location = new System.Drawing.Point(617, 431);
             this.btnWS.Name = "btnWS";
             this.btnWS.Size = new System.Drawing.Size(60, 54);
             this.btnWS.TabIndex = 1;
@@ -77,7 +85,7 @@
             // btnIS
             // 
             this.btnIS.Enabled = false;
-            this.btnIS.Location = new System.Drawing.Point(683, 464);
+            this.btnIS.Location = new System.Drawing.Point(683, 431);
             this.btnIS.Name = "btnIS";
             this.btnIS.Size = new System.Drawing.Size(60, 54);
             this.btnIS.TabIndex = 2;
@@ -92,7 +100,7 @@
             // btnIA
             // 
             this.btnIA.Enabled = false;
-            this.btnIA.Location = new System.Drawing.Point(683, 524);
+            this.btnIA.Location = new System.Drawing.Point(683, 491);
             this.btnIA.Name = "btnIA";
             this.btnIA.Size = new System.Drawing.Size(60, 54);
             this.btnIA.TabIndex = 5;
@@ -106,7 +114,7 @@
             // 
             // btnBA
             // 
-            this.btnBA.Location = new System.Drawing.Point(617, 524);
+            this.btnBA.Location = new System.Drawing.Point(617, 491);
             this.btnBA.Name = "btnBA";
             this.btnBA.Size = new System.Drawing.Size(60, 54);
             this.btnBA.TabIndex = 4;
@@ -131,7 +139,7 @@
             // btnPS
             // 
             this.btnPS.Enabled = false;
-            this.btnPS.Location = new System.Drawing.Point(749, 464);
+            this.btnPS.Location = new System.Drawing.Point(749, 431);
             this.btnPS.Name = "btnPS";
             this.btnPS.Size = new System.Drawing.Size(60, 54);
             this.btnPS.TabIndex = 11;
@@ -146,7 +154,7 @@
             // btnCraft
             // 
             this.btnCraft.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCraft.Location = new System.Drawing.Point(27, 495);
+            this.btnCraft.Location = new System.Drawing.Point(29, 507);
             this.btnCraft.Name = "btnCraft";
             this.btnCraft.Size = new System.Drawing.Size(188, 83);
             this.btnCraft.TabIndex = 12;
@@ -158,7 +166,7 @@
             // btnPA
             // 
             this.btnPA.Enabled = false;
-            this.btnPA.Location = new System.Drawing.Point(749, 524);
+            this.btnPA.Location = new System.Drawing.Point(749, 491);
             this.btnPA.Name = "btnPA";
             this.btnPA.Size = new System.Drawing.Size(60, 54);
             this.btnPA.TabIndex = 13;
@@ -174,7 +182,7 @@
             // 
             this.btnShop.BackColor = System.Drawing.Color.Transparent;
             this.btnShop.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShop.Location = new System.Drawing.Point(27, 366);
+            this.btnShop.Location = new System.Drawing.Point(29, 378);
             this.btnShop.Name = "btnShop";
             this.btnShop.Size = new System.Drawing.Size(188, 83);
             this.btnShop.TabIndex = 14;
@@ -186,7 +194,7 @@
             // btnEquipment
             // 
             this.btnEquipment.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEquipment.Location = new System.Drawing.Point(649, 400);
+            this.btnEquipment.Location = new System.Drawing.Point(649, 367);
             this.btnEquipment.Name = "btnEquipment";
             this.btnEquipment.Size = new System.Drawing.Size(132, 49);
             this.btnEquipment.TabIndex = 15;
@@ -221,7 +229,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exitGameToolStripMenuItem});
+            this.exitGameToolStripMenuItem,
+            this.saveLoadGameToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(835, 24);
@@ -235,11 +244,35 @@
             this.exitGameToolStripMenuItem.Text = "Exit Game";
             this.exitGameToolStripMenuItem.Click += new System.EventHandler(this.exitGameToolStripMenuItem_Click);
             // 
+            // saveLoadGameToolStripMenuItem
+            // 
+            this.saveLoadGameToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saveGameToolStripMenuItem,
+            this.loadGameToolStripMenuItem,
+            this.saveNewGameToolStripMenuItem});
+            this.saveLoadGameToolStripMenuItem.Name = "saveLoadGameToolStripMenuItem";
+            this.saveLoadGameToolStripMenuItem.Size = new System.Drawing.Size(108, 20);
+            this.saveLoadGameToolStripMenuItem.Text = "Save/Load Game";
+            // 
+            // saveGameToolStripMenuItem
+            // 
+            this.saveGameToolStripMenuItem.Name = "saveGameToolStripMenuItem";
+            this.saveGameToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.saveGameToolStripMenuItem.Text = "Save Game";
+            this.saveGameToolStripMenuItem.Click += new System.EventHandler(this.saveGameToolStripMenuItem_Click);
+            // 
+            // loadGameToolStripMenuItem
+            // 
+            this.loadGameToolStripMenuItem.Name = "loadGameToolStripMenuItem";
+            this.loadGameToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.loadGameToolStripMenuItem.Text = "Load Game";
+            this.loadGameToolStripMenuItem.Click += new System.EventHandler(this.loadGameToolStripMenuItem_Click);
+            // 
             // btnMap
             // 
             this.btnMap.BackColor = System.Drawing.Color.Transparent;
             this.btnMap.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMap.Location = new System.Drawing.Point(27, 239);
+            this.btnMap.Location = new System.Drawing.Point(29, 250);
             this.btnMap.Name = "btnMap";
             this.btnMap.Size = new System.Drawing.Size(188, 83);
             this.btnMap.TabIndex = 20;
@@ -252,7 +285,7 @@
             // 
             this.lblLevel.AutoSize = true;
             this.lblLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLevel.Location = new System.Drawing.Point(292, 102);
+            this.lblLevel.Location = new System.Drawing.Point(286, 102);
             this.lblLevel.Name = "lblLevel";
             this.lblLevel.Size = new System.Drawing.Size(52, 17);
             this.lblLevel.TabIndex = 22;
@@ -262,7 +295,7 @@
             // 
             this.lblHP.AutoSize = true;
             this.lblHP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHP.Location = new System.Drawing.Point(292, 119);
+            this.lblHP.Location = new System.Drawing.Point(286, 119);
             this.lblHP.Name = "lblHP";
             this.lblHP.Size = new System.Drawing.Size(34, 17);
             this.lblHP.TabIndex = 23;
@@ -272,7 +305,7 @@
             // 
             this.lblStats.AutoSize = true;
             this.lblStats.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStats.Location = new System.Drawing.Point(292, 136);
+            this.lblStats.Location = new System.Drawing.Point(286, 136);
             this.lblStats.Name = "lblStats";
             this.lblStats.Size = new System.Drawing.Size(55, 17);
             this.lblStats.TabIndex = 24;
@@ -281,7 +314,7 @@
             // btnGS
             // 
             this.btnGS.Enabled = false;
-            this.btnGS.Location = new System.Drawing.Point(617, 464);
+            this.btnGS.Location = new System.Drawing.Point(617, 431);
             this.btnGS.Name = "btnGS";
             this.btnGS.Size = new System.Drawing.Size(60, 54);
             this.btnGS.TabIndex = 25;
@@ -296,7 +329,7 @@
             // btnGA
             // 
             this.btnGA.Enabled = false;
-            this.btnGA.Location = new System.Drawing.Point(617, 524);
+            this.btnGA.Location = new System.Drawing.Point(617, 491);
             this.btnGA.Name = "btnGA";
             this.btnGA.Size = new System.Drawing.Size(60, 54);
             this.btnGA.TabIndex = 26;
@@ -308,36 +341,9 @@
             this.btnGA.Click += new System.EventHandler(this.btnGA_Click);
             this.btnGA.MouseClick += new System.Windows.Forms.MouseEventHandler(this.updateStats);
             // 
-            // pbSword
-            // 
-            this.pbSword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbSword.Location = new System.Drawing.Point(305, 186);
-            this.pbSword.Name = "pbSword";
-            this.pbSword.Size = new System.Drawing.Size(51, 77);
-            this.pbSword.TabIndex = 8;
-            this.pbSword.TabStop = false;
-            // 
-            // pbPlayer
-            // 
-            this.pbPlayer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbPlayer.Location = new System.Drawing.Point(313, 185);
-            this.pbPlayer.Name = "pbPlayer";
-            this.pbPlayer.Size = new System.Drawing.Size(225, 264);
-            this.pbPlayer.TabIndex = 7;
-            this.pbPlayer.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(295, 167);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(260, 300);
-            this.pictureBox1.TabIndex = 21;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(617, 593);
+            this.btnNext.Location = new System.Drawing.Point(617, 560);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(192, 30);
             this.btnNext.TabIndex = 27;
@@ -351,7 +357,7 @@
             // btnMA
             // 
             this.btnMA.Enabled = false;
-            this.btnMA.Location = new System.Drawing.Point(683, 524);
+            this.btnMA.Location = new System.Drawing.Point(683, 491);
             this.btnMA.Name = "btnMA";
             this.btnMA.Size = new System.Drawing.Size(60, 54);
             this.btnMA.TabIndex = 29;
@@ -365,7 +371,7 @@
             // btnMM
             // 
             this.btnMM.Enabled = false;
-            this.btnMM.Location = new System.Drawing.Point(683, 464);
+            this.btnMM.Location = new System.Drawing.Point(683, 431);
             this.btnMM.Name = "btnMM";
             this.btnMM.Size = new System.Drawing.Size(60, 54);
             this.btnMM.TabIndex = 28;
@@ -376,6 +382,77 @@
             this.btnMM.Visible = false;
             this.btnMM.Click += new System.EventHandler(this.btnMM_Click);
             // 
+            // btnDA
+            // 
+            this.btnDA.Enabled = false;
+            this.btnDA.Location = new System.Drawing.Point(749, 491);
+            this.btnDA.Name = "btnDA";
+            this.btnDA.Size = new System.Drawing.Size(60, 54);
+            this.btnDA.TabIndex = 31;
+            this.btnDA.TabStop = false;
+            this.btnDA.Tag = "Equipment2";
+            this.btnDA.Text = "Dino Armor";
+            this.btnDA.UseVisualStyleBackColor = true;
+            this.btnDA.Visible = false;
+            this.btnDA.Click += new System.EventHandler(this.btnDA_Click);
+            // 
+            // btnDS
+            // 
+            this.btnDS.Enabled = false;
+            this.btnDS.Location = new System.Drawing.Point(749, 431);
+            this.btnDS.Name = "btnDS";
+            this.btnDS.Size = new System.Drawing.Size(60, 54);
+            this.btnDS.TabIndex = 30;
+            this.btnDS.TabStop = false;
+            this.btnDS.Tag = "Equipment2";
+            this.btnDS.Text = "Dino Sword";
+            this.btnDS.UseVisualStyleBackColor = true;
+            this.btnDS.Visible = false;
+            this.btnDS.Click += new System.EventHandler(this.btnDS_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Filter = "JSON (*.json) | *.json;";
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.Filter = "JSON (*.json) | *.json;";
+            // 
+            // saveNewGameToolStripMenuItem
+            // 
+            this.saveNewGameToolStripMenuItem.Name = "saveNewGameToolStripMenuItem";
+            this.saveNewGameToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.saveNewGameToolStripMenuItem.Text = "Save New Game";
+            this.saveNewGameToolStripMenuItem.Click += new System.EventHandler(this.saveNewGameToolStripMenuItem_Click);
+            // 
+            // pbSword
+            // 
+            this.pbSword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbSword.Location = new System.Drawing.Point(299, 186);
+            this.pbSword.Name = "pbSword";
+            this.pbSword.Size = new System.Drawing.Size(51, 77);
+            this.pbSword.TabIndex = 8;
+            this.pbSword.TabStop = false;
+            // 
+            // pbPlayer
+            // 
+            this.pbPlayer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbPlayer.Location = new System.Drawing.Point(307, 185);
+            this.pbPlayer.Name = "pbPlayer";
+            this.pbPlayer.Size = new System.Drawing.Size(225, 264);
+            this.pbPlayer.TabIndex = 7;
+            this.pbPlayer.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Location = new System.Drawing.Point(289, 167);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(260, 300);
+            this.pictureBox1.TabIndex = 21;
+            this.pictureBox1.TabStop = false;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -384,6 +461,8 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(835, 644);
             this.ControlBox = false;
+            this.Controls.Add(this.btnDA);
+            this.Controls.Add(this.btnDS);
             this.Controls.Add(this.btnMA);
             this.Controls.Add(this.btnMM);
             this.Controls.Add(this.btnNext);
@@ -450,5 +529,13 @@
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnMA;
         private System.Windows.Forms.Button btnMM;
+        private System.Windows.Forms.Button btnDA;
+        private System.Windows.Forms.Button btnDS;
+        private System.Windows.Forms.ToolStripMenuItem saveLoadGameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveGameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loadGameToolStripMenuItem;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.ToolStripMenuItem saveNewGameToolStripMenuItem;
     }
 }

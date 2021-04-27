@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json.Serialization;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace STS
 {
@@ -35,6 +38,10 @@ namespace STS
                 btnGS.Enabled = true;
             if (p.armors.goblinA.isUnlocked == true)
                 btnGA.Enabled = true;
+            if (p.weapons.dinoS.isUnlocked == true)
+                btnDS.Enabled = true;
+            if (p.armors.dinoA.isUnlocked == true)
+                btnDA.Enabled = true;
         }
 
         public void showAvailableEquipment()
@@ -140,6 +147,18 @@ namespace STS
         private void btnMA_Click(object sender, EventArgs e)
         {
             armor = p.armors.monkeA;
+            showEquipment();
+        }
+
+        private void btnDS_Click(object sender, EventArgs e)
+        {
+            weapon = p.weapons.dinoS;
+            showEquipment();
+        }
+
+        private void btnDA_Click(object sender, EventArgs e)
+        {
+            armor = p.armors.dinoA;
             showEquipment();
         }
 
@@ -273,6 +292,46 @@ namespace STS
             }
         }
 
-        
+        private void loadGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                p.saveName = Path.GetFullPath(openFileDialog1.FileName);
+                JsonConvert.PopulateObject(File.ReadAllText(p.saveName), this.p);
+
+                weapon = p.weapons.woodenS;
+                armor = p.armors.bronzeA;
+                Home h = new Home(weapon, armor, ref p);
+                h.Width = this.Width;
+                h.Height = this.Height;
+                h.StartPosition = FormStartPosition.Manual;
+                h.Location = new Point(this.Location.X, this.Location.Y);
+                this.Visible = false;
+                h.ShowDialog();
+            }
+        }
+
+        private void saveGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (p.saveName == "")
+            {
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    p.saveName = Path.GetFullPath(saveFileDialog1.FileName);
+                }
+            }
+
+            if(p.saveName != "")
+                File.WriteAllText(p.saveName, JsonConvert.SerializeObject(p));
+        }
+
+        private void saveNewGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                p.saveName = Path.GetFullPath(saveFileDialog1.FileName);
+                File.WriteAllText(p.saveName, JsonConvert.SerializeObject(p));
+            }
+        }
     }
 }

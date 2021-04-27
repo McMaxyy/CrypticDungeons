@@ -34,6 +34,7 @@ namespace STS
 
             if (p.weapons.monkeM.isUnlocked == true && p.armors.monkeA.isUnlocked == true)
             {
+                btnFinalBoss.Enabled = true;
                 btnEndless.Enabled = true;
             }
         }
