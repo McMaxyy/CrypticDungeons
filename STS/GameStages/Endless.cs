@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Reflection;
 
@@ -23,6 +19,7 @@ namespace STS
         bool enemyDefeated, bossTime, fireAttack, isRageActive;
         string dmgOutput;
 
+        //Function that drops one of the 4 items in this gamemode
         public void dropItems()
         {
             x = r.Next(10);
@@ -38,6 +35,7 @@ namespace STS
             updateItems();
         }
 
+        //Function that checks if the enemy's been slain, resets extra weapon values and gives the player coins and experience points
         public void isClear()
         {
             goblinCount = -1;
@@ -103,6 +101,7 @@ namespace STS
             }
         }
 
+        //Player attack function
         public void playerAttack()
         {
             x = r.Next(10);
@@ -134,6 +133,8 @@ namespace STS
                 enemyDefeated = true;                
             }
         }
+
+        //Enemy attack function
         public void enemyAttack()
         {
             if (bossTime == true)
@@ -176,13 +177,13 @@ namespace STS
             }
         }
 
+        //Function for selecting a random enemy
         public void selectMob()
         {
             Type[] chooseMob = Assembly.GetAssembly(typeof (Mob)).GetTypes().Where(TheType => TheType.IsClass && !TheType.IsAbstract && TheType.IsSubclassOf(typeof (Mob))).ToArray();
             x = r.Next(chooseMob.Length);
             ConstructorInfo ctor = chooseMob[x].GetConstructor(new Type[0]);
             selectedMob = (Mob)ctor.Invoke(new object[] { });
-            //MessageBox.Show(selectedMob.mobName);
             pbEnemy.BackgroundImage = selectedMob.mobImage;
         }
         public void selectBoss()
@@ -191,7 +192,6 @@ namespace STS
             x = r.Next(chooseMob.Length);
             ConstructorInfo ctor = chooseMob[x].GetConstructor(new Type[0]);
             selectedBoss = (Boss)ctor.Invoke(new object[] { });
-            //MessageBox.Show(selectedMob.mobName);
 
             pbEnemy.BackgroundImage = selectedBoss.bossImage;
             p.enemyMaxHP = selectedBoss.bossMaxHP;
@@ -202,6 +202,7 @@ namespace STS
             lblEnemyHP.Text = "HP: " + p.enemyHP + "/" + p.enemyMaxHP;
         }
 
+        //Function for setting enemy stats (health, etc.)
         public void setMobStats()
         {
             if (selectedMob != p.mobs.pikle)
@@ -215,6 +216,7 @@ namespace STS
             lblEnemyHP.Text = "HP: " + p.enemyHP + "/" + p.enemyMaxHP;
         }
 
+        //Function for when the player levels up
         public void levelUp()
         {
             lblLevel.Text = "Level: " + p.level;
@@ -225,6 +227,7 @@ namespace STS
             p.newLevel++;
         }
         
+        //Function that updates which items you have
         public void updateItems()
         {
             btnSword.Text = "Damage: " + p.items.sword.itemQuantity;
@@ -233,6 +236,7 @@ namespace STS
             btnPotion.Text = "HP Pots: " + p.items.healthPot.itemQuantity;
         }
 
+        //Function that locks items that you don't have
         public void lockItems()
         {
             btnPotion.Enabled = false;
@@ -241,6 +245,7 @@ namespace STS
             btnSword.Enabled = false;
         }
 
+        //Function that unlocks items that you do have
         public void unlockItems()
         {
             if (p.items.healthPot.itemQuantity > 0)
@@ -279,6 +284,7 @@ namespace STS
             selectedBoss = p.bosses.goblinKing;
         }
 
+        //Buttons for adding strength and defense points
         private void btnStr_Click(object sender, EventArgs e)
         {
             if (p.points > 0)
@@ -293,7 +299,6 @@ namespace STS
                 btnStr.Enabled = btnDef.Enabled = false;
             }
         }
-
         private void btnDef_Click(object sender, EventArgs e)
         {
             if (p.points > 0)
@@ -309,6 +314,7 @@ namespace STS
             }
         }
 
+        //Buttons for using items
         private void btnPotion_Click(object sender, EventArgs e)
         {
             if (p.items.healthPot.itemQuantity > 0)
@@ -322,7 +328,6 @@ namespace STS
                 lblPlayerHP.Text = "HP: " + p.playerHP + "/" + p.playerMaxHP;
             }
         }
-
         private void btnBomb_Click(object sender, EventArgs e)
         {
             if (p.items.bomb.itemQuantity > 0)
@@ -336,7 +341,6 @@ namespace STS
                     playerAttack();
             }
         }
-
         private void btnShield_Click(object sender, EventArgs e)
         {
             if (p.items.shield.itemQuantity > 0)
@@ -348,7 +352,6 @@ namespace STS
                 lblShields.Text = "(" + p.shields + ")";
             }
         }
-
         private void btnSword_Click(object sender, EventArgs e)
         {
             if (p.items.sword.itemQuantity > 0)
@@ -375,6 +378,7 @@ namespace STS
             m.ShowDialog();
         }
 
+        //Attack button
         private void btnAttack_Click(object sender, EventArgs e)
         {
             if (selectedWeapon == p.weapons.dinoS && fireAttack == false)

@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Reflection;
 
@@ -22,6 +18,7 @@ namespace STS
         bool enemyDefeated, fireAttack, isRageActive;
         string dmgOutput;
 
+        //Function that drops one of the 4 items in this gamemode
         public void dropItems()
         {
             x = r.Next(12);
@@ -37,6 +34,7 @@ namespace STS
             updateItems();
         }
 
+        //Function that checks if the enemy's been slain, resets extra weapon values and gives the player coins and experience points
         public void isClear()
         {
             goblinCount = -1;
@@ -82,6 +80,7 @@ namespace STS
             unlockItems();
         }
 
+        //Player attack function
         public void playerAttack()
         {
             x = r.Next(10);
@@ -113,6 +112,8 @@ namespace STS
                 enemyDefeated = true;                
             }
         }
+
+        //Enemy attack function
         public void enemyAttack()
         {
             p.y = r.Next(selectedMob.minMobDmg, selectedMob.maxMobDmg + 1);
@@ -153,6 +154,7 @@ namespace STS
             }
         }
 
+        //Function for selecting a random enemy depending on the stage rank
         public void selectMob()
         {
             if (p.stageRank == 1)
@@ -191,6 +193,7 @@ namespace STS
             pbEnemy.BackgroundImage = selectedMob.mobImage;
         }
 
+        //Function for setting enemy stats (health, etc.)
         public void setMobStats()
         {                       
             pbEnemy.BackgroundImage = selectedMob.mobImage;
@@ -200,6 +203,7 @@ namespace STS
             lblEnemyHP.Text = "HP: " + p.enemyHP + "/" + p.enemyMaxHP;
         }
 
+        //Function for when the player levels up
         public void levelUp()
         {
             lblLevel.Text = "Level: " + p.level;
@@ -209,7 +213,8 @@ namespace STS
             pbLevelUp.Visible = btnDef.Visible = btnStr.Visible = btnLevelUp.Visible = lblStrDef.Visible = lblPoints.Visible = lblLevelUp.Visible = true;
             p.newLevel++;
         }
-        
+
+        //Function that updates which items you have
         public void updateItems()
         {
             btnSword.Text = "Damage: " + p.items.sword.itemQuantity;
@@ -218,6 +223,7 @@ namespace STS
             btnPotion.Text = "HP Pots: " + p.items.healthPot.itemQuantity;
         }
 
+        //Function that locks items that you don't have
         public void lockItems()
         {
             btnPotion.Enabled = false;
@@ -226,6 +232,7 @@ namespace STS
             btnSword.Enabled = false;
         }
 
+        //Function that unlocks items that you do have
         public void unlockItems()
         {
             if (p.items.healthPot.itemQuantity > 0)

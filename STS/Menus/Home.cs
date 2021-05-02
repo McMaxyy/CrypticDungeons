@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Newtonsoft.Json.Serialization;
 using Newtonsoft.Json;
 using System.IO;
 
@@ -19,31 +12,59 @@ namespace STS
         Weapons weapon;
         Armor armor;
 
+        //Function that shows equiped gear 
         public void showEquipment()
         {
             pbPlayer.BackgroundImage = armor.armorImage;
             pbSword.BackgroundImage = weapon.weaponImage;
         }
+
+        //Function that checks which piece of equipment you have
         public void isUnlocked()
         {
             if (p.weapons.ironS.isUnlocked == true)
+            {
                 btnIS.Enabled = true;
+                btnIS.BackColor = Color.DarkSlateGray;
+            }
             if (p.armors.ironA.isUnlocked == true)
+            {
                 btnIA.Enabled = true;
+                btnIA.BackColor = Color.DarkSlateGray;
+            }
             if (p.weapons.pickleS.isUnlocked == true)
+            {
                 btnPS.Enabled = true;
+                btnPS.BackColor = Color.DarkSlateGray;
+            }
             if (p.armors.pickleA.isUnlocked == true)
+            {
                 btnPA.Enabled = true;
+                btnPA.BackColor = Color.DarkSlateGray;
+            }
             if (p.weapons.goblinS.isUnlocked == true)
+            {
                 btnGS.Enabled = true;
+                btnGS.BackColor = Color.DarkSlateGray;
+            }
             if (p.armors.goblinA.isUnlocked == true)
+            {
                 btnGA.Enabled = true;
+                btnGA.BackColor = Color.DarkSlateGray;
+            }
             if (p.weapons.dinoS.isUnlocked == true)
+            {
                 btnDS.Enabled = true;
+                btnDS.BackColor = Color.DarkSlateGray;
+            }
             if (p.armors.dinoA.isUnlocked == true)
+            {
                 btnDA.Enabled = true;
+                btnDA.BackColor = Color.DarkSlateGray;
+            }
         }
 
+        //Function that shows equipment
         public void showAvailableEquipment()
         {
             foreach (Control x in this.Controls)
@@ -58,6 +79,7 @@ namespace STS
             }
         }
 
+        //Function that hides equipment
         public void hideAvailableEquipment()
         {
             foreach (Control x in this.Controls)
@@ -70,9 +92,9 @@ namespace STS
                     }
                 }
             }
-            btnNext.Text = "Next Page";
         }
 
+        //Function that shows stats
         public void showStats()
         {
             lblStats.Text = "Attack: " + (p.str + (weapon.weaponDmgMax + weapon.weaponDmgMin) / 2) + " || Defense: " + (p.def + armor.armorDefense);
@@ -90,33 +112,30 @@ namespace STS
 
             lblLevel.Text = "Level: " + p.level;
             lblHP.Text = "HP: " + p.playerMaxHP;
-            lblStats.Text = "Attack: " + (p.str + (weapon.weaponDmgMax + weapon.weaponDmgMin) / 2) + " || Defense: " + (p.def + armor.armorDefense);
+            showStats();
         } 
 
+        //Buttons that choose worn equipment
         private void btnWS_Click(object sender, EventArgs e)
         {
             weapon = p.weapons.woodenS;
             showEquipment();
         }
-
         private void btnIS_Click(object sender, EventArgs e)
         {
             weapon = p.weapons.ironS;
             showEquipment();
         }
-
         private void btnIA_Click(object sender, EventArgs e)
         {
             armor = p.armors.ironA;
             showEquipment();
         }
-
         private void btnBA_Click(object sender, EventArgs e)
         {
             armor = p.armors.bronzeA;
             showEquipment();
         }
-
         private void btnPS_Click(object sender, EventArgs e)
         {
             weapon = p.weapons.pickleS;
@@ -127,7 +146,6 @@ namespace STS
             weapon = p.weapons.goblinS;
             showEquipment();
         }
-
         private void btnGA_Click(object sender, EventArgs e)
         {
             armor = p.armors.goblinA;
@@ -143,52 +161,48 @@ namespace STS
             weapon = p.weapons.monkeM;
             showEquipment();
         }
-
         private void btnMA_Click(object sender, EventArgs e)
         {
             armor = p.armors.monkeA;
             showEquipment();
         }
-
         private void btnDS_Click(object sender, EventArgs e)
         {
             weapon = p.weapons.dinoS;
             showEquipment();
         }
-
         private void btnDA_Click(object sender, EventArgs e)
         {
             armor = p.armors.dinoA;
             showEquipment();
         }
 
+        //Button for showing/hiding equipment
         private void btnEquipment_Click(object sender, EventArgs e)
         {
-            if (btnEquipment.Text == "Show Equipment")
+            if (btnBA.Visible == false)
             {
                 showAvailableEquipment();
-                btnEquipment.Text = "Hide Equipment";
             }
-            else
+            else if (btnBA.Visible == true || btnDA.Visible == true)
             {
                 hideAvailableEquipment();
-                btnEquipment.Text = "Show Equipment";
+                btnNext.BackgroundImage = Properties.Resources.Next;
             }
 
         }
 
+        //Button for showing/hiding inventory
         private void btnInventory_Click(object sender, EventArgs e)
         {
             if (lblItems.Visible == false)
             {
-                btnInventory.Text = "Hide Inventory";
                 lblItems.Visible = lblCoins.Visible = true;
                 lblItems.Text = p.inventory.toString();
                 lblCoins.Text = "Available coins:" + p.coins;
             }
             else
             {
-                btnInventory.Text = "Show Inventory";
                 lblItems.Visible = lblCoins.Visible = false;
             }
         }
@@ -239,59 +253,53 @@ namespace STS
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            if (btnNext.Text == "Next Page")
+            foreach (Control x in this.Controls)
             {
-                btnNext.Text = "Previous Page";
-
-                foreach (Control x in this.Controls)
+                if (x is Button && x.Visible == false)
                 {
-                    if (x is Button && x.Visible == false)
+                    if ((string)x.Tag == "Equipment2")
                     {
-                        if ((string)x.Tag == "Equipment2")
-                        {
-                            x.Visible = true;
-                        }
-                    }
-                }
-                foreach (Control x in this.Controls)
-                {
-                    if (x is Button && x.Visible == true)
-                    {
-                        if ((string)x.Tag == "Equipment1")
-                        {
-                            x.Visible = false;
-                        }
+                        x.Visible = true;
                     }
                 }
             }
-
-            else
+            foreach (Control x in this.Controls)
             {
-                btnNext.Text = "Next Page";
-
-                foreach (Control x in this.Controls)
+                if (x is Button && x.Visible == true)
                 {
-                    if (x is Button && x.Visible == false)
+                    if ((string)x.Tag == "Equipment1")
                     {
-                        if ((string)x.Tag == "Equipment1")
-                        {
-                            x.Visible = true;
-                        }
+                        x.Visible = false;
                     }
                 }
-                foreach (Control x in this.Controls)
+            }             
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            foreach (Control x in this.Controls)
+            {
+                if (x is Button && x.Visible == false)
                 {
-                    if (x is Button && x.Visible == true)
+                    if ((string)x.Tag == "Equipment1")
                     {
-                        if ((string)x.Tag == "Equipment2")
-                        {
-                            x.Visible = false;
-                        }
+                        x.Visible = true;
+                    }
+                }
+            }
+            foreach (Control x in this.Controls)
+            {
+                if (x is Button && x.Visible == true)
+                {
+                    if ((string)x.Tag == "Equipment2")
+                    {
+                        x.Visible = false;
                     }
                 }
             }
         }
 
+        //JSON serialization and deserialization
         private void loadGameToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
@@ -332,6 +340,6 @@ namespace STS
                 p.saveName = Path.GetFullPath(saveFileDialog1.FileName);
                 File.WriteAllText(p.saveName, JsonConvert.SerializeObject(p));
             }
-        }
+        }       
     }
 }

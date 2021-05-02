@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using Newtonsoft.Json;
@@ -24,6 +18,7 @@ namespace STS
             this.p = p;
         }
 
+        //Start new game
         private void btnStart_Click(object sender, EventArgs e)
         {
             weapon = p.weapons.woodenS;
@@ -37,6 +32,7 @@ namespace STS
             h.ShowDialog();           
         }
 
+        //Load JSON save game
         private void btnLoad_Click(object sender, EventArgs e)
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
@@ -56,6 +52,7 @@ namespace STS
             }
         }
 
+        //Close the game
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();

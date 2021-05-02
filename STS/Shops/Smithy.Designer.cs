@@ -28,23 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCraftPSword = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Smithy));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnCraftPArmor = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.lblItems = new System.Windows.Forms.Label();
-            this.btnReturn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnCraftGS = new System.Windows.Forms.Button();
-            this.btnCraftGA = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.btnCraftMonkeA = new System.Windows.Forms.Button();
-            this.btnCraftMonkeM = new System.Windows.Forms.Button();
             this.lblPickleS = new System.Windows.Forms.Label();
             this.lblPickleA = new System.Windows.Forms.Label();
             this.lblGoblinS = new System.Windows.Forms.Label();
@@ -53,20 +47,27 @@
             this.lblMonkeM = new System.Windows.Forms.Label();
             this.lblDinoA = new System.Windows.Forms.Label();
             this.lblDinoS = new System.Windows.Forms.Label();
-            this.btnCraftDinoA = new System.Windows.Forms.Button();
-            this.btnCraftDinoS = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.btnCraftDinoA = new System.Windows.Forms.Button();
+            this.btnCraftDinoS = new System.Windows.Forms.Button();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.btnCraftMonkeA = new System.Windows.Forms.Button();
+            this.btnCraftMonkeM = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.btnCraftGA = new System.Windows.Forms.Button();
+            this.btnCraftGS = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pbSword = new System.Windows.Forms.PictureBox();
             this.pbPlayer = new System.Windows.Forms.PictureBox();
+            this.btnReturn = new System.Windows.Forms.Button();
+            this.btnCraftPArmor = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pbPickleS = new System.Windows.Forms.PictureBox();
+            this.btnCraftPSword = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -79,21 +80,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbPickleS)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnCraftPSword
-            // 
-            this.btnCraftPSword.Location = new System.Drawing.Point(149, 172);
-            this.btnCraftPSword.Name = "btnCraftPSword";
-            this.btnCraftPSword.Size = new System.Drawing.Size(37, 23);
-            this.btnCraftPSword.TabIndex = 0;
-            this.btnCraftPSword.TabStop = false;
-            this.btnCraftPSword.Text = "Craft";
-            this.btnCraftPSword.UseVisualStyleBackColor = true;
-            this.btnCraftPSword.Click += new System.EventHandler(this.btnCraftPSword_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(58, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(116, 17);
@@ -103,6 +94,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.Control;
             this.label2.Location = new System.Drawing.Point(61, 223);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 13);
@@ -112,27 +104,18 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.SystemColors.Control;
             this.label3.Location = new System.Drawing.Point(61, 95);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 13);
             this.label3.TabIndex = 6;
             this.label3.Text = "Pickle Sword";
             // 
-            // btnCraftPArmor
-            // 
-            this.btnCraftPArmor.Location = new System.Drawing.Point(149, 312);
-            this.btnCraftPArmor.Name = "btnCraftPArmor";
-            this.btnCraftPArmor.Size = new System.Drawing.Size(37, 23);
-            this.btnCraftPArmor.TabIndex = 7;
-            this.btnCraftPArmor.TabStop = false;
-            this.btnCraftPArmor.Text = "Craft";
-            this.btnCraftPArmor.UseVisualStyleBackColor = true;
-            this.btnCraftPArmor.Click += new System.EventHandler(this.btnCraftPArmor_Click);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.Control;
             this.label4.Location = new System.Drawing.Point(546, 393);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(79, 16);
@@ -148,48 +131,16 @@
             this.lblItems.Size = new System.Drawing.Size(236, 174);
             this.lblItems.TabIndex = 9;
             // 
-            // btnReturn
-            // 
-            this.btnReturn.Location = new System.Drawing.Point(13, 13);
-            this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(75, 23);
-            this.btnReturn.TabIndex = 10;
-            this.btnReturn.TabStop = false;
-            this.btnReturn.Text = "Return";
-            this.btnReturn.UseVisualStyleBackColor = true;
-            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.Control;
             this.label5.Location = new System.Drawing.Point(546, 38);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 16);
             this.label5.TabIndex = 11;
             this.label5.Text = "Preview:";
-            // 
-            // btnCraftGS
-            // 
-            this.btnCraftGS.Location = new System.Drawing.Point(366, 172);
-            this.btnCraftGS.Name = "btnCraftGS";
-            this.btnCraftGS.Size = new System.Drawing.Size(37, 23);
-            this.btnCraftGS.TabIndex = 16;
-            this.btnCraftGS.TabStop = false;
-            this.btnCraftGS.Text = "Craft";
-            this.btnCraftGS.UseVisualStyleBackColor = true;
-            this.btnCraftGS.Click += new System.EventHandler(this.btnCraftGS_Click);
-            // 
-            // btnCraftGA
-            // 
-            this.btnCraftGA.Location = new System.Drawing.Point(366, 312);
-            this.btnCraftGA.Name = "btnCraftGA";
-            this.btnCraftGA.Size = new System.Drawing.Size(37, 23);
-            this.btnCraftGA.TabIndex = 17;
-            this.btnCraftGA.TabStop = false;
-            this.btnCraftGA.Text = "Craft";
-            this.btnCraftGA.UseVisualStyleBackColor = true;
-            this.btnCraftGA.Click += new System.EventHandler(this.btnCraftGA_Click);
             // 
             // label6
             // 
@@ -203,6 +154,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.SystemColors.Control;
             this.label7.Location = new System.Drawing.Point(275, 95);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(70, 13);
@@ -212,6 +164,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.SystemColors.Control;
             this.label8.Location = new System.Drawing.Point(58, 493);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(70, 13);
@@ -221,38 +174,16 @@
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.SystemColors.Control;
             this.label9.Location = new System.Drawing.Point(58, 365);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(71, 13);
             this.label9.TabIndex = 23;
             this.label9.Text = "Monke Mallet";
             // 
-            // btnCraftMonkeA
-            // 
-            this.btnCraftMonkeA.Enabled = false;
-            this.btnCraftMonkeA.Location = new System.Drawing.Point(149, 582);
-            this.btnCraftMonkeA.Name = "btnCraftMonkeA";
-            this.btnCraftMonkeA.Size = new System.Drawing.Size(37, 23);
-            this.btnCraftMonkeA.TabIndex = 25;
-            this.btnCraftMonkeA.TabStop = false;
-            this.btnCraftMonkeA.Text = "Craft";
-            this.btnCraftMonkeA.UseVisualStyleBackColor = true;
-            this.btnCraftMonkeA.Click += new System.EventHandler(this.btnCraftMonkeA_Click);
-            // 
-            // btnCraftMonkeM
-            // 
-            this.btnCraftMonkeM.Enabled = false;
-            this.btnCraftMonkeM.Location = new System.Drawing.Point(149, 442);
-            this.btnCraftMonkeM.Name = "btnCraftMonkeM";
-            this.btnCraftMonkeM.Size = new System.Drawing.Size(37, 23);
-            this.btnCraftMonkeM.TabIndex = 24;
-            this.btnCraftMonkeM.TabStop = false;
-            this.btnCraftMonkeM.Text = "Craft";
-            this.btnCraftMonkeM.UseVisualStyleBackColor = true;
-            this.btnCraftMonkeM.Click += new System.EventHandler(this.btnCraftMonkeM_Click);
-            // 
             // lblPickleS
             // 
+            this.lblPickleS.ForeColor = System.Drawing.SystemColors.Control;
             this.lblPickleS.Location = new System.Drawing.Point(146, 138);
             this.lblPickleS.Name = "lblPickleS";
             this.lblPickleS.Size = new System.Drawing.Size(100, 31);
@@ -261,6 +192,7 @@
             // 
             // lblPickleA
             // 
+            this.lblPickleA.ForeColor = System.Drawing.SystemColors.Control;
             this.lblPickleA.Location = new System.Drawing.Point(146, 278);
             this.lblPickleA.Name = "lblPickleA";
             this.lblPickleA.Size = new System.Drawing.Size(100, 31);
@@ -269,6 +201,7 @@
             // 
             // lblGoblinS
             // 
+            this.lblGoblinS.ForeColor = System.Drawing.SystemColors.Control;
             this.lblGoblinS.Location = new System.Drawing.Point(363, 138);
             this.lblGoblinS.Name = "lblGoblinS";
             this.lblGoblinS.Size = new System.Drawing.Size(100, 31);
@@ -277,6 +210,7 @@
             // 
             // lblGoblinA
             // 
+            this.lblGoblinA.ForeColor = System.Drawing.SystemColors.Control;
             this.lblGoblinA.Location = new System.Drawing.Point(363, 278);
             this.lblGoblinA.Name = "lblGoblinA";
             this.lblGoblinA.Size = new System.Drawing.Size(100, 31);
@@ -285,6 +219,7 @@
             // 
             // lblMonkeA
             // 
+            this.lblMonkeA.ForeColor = System.Drawing.SystemColors.Control;
             this.lblMonkeA.Location = new System.Drawing.Point(146, 548);
             this.lblMonkeA.Name = "lblMonkeA";
             this.lblMonkeA.Size = new System.Drawing.Size(120, 31);
@@ -293,6 +228,7 @@
             // 
             // lblMonkeM
             // 
+            this.lblMonkeM.ForeColor = System.Drawing.SystemColors.Control;
             this.lblMonkeM.Location = new System.Drawing.Point(146, 408);
             this.lblMonkeM.Name = "lblMonkeM";
             this.lblMonkeM.Size = new System.Drawing.Size(120, 31);
@@ -301,6 +237,7 @@
             // 
             // lblDinoA
             // 
+            this.lblDinoA.ForeColor = System.Drawing.SystemColors.Control;
             this.lblDinoA.Location = new System.Drawing.Point(363, 536);
             this.lblDinoA.Name = "lblDinoA";
             this.lblDinoA.Size = new System.Drawing.Size(120, 43);
@@ -309,39 +246,17 @@
             // 
             // lblDinoS
             // 
+            this.lblDinoS.ForeColor = System.Drawing.SystemColors.Control;
             this.lblDinoS.Location = new System.Drawing.Point(363, 408);
             this.lblDinoS.Name = "lblDinoS";
             this.lblDinoS.Size = new System.Drawing.Size(120, 31);
             this.lblDinoS.TabIndex = 38;
             this.lblDinoS.Text = "Dino Teeth\r\nDino Claws\r\n";
             // 
-            // btnCraftDinoA
-            // 
-            this.btnCraftDinoA.Enabled = false;
-            this.btnCraftDinoA.Location = new System.Drawing.Point(366, 582);
-            this.btnCraftDinoA.Name = "btnCraftDinoA";
-            this.btnCraftDinoA.Size = new System.Drawing.Size(37, 23);
-            this.btnCraftDinoA.TabIndex = 37;
-            this.btnCraftDinoA.TabStop = false;
-            this.btnCraftDinoA.Text = "Craft";
-            this.btnCraftDinoA.UseVisualStyleBackColor = true;
-            this.btnCraftDinoA.Click += new System.EventHandler(this.btnCraftDinoA_Click);
-            // 
-            // btnCraftDinoS
-            // 
-            this.btnCraftDinoS.Enabled = false;
-            this.btnCraftDinoS.Location = new System.Drawing.Point(366, 442);
-            this.btnCraftDinoS.Name = "btnCraftDinoS";
-            this.btnCraftDinoS.Size = new System.Drawing.Size(37, 23);
-            this.btnCraftDinoS.TabIndex = 36;
-            this.btnCraftDinoS.TabStop = false;
-            this.btnCraftDinoS.Text = "Craft";
-            this.btnCraftDinoS.UseVisualStyleBackColor = true;
-            this.btnCraftDinoS.Click += new System.EventHandler(this.btnCraftDinoS_Click);
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
+            this.label12.ForeColor = System.Drawing.SystemColors.Control;
             this.label12.Location = new System.Drawing.Point(275, 365);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(62, 13);
@@ -351,15 +266,42 @@
             // label13
             // 
             this.label13.AutoSize = true;
+            this.label13.ForeColor = System.Drawing.SystemColors.Control;
             this.label13.Location = new System.Drawing.Point(275, 493);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(59, 13);
             this.label13.TabIndex = 34;
             this.label13.Text = "Dino Armor";
             // 
+            // btnCraftDinoA
+            // 
+            this.btnCraftDinoA.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCraftDinoA.BackgroundImage")));
+            this.btnCraftDinoA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCraftDinoA.Enabled = false;
+            this.btnCraftDinoA.Location = new System.Drawing.Point(366, 582);
+            this.btnCraftDinoA.Name = "btnCraftDinoA";
+            this.btnCraftDinoA.Size = new System.Drawing.Size(37, 23);
+            this.btnCraftDinoA.TabIndex = 37;
+            this.btnCraftDinoA.TabStop = false;
+            this.btnCraftDinoA.UseVisualStyleBackColor = true;
+            this.btnCraftDinoA.Click += new System.EventHandler(this.btnCraftDinoA_Click);
+            // 
+            // btnCraftDinoS
+            // 
+            this.btnCraftDinoS.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCraftDinoS.BackgroundImage")));
+            this.btnCraftDinoS.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCraftDinoS.Enabled = false;
+            this.btnCraftDinoS.Location = new System.Drawing.Point(366, 442);
+            this.btnCraftDinoS.Name = "btnCraftDinoS";
+            this.btnCraftDinoS.Size = new System.Drawing.Size(37, 23);
+            this.btnCraftDinoS.TabIndex = 36;
+            this.btnCraftDinoS.TabStop = false;
+            this.btnCraftDinoS.UseVisualStyleBackColor = true;
+            this.btnCraftDinoS.Click += new System.EventHandler(this.btnCraftDinoS_Click);
+            // 
             // pictureBox6
             // 
-            this.pictureBox6.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox6.BackColor = System.Drawing.Color.DimGray;
             this.pictureBox6.BackgroundImage = global::STS.Properties.Resources.DinoArmor;
             this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -371,6 +313,7 @@
             // 
             // pictureBox7
             // 
+            this.pictureBox7.BackColor = System.Drawing.Color.DimGray;
             this.pictureBox7.BackgroundImage = global::STS.Properties.Resources.DinoSword;
             this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -380,9 +323,35 @@
             this.pictureBox7.TabIndex = 32;
             this.pictureBox7.TabStop = false;
             // 
+            // btnCraftMonkeA
+            // 
+            this.btnCraftMonkeA.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCraftMonkeA.BackgroundImage")));
+            this.btnCraftMonkeA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCraftMonkeA.Enabled = false;
+            this.btnCraftMonkeA.Location = new System.Drawing.Point(149, 582);
+            this.btnCraftMonkeA.Name = "btnCraftMonkeA";
+            this.btnCraftMonkeA.Size = new System.Drawing.Size(37, 23);
+            this.btnCraftMonkeA.TabIndex = 25;
+            this.btnCraftMonkeA.TabStop = false;
+            this.btnCraftMonkeA.UseVisualStyleBackColor = true;
+            this.btnCraftMonkeA.Click += new System.EventHandler(this.btnCraftMonkeA_Click);
+            // 
+            // btnCraftMonkeM
+            // 
+            this.btnCraftMonkeM.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCraftMonkeM.BackgroundImage")));
+            this.btnCraftMonkeM.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCraftMonkeM.Enabled = false;
+            this.btnCraftMonkeM.Location = new System.Drawing.Point(149, 442);
+            this.btnCraftMonkeM.Name = "btnCraftMonkeM";
+            this.btnCraftMonkeM.Size = new System.Drawing.Size(37, 23);
+            this.btnCraftMonkeM.TabIndex = 24;
+            this.btnCraftMonkeM.TabStop = false;
+            this.btnCraftMonkeM.UseVisualStyleBackColor = true;
+            this.btnCraftMonkeM.Click += new System.EventHandler(this.btnCraftMonkeM_Click);
+            // 
             // pictureBox4
             // 
-            this.pictureBox4.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox4.BackColor = System.Drawing.Color.DimGray;
             this.pictureBox4.BackgroundImage = global::STS.Properties.Resources.MonkeArmor;
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -394,6 +363,7 @@
             // 
             // pictureBox5
             // 
+            this.pictureBox5.BackColor = System.Drawing.Color.DimGray;
             this.pictureBox5.BackgroundImage = global::STS.Properties.Resources.MonkeMallet;
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -403,9 +373,33 @@
             this.pictureBox5.TabIndex = 20;
             this.pictureBox5.TabStop = false;
             // 
+            // btnCraftGA
+            // 
+            this.btnCraftGA.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCraftGA.BackgroundImage")));
+            this.btnCraftGA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCraftGA.Location = new System.Drawing.Point(366, 312);
+            this.btnCraftGA.Name = "btnCraftGA";
+            this.btnCraftGA.Size = new System.Drawing.Size(37, 23);
+            this.btnCraftGA.TabIndex = 17;
+            this.btnCraftGA.TabStop = false;
+            this.btnCraftGA.UseVisualStyleBackColor = true;
+            this.btnCraftGA.Click += new System.EventHandler(this.btnCraftGA_Click);
+            // 
+            // btnCraftGS
+            // 
+            this.btnCraftGS.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCraftGS.BackgroundImage")));
+            this.btnCraftGS.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCraftGS.Location = new System.Drawing.Point(366, 172);
+            this.btnCraftGS.Name = "btnCraftGS";
+            this.btnCraftGS.Size = new System.Drawing.Size(37, 23);
+            this.btnCraftGS.TabIndex = 16;
+            this.btnCraftGS.TabStop = false;
+            this.btnCraftGS.UseVisualStyleBackColor = true;
+            this.btnCraftGS.Click += new System.EventHandler(this.btnCraftGS_Click);
+            // 
             // pictureBox3
             // 
-            this.pictureBox3.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox3.BackColor = System.Drawing.Color.DimGray;
             this.pictureBox3.BackgroundImage = global::STS.Properties.Resources.GoblinArmor;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -417,6 +411,7 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.BackColor = System.Drawing.Color.DimGray;
             this.pictureBox2.BackgroundImage = global::STS.Properties.Resources.GoblinSword;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -444,9 +439,33 @@
             this.pbPlayer.TabIndex = 12;
             this.pbPlayer.TabStop = false;
             // 
+            // btnReturn
+            // 
+            this.btnReturn.BackgroundImage = global::STS.Properties.Resources.Previous;
+            this.btnReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnReturn.Location = new System.Drawing.Point(13, 13);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(75, 23);
+            this.btnReturn.TabIndex = 10;
+            this.btnReturn.TabStop = false;
+            this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
+            // 
+            // btnCraftPArmor
+            // 
+            this.btnCraftPArmor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCraftPArmor.BackgroundImage")));
+            this.btnCraftPArmor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCraftPArmor.Location = new System.Drawing.Point(149, 312);
+            this.btnCraftPArmor.Name = "btnCraftPArmor";
+            this.btnCraftPArmor.Size = new System.Drawing.Size(37, 23);
+            this.btnCraftPArmor.TabIndex = 7;
+            this.btnCraftPArmor.TabStop = false;
+            this.btnCraftPArmor.UseVisualStyleBackColor = true;
+            this.btnCraftPArmor.Click += new System.EventHandler(this.btnCraftPArmor_Click);
+            // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox1.BackColor = System.Drawing.Color.DimGray;
             this.pictureBox1.BackgroundImage = global::STS.Properties.Resources.PiklArmor_Equip;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -458,6 +477,7 @@
             // 
             // pbPickleS
             // 
+            this.pbPickleS.BackColor = System.Drawing.Color.DimGray;
             this.pbPickleS.BackgroundImage = global::STS.Properties.Resources.PiklSword;
             this.pbPickleS.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbPickleS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -467,11 +487,23 @@
             this.pbPickleS.TabIndex = 3;
             this.pbPickleS.TabStop = false;
             // 
+            // btnCraftPSword
+            // 
+            this.btnCraftPSword.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCraftPSword.BackgroundImage")));
+            this.btnCraftPSword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCraftPSword.Location = new System.Drawing.Point(149, 172);
+            this.btnCraftPSword.Name = "btnCraftPSword";
+            this.btnCraftPSword.Size = new System.Drawing.Size(37, 23);
+            this.btnCraftPSword.TabIndex = 0;
+            this.btnCraftPSword.TabStop = false;
+            this.btnCraftPSword.UseVisualStyleBackColor = true;
+            this.btnCraftPSword.Click += new System.EventHandler(this.btnCraftPSword_Click);
+            // 
             // Smithy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(835, 644);
             this.ControlBox = false;
             this.Controls.Add(this.lblDinoA);

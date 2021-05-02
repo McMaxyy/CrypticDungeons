@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Reflection;
 
 namespace STS
 {   
@@ -22,6 +15,7 @@ namespace STS
         bool enemyDefeated, fireAttack;
         string dmgOutput;
 
+        //Function that checks if the enemy's been slain, resets extra weapon values and gives the player coins and experience points
         public void isClear()
         {
             p.enemyHP = 0;
@@ -53,6 +47,7 @@ namespace STS
             pbCleared.Visible = btnCleared.Visible = lblCleared.Visible = true;          
         }
 
+        //Player attack function
         public void playerAttack()
         {
             x = r.Next(10);
@@ -79,6 +74,8 @@ namespace STS
                 isClear();
             }
         }
+
+        //Enemy attack function
         public void enemyAttack()
         {
             x = r.Next(10);
@@ -133,12 +130,14 @@ namespace STS
                 m.ShowDialog();
             }
         }
-        
+
+        //Function that updates which items you have
         public void updateItems()
         {
             btnPotion.Text = "HP Pots: " + p.items.healthPot.itemQuantity;
         }
 
+        //Function that unlocks items that you do have
         public void unlockItems()
         {
             if (p.items.healthPot.itemQuantity > 0)

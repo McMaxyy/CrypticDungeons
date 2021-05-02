@@ -1,35 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Reflection;
-using System.Runtime.InteropServices;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
-using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace STS
 {
+    //Player, armors, weapons, inventory and item data
     public class Podatki
     {
-        public bool defend, cleared, skipped, bossStage;
-        public int n = 1;
-        public int t = 1;
-        public double h;
-        public double y;
-        public double playerHP = 30;
-        public int enemyMaxHP;
-        public int enemyHP;
-        public int stageRank;
-        public string saveName = "";
+        [JsonIgnore] public bool defend, cleared, skipped, bossStage;
+        [JsonIgnore] public int n = 1;
+        [JsonIgnore] public int t = 1;
+        [JsonIgnore] public double h;
+        [JsonIgnore] public double y;
+        [JsonIgnore] public double playerHP = 30;
+        [JsonIgnore] public int enemyMaxHP;
+        [JsonIgnore] public int enemyHP;
+        [JsonIgnore] public int stageRank;
+        [JsonIgnore] public string saveName = "";
 
         public int newCoins;
         public int coins = 0;
         public int points = 0;
         public int str = 0;
         public int def = 0;
-        public int playerMaxHP = 300;
+        public int playerMaxHP = 30;
         public double shields;
         public int expAdd;
         public double exp = 0;
@@ -37,6 +32,7 @@ namespace STS
         public int level = 1;
         public int newLevel = 2;
 
+        //Every piece of equipment, inventory is stored in these objects
         public Armors armors = new Armors();
         public Weapon weapons = new Weapon();
         [JsonIgnore] public Bosses bosses = new Bosses();
@@ -46,6 +42,7 @@ namespace STS
         public Items items = new Items();
     }
 
+    //Weapon class
     public abstract class Weapons
     {
         private string _weaponName;
@@ -169,6 +166,7 @@ namespace STS
         }
     }
 
+    //Armor class
     public class Armor
     {
         private string _armorName;
@@ -277,6 +275,7 @@ namespace STS
         }
     }
 
+    //Create armors & weapons with primary constructor attributes
     public class Armors
     {
         public IronArmor ironA = new IronArmor();
@@ -286,7 +285,6 @@ namespace STS
         public MonkeArmor monkeA = new MonkeArmor();
         public DinoArmor dinoA = new DinoArmor();
     }
-
     public class Weapon
     {
         public WoodenSword woodenS = new WoodenSword();
@@ -297,6 +295,7 @@ namespace STS
         public DinoSword dinoS = new DinoSword();
     }
 
+    //Boss class
     public class Boss
     {
         private string _bossName;
@@ -305,7 +304,7 @@ namespace STS
         private int _maxDmgBoss;
         private int _bossMaxHP;
         private Bitmap _bossImage;
-        public int[] dropTable;
+        private int[] _dropTable;
         private int _coinValue;
 
         public string bossName
@@ -342,6 +341,11 @@ namespace STS
         {
             get { return _bossImage; }
             set { _bossImage = value; }
+        }
+        public int[] dropTable
+        {
+            get { return _dropTable; }
+            set { _dropTable = value; }
         }
     }
     public class MenacingPikl : Boss
@@ -401,6 +405,7 @@ namespace STS
         }
     }
 
+    //Create bosses with primary attributes
     public class Bosses
     {
         public MenacingPikl menacingPikl = new MenacingPikl();
@@ -409,6 +414,7 @@ namespace STS
         public Zavr zavr = new Zavr();
     }
 
+    //Interfaces, allowing me to add another subclass/label to the Mob subclasses
     interface MobLowRank
     {
 
@@ -422,7 +428,7 @@ namespace STS
 
     }
 
-
+    //Mob class (enemies)
     public abstract class Mob
     {
         private string _mobName;
@@ -431,7 +437,7 @@ namespace STS
         private int _maxMobDmg;
         private int _coinValue;
         private Bitmap _mobImage;
-        public int mobID;
+        private int _mobID;
 
         public string mobName
         {
@@ -462,6 +468,11 @@ namespace STS
         {
             get { return _mobImage; }
             set { _mobImage = value; }
+        }
+        public int mobID
+        {
+            get { return _mobID; }
+            set { _mobID = value; }
         }
     }
 
@@ -597,7 +608,7 @@ namespace STS
         }
     }
 
-
+    //Creating enemies with primary constructor attributes
     public class Mobs
     {
         public Pikle pikle = new Pikle();
@@ -612,6 +623,8 @@ namespace STS
         public Gorilla gorilla = new Gorilla();
     }
 
+    //Inventory class, where materials are stored in, with functions such as "showItem (used for showing what the boss dropped)", "addItem", "useItem", "toString (used for listing materials the player has)"
+    //and "requiredMaterials (used for crafting recipes)"
     public class Inventory
     {
         public Item[] items = { new PickleJuice(), new PickleSkin(), new GoblinHide(), new GoblinSkull(), new MonkeBones(), new MonkeCarapace(),
@@ -652,6 +665,7 @@ namespace STS
         }
     }
 
+    //Item class, where every material's primary constructor is located
     public class Item
     {
         private int _itemID;
@@ -816,6 +830,7 @@ namespace STS
         public Bomb bomb = new Bomb();
     }
 
+    //Recipe class, with every crafting recipe and function for checking the availability and crafting said item, along with unlocking them
     abstract public class Recipe
     {
         private Dictionary<int, int> _recipe;
@@ -981,6 +996,7 @@ namespace STS
         }
     }
 
+    //Creating the recipes and putting them in Podatki
     public class Recipes
     {
         public PickleSwordRecipe pickleS = new PickleSwordRecipe();

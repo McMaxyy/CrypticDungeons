@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace STS
@@ -16,6 +10,7 @@ namespace STS
         Weapons selectedWeapon;
         Armor selectedArmor;
 
+        //Function that locks the "buy" buttons after the player's made a purchase
         public void lockButtons()
         {
             foreach (Control x in this.Controls)
@@ -30,6 +25,7 @@ namespace STS
             }
         }
 
+        //Function that checks if the player has enough coins to purchase the piece of equipment
         public void isAvailable()
         {
             if (p.coins >= p.weapons.ironS.coinValue && p.weapons.ironS.isObtained == false)
@@ -52,7 +48,7 @@ namespace STS
         private void btnBuyIronS_Click(object sender, EventArgs e)
         {
             selectedWeapon = p.weapons.ironS;
-            p.coins = p.coins - 15;
+            p.coins = p.coins - 35;
             lblCoins.Text = "Available Coins: " + p.coins;
             btnBuyIronS.Enabled = false;
             p.weapons.ironS.isObtained = true;
@@ -64,7 +60,7 @@ namespace STS
         private void btnBuyIronA_Click(object sender, EventArgs e)
         {
             selectedArmor = p.armors.ironA;
-            p.coins = p.coins - 20;
+            p.coins = p.coins - 60;
             lblCoins.Text = "Available Coins: " + p.coins;
             btnBuyIronA.Enabled = false;
             p.armors.ironA.isObtained = true;

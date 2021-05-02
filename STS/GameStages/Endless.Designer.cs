@@ -61,6 +61,7 @@
             // 
             this.lblExp.AutoSize = true;
             this.lblExp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExp.ForeColor = System.Drawing.SystemColors.Control;
             this.lblExp.Location = new System.Drawing.Point(240, 595);
             this.lblExp.Name = "lblExp";
             this.lblExp.Size = new System.Drawing.Size(43, 17);
@@ -72,6 +73,7 @@
             // 
             this.lblPlayerHP.AutoSize = true;
             this.lblPlayerHP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayerHP.ForeColor = System.Drawing.SystemColors.Control;
             this.lblPlayerHP.Location = new System.Drawing.Point(28, 355);
             this.lblPlayerHP.Name = "lblPlayerHP";
             this.lblPlayerHP.Size = new System.Drawing.Size(39, 17);
@@ -83,6 +85,7 @@
             // 
             this.lblEnemyHP.AutoSize = true;
             this.lblEnemyHP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEnemyHP.ForeColor = System.Drawing.SystemColors.Control;
             this.lblEnemyHP.Location = new System.Drawing.Point(513, 26);
             this.lblEnemyHP.Name = "lblEnemyHP";
             this.lblEnemyHP.Size = new System.Drawing.Size(39, 17);
@@ -92,12 +95,13 @@
             // 
             // btnAttack
             // 
-            this.btnAttack.Location = new System.Drawing.Point(469, 391);
+            this.btnAttack.BackgroundImage = global::STS.Properties.Resources.Attack;
+            this.btnAttack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAttack.Location = new System.Drawing.Point(469, 414);
             this.btnAttack.Name = "btnAttack";
-            this.btnAttack.Size = new System.Drawing.Size(173, 83);
+            this.btnAttack.Size = new System.Drawing.Size(173, 60);
             this.btnAttack.TabIndex = 50;
             this.btnAttack.Tag = "Stage";
-            this.btnAttack.Text = "Attack";
             this.btnAttack.UseVisualStyleBackColor = true;
             this.btnAttack.Click += new System.EventHandler(this.btnAttack_Click);
             // 
@@ -145,6 +149,7 @@
             // 
             this.lblLevel.AutoSize = true;
             this.lblLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLevel.ForeColor = System.Drawing.SystemColors.Control;
             this.lblLevel.Location = new System.Drawing.Point(240, 570);
             this.lblLevel.Name = "lblLevel";
             this.lblLevel.Size = new System.Drawing.Size(52, 17);
@@ -156,6 +161,7 @@
             // 
             this.lblCoins.AutoSize = true;
             this.lblCoins.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCoins.ForeColor = System.Drawing.SystemColors.Control;
             this.lblCoins.Location = new System.Drawing.Point(240, 545);
             this.lblCoins.Name = "lblCoins";
             this.lblCoins.Size = new System.Drawing.Size(53, 17);
@@ -189,6 +195,7 @@
             // 
             // lblPoints
             // 
+            this.lblPoints.BackColor = System.Drawing.SystemColors.Control;
             this.lblPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPoints.Location = new System.Drawing.Point(351, 266);
             this.lblPoints.Name = "lblPoints";
@@ -201,6 +208,7 @@
             // 
             // lblStrDef
             // 
+            this.lblStrDef.BackColor = System.Drawing.SystemColors.Control;
             this.lblStrDef.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStrDef.Location = new System.Drawing.Point(363, 309);
             this.lblStrDef.Name = "lblStrDef";
@@ -213,6 +221,7 @@
             // 
             // lblLevelUp
             // 
+            this.lblLevelUp.BackColor = System.Drawing.SystemColors.Control;
             this.lblLevelUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLevelUp.Location = new System.Drawing.Point(331, 253);
             this.lblLevelUp.Name = "lblLevelUp";
@@ -237,11 +246,12 @@
             // 
             // btnReturn
             // 
+            this.btnReturn.BackgroundImage = global::STS.Properties.Resources.Previous;
+            this.btnReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnReturn.Location = new System.Drawing.Point(12, 12);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(75, 23);
             this.btnReturn.TabIndex = 71;
-            this.btnReturn.Text = "Return";
             this.btnReturn.UseVisualStyleBackColor = true;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
@@ -269,6 +279,7 @@
             // 
             // pbLevelUp
             // 
+            this.pbLevelUp.BackColor = System.Drawing.SystemColors.Control;
             this.pbLevelUp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbLevelUp.Location = new System.Drawing.Point(315, 244);
             this.pbLevelUp.Name = "pbLevelUp";
@@ -312,7 +323,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightGray;
+            this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(835, 644);
             this.ControlBox = false;
             this.Controls.Add(this.lblShields);

@@ -1,20 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Configuration;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace STS
 {
     public partial class STS : Form
     {
-
         int yy, xx, defense, goblinCount = 0, specialExp = 0, fireCount = 0;
         bool enemyDefeated, bossStage, isRageActive, specialStage, fireAttack;
         Weapons selectedWeapon;
@@ -41,8 +32,10 @@ namespace STS
             {
                 if (x is PictureBox || x is Button || x is Label && x.Visible == false)
                 {
-                    if (x != pbSkip && x != btnSkip && x != lblSkip && x != lblLost && x != btnRestart && x != pbCleared && x != lblCleared && x != btnCleared &&
-                        x != pbLevelUp && x != btnLevelUp && x != lblLevelUp && x != lblStrDef && x != lblPoints && x != btnStr && x != btnDef)
+                    if (x != pbSkip && x != btnSkip && x != lblSkip && x != lblLost && x != btnRestart && 
+                        x != pbCleared && x != lblCleared && x != btnCleared &&
+                        x != pbLevelUp && x != btnLevelUp && x != lblLevelUp && x != lblStrDef && 
+                        x != lblPoints && x != btnStr && x != btnDef)
                     {
                         x.Visible = true;
                     }
@@ -59,7 +52,6 @@ namespace STS
                 }
             }
         }
-
         public void skipStage()
         {
             p.skipped = true;
@@ -184,6 +176,7 @@ namespace STS
             }
             else if (p.n == 4)
             {
+                //Drop boss materials to player
                 yy = r.Next(0, selectedBoss.dropTable.Length);
                 xx = r.Next(1, 4);
                 p.inventory.addItem(selectedBoss.dropTable[yy], xx);
@@ -216,7 +209,6 @@ namespace STS
                 btnBoss.Enabled = false;
                 lblLost.Text = "You won";
                 lblLost.Visible = true;
-                btnRestart.Text = "Return to map";
                 btnRestart.Visible = true;
                 p.cleared = true;
             }
@@ -231,25 +223,6 @@ namespace STS
             btnAttack.Enabled = btnDefend.Enabled = btnFlee.Enabled = false;
             p.bossStage = false;
             specialExp = 0;
-        }
-
-        //Restart Game
-        public void restartGame()
-        {
-            hideStage();
-            btnBattle1.Enabled = btnRand1.Enabled = btnRand2.Enabled = true;
-            btnBattle2.Enabled = btnRand3.Enabled = btnRand4.Enabled = false;
-            btnBattle3.Enabled = btnRand5.Enabled = btnSpecial.Enabled = false;
-            btnBoss.Enabled = false;
-            btnAttack.Enabled = btnDefend.Enabled = btnFlee.Enabled = true;
-            lblLost.Visible = false;
-            btnRestart.Visible = false;
-            lblLost.Text = "You lost";
-            p.n = 1;
-            p.playerHP = 30;
-            p.enemyHP = 15;
-            p.enemyMaxHP = 15;
-            pbEnemy.BackgroundImage = Properties.Resources.Pikl;
         }
 
         //Battle phase
@@ -359,8 +332,9 @@ namespace STS
             lblYY.Text = "";
             btnLevelUp.Enabled = true;
             p.n = 1;
-        }       
+        }
 
+        //Battle button
         private void btnBattle1_Click(object sender, EventArgs e)
         {
             selectMob();
@@ -368,11 +342,20 @@ namespace STS
             showStage();
         }
 
+        //Random "?" button
         private void btnRand2_Click(object sender, EventArgs e)
         {
-            yy = r.Next(0, 10);
+            yy = r.Next(10);
             if (yy <= 2)
             {
+                skipStage();
+            }
+            else if (yy == 3 && yy == 4)
+            {
+                p.playerHP += 10;
+                if (p.playerHP > p.playerMaxHP)
+                    p.playerHP = p.playerMaxHP;
+
                 skipStage();
             }
             else
@@ -383,12 +366,14 @@ namespace STS
             }
         }
 
+        //Skip button
         private void btnSkip_Click(object sender, EventArgs e)
         {
             hideStage();
             stageIsClear();
         }
 
+        //Special enemy button
         private void btnSpecial_Click(object sender, EventArgs e)
         {
             specialStage = true;
@@ -400,6 +385,7 @@ namespace STS
             showStage();
         }
 
+        //Attack button
         private void btnAttack_Click(object sender, EventArgs e)
         {
             if (selectedWeapon == p.weapons.dinoS && fireAttack == false)
@@ -452,6 +438,7 @@ namespace STS
             }
         }
 
+        //Run away button
         private void btnFlee_Click(object sender, EventArgs e)
         {
             int x = r.Next(1, 11);
@@ -467,6 +454,7 @@ namespace STS
             }
         }
 
+        //Restart button
         private void btnRestart_Click(object sender, EventArgs e)
         {
             bossStage = false;
@@ -479,6 +467,7 @@ namespace STS
             m.ShowDialog();
         }
 
+        //Boss button
         private void btnBoss_Click(object sender, EventArgs e)
         {
             pbEnemy.BackgroundImage = selectedBoss.bossImage;
@@ -501,6 +490,7 @@ namespace STS
             hideStage();
         }
 
+        //Buttons for adding player attributes
         private void btnStr_Click(object sender, EventArgs e)
         {
             if (p.points > 0)
@@ -515,7 +505,6 @@ namespace STS
                 btnStr.Enabled = btnDef.Enabled = false;             
             }
         }
-
         private void btnDef_Click(object sender, EventArgs e)
         {
             if (p.points > 0)
@@ -541,7 +530,8 @@ namespace STS
             this.Visible = false;
             m.ShowDialog();
         }
-
+        
+        //Parry button
         private void btnDefend_Click(object sender, EventArgs e)
         {
             p.defend = true;

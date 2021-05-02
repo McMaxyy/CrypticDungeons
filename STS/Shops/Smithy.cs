@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace STS
@@ -22,49 +16,75 @@ namespace STS
             pbSword.BackgroundImage = selectedWeapon.weaponImage;
         }
 
+        //Function that checks if the item is craftable (depending on whether the player has enough materials and if they haven't already crafted it)
         public void isCraftable()
         {
             if (p.recipes.dinoS.isCraftable(ref p) == true && p.weapons.dinoS.isObtained == false)
+            {
                 btnCraftDinoS.Enabled = true;
+                btnCraftDinoS.BackColor = Color.DarkSlateGray;
+            }
             else
                 btnCraftDinoS.Enabled = false;
 
             if (p.recipes.dinoA.isCraftable(ref p) == true && p.armors.dinoA.isObtained == false)
+            {
                 btnCraftDinoA.Enabled = true;
+                btnCraftDinoA.BackColor = Color.DarkSlateGray;
+            }
             else
                 btnCraftDinoA.Enabled = false;
 
             if (p.recipes.monkeM.isCraftable(ref p) == true && p.weapons.monkeM.isObtained == false)
+            {
                 btnCraftMonkeM.Enabled = true;
+                btnCraftMonkeM.BackColor = Color.DarkSlateGray;
+            }
             else
                 btnCraftMonkeM.Enabled = false;
 
             if (p.recipes.monkeA.isCraftable(ref p) == true && p.armors.monkeA.isObtained == false)
+            {
                 btnCraftMonkeA.Enabled = true;
+                btnCraftMonkeA.BackColor = Color.DarkSlateGray;
+            }
             else
                 btnCraftMonkeA.Enabled = false;
 
             if (p.recipes.goblinS.isCraftable(ref p) == true && p.weapons.goblinS.isObtained == false)
+            {
                 btnCraftGS.Enabled = true;
+                btnCraftGS.BackColor = Color.DarkSlateGray;
+            }
             else
                 btnCraftGS.Enabled = false;
 
             if (p.recipes.goblinA.isCraftable(ref p) == true && p.armors.goblinA.isObtained == false)
+            {
                 btnCraftGA.Enabled = true;
+                btnCraftGA.BackColor = Color.DarkSlateGray;
+            }
             else
                 btnCraftGA.Enabled = false;
 
             if (p.recipes.pickleS.isCraftable(ref p) == true && p.weapons.pickleS.isObtained == false)
+            {
                 btnCraftPSword.Enabled = true;
+                btnCraftPSword.BackColor = Color.DarkSlateGray;
+            }
             else
                 btnCraftPSword.Enabled = false;
 
             if (p.recipes.pickleA.isCraftable(ref p) == true && p.armors.pickleA.isObtained == false)
+            {
                 btnCraftPArmor.Enabled = true;
+                btnCraftPArmor.BackColor = Color.DarkSlateGray;
+            }
             else
                 btnCraftPArmor.Enabled = false;
         }
 
+        //Function that updates the player's materials
         public void updateMaterials()
         {
             lblPickleS.Text = "Pickle Juice: " + p.inventory.requiredMaterials(0) + "/2" + Environment.NewLine + "Pickle Skin: " + p.inventory.requiredMaterials(1) + "/2";
@@ -101,6 +121,7 @@ namespace STS
             h.ShowDialog();
         }
 
+        //Buttons that unlock the gear piece, remove the materials from the player's inventory and equip the piece
         private void btnCraftPSword_Click(object sender, EventArgs e)
         {
             p.weapons.pickleS.isObtained = true;

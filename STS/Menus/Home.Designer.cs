@@ -34,34 +34,35 @@
             this.btnBA = new System.Windows.Forms.Button();
             this.lblItems = new System.Windows.Forms.Label();
             this.btnPS = new System.Windows.Forms.Button();
-            this.btnCraft = new System.Windows.Forms.Button();
             this.btnPA = new System.Windows.Forms.Button();
-            this.btnShop = new System.Windows.Forms.Button();
-            this.btnEquipment = new System.Windows.Forms.Button();
-            this.btnInventory = new System.Windows.Forms.Button();
             this.lblCoins = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.exitGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveLoadGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnMap = new System.Windows.Forms.Button();
+            this.saveNewGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblLevel = new System.Windows.Forms.Label();
             this.lblHP = new System.Windows.Forms.Label();
             this.lblStats = new System.Windows.Forms.Label();
             this.btnGS = new System.Windows.Forms.Button();
             this.btnGA = new System.Windows.Forms.Button();
-            this.btnNext = new System.Windows.Forms.Button();
             this.btnMA = new System.Windows.Forms.Button();
             this.btnMM = new System.Windows.Forms.Button();
             this.btnDA = new System.Windows.Forms.Button();
             this.btnDS = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.saveNewGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.btnMap = new System.Windows.Forms.Button();
+            this.btnInventory = new System.Windows.Forms.Button();
+            this.btnEquipment = new System.Windows.Forms.Button();
+            this.btnShop = new System.Windows.Forms.Button();
+            this.btnCraft = new System.Windows.Forms.Button();
             this.pbSword = new System.Windows.Forms.PictureBox();
             this.pbPlayer = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnBack = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayer)).BeginInit();
@@ -70,58 +71,70 @@
             // 
             // btnWS
             // 
+            this.btnWS.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnWS.BackgroundImage = global::STS.Properties.Resources.WoodenSword;
+            this.btnWS.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnWS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWS.Location = new System.Drawing.Point(617, 431);
             this.btnWS.Name = "btnWS";
             this.btnWS.Size = new System.Drawing.Size(60, 54);
             this.btnWS.TabIndex = 1;
             this.btnWS.TabStop = false;
             this.btnWS.Tag = "Equipment1";
-            this.btnWS.Text = "Wooden Sword";
-            this.btnWS.UseVisualStyleBackColor = true;
+            this.btnWS.UseVisualStyleBackColor = false;
             this.btnWS.Visible = false;
             this.btnWS.Click += new System.EventHandler(this.btnWS_Click);
             this.btnWS.MouseClick += new System.Windows.Forms.MouseEventHandler(this.updateStats);
             // 
             // btnIS
             // 
+            this.btnIS.BackColor = System.Drawing.Color.DimGray;
+            this.btnIS.BackgroundImage = global::STS.Properties.Resources.IronSword;
+            this.btnIS.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnIS.Enabled = false;
+            this.btnIS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIS.Location = new System.Drawing.Point(683, 431);
             this.btnIS.Name = "btnIS";
             this.btnIS.Size = new System.Drawing.Size(60, 54);
             this.btnIS.TabIndex = 2;
             this.btnIS.TabStop = false;
             this.btnIS.Tag = "Equipment1";
-            this.btnIS.Text = "Iron Sword";
-            this.btnIS.UseVisualStyleBackColor = true;
+            this.btnIS.UseVisualStyleBackColor = false;
             this.btnIS.Visible = false;
             this.btnIS.Click += new System.EventHandler(this.btnIS_Click);
             this.btnIS.MouseClick += new System.Windows.Forms.MouseEventHandler(this.updateStats);
             // 
             // btnIA
             // 
+            this.btnIA.BackColor = System.Drawing.Color.DimGray;
+            this.btnIA.BackgroundImage = global::STS.Properties.Resources.IronArmor_Equip;
+            this.btnIA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnIA.Enabled = false;
+            this.btnIA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIA.Location = new System.Drawing.Point(683, 491);
             this.btnIA.Name = "btnIA";
-            this.btnIA.Size = new System.Drawing.Size(60, 54);
+            this.btnIA.Size = new System.Drawing.Size(60, 70);
             this.btnIA.TabIndex = 5;
             this.btnIA.TabStop = false;
             this.btnIA.Tag = "Equipment1";
-            this.btnIA.Text = "Iron Armor";
-            this.btnIA.UseVisualStyleBackColor = true;
+            this.btnIA.UseVisualStyleBackColor = false;
             this.btnIA.Visible = false;
             this.btnIA.Click += new System.EventHandler(this.btnIA_Click);
             this.btnIA.MouseClick += new System.Windows.Forms.MouseEventHandler(this.updateStats);
             // 
             // btnBA
             // 
+            this.btnBA.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnBA.BackgroundImage = global::STS.Properties.Resources.BronzeArmor_Equip;
+            this.btnBA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBA.Location = new System.Drawing.Point(617, 491);
             this.btnBA.Name = "btnBA";
-            this.btnBA.Size = new System.Drawing.Size(60, 54);
+            this.btnBA.Size = new System.Drawing.Size(60, 70);
             this.btnBA.TabIndex = 4;
             this.btnBA.TabStop = false;
             this.btnBA.Tag = "Equipment1";
-            this.btnBA.Text = "Bronze Armor";
-            this.btnBA.UseVisualStyleBackColor = true;
+            this.btnBA.UseVisualStyleBackColor = false;
             this.btnBA.Visible = false;
             this.btnBA.Click += new System.EventHandler(this.btnBA_Click);
             this.btnBA.MouseClick += new System.Windows.Forms.MouseEventHandler(this.updateStats);
@@ -130,7 +143,8 @@
             // 
             this.lblItems.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblItems.Location = new System.Drawing.Point(617, 130);
+            this.lblItems.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblItems.Location = new System.Drawing.Point(617, 134);
             this.lblItems.Name = "lblItems";
             this.lblItems.Size = new System.Drawing.Size(192, 206);
             this.lblItems.TabIndex = 9;
@@ -138,87 +152,45 @@
             // 
             // btnPS
             // 
+            this.btnPS.BackColor = System.Drawing.Color.DimGray;
+            this.btnPS.BackgroundImage = global::STS.Properties.Resources.PiklSword;
+            this.btnPS.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPS.Enabled = false;
+            this.btnPS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPS.Location = new System.Drawing.Point(749, 431);
             this.btnPS.Name = "btnPS";
             this.btnPS.Size = new System.Drawing.Size(60, 54);
             this.btnPS.TabIndex = 11;
             this.btnPS.TabStop = false;
             this.btnPS.Tag = "Equipment1";
-            this.btnPS.Text = "Pickle Sword";
-            this.btnPS.UseVisualStyleBackColor = true;
+            this.btnPS.UseVisualStyleBackColor = false;
             this.btnPS.Visible = false;
             this.btnPS.Click += new System.EventHandler(this.btnPS_Click);
             this.btnPS.MouseClick += new System.Windows.Forms.MouseEventHandler(this.updateStats);
             // 
-            // btnCraft
-            // 
-            this.btnCraft.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCraft.Location = new System.Drawing.Point(29, 507);
-            this.btnCraft.Name = "btnCraft";
-            this.btnCraft.Size = new System.Drawing.Size(188, 83);
-            this.btnCraft.TabIndex = 12;
-            this.btnCraft.TabStop = false;
-            this.btnCraft.Text = "Smithy";
-            this.btnCraft.UseVisualStyleBackColor = true;
-            this.btnCraft.Click += new System.EventHandler(this.btnCraft_Click);
-            // 
             // btnPA
             // 
+            this.btnPA.BackColor = System.Drawing.Color.DimGray;
+            this.btnPA.BackgroundImage = global::STS.Properties.Resources.PiklArmor_Equip;
+            this.btnPA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPA.Enabled = false;
+            this.btnPA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPA.Location = new System.Drawing.Point(749, 491);
             this.btnPA.Name = "btnPA";
-            this.btnPA.Size = new System.Drawing.Size(60, 54);
+            this.btnPA.Size = new System.Drawing.Size(60, 70);
             this.btnPA.TabIndex = 13;
             this.btnPA.TabStop = false;
             this.btnPA.Tag = "Equipment1";
-            this.btnPA.Text = "Pickle Armor";
-            this.btnPA.UseVisualStyleBackColor = true;
+            this.btnPA.UseVisualStyleBackColor = false;
             this.btnPA.Visible = false;
             this.btnPA.Click += new System.EventHandler(this.btnPA_Click);
             this.btnPA.MouseClick += new System.Windows.Forms.MouseEventHandler(this.updateStats);
-            // 
-            // btnShop
-            // 
-            this.btnShop.BackColor = System.Drawing.Color.Transparent;
-            this.btnShop.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShop.Location = new System.Drawing.Point(29, 378);
-            this.btnShop.Name = "btnShop";
-            this.btnShop.Size = new System.Drawing.Size(188, 83);
-            this.btnShop.TabIndex = 14;
-            this.btnShop.TabStop = false;
-            this.btnShop.Text = "Shop";
-            this.btnShop.UseVisualStyleBackColor = false;
-            this.btnShop.Click += new System.EventHandler(this.btnShop_Click);
-            // 
-            // btnEquipment
-            // 
-            this.btnEquipment.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEquipment.Location = new System.Drawing.Point(649, 367);
-            this.btnEquipment.Name = "btnEquipment";
-            this.btnEquipment.Size = new System.Drawing.Size(132, 49);
-            this.btnEquipment.TabIndex = 15;
-            this.btnEquipment.TabStop = false;
-            this.btnEquipment.Text = "Show Equipment";
-            this.btnEquipment.UseVisualStyleBackColor = true;
-            this.btnEquipment.Click += new System.EventHandler(this.btnEquipment_Click);
-            // 
-            // btnInventory
-            // 
-            this.btnInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInventory.Location = new System.Drawing.Point(649, 51);
-            this.btnInventory.Name = "btnInventory";
-            this.btnInventory.Size = new System.Drawing.Size(132, 49);
-            this.btnInventory.TabIndex = 16;
-            this.btnInventory.TabStop = false;
-            this.btnInventory.Text = "Show Inventory";
-            this.btnInventory.UseVisualStyleBackColor = true;
-            this.btnInventory.Click += new System.EventHandler(this.btnInventory_Click);
             // 
             // lblCoins
             // 
             this.lblCoins.AutoSize = true;
             this.lblCoins.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCoins.ForeColor = System.Drawing.SystemColors.Control;
             this.lblCoins.Location = new System.Drawing.Point(614, 113);
             this.lblCoins.Name = "lblCoins";
             this.lblCoins.Size = new System.Drawing.Size(124, 17);
@@ -268,23 +240,18 @@
             this.loadGameToolStripMenuItem.Text = "Load Game";
             this.loadGameToolStripMenuItem.Click += new System.EventHandler(this.loadGameToolStripMenuItem_Click);
             // 
-            // btnMap
+            // saveNewGameToolStripMenuItem
             // 
-            this.btnMap.BackColor = System.Drawing.Color.Transparent;
-            this.btnMap.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMap.Location = new System.Drawing.Point(29, 250);
-            this.btnMap.Name = "btnMap";
-            this.btnMap.Size = new System.Drawing.Size(188, 83);
-            this.btnMap.TabIndex = 20;
-            this.btnMap.TabStop = false;
-            this.btnMap.Text = "Map";
-            this.btnMap.UseVisualStyleBackColor = false;
-            this.btnMap.Click += new System.EventHandler(this.btnMap_Click);
+            this.saveNewGameToolStripMenuItem.Name = "saveNewGameToolStripMenuItem";
+            this.saveNewGameToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.saveNewGameToolStripMenuItem.Text = "Save New Game";
+            this.saveNewGameToolStripMenuItem.Click += new System.EventHandler(this.saveNewGameToolStripMenuItem_Click);
             // 
             // lblLevel
             // 
             this.lblLevel.AutoSize = true;
             this.lblLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLevel.ForeColor = System.Drawing.SystemColors.Control;
             this.lblLevel.Location = new System.Drawing.Point(286, 102);
             this.lblLevel.Name = "lblLevel";
             this.lblLevel.Size = new System.Drawing.Size(52, 17);
@@ -295,6 +262,7 @@
             // 
             this.lblHP.AutoSize = true;
             this.lblHP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHP.ForeColor = System.Drawing.SystemColors.Control;
             this.lblHP.Location = new System.Drawing.Point(286, 119);
             this.lblHP.Name = "lblHP";
             this.lblHP.Size = new System.Drawing.Size(34, 17);
@@ -305,6 +273,7 @@
             // 
             this.lblStats.AutoSize = true;
             this.lblStats.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStats.ForeColor = System.Drawing.SystemColors.Control;
             this.lblStats.Location = new System.Drawing.Point(286, 136);
             this.lblStats.Name = "lblStats";
             this.lblStats.Size = new System.Drawing.Size(55, 17);
@@ -313,100 +282,105 @@
             // 
             // btnGS
             // 
+            this.btnGS.BackColor = System.Drawing.Color.DimGray;
+            this.btnGS.BackgroundImage = global::STS.Properties.Resources.GoblinSword;
+            this.btnGS.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnGS.Enabled = false;
+            this.btnGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGS.Location = new System.Drawing.Point(617, 431);
             this.btnGS.Name = "btnGS";
             this.btnGS.Size = new System.Drawing.Size(60, 54);
             this.btnGS.TabIndex = 25;
             this.btnGS.TabStop = false;
             this.btnGS.Tag = "Equipment2";
-            this.btnGS.Text = "Goblin Sword";
-            this.btnGS.UseVisualStyleBackColor = true;
+            this.btnGS.UseVisualStyleBackColor = false;
             this.btnGS.Visible = false;
             this.btnGS.Click += new System.EventHandler(this.btnGS_Click);
             this.btnGS.MouseClick += new System.Windows.Forms.MouseEventHandler(this.updateStats);
             // 
             // btnGA
             // 
+            this.btnGA.BackColor = System.Drawing.Color.DimGray;
+            this.btnGA.BackgroundImage = global::STS.Properties.Resources.GoblinArmor;
+            this.btnGA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnGA.Enabled = false;
+            this.btnGA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGA.Location = new System.Drawing.Point(617, 491);
             this.btnGA.Name = "btnGA";
-            this.btnGA.Size = new System.Drawing.Size(60, 54);
+            this.btnGA.Size = new System.Drawing.Size(60, 70);
             this.btnGA.TabIndex = 26;
             this.btnGA.TabStop = false;
             this.btnGA.Tag = "Equipment2";
-            this.btnGA.Text = "Goblin Armor";
-            this.btnGA.UseVisualStyleBackColor = true;
+            this.btnGA.UseVisualStyleBackColor = false;
             this.btnGA.Visible = false;
             this.btnGA.Click += new System.EventHandler(this.btnGA_Click);
             this.btnGA.MouseClick += new System.Windows.Forms.MouseEventHandler(this.updateStats);
             // 
-            // btnNext
-            // 
-            this.btnNext.Location = new System.Drawing.Point(617, 560);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(192, 30);
-            this.btnNext.TabIndex = 27;
-            this.btnNext.TabStop = false;
-            this.btnNext.Tag = "Equipment";
-            this.btnNext.Text = "Next Page";
-            this.btnNext.UseVisualStyleBackColor = true;
-            this.btnNext.Visible = false;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
-            // 
             // btnMA
             // 
+            this.btnMA.BackColor = System.Drawing.Color.DimGray;
+            this.btnMA.BackgroundImage = global::STS.Properties.Resources.MonkeArmor;
+            this.btnMA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnMA.Enabled = false;
+            this.btnMA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMA.Location = new System.Drawing.Point(683, 491);
             this.btnMA.Name = "btnMA";
-            this.btnMA.Size = new System.Drawing.Size(60, 54);
+            this.btnMA.Size = new System.Drawing.Size(60, 70);
             this.btnMA.TabIndex = 29;
             this.btnMA.TabStop = false;
             this.btnMA.Tag = "Equipment2";
-            this.btnMA.Text = "Monke Armor";
-            this.btnMA.UseVisualStyleBackColor = true;
+            this.btnMA.UseVisualStyleBackColor = false;
             this.btnMA.Visible = false;
             this.btnMA.Click += new System.EventHandler(this.btnMA_Click);
             // 
             // btnMM
             // 
+            this.btnMM.BackColor = System.Drawing.Color.DimGray;
+            this.btnMM.BackgroundImage = global::STS.Properties.Resources.MonkeMallet;
+            this.btnMM.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnMM.Enabled = false;
+            this.btnMM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMM.Location = new System.Drawing.Point(683, 431);
             this.btnMM.Name = "btnMM";
             this.btnMM.Size = new System.Drawing.Size(60, 54);
             this.btnMM.TabIndex = 28;
             this.btnMM.TabStop = false;
             this.btnMM.Tag = "Equipment2";
-            this.btnMM.Text = "Monke Mallet";
-            this.btnMM.UseVisualStyleBackColor = true;
+            this.btnMM.UseVisualStyleBackColor = false;
             this.btnMM.Visible = false;
             this.btnMM.Click += new System.EventHandler(this.btnMM_Click);
             // 
             // btnDA
             // 
+            this.btnDA.BackColor = System.Drawing.Color.DimGray;
+            this.btnDA.BackgroundImage = global::STS.Properties.Resources.DinoArmor;
+            this.btnDA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDA.Enabled = false;
+            this.btnDA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDA.Location = new System.Drawing.Point(749, 491);
             this.btnDA.Name = "btnDA";
-            this.btnDA.Size = new System.Drawing.Size(60, 54);
+            this.btnDA.Size = new System.Drawing.Size(60, 70);
             this.btnDA.TabIndex = 31;
             this.btnDA.TabStop = false;
             this.btnDA.Tag = "Equipment2";
-            this.btnDA.Text = "Dino Armor";
-            this.btnDA.UseVisualStyleBackColor = true;
+            this.btnDA.UseVisualStyleBackColor = false;
             this.btnDA.Visible = false;
             this.btnDA.Click += new System.EventHandler(this.btnDA_Click);
             // 
             // btnDS
             // 
+            this.btnDS.BackColor = System.Drawing.Color.DimGray;
+            this.btnDS.BackgroundImage = global::STS.Properties.Resources.DinoSword;
+            this.btnDS.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDS.Enabled = false;
+            this.btnDS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDS.Location = new System.Drawing.Point(749, 431);
             this.btnDS.Name = "btnDS";
             this.btnDS.Size = new System.Drawing.Size(60, 54);
             this.btnDS.TabIndex = 30;
             this.btnDS.TabStop = false;
             this.btnDS.Tag = "Equipment2";
-            this.btnDS.Text = "Dino Sword";
-            this.btnDS.UseVisualStyleBackColor = true;
+            this.btnDS.UseVisualStyleBackColor = false;
             this.btnDS.Visible = false;
             this.btnDS.Click += new System.EventHandler(this.btnDS_Click);
             // 
@@ -419,12 +393,87 @@
             // 
             this.saveFileDialog1.Filter = "JSON (*.json) | *.json;";
             // 
-            // saveNewGameToolStripMenuItem
+            // btnNext
             // 
-            this.saveNewGameToolStripMenuItem.Name = "saveNewGameToolStripMenuItem";
-            this.saveNewGameToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
-            this.saveNewGameToolStripMenuItem.Text = "Save New Game";
-            this.saveNewGameToolStripMenuItem.Click += new System.EventHandler(this.saveNewGameToolStripMenuItem_Click);
+            this.btnNext.BackgroundImage = global::STS.Properties.Resources.Next;
+            this.btnNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 0.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.Location = new System.Drawing.Point(720, 576);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(89, 30);
+            this.btnNext.TabIndex = 27;
+            this.btnNext.TabStop = false;
+            this.btnNext.Tag = "Equipment";
+            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Visible = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // btnMap
+            // 
+            this.btnMap.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnMap.BackgroundImage = global::STS.Properties.Resources.Map;
+            this.btnMap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMap.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMap.Location = new System.Drawing.Point(29, 250);
+            this.btnMap.Name = "btnMap";
+            this.btnMap.Size = new System.Drawing.Size(188, 83);
+            this.btnMap.TabIndex = 20;
+            this.btnMap.TabStop = false;
+            this.btnMap.UseVisualStyleBackColor = false;
+            this.btnMap.Click += new System.EventHandler(this.btnMap_Click);
+            // 
+            // btnInventory
+            // 
+            this.btnInventory.BackgroundImage = global::STS.Properties.Resources.Inventory;
+            this.btnInventory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInventory.Location = new System.Drawing.Point(649, 51);
+            this.btnInventory.Name = "btnInventory";
+            this.btnInventory.Size = new System.Drawing.Size(132, 49);
+            this.btnInventory.TabIndex = 16;
+            this.btnInventory.TabStop = false;
+            this.btnInventory.UseVisualStyleBackColor = true;
+            this.btnInventory.Click += new System.EventHandler(this.btnInventory_Click);
+            // 
+            // btnEquipment
+            // 
+            this.btnEquipment.BackgroundImage = global::STS.Properties.Resources.Gear;
+            this.btnEquipment.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEquipment.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEquipment.Location = new System.Drawing.Point(649, 367);
+            this.btnEquipment.Name = "btnEquipment";
+            this.btnEquipment.Size = new System.Drawing.Size(132, 49);
+            this.btnEquipment.TabIndex = 15;
+            this.btnEquipment.TabStop = false;
+            this.btnEquipment.UseVisualStyleBackColor = true;
+            this.btnEquipment.Click += new System.EventHandler(this.btnEquipment_Click);
+            // 
+            // btnShop
+            // 
+            this.btnShop.BackColor = System.Drawing.Color.Transparent;
+            this.btnShop.BackgroundImage = global::STS.Properties.Resources.Shop;
+            this.btnShop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnShop.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShop.Location = new System.Drawing.Point(29, 378);
+            this.btnShop.Name = "btnShop";
+            this.btnShop.Size = new System.Drawing.Size(188, 83);
+            this.btnShop.TabIndex = 14;
+            this.btnShop.TabStop = false;
+            this.btnShop.UseVisualStyleBackColor = false;
+            this.btnShop.Click += new System.EventHandler(this.btnShop_Click);
+            // 
+            // btnCraft
+            // 
+            this.btnCraft.BackgroundImage = global::STS.Properties.Resources.Smithy;
+            this.btnCraft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCraft.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCraft.Location = new System.Drawing.Point(29, 507);
+            this.btnCraft.Name = "btnCraft";
+            this.btnCraft.Size = new System.Drawing.Size(188, 83);
+            this.btnCraft.TabIndex = 12;
+            this.btnCraft.TabStop = false;
+            this.btnCraft.UseVisualStyleBackColor = true;
+            this.btnCraft.Click += new System.EventHandler(this.btnCraft_Click);
             // 
             // pbSword
             // 
@@ -453,14 +502,30 @@
             this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
             // 
+            // btnBack
+            // 
+            this.btnBack.BackgroundImage = global::STS.Properties.Resources.Previous;
+            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 0.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Location = new System.Drawing.Point(617, 576);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(89, 30);
+            this.btnBack.TabIndex = 32;
+            this.btnBack.TabStop = false;
+            this.btnBack.Tag = "Equipment";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Visible = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Tan;
+            this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(835, 644);
             this.ControlBox = false;
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnDA);
             this.Controls.Add(this.btnDS);
             this.Controls.Add(this.btnMA);
@@ -537,5 +602,6 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.ToolStripMenuItem saveNewGameToolStripMenuItem;
+        private System.Windows.Forms.Button btnBack;
     }
 }

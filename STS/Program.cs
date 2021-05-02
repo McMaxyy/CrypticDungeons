@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace STS
@@ -17,6 +14,8 @@ namespace STS
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            //Creating a new set of player data, stored in Podatki
             Podatki p = new Podatki();           
             Application.Run(new Start(ref p));
         }
