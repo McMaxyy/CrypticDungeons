@@ -44,9 +44,10 @@
             // btnStage2
             // 
             this.btnStage2.Enabled = false;
-            this.btnStage2.Location = new System.Drawing.Point(217, 107);
+            this.btnStage2.Location = new System.Drawing.Point(289, 132);
+            this.btnStage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnStage2.Name = "btnStage2";
-            this.btnStage2.Size = new System.Drawing.Size(128, 64);
+            this.btnStage2.Size = new System.Drawing.Size(171, 79);
             this.btnStage2.TabIndex = 8;
             this.btnStage2.TabStop = false;
             this.btnStage2.Text = "Forest";
@@ -55,9 +56,10 @@
             // 
             // btnStage1
             // 
-            this.btnStage1.Location = new System.Drawing.Point(54, 107);
+            this.btnStage1.Location = new System.Drawing.Point(72, 132);
+            this.btnStage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnStage1.Name = "btnStage1";
-            this.btnStage1.Size = new System.Drawing.Size(128, 64);
+            this.btnStage1.Size = new System.Drawing.Size(171, 79);
             this.btnStage1.TabIndex = 7;
             this.btnStage1.TabStop = false;
             this.btnStage1.Text = "Seabed";
@@ -67,9 +69,10 @@
             // btnEndless
             // 
             this.btnEndless.Enabled = false;
-            this.btnEndless.Location = new System.Drawing.Point(54, 360);
+            this.btnEndless.Location = new System.Drawing.Point(72, 443);
+            this.btnEndless.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEndless.Name = "btnEndless";
-            this.btnEndless.Size = new System.Drawing.Size(456, 64);
+            this.btnEndless.Size = new System.Drawing.Size(608, 79);
             this.btnEndless.TabIndex = 9;
             this.btnEndless.TabStop = false;
             this.btnEndless.Text = "Endless";
@@ -78,9 +81,10 @@
             // 
             // btnLowGrind
             // 
-            this.btnLowGrind.Location = new System.Drawing.Point(54, 233);
+            this.btnLowGrind.Location = new System.Drawing.Point(72, 287);
+            this.btnLowGrind.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLowGrind.Name = "btnLowGrind";
-            this.btnLowGrind.Size = new System.Drawing.Size(128, 64);
+            this.btnLowGrind.Size = new System.Drawing.Size(171, 79);
             this.btnLowGrind.TabIndex = 10;
             this.btnLowGrind.TabStop = false;
             this.btnLowGrind.Text = "LowRank Grind";
@@ -90,9 +94,10 @@
             // btnMidGrind
             // 
             this.btnMidGrind.Enabled = false;
-            this.btnMidGrind.Location = new System.Drawing.Point(217, 233);
+            this.btnMidGrind.Location = new System.Drawing.Point(289, 287);
+            this.btnMidGrind.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMidGrind.Name = "btnMidGrind";
-            this.btnMidGrind.Size = new System.Drawing.Size(128, 64);
+            this.btnMidGrind.Size = new System.Drawing.Size(171, 79);
             this.btnMidGrind.TabIndex = 11;
             this.btnMidGrind.TabStop = false;
             this.btnMidGrind.Text = "MidRank Grind";
@@ -103,9 +108,10 @@
             // 
             this.btnReturn.BackgroundImage = global::STS.Properties.Resources.Previous;
             this.btnReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnReturn.Location = new System.Drawing.Point(12, 12);
+            this.btnReturn.Location = new System.Drawing.Point(16, 15);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(75, 23);
+            this.btnReturn.Size = new System.Drawing.Size(100, 28);
             this.btnReturn.TabIndex = 72;
             this.btnReturn.TabStop = false;
             this.btnReturn.UseVisualStyleBackColor = true;
@@ -114,9 +120,10 @@
             // btnStage3
             // 
             this.btnStage3.Enabled = false;
-            this.btnStage3.Location = new System.Drawing.Point(382, 107);
+            this.btnStage3.Location = new System.Drawing.Point(509, 132);
+            this.btnStage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnStage3.Name = "btnStage3";
-            this.btnStage3.Size = new System.Drawing.Size(128, 64);
+            this.btnStage3.Size = new System.Drawing.Size(171, 79);
             this.btnStage3.TabIndex = 73;
             this.btnStage3.TabStop = false;
             this.btnStage3.Text = "Jungle";
@@ -126,9 +133,10 @@
             // btnHighGrind
             // 
             this.btnHighGrind.Enabled = false;
-            this.btnHighGrind.Location = new System.Drawing.Point(382, 233);
+            this.btnHighGrind.Location = new System.Drawing.Point(509, 287);
+            this.btnHighGrind.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnHighGrind.Name = "btnHighGrind";
-            this.btnHighGrind.Size = new System.Drawing.Size(128, 64);
+            this.btnHighGrind.Size = new System.Drawing.Size(171, 79);
             this.btnHighGrind.TabIndex = 74;
             this.btnHighGrind.TabStop = false;
             this.btnHighGrind.Text = "HighRank Grind";
@@ -138,9 +146,10 @@
             // btnFinalBoss
             // 
             this.btnFinalBoss.Enabled = false;
-            this.btnFinalBoss.Location = new System.Drawing.Point(623, 107);
+            this.btnFinalBoss.Location = new System.Drawing.Point(831, 132);
+            this.btnFinalBoss.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnFinalBoss.Name = "btnFinalBoss";
-            this.btnFinalBoss.Size = new System.Drawing.Size(148, 317);
+            this.btnFinalBoss.Size = new System.Drawing.Size(197, 390);
             this.btnFinalBoss.TabIndex = 75;
             this.btnFinalBoss.TabStop = false;
             this.btnFinalBoss.Text = "Böss";
@@ -149,19 +158,22 @@
             // 
             // btnHunting
             // 
-            this.btnHunting.Location = new System.Drawing.Point(54, 543);
+            this.btnHunting.Location = new System.Drawing.Point(72, 668);
+            this.btnHunting.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnHunting.Name = "btnHunting";
-            this.btnHunting.Size = new System.Drawing.Size(219, 64);
+            this.btnHunting.Size = new System.Drawing.Size(292, 79);
             this.btnHunting.TabIndex = 76;
             this.btnHunting.TabStop = false;
             this.btnHunting.Text = "Hunting";
             this.btnHunting.UseVisualStyleBackColor = true;
+            this.btnHunting.Click += new System.EventHandler(this.btnHunting_Click);
             // 
             // btnMining
             // 
-            this.btnMining.Location = new System.Drawing.Point(291, 543);
+            this.btnMining.Location = new System.Drawing.Point(388, 668);
+            this.btnMining.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMining.Name = "btnMining";
-            this.btnMining.Size = new System.Drawing.Size(219, 64);
+            this.btnMining.Size = new System.Drawing.Size(292, 79);
             this.btnMining.TabIndex = 77;
             this.btnMining.TabStop = false;
             this.btnMining.Text = "Mining";
@@ -169,10 +181,10 @@
             // 
             // Map
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(835, 644);
+            this.ClientSize = new System.Drawing.Size(1113, 793);
             this.ControlBox = false;
             this.Controls.Add(this.btnMining);
             this.Controls.Add(this.btnHunting);
@@ -185,6 +197,7 @@
             this.Controls.Add(this.btnEndless);
             this.Controls.Add(this.btnStage2);
             this.Controls.Add(this.btnStage1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Map";
             this.Text = "Cryptic Dungeons";
             this.ResumeLayout(false);

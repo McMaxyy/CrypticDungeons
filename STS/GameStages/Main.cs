@@ -6,7 +6,7 @@ namespace STS
 {
     public partial class STS : Form
     {
-        int yy, xx, defense, goblinCount = 0, specialExp = 0, fireCount = 0;
+        int yy, xx, defense, goblinCount = 0, specialExp = 0, fireCount = 0, foodDmg = 0;
         bool enemyDefeated, bossStage, isRageActive, specialStage, fireAttack;
         Weapons selectedWeapon;
         Armor selectedArmor;
@@ -230,7 +230,7 @@ namespace STS
         {
             int x;
 
-            x = p.str / 2 + r.Next(selectedWeapon.weaponDmgMin, selectedWeapon.weaponDmgMax + 1);
+            x = p.str / 2 + r.Next(selectedWeapon.weaponDmgMin, selectedWeapon.weaponDmgMax + 1) + foodDmg;
             if (isRageActive == true)
             {
                 x += 3;
@@ -332,6 +332,11 @@ namespace STS
             lblYY.Text = "";
             btnLevelUp.Enabled = true;
             p.n = 1;
+
+            if (p.didPlayerEat == true)
+                foodDmg = 1;
+            else
+                foodDmg = 0;
         }
 
         //Battle button

@@ -31,6 +31,7 @@ namespace STS
         public int maxExp = 10;
         public int level = 1;
         public int newLevel = 2;
+        public bool didPlayerEat = false;
 
         //Every piece of equipment, inventory is stored in these objects
         public Armors armors = new Armors();
@@ -628,8 +629,8 @@ namespace STS
     public class Inventory
     {
         public Item[] items = { new PickleJuice(), new PickleSkin(), new GoblinHide(), new GoblinSkull(), new MonkeBones(), new MonkeCarapace(),
-            new DinoTeeth(), new DinoClaws(), new DinoTail(),
-            new HealthPotion(), new Sword(), new Shield(), new Bomb() };
+            new DinoTeeth(), new DinoClaws(), new DinoTail(),           
+            new HealthPotion(), new Sword(), new Shield(), new Bomb(), new Meat(), };
         public string itemShow;
         public int reqMat;
 
@@ -821,6 +822,14 @@ namespace STS
             itemQuantity = 0;
         }
     }
+    public class Meat : Item
+    {
+        public Meat()
+        {
+            itemName = "Meat";
+            itemQuantity = 0;
+        }
+    }
 
     public class Items
     {
@@ -828,6 +837,7 @@ namespace STS
         public Sword sword = new Sword();
         public Shield shield = new Shield();
         public Bomb bomb = new Bomb();
+        public Meat meat = new Meat();
     }
 
     //Recipe class, with every crafting recipe and function for checking the availability and crafting said item, along with unlocking them

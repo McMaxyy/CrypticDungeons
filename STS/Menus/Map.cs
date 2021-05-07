@@ -120,7 +120,18 @@ namespace STS
             m.Location = new Point(this.Location.X, this.Location.Y);
             this.Visible = false;
             m.ShowDialog();
-        }       
+        }
+
+        private void btnHunting_Click(object sender, EventArgs e)
+        {
+            Hunting m = new Hunting(selectedWeapon, selectedArmor, ref p);
+            m.Width = this.Width;
+            m.Height = this.Height;
+            m.StartPosition = FormStartPosition.Manual;
+            m.Location = new Point(this.Location.X, this.Location.Y);
+            this.Visible = false;
+            m.ShowDialog();
+        }
 
         private void btnStage1_Click(object sender, EventArgs e)
         {
