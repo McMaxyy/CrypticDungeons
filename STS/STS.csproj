@@ -78,6 +78,12 @@
     <Compile Include="GameStages\Grind.designer.cs">
       <DependentUpon>Grind.cs</DependentUpon>
     </Compile>
+    <Compile Include="GameStages\Hunting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameStages\Hunting.designer.cs">
+      <DependentUpon>Hunting.cs</DependentUpon>
+    </Compile>
     <Compile Include="Shops\Shop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GameStages\Mining.resx">
       <DependentUpon>Mining.cs</DependentUpon>
+	</EmbeddedResource>
+    <EmbeddedResource Include="GameStages\Hunting.resx">
+      <DependentUpon>Hunting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Shops\Shop.resx">
       <DependentUpon>Shop.cs</DependentUpon>

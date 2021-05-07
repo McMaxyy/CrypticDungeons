@@ -113,6 +113,11 @@ namespace STS
             lblLevel.Text = "Level: " + p.level;
             lblHP.Text = "HP: " + p.playerMaxHP;
             showStats();
+
+            p.didPlayerEat = false;
+            lblFood.Text = "Available meat: " + p.items.meat.itemQuantity;
+            if (p.items.meat.itemQuantity > 0)
+                btnCook.Enabled = true;
         } 
 
         //Buttons that choose worn equipment
@@ -340,6 +345,14 @@ namespace STS
                 p.saveName = Path.GetFullPath(saveFileDialog1.FileName);
                 File.WriteAllText(p.saveName, JsonConvert.SerializeObject(p));
             }
-        }       
+        }
+
+        private void btnCook_Click(object sender, EventArgs e)
+        {
+            p.items.meat.itemQuantity--;
+            lblFood.Text = "Available meat: " + p.items.meat.itemQuantity;
+            p.didPlayerEat = true;
+            btnCook.Enabled = false;
+        }
     }
 }
