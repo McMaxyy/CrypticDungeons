@@ -52,6 +52,16 @@ namespace STS
                 btnGA.Enabled = true;
                 btnGA.BackColor = Color.DarkSlateGray;
             }
+            if (p.weapons.monkeM.isUnlocked == true)
+            {
+                btnMM.Enabled = true;
+                btnMM.BackColor = Color.DarkSlateGray;
+            }
+            if (p.armors.monkeA.isUnlocked == true)
+            {
+                btnMA.Enabled = true;
+                btnMA.BackColor = Color.DarkSlateGray;
+            }
             if (p.weapons.dinoS.isUnlocked == true)
             {
                 btnDS.Enabled = true;
@@ -353,6 +363,16 @@ namespace STS
             lblFood.Text = "Available meat: " + p.items.meat.itemQuantity;
             p.didPlayerEat = true;
             btnCook.Enabled = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 12; i++)
+            {
+                p.inventory.addItem(i, 20);
+            }
+            p.coins += 200;
+            p.items.meat.itemQuantity += 10;
         }
     }
 }

@@ -42,3 +42,4 @@ C:\Users\uporabnik\CrypticDungeons\STS\obj\Debug\STS.csproj.CoreCompileInputs.ca
 C:\Users\uporabnik\CrypticDungeons\STS\obj\Debug\STS.csproj.CopyComplete
 C:\Users\uporabnik\CrypticDungeons\STS\obj\Debug\STS.exe
 C:\Users\uporabnik\CrypticDungeons\STS\obj\Debug\STS.pdb
+C:\Users\mryor\source\repos\Stage1\STS\obj\Debug\STS.Hunting.resources

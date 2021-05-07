@@ -84,6 +84,61 @@ namespace STS
                 btnCraftPArmor.Enabled = false;
         }
 
+        public void isUpgradable()
+        {
+            if (p.weapons.pickleS.isUnlocked == true && p.weapons.pickleS.enchLevel < 5 && p.inventory.requiredMaterials(11) >= 1 && p.coins >= 10)
+                btnUpgradePS.Visible = true;
+            else
+                btnUpgradePS.Visible = false;
+
+            if (p.weapons.goblinS.isUnlocked == true && p.weapons.goblinS.enchLevel < 5 && p.inventory.requiredMaterials(11) >= 1 && p.coins >= 20)
+                btnUpgradeGS.Visible = true;
+            else
+                btnUpgradeGS.Visible = false;
+
+            if (p.weapons.monkeM.isUnlocked == true && p.weapons.monkeM.enchLevel < 5 && p.inventory.requiredMaterials(11) >= 1 && p.coins >= 30)
+                btnUpgradeMM.Visible = true;
+            else
+                btnUpgradeMM.Visible = false;
+
+            if (p.weapons.dinoS.isUnlocked == true && p.weapons.dinoS.enchLevel < 5 && p.inventory.requiredMaterials(11) >= 1 && p.coins >= 40)
+                btnUpgradeDS.Visible = true;
+            else
+                btnUpgradeDS.Visible = false;
+
+            if (p.armors.pickleA.isUnlocked == true && p.armors.pickleA.enchLevel < 5 && p.inventory.requiredMaterials(11) >= 1 && p.coins >= 10)
+                btnUpgradePA.Visible = true;
+            else
+                btnUpgradePA.Visible = false;
+
+            if (p.armors.goblinA.isUnlocked == true && p.armors.goblinA.enchLevel < 5 && p.inventory.requiredMaterials(11) >= 1 && p.coins >= 20)
+                btnUpgradeGA.Visible = true;
+            else
+                btnUpgradeGA.Visible = false;
+
+            if (p.armors.monkeA.isUnlocked == true && p.armors.monkeA.enchLevel < 5 && p.inventory.requiredMaterials(11) >= 1 && p.coins >= 30)
+                btnUpgradeMA.Visible = true;
+            else
+                btnUpgradeMA.Visible = false;
+
+            if (p.armors.dinoA.isUnlocked == true && p.armors.dinoA.enchLevel < 5 && p.inventory.requiredMaterials(11) >= 1 && p.coins >= 40)
+                btnUpgradeDA.Visible = true;
+            else
+                btnUpgradeDA.Visible = false;
+        }
+
+        public void updateText()
+        {
+            lblDS.Text = p.weapons.dinoS.weaponName;           
+            lblPS.Text = p.weapons.pickleS.weaponName;
+            lblMM.Text = p.weapons.monkeM.weaponName;
+            lblGS.Text = p.weapons.goblinS.weaponName;
+            lblDA.Text = p.armors.dinoA.armorName;
+            lblPA.Text = p.armors.pickleA.armorName;
+            lblGA.Text = p.armors.goblinA.armorName;
+            lblMA.Text = p.armors.monkeA.armorName;
+        }
+
         //Function that updates the player's materials
         public void updateMaterials()
         {
@@ -108,6 +163,8 @@ namespace STS
             lblItems.Text = p.inventory.toString();
             isCraftable();
             updateMaterials();
+            isUpgradable();
+            updateText();
         }
 
         private void btnReturn_Click(object sender, EventArgs e)
@@ -131,6 +188,7 @@ namespace STS
             showEquipment();
             isCraftable();
             updateMaterials();
+            isUpgradable();
         }
 
         private void btnCraftPArmor_Click(object sender, EventArgs e)
@@ -142,6 +200,7 @@ namespace STS
             showEquipment();
             isCraftable();
             updateMaterials();
+            isUpgradable();
         }
 
         private void btnCraftGS_Click(object sender, EventArgs e)
@@ -153,6 +212,7 @@ namespace STS
             showEquipment();
             isCraftable();
             updateMaterials();
+            isUpgradable();
         }
 
         private void btnCraftGA_Click(object sender, EventArgs e)
@@ -164,6 +224,7 @@ namespace STS
             showEquipment();
             isCraftable();
             updateMaterials();
+            isUpgradable();
         }
 
         private void btnCraftMonkeM_Click(object sender, EventArgs e)
@@ -175,6 +236,7 @@ namespace STS
             showEquipment();
             isCraftable();
             updateMaterials();
+            isUpgradable();
         }
 
         private void btnCraftMonkeA_Click(object sender, EventArgs e)
@@ -186,6 +248,7 @@ namespace STS
             showEquipment();
             isCraftable();
             updateMaterials();
+            isUpgradable();
         }
 
         private void btnCraftDinoS_Click(object sender, EventArgs e)
@@ -197,6 +260,7 @@ namespace STS
             showEquipment();
             isCraftable();
             updateMaterials();
+            isUpgradable();
         }
 
         private void btnCraftDinoA_Click(object sender, EventArgs e)
@@ -208,6 +272,115 @@ namespace STS
             showEquipment();
             isCraftable();
             updateMaterials();
+            isUpgradable();
+        }
+
+        private void btnUpgradePS_Click(object sender, EventArgs e)
+        {
+            p.coins -= 10;
+            p.i_1++;
+            p.weapons.pickleS.weaponName = "Pickle Sword +" + p.i_1;
+            p.weapons.pickleS.weaponDmgMin++;
+            p.weapons.pickleS.weaponDmgMax++;
+            p.weapons.pickleS.enchLevel++;
+            p.inventory.useItem(11, 1);
+            lblItems.Text = p.inventory.toString();
+            isUpgradable();
+            updateText();
+        }
+
+        private void btnUpgradePA_Click(object sender, EventArgs e)
+        {
+            p.coins -= 10;
+            p.i_2++;
+            p.armors.pickleA.armorName = "Pickle Armor +" + p.i_2;
+            p.armors.pickleA.armorDefense++;
+            p.armors.pickleA.enchLevel++;
+            p.inventory.useItem(11, 1);
+            lblItems.Text = p.inventory.toString();
+            isUpgradable();
+            updateText();
+        }
+
+        private void btnUpgradeGS_Click(object sender, EventArgs e)
+        {
+            p.coins -= 20;
+            p.i_3++;
+            p.weapons.goblinS.weaponName = "Goblin Sword +" + p.i_3;
+            p.weapons.goblinS.weaponDmgMin++;
+            p.weapons.goblinS.weaponDmgMax++;
+            p.weapons.goblinS.enchLevel++;
+            p.inventory.useItem(11, 1);
+            lblItems.Text = p.inventory.toString();
+            isUpgradable();
+            updateText();
+        }
+
+        private void btnUpgradeGA_Click(object sender, EventArgs e)
+        {
+            p.coins -= 20;
+            p.i_4++;
+            p.armors.goblinA.armorName = "Goblin Armor +" + p.i_4;
+            p.armors.goblinA.armorDefense++;
+            p.armors.goblinA.enchLevel++;
+            p.inventory.useItem(11, 1);
+            lblItems.Text = p.inventory.toString();
+            isUpgradable();
+            updateText();
+        }
+
+        private void btnUpgradeMM_Click(object sender, EventArgs e)
+        {
+            p.coins -= 30;
+            p.i_5++;
+            p.weapons.monkeM.weaponName = "Monke Mallet +" + p.i_5;
+            p.weapons.monkeM.weaponDmgMin++;
+            p.weapons.monkeM.weaponDmgMax++;
+            p.weapons.monkeM.enchLevel++;
+            p.inventory.useItem(11, 1);
+            lblItems.Text = p.inventory.toString();
+            isUpgradable();
+            updateText();
+        }      
+
+        private void btnUpgradeMA_Click(object sender, EventArgs e)
+        {
+            p.coins -= 30;
+            p.i_6++;
+            p.armors.monkeA.armorName = "Monke Armor +" + p.i_6;
+            p.armors.monkeA.armorDefense++;
+            p.armors.monkeA.enchLevel++;
+            p.inventory.useItem(11, 1);
+            lblItems.Text = p.inventory.toString();
+            isUpgradable();
+            updateText();
+        }
+
+        private void btnUpgradeDS_Click(object sender, EventArgs e)
+        {
+            p.coins -= 40;
+            p.i_7++;
+            p.weapons.dinoS.weaponName = "Dino Sword +" + p.i_7;
+            p.weapons.dinoS.weaponDmgMin++;
+            p.weapons.dinoS.weaponDmgMax++;
+            p.weapons.dinoS.enchLevel++;
+            p.inventory.useItem(11, 1);
+            lblItems.Text = p.inventory.toString();
+            isUpgradable();
+            updateText();
+        }
+
+        private void btnUpgradeDA_Click(object sender, EventArgs e)
+        {
+            p.coins -= 40;
+            p.i_8++;
+            p.armors.dinoA.armorName = "Dino Armor +" + p.i_8;
+            p.armors.dinoA.armorDefense++;
+            p.armors.dinoA.enchLevel++;
+            p.inventory.useItem(11, 1);
+            lblItems.Text = p.inventory.toString();
+            isUpgradable();
+            updateText();
         }
     }
 }

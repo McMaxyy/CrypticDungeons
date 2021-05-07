@@ -11,7 +11,7 @@ namespace STS
         Armor selectedArmor;
         Boss selectedBoss;
         Random r = new Random();
-        int x, defense, yy, xx, fireCount;
+        int x, defense, yy, xx, fireCount, foodDmg;
         bool enemyDefeated, fireAttack;
         string dmgOutput;
 
@@ -59,7 +59,7 @@ namespace STS
             }
             else
             {
-                x = p.str / 2 + r.Next(selectedWeapon.weaponDmgMin, selectedWeapon.weaponDmgMax + 1);
+                x = p.str / 2 + r.Next(selectedWeapon.weaponDmgMin, selectedWeapon.weaponDmgMax + 1) + foodDmg;
 
                 p.enemyHP = p.enemyHP - x;
                 lblEnemyHP.Text = "HP: " + p.enemyHP + "/" + p.enemyMaxHP;
@@ -164,6 +164,11 @@ namespace STS
             p.enemyHP = p.enemyMaxHP;
             lblPlayerHP.Text = "HP: " + p.playerHP + "/" + p.playerMaxHP;
             lblEnemyHP.Text = "HP: " + p.enemyHP + "/" + p.enemyMaxHP;
+
+            if (p.didPlayerEat == true)
+                foodDmg = p.stageRank;
+            else
+                foodDmg = 0;
         }
 
         private void btnPotion_Click(object sender, EventArgs e)

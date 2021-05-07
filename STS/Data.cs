@@ -18,7 +18,9 @@ namespace STS
         [JsonIgnore] public int enemyHP;
         [JsonIgnore] public int stageRank;
         [JsonIgnore] public string saveName = "";
+        public int i_1 = 0, i_2 = 0, i_3 = 0, i_4 = 0, i_5 = 0, i_6 = 0, i_7 = 0, i_8 = 0;  //Used for enhancement levels
 
+        //Player stats
         public int newCoins;
         public int coins = 0;
         public int points = 0;
@@ -53,8 +55,8 @@ namespace STS
         private Bitmap _weaponImage;
         private int _coinValue;
         private bool _isObtained;
+        private int _enchLevel;
 
-        [JsonIgnore]
         public string weaponName
         {
             get { return _weaponName; }
@@ -92,6 +94,11 @@ namespace STS
             get { return _isObtained; }
             set { _isObtained = value; }
         }
+        public int enchLevel
+        {
+            get { return _enchLevel; }
+            set { _enchLevel = value; }
+        }
     }
 
     public class WoodenSword : Weapons
@@ -128,6 +135,7 @@ namespace STS
             isUnlocked = false;
             weaponImage = Properties.Resources.PiklSword_Equip;
             isObtained = false;
+            enchLevel = 0;
         }
     }
     public class GoblinSword : Weapons
@@ -140,6 +148,7 @@ namespace STS
             isUnlocked = false;
             weaponImage = Properties.Resources.GoblinSwordNormal_Equip;
             isObtained = false;
+            enchLevel = 0;
         }
     }
     public class MonkeMallet : Weapons
@@ -152,6 +161,7 @@ namespace STS
             isUnlocked = false;
             weaponImage = Properties.Resources.MonkeMallet_Equip;
             isObtained = false;
+            enchLevel = 0;
         }
     }
     public class DinoSword : Weapons
@@ -164,6 +174,7 @@ namespace STS
             isUnlocked = false;
             weaponImage = Properties.Resources.DinoSword_Equip;
             isObtained = false;
+            enchLevel = 0;
         }
     }
 
@@ -176,13 +187,14 @@ namespace STS
         private Bitmap _armorImage;
         private int _coinValue;
         private bool _isObtained;
+        private int _enchLevel;
 
-        [JsonIgnore] public string armorName
+        public string armorName
         {
             get { return _armorName; }
             set { _armorName = value; }
         }
-        [JsonIgnore] public int armorDefense
+        public int armorDefense
         {
             get { return _armorDefense; }
             set { _armorDefense = value; }
@@ -206,6 +218,11 @@ namespace STS
         {
             get { return _isObtained; }
             set { _isObtained = value; }
+        }
+        public int enchLevel
+        {
+            get { return _enchLevel; }
+            set { _enchLevel = value; }
         }
     }
 
@@ -240,6 +257,7 @@ namespace STS
             isUnlocked = false;
             armorImage = Properties.Resources.PiklArmor_Equip;
             isObtained = false;
+            enchLevel = 0;
         }
     }
     public class GoblinArmor : Armor
@@ -251,6 +269,7 @@ namespace STS
             isUnlocked = false;
             armorImage = Properties.Resources.GoblinArmor;
             isObtained = false;
+            enchLevel = 0;
         }
     }
     public class MonkeArmor : Armor
@@ -262,6 +281,7 @@ namespace STS
             isUnlocked = false;
             armorImage = Properties.Resources.MonkeArmor;
             isObtained = false;
+            enchLevel = 0;
         }
     }
     public class DinoArmor : Armor
@@ -273,6 +293,7 @@ namespace STS
             isUnlocked = false;
             armorImage = Properties.Resources.DinoArmor;
             isObtained = false;
+            enchLevel = 0;
         }
     }
 
@@ -370,8 +391,8 @@ namespace STS
             bossName = "Goblin King";
             bossID = 1;
             coinValue = 15;
-            minDmgBoss = 11;
-            maxDmgBoss = 14;
+            minDmgBoss = 12;
+            maxDmgBoss = 15;
             bossMaxHP = 80;
             bossImage = Properties.Resources.GoblinKing;
             dropTable = new int[] { GoblinSkull.ID, GoblinHide.ID };
@@ -384,8 +405,8 @@ namespace STS
             bossName = "Smol Hanging Monke";
             bossID = 2;
             coinValue = 25;
-            minDmgBoss = 21;
-            maxDmgBoss = 23;
+            minDmgBoss = 22;
+            maxDmgBoss = 24;
             bossMaxHP = 100;
             bossImage = Properties.Resources.SmolBossMonke;
             dropTable = new int[] { MonkeCarapace.ID, MonkeBones.ID };
@@ -398,8 +419,8 @@ namespace STS
             bossName = "Zavr";
             bossID = 3;
             coinValue = 50;
-            minDmgBoss = 28;
-            maxDmgBoss = 32;
+            minDmgBoss = 30;
+            maxDmgBoss = 33;
             bossMaxHP = 200;
             bossImage = Properties.Resources.ZavrRed;
             dropTable = new int[] { DinoTeeth.ID, DinoClaws.ID, DinoTail.ID };
@@ -509,9 +530,9 @@ namespace STS
         {
             mobName = "Smol Goblin";
             coinValue = 4;
-            maxMobHP = 25;
-            minMobDmg = 5;
-            maxMobDmg = 7;
+            maxMobHP = 35;
+            minMobDmg = 6;
+            maxMobDmg = 8;
             mobImage = Properties.Resources.Nejc;
             mobID = 2;
         }
@@ -522,9 +543,9 @@ namespace STS
         {
             mobName = "Spear Goblin";
             coinValue = 5;
-            maxMobHP = 35;
-            minMobDmg = 6;
-            maxMobDmg = 8;
+            maxMobHP = 45;
+            minMobDmg = 7;
+            maxMobDmg = 9;
             mobImage = Properties.Resources.SpearGoblin;
             mobID = 3;
         }
@@ -535,9 +556,9 @@ namespace STS
         {
             mobName = "Space Goblin";
             coinValue = 6;
-            maxMobHP = 40;
-            minMobDmg = 7;
-            maxMobDmg = 9;
+            maxMobHP = 50;
+            minMobDmg = 8;
+            maxMobDmg = 10;
             mobImage = Properties.Resources.SpaceGoblin;
             mobID = 4;
         }
@@ -548,9 +569,9 @@ namespace STS
         {
             mobName = "Cyclops";
             coinValue = 20;
-            maxMobHP = 90;
-            minMobDmg = 14;
-            maxMobDmg = 17;
+            maxMobHP = 110;
+            minMobDmg = 15;
+            maxMobDmg = 18;
             mobImage = Properties.Resources.Cyclops;
             mobID = 5;
         }
@@ -562,9 +583,9 @@ namespace STS
         {
             mobName = "Cool Monke";
             coinValue = 10;
-            maxMobHP = 40;
-            minMobDmg = 10;
-            maxMobDmg = 12;
+            maxMobHP = 50;
+            minMobDmg = 11;
+            maxMobDmg = 13;
             mobImage = Properties.Resources.CoolMonke;
             mobID = 6;
         }
@@ -575,9 +596,9 @@ namespace STS
         {
             mobName = "Strong Monke";
             coinValue = 13;
-            maxMobHP = 65;
-            minMobDmg = 9;
-            maxMobDmg = 13;
+            maxMobHP = 75;
+            minMobDmg = 10;
+            maxMobDmg = 14;
             mobImage = Properties.Resources.StrongMonke;
             mobID = 7;
         }
@@ -588,9 +609,9 @@ namespace STS
         {
             mobName = "Crossbow Monke";
             coinValue = 15;
-            maxMobHP = 50;
-            minMobDmg = 13;
-            maxMobDmg = 15;
+            maxMobHP = 60;
+            minMobDmg = 14;
+            maxMobDmg = 16;
             mobImage = Properties.Resources.CrossbowMonke;
             mobID = 8;
         }
@@ -601,9 +622,9 @@ namespace STS
         {
             mobName = "Gorilla";
             coinValue = 35;
-            maxMobHP = 140;
-            minMobDmg = 22;
-            maxMobDmg = 25;
+            maxMobHP = 160;
+            minMobDmg = 23;
+            maxMobDmg = 26;
             mobImage = Properties.Resources.Gorillaz;
             mobID = 9;
         }
@@ -630,8 +651,7 @@ namespace STS
     {
         public Item[] items = { new PickleJuice(), new PickleSkin(), new GoblinHide(), new GoblinSkull(), new MonkeBones(), new MonkeCarapace(),
             new DinoTeeth(), new DinoClaws(), new DinoTail(),
-            new IronOre(), new MythrilOre(),
-            new HealthPotion(), new Sword(), new Shield(), new Bomb(), new Meat() };
+            new IronOre(), new MythrilOre(), new EnhancementStone()};
 
         public string itemShow;
         public int reqMat;
@@ -826,17 +846,21 @@ namespace STS
     }
     public class IronOre : Item
     {
+        readonly public static int ID = 9;
         public IronOre()
         {
             itemName = "Iron Ore";
+            itemID = ID;
             itemQuantity = 0;
         }
     }
     public class MythrilOre : Item
     {
+        readonly public static int ID = 10;
         public MythrilOre()
         {
             itemName = "Mythril Ore";
+            itemID = ID;
             itemQuantity = 0;
         }
     }
@@ -848,6 +872,16 @@ namespace STS
             itemQuantity = 0;
         }
     }
+    public class EnhancementStone : Item
+    {
+        readonly public static int ID = 11;
+        public EnhancementStone()
+        {
+            itemName = "Enhancement Stone";
+            itemID = ID;
+            itemQuantity = 0;
+        }
+    }
 
     public class Items
     {
@@ -856,6 +890,7 @@ namespace STS
         public Shield shield = new Shield();
         public Bomb bomb = new Bomb();
         public Meat meat = new Meat();
+        public EnhancementStone enchStn = new EnhancementStone();
     }
 
     //Recipe class, with every crafting recipe and function for checking the availability and crafting said item, along with unlocking them

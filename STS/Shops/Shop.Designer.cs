@@ -37,6 +37,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pbPickleS = new System.Windows.Forms.PictureBox();
+            this.lblIronS = new System.Windows.Forms.Label();
+            this.lblIronA = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPickleS)).BeginInit();
             this.SuspendLayout();
@@ -103,9 +105,9 @@
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
             this.label2.Location = new System.Drawing.Point(96, 117);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 13);
+            this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 18;
-            this.label2.Text = "Iron Sword - 35 coins";
+            this.label2.Text = "Iron Sword";
             // 
             // label3
             // 
@@ -113,9 +115,9 @@
             this.label3.ForeColor = System.Drawing.SystemColors.Control;
             this.label3.Location = new System.Drawing.Point(93, 267);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 13);
+            this.label3.Size = new System.Drawing.Size(55, 13);
             this.label3.TabIndex = 19;
-            this.label3.Text = "Iron Armor - 60 coins";
+            this.label3.Text = "Iron Armor";
             // 
             // pictureBox1
             // 
@@ -140,6 +142,24 @@
             this.pbPickleS.TabIndex = 12;
             this.pbPickleS.TabStop = false;
             // 
+            // lblIronS
+            // 
+            this.lblIronS.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblIronS.Location = new System.Drawing.Point(184, 163);
+            this.lblIronS.Name = "lblIronS";
+            this.lblIronS.Size = new System.Drawing.Size(100, 31);
+            this.lblIronS.TabIndex = 30;
+            this.lblIronS.Text = "Coins:\r\nIron Ore:";
+            // 
+            // lblIronA
+            // 
+            this.lblIronA.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblIronA.Location = new System.Drawing.Point(184, 322);
+            this.lblIronA.Name = "lblIronA";
+            this.lblIronA.Size = new System.Drawing.Size(100, 31);
+            this.lblIronA.TabIndex = 31;
+            this.lblIronA.Text = "Coins: \r\nIron Ore:";
+            // 
             // Shop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -147,6 +167,8 @@
             this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(835, 644);
             this.ControlBox = false;
+            this.Controls.Add(this.lblIronA);
+            this.Controls.Add(this.lblIronS);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblCoins);
@@ -176,5 +198,7 @@
         private System.Windows.Forms.Label lblCoins;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblIronS;
+        private System.Windows.Forms.Label lblIronA;
     }
 }

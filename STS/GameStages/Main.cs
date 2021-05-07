@@ -173,6 +173,12 @@ namespace STS
 
                     lblExp.Text = "EXP: " + p.exp + "/" + p.maxExp;
                 }
+
+                if (specialStage == true && p.stageRank == 2 && p.weapons.monkeM.isUnlocked == false && p.armors.monkeA.isUnlocked == false 
+                    && selectedArmor == p.armors.goblinA || selectedArmor == p.armors.pickleA && selectedWeapon == p.weapons.goblinS || selectedWeapon == p.weapons.pickleS)
+                    p.inventory.addItem(11, 1);
+                else if (specialStage == true && p.stageRank == 3)
+                    p.inventory.addItem(11, 1);
             }
             else if (p.n == 4)
             {
@@ -334,7 +340,7 @@ namespace STS
             p.n = 1;
 
             if (p.didPlayerEat == true)
-                foodDmg = 1;
+                foodDmg = p.stageRank;
             else
                 foodDmg = 0;
         }

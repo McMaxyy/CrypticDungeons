@@ -112,6 +112,7 @@ namespace STS
         //Stage buttons that send over the correct enemies for the stage
         private void btnFinalBoss_Click(object sender, EventArgs e)
         {
+            p.stageRank = 4;
             boss = p.bosses.zavr;
             FinalBoss m = new FinalBoss(selectedWeapon, selectedArmor, boss, ref p);
             m.Width = this.Width;
@@ -152,6 +153,7 @@ namespace STS
             mob3 = p.mobs.jerry;
             specialMob = p.mobs.jerry;
             p.expAdd = 0;
+            p.stageRank = 1;
             startMain();
         }
 
@@ -163,6 +165,7 @@ namespace STS
             mob3 = p.mobs.spaceGoblin;
             specialMob = p.mobs.cyclops;
             p.expAdd = 2;
+            p.stageRank = 2;
             startMain();
         }
 
@@ -174,6 +177,7 @@ namespace STS
             mob3 = p.mobs.crossbowMonke;
             specialMob = p.mobs.gorilla;
             p.expAdd = 5;
+            p.stageRank = 3;
             startMain();
         }
     }
