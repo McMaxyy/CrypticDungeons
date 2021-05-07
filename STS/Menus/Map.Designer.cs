@@ -166,6 +166,7 @@
             this.btnMining.TabStop = false;
             this.btnMining.Text = "Mining";
             this.btnMining.UseVisualStyleBackColor = true;
+            this.btnMining.Click += new System.EventHandler(this.btnMining_Click);
             // 
             // Map
             // 

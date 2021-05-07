@@ -629,6 +629,7 @@ namespace STS
     {
         public Item[] items = { new PickleJuice(), new PickleSkin(), new GoblinHide(), new GoblinSkull(), new MonkeBones(), new MonkeCarapace(),
             new DinoTeeth(), new DinoClaws(), new DinoTail(),
+            new IronOre(), new MythrilOre(),
             new HealthPotion(), new Sword(), new Shield(), new Bomb() };
         public string itemShow;
         public int reqMat;
@@ -818,6 +819,22 @@ namespace STS
         public Bomb()
         {
             itemName = "Bomb";
+            itemQuantity = 0;
+        }
+    }
+    public class IronOre : Item
+    {
+        public IronOre()
+        {
+            itemName = "Iron Ore";
+            itemQuantity = 0;
+        }
+    }
+    public class MythrilOre : Item
+    {
+        public MythrilOre()
+        {
+            itemName = "Mythril Ore";
             itemQuantity = 0;
         }
     }

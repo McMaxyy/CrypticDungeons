@@ -313,6 +313,26 @@ namespace STS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap IronOre_Depleted {
+            get {
+                object obj = ResourceManager.GetObject("IronOre_Depleted", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IronOre_New {
+            get {
+                object obj = ResourceManager.GetObject("IronOre_New", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap IronSword {
             get {
                 object obj = ResourceManager.GetObject("IronSword", resourceCulture);
@@ -396,6 +416,26 @@ namespace STS.Properties {
         internal static System.Drawing.Bitmap MonkeMallet_Equip {
             get {
                 object obj = ResourceManager.GetObject("MonkeMallet_Equip", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MythrilOre_Depleted {
+            get {
+                object obj = ResourceManager.GetObject("MythrilOre_Depleted", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MythrilOre_New {
+            get {
+                object obj = ResourceManager.GetObject("MythrilOre_New", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

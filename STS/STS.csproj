@@ -66,6 +66,12 @@
     <Compile Include="GameStages\Endless.Designer.cs">
       <DependentUpon>Endless.cs</DependentUpon>
     </Compile>
+    <Compile Include="GameStages\Mining.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameStages\Mining.Designer.cs">
+      <DependentUpon>Mining.cs</DependentUpon>
+    </Compile>
     <Compile Include="GameStages\Grind.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GameStages\Grind.resx">
       <DependentUpon>Grind.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GameStages\Mining.resx">
+      <DependentUpon>Mining.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Shops\Shop.resx">
       <DependentUpon>Shop.cs</DependentUpon>
@@ -358,6 +367,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Boss.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IronOre_Depleted.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IronOre_New.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MythrilOre_Depleted.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MythrilOre_New.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

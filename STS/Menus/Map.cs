@@ -120,7 +120,18 @@ namespace STS
             m.Location = new Point(this.Location.X, this.Location.Y);
             this.Visible = false;
             m.ShowDialog();
-        }       
+        }
+
+        private void btnMining_Click(object sender, EventArgs e)
+        {
+            Mining s = new Mining(selectedWeapon, selectedArmor, ref p);
+            s.Width = this.Width;
+            s.Height = this.Height;
+            s.StartPosition = FormStartPosition.Manual;
+            s.Location = new Point(this.Location.X, this.Location.Y);
+            this.Visible = false;
+            s.ShowDialog();
+        }
 
         private void btnStage1_Click(object sender, EventArgs e)
         {

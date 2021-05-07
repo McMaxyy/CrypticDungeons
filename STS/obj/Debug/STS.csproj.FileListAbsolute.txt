@@ -19,3 +19,4 @@ C:\Users\mryor\source\repos\Stage1\STS\obj\Debug\STS.FinalBoss.resources
 C:\Users\mryor\source\repos\Stage1\STS\bin\Debug\Newtonsoft.Json.dll
 C:\Users\mryor\source\repos\Stage1\STS\bin\Debug\Newtonsoft.Json.xml
 C:\Users\mryor\source\repos\Stage1\STS\obj\Debug\STS.csproj.CopyComplete
+C:\Users\mryor\source\repos\Stage1\STS\obj\Debug\STS.Mining.resources
